@@ -127,11 +127,16 @@
     @keyframes gateway-mote-flight{0%{opacity:0;transform:translate(0,0) scale(.3) rotate(0)}18%{opacity:.85}72%{opacity:.7}100%{opacity:0;transform:translate(var(--mote-x),var(--mote-rise)) scale(1.3) rotate(var(--mote-turn,130deg))}}
     @media(max-width:650px){.gateway-doors{left:15%;right:15%}.gate-sidewall{width:15.5%}.gate-pillar{width:4.2%}.gate-pillar.left{left:12%}.gate-pillar.right{right:12%}.gate-cornice{font-size:12px;letter-spacing:.26em;height:7%}.gate-banner{left:22%;width:50%;top:19%;height:39%;gap:13px}.gate-banner svg{width:65%}.gate-banner span{font-size:10px}.gateway-wind{stroke-width:1.7}}
     @media(prefers-reduced-motion:reduce){.gateway-whiteveil,.gateway-transit-effects,.gateway-wind,.gateway-mote{display:none}}
+    .entry-screen>.gate-architecture{z-index:-4;overflow:hidden;transition:filter .6s ease}
+    .entry-screen>.gate-architecture .gate-crest{opacity:.55}
+    .entry-screen:before{background:radial-gradient(ellipse at 50% 47%,rgba(4,10,18,.72),rgba(5,12,22,.53) 36%,rgba(5,12,22,.14) 77%,rgba(3,9,17,.38)),linear-gradient(0deg,rgba(4,10,18,.35),transparent 36%)}
+    .entry-screen .entry-content{z-index:1}
+    .entry-screen .entry-title{text-shadow:0 2px 5px #020811,0 0 28px rgba(3,10,19,.7),0 0 80px rgba(220,233,247,.18)}
+    .entry-screen.connecting>.gate-architecture{filter:brightness(.5) saturate(.72)}
   </style>
 </head>
 <body>
   <dialog class="entry-screen" id="entry-screen" aria-labelledby="entry-title" aria-describedby="entry-hint">
-    <img class="entry-background" id="entry-background" alt="" aria-hidden="true">
     <div class="entry-grid" aria-hidden="true"></div>
     <div class="entry-scan" aria-hidden="true"></div>
     <div class="entry-corner top-left" aria-hidden="true"></div><div class="entry-corner top-right" aria-hidden="true"></div>
@@ -157,7 +162,7 @@
         <img class="gateway-image" id="gateway-image" alt="">
         <div class="gateway-atmosphere"></div>
         <div class="gateway-whiteveil"></div>
-        <div class="gate-architecture" id="gate-architecture">
+        <div class="gate-architecture" id="gate-architecture" aria-hidden="true">
         <div class="gateway-doors"><div class="gate-door left"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div><div class="gate-door right"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div></div>
         <div class="gate-sidewall left"><div class="gate-banner"><svg viewBox="0 0 50 74"><path d="M25 3L45 14V47L25 69L5 47V14ZM25 13V59M14 32H36M25 18L31 32L25 46L19 32Z"/></svg><span>LUMIÈRE</span></div></div><div class="gate-sidewall right"><div class="gate-banner"><svg viewBox="0 0 50 74"><path d="M25 3L45 14V47L25 69L5 47V14ZM25 13V59M14 32H36M25 18L31 32L25 46L19 32Z"/></svg><span>LUMIÈRE</span></div></div>
         <div class="gate-pillar left"></div><div class="gate-pillar right"></div><div class="gate-cornice">✦ &nbsp; LUMIÈRE &nbsp; ✦</div>
@@ -406,7 +411,7 @@
     },true);
     const entryScreen=document.querySelector('#entry-screen');
     const entryButton=document.querySelector('#entry-enter');
-    const entryBackground=document.querySelector('#entry-background');
+    const entryGateArchitecture=document.querySelector('#gate-architecture');
     const entryConnection=document.querySelector('#entry-connection');
     const entrySkip=document.querySelector('#entry-skip');
     const academyGateway=document.querySelector('#academy-gateway');
@@ -436,8 +441,9 @@
       document.body.classList.add('scene-entering');window.scrollTo({top:0,behavior:'instant'});
       entryScreen.classList.add('gate-active');
       entryScreen.setAttribute('aria-labelledby','gateway-title');entryScreen.setAttribute('aria-describedby','gateway-description');
-      const architecture=document.querySelector('#gate-architecture');const transitEffects=document.querySelector('#gateway-transit-effects');
-      if(!(architecture instanceof HTMLElement)||!(transitEffects instanceof HTMLElement)){completeEntry();return}
+      const architecture=entryGateArchitecture;const transitEffects=document.querySelector('#gateway-transit-effects');const stage=academyGateway.querySelector('.gateway-stage');
+      if(!(architecture instanceof HTMLElement)||!(transitEffects instanceof HTMLElement)||!(stage instanceof HTMLElement)){completeEntry();return}
+      stage.append(architecture);
       academyGateway.dataset.phase='passing';
       academyGateway.hidden=false;academyGateway.classList.add('opening','home-gateway');gatewaySkip?.focus({preventScroll:true});
       scheduleEntry(()=>{architecture.hidden=true;transitEffects.hidden=true;academyGateway.dataset.phase='white'},1050);
@@ -565,7 +571,7 @@
     entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting){event.preventDefault();if(!event.repeat)enterAcademy()}});
     entryScreen?.addEventListener('cancel',event=>event.preventDefault());
     renderCharacters();updateView();
-    if(entryScreen instanceof HTMLDialogElement){if(entryBackground instanceof HTMLImageElement){const artwork=document.querySelector('#academy-image');if(artwork instanceof HTMLImageElement)entryBackground.src=artwork.src}entryScreen.showModal();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
+    if(entryScreen instanceof HTMLDialogElement){if(entryGateArchitecture instanceof HTMLElement)entryScreen.prepend(entryGateArchitecture);entryScreen.showModal();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
   </script>
 </body>
 </html>
