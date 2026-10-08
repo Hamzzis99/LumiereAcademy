@@ -51,9 +51,10 @@
     @media(prefers-reduced-motion:reduce){.academy-gateway .gateway-bird,.academy-gateway .gateway-light,.academy-gateway .gateway-seam{display:none}}
     html{scrollbar-gutter:stable}
     body.home-scene{--scene-header-height:88px}
-    .home-scene .header{background:rgba(10,18,30,.58)}
+    .home-scene .header{background:rgba(10,18,30,.58);border-bottom:0;box-shadow:inset 0 -1px var(--line)}
     .home-scene .hero{margin-top:calc(-1 * var(--scene-header-height));min-height:100svh;padding-top:var(--scene-header-height)}
     .home-scene .hero-image{object-position:64% 50%;filter:brightness(1.05) saturate(1.02)}
+    .home-scene .hero h1:focus{outline:none}
     .home-scene .hero:before{background:linear-gradient(90deg,rgba(7,16,29,.83),rgba(7,16,29,.58) 35%,rgba(7,16,29,.06) 76%),linear-gradient(0deg,#0e1928,transparent 35%)}
     .home-scene .hero-actions .button{border-radius:8px;backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(3,10,19,.15)}
     .home-scene .hero-actions .button:not(.primary){background:rgba(16,31,48,.44);border-color:rgba(233,221,193,.4)}
@@ -379,7 +380,7 @@
       entryScreen.setAttribute('aria-labelledby','gateway-title');entryScreen.setAttribute('aria-describedby','gateway-description');
       academyGateway.hidden=false;academyGateway.classList.add('opening','home-gateway');gatewaySkip?.focus({preventScroll:true});
       scheduleEntry(()=>academyGateway.classList.add('revealed'),950);
-      scheduleEntry(()=>{document.body.classList.add('interface-revealing');academyGateway.classList.add('interface-revealing');document.querySelector('#gateway-description').textContent='아카데미 안내가 차례로 나타납니다.'},2400);
+      scheduleEntry(()=>{document.body.classList.add('interface-revealing');academyGateway.classList.add('interface-revealing');const description=document.querySelector('#gateway-description');if(description)description.textContent='아카데미 안내가 차례로 나타납니다.'},2400);
       scheduleEntry(completeEntry,5400);
     }
     // Fictional CLI playback only; commands are never executed and no connections are performed.
