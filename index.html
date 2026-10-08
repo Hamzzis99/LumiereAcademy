@@ -79,6 +79,43 @@
     @media(max-width:600px){body.home-scene{--scene-header-height:74px}}
     @media(max-height:650px) and (min-width:601px){.home-scene .hero-content{padding:30px 0 105px}.home-scene .hero h1{font-size:52px;margin-bottom:18px}.home-scene .hero-copy{margin-bottom:22px}.home-scene .hero-kicker{margin-bottom:12px}.home-scene .hero-english{margin-bottom:12px}}
     @media(prefers-reduced-motion:reduce){.scene-entering .header,.scene-entering .hero-content>*,.scene-entering .hero-actions>.button,.scene-entering .hero-bottom,.scene-entering .hero:before{opacity:1}}
+    .gateway-whiteveil{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,#fff 10%,#fffdf5 62%,#f6eddb);opacity:1}
+    .gateway-doors{left:14%;right:14%;z-index:3}
+    .gate-sidewall{position:absolute;top:0;bottom:0;width:14.4%;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 96px,rgba(98,83,59,.2) 96px 98px),repeating-linear-gradient(90deg,transparent 0 74px,rgba(135,113,72,.13) 74px 76px),linear-gradient(90deg,#948770,#e7dec9 24%,#cec3aa 75%,#8d7d60);box-shadow:inset -18px 0 28px rgba(75,58,31,.2)}
+    .gate-sidewall.left{left:0}.gate-sidewall.right{right:0}
+    .gate-sidewall:before{content:'';position:absolute;inset:12% 16% 8%;border:1px solid rgba(121,98,53,.45);border-radius:80px 80px 4px 4px;background:linear-gradient(90deg,rgba(72,64,46,.21),rgba(255,249,227,.22),rgba(71,58,33,.18));box-shadow:inset 0 4px 12px rgba(62,45,22,.24),0 0 0 7px rgba(243,233,207,.25)}
+    .gate-sidewall:after{content:'';position:absolute;left:0;right:0;bottom:6%;height:7%;border-top:2px solid #b8a782;border-bottom:1px solid #8b7959;background:linear-gradient(#ede2c8,#b1a17c 14%,#d6c9ac 45%,#8d7a57);box-shadow:0 5px 12px rgba(50,39,21,.25)}
+    .gate-pillar{width:3.6%;background:linear-gradient(90deg,#8c7a5c,#f1e5c8 24%,#cabc97 45%,#eadfc2 72%,#8f7950);box-shadow:0 0 18px rgba(42,28,10,.38),inset 0 0 0 1px rgba(131,101,51,.35)}
+    .gate-pillar.left{left:11%}.gate-pillar.right{right:11%}
+    .gate-pillar:before,.gate-pillar:after{content:'';position:absolute;left:-14%;right:-14%;height:6%;border-top:1px solid #eadab8;border-bottom:2px solid #a7926a;background:linear-gradient(#c5b08a,#f5e8ca 28%,#b19a72 70%,#d6c4a1)}
+    .gate-pillar:before{top:8%}.gate-pillar:after{bottom:10%}
+    .gate-cornice{position:absolute;top:0;left:0;right:0;height:9%;min-height:38px;max-height:76px;z-index:4;display:grid;place-items:center;border-bottom:3px solid #a99366;background:linear-gradient(#8b7758,#f1e5c9 20%,#d3c5a3 66%,#9d8860);box-shadow:0 7px 20px rgba(49,36,18,.3);color:#7d643d;font-family:var(--english);font-size:18px;letter-spacing:.35em;text-shadow:0 1px #fff6dc;pointer-events:none}
+    .gate-cornice:before{content:'';position:absolute;inset:8px 4%;border:1px solid rgba(136,109,61,.45)}
+    .gate-banner{position:absolute;top:21%;left:25%;width:48%;height:43%;max-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transform-origin:50% 0;clip-path:polygon(0 0,100% 0,100% 92%,50% 100%,0 92%);background:linear-gradient(90deg,#101f35,#304563 24%,#1b304d 52%,#3c4d65 77%,#15243c);box-shadow:inset 0 0 0 2px #baa06d,inset 7px 0 16px rgba(0,0,0,.3);color:#ead9a7}
+    .gate-banner:before{content:'';position:absolute;inset:8px 9% 10%;border:1px solid rgba(214,187,127,.5);clip-path:polygon(0 0,100% 0,100% 92%,50% 100%,0 92%)}
+    .gate-banner svg{width:54%;max-width:50px;height:auto;fill:none;stroke:currentColor;stroke-width:1.3}
+    .gate-banner span{font-family:var(--english);font-size:clamp(10px,1.35vw,17px);letter-spacing:.08em;writing-mode:vertical-rl}
+    .gateway-wind{position:absolute;inset:0;z-index:5;width:100%;height:100%;pointer-events:none;overflow:visible;fill:none;stroke:#fff5d5;stroke-width:1.3;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(255,239,201,.35))}
+    .wind-ribbon{opacity:0;stroke-dasharray:170 1300;stroke-dashoffset:1300}
+    .gateway-mote{position:absolute;left:50%;top:var(--mote-y,50%);z-index:5;width:var(--mote-size,5px);height:var(--mote-size,5px);border-radius:50%;background:#fff3c5;box-shadow:0 0 8px rgba(255,241,193,.6);opacity:0;pointer-events:none}
+    .gateway-mote.leaf{width:12px;height:5px;border-radius:80% 0 80% 0;background:#f1d9a3;box-shadow:none}
+    .academy-gateway.opening .gateway-whiteveil{animation:gateway-dawn 3.4s ease-in-out both}
+    .academy-gateway.opening .gate-sidewall,.academy-gateway.opening .gate-cornice,.academy-gateway.opening .gate-pillar{animation:gateway-frame-fade 3.4s ease both}
+    .academy-gateway.opening .gate-banner{animation:gateway-banner-breeze 2.6s .4s ease-out both}
+    .academy-gateway.opening .gate-sidewall.right .gate-banner{animation-name:gateway-banner-breeze-right}
+    .academy-gateway.opening .wind-ribbon{animation:gateway-wind-trace 2.3s var(--wind-delay,.65s) ease-out both}
+    .academy-gateway.opening .gateway-mote{animation:gateway-mote-flight 2.2s var(--mote-delay,.8s) cubic-bezier(.12,.5,.38,1) both}
+    .academy-gateway.opening .gateway-bird{animation-delay:calc(var(--bird-delay,.8s) + .8s)}
+    .scene-entering .hero-image{animation-name:gateway-clear-view}
+    @keyframes gateway-dawn{0%,16%{opacity:1}40%{opacity:.92}72%{opacity:.26}100%{opacity:0}}
+    @keyframes gateway-clear-view{from{transform:scale(1.04);filter:brightness(1.05) saturate(1.02)}to{transform:scale(1);filter:brightness(1.05) saturate(1.02)}}
+    @keyframes gateway-frame-fade{0%,63%{opacity:1}100%{opacity:0}}
+    @keyframes gateway-banner-breeze{0%,100%{transform:rotate(0) skewX(0)}22%{transform:rotate(-5deg) skewX(-4deg)}47%{transform:rotate(2deg) skewX(2deg)}72%{transform:rotate(-1deg) skewX(-1deg)}}
+    @keyframes gateway-banner-breeze-right{0%,100%{transform:rotate(0) skewX(0)}22%{transform:rotate(5deg) skewX(4deg)}47%{transform:rotate(-2deg) skewX(-2deg)}72%{transform:rotate(1deg) skewX(1deg)}}
+    @keyframes gateway-wind-trace{0%{opacity:0;stroke-dashoffset:1300}18%{opacity:.55}70%{opacity:.38}100%{opacity:0;stroke-dashoffset:-400}}
+    @keyframes gateway-mote-flight{0%{opacity:0;transform:translate(0,0) scale(.3) rotate(0)}18%{opacity:.85}72%{opacity:.7}100%{opacity:0;transform:translate(var(--mote-x),var(--mote-rise)) scale(1.3) rotate(var(--mote-turn,130deg))}}
+    @media(max-width:650px){.gateway-doors{left:15%;right:15%}.gate-sidewall{width:15.5%}.gate-pillar{width:4.2%}.gate-pillar.left{left:12%}.gate-pillar.right{right:12%}.gate-cornice{font-size:12px;letter-spacing:.26em;height:7%}.gate-banner{left:22%;width:50%;top:19%;height:39%;gap:13px}.gate-banner svg{width:65%}.gate-banner span{font-size:10px}.gateway-wind{stroke-width:1.7}}
+    @media(prefers-reduced-motion:reduce){.gateway-whiteveil,.gateway-wind,.gateway-mote{display:none}}
   </style>
 </head>
 <body>
@@ -108,8 +145,12 @@
       <div class="gateway-stage" aria-hidden="true">
         <img class="gateway-image" id="gateway-image" alt="">
         <div class="gateway-atmosphere"></div>
+        <div class="gateway-whiteveil"></div>
         <div class="gateway-doors"><div class="gate-door left"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div><div class="gate-door right"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div></div>
-        <div class="gate-pillar left"></div><div class="gate-pillar right"></div><div class="gateway-seam"></div><div class="gateway-light"></div>
+        <div class="gate-sidewall left"><div class="gate-banner"><svg viewBox="0 0 50 74"><path d="M25 3L45 14V47L25 69L5 47V14ZM25 13V59M14 32H36M25 18L31 32L25 46L19 32Z"/></svg><span>LUMIÈRE</span></div></div><div class="gate-sidewall right"><div class="gate-banner"><svg viewBox="0 0 50 74"><path d="M25 3L45 14V47L25 69L5 47V14ZM25 13V59M14 32H36M25 18L31 32L25 46L19 32Z"/></svg><span>LUMIÈRE</span></div></div>
+        <div class="gate-pillar left"></div><div class="gate-pillar right"></div><div class="gate-cornice">✦ &nbsp; LUMIÈRE &nbsp; ✦</div><div class="gateway-seam"></div><div class="gateway-light"></div>
+        <svg class="gateway-wind" viewBox="0 0 1000 600" preserveAspectRatio="none"><path class="wind-ribbon" style="--wind-delay:.65s" d="M490 345C395 320 380 415 265 390S65 280 -120 440"/><path class="wind-ribbon" style="--wind-delay:.85s" d="M510 330C625 285 630 405 765 370S945 315 1120 470"/><path class="wind-ribbon" style="--wind-delay:.95s" d="M480 295C360 220 365 315 225 275S60 120 -120 190"/><path class="wind-ribbon" style="--wind-delay:1.1s" d="M525 285C670 195 650 315 810 250S980 180 1115 225"/><path class="wind-ribbon" style="--wind-delay:1.15s" d="M500 380C435 460 325 420 200 515S70 610 -100 570"/><path class="wind-ribbon" style="--wind-delay:1.3s" d="M515 375C610 490 740 420 850 520S1000 650 1110 555"/></svg>
+        <span class="gateway-mote" style="--mote-x:-57vw;--mote-rise:-22vh;--mote-y:38%;--mote-delay:.75s;--mote-size:4px"></span><span class="gateway-mote" style="--mote-x:62vw;--mote-rise:-15vh;--mote-y:45%;--mote-delay:.85s;--mote-size:6px"></span><span class="gateway-mote leaf" style="--mote-x:-58vw;--mote-rise:22vh;--mote-y:52%;--mote-delay:1s;--mote-turn:280deg"></span><span class="gateway-mote" style="--mote-x:50vw;--mote-rise:31vh;--mote-y:50%;--mote-delay:1.1s;--mote-size:4px"></span><span class="gateway-mote leaf" style="--mote-x:63vw;--mote-rise:-32vh;--mote-y:40%;--mote-delay:1.15s;--mote-turn:-240deg"></span><span class="gateway-mote" style="--mote-x:-51vw;--mote-rise:-38vh;--mote-y:44%;--mote-delay:1.2s;--mote-size:5px"></span><span class="gateway-mote" style="--mote-x:54vw;--mote-rise:8vh;--mote-y:58%;--mote-delay:1.3s;--mote-size:7px"></span><span class="gateway-mote leaf" style="--mote-x:-64vw;--mote-rise:4vh;--mote-y:48%;--mote-delay:1.35s;--mote-turn:190deg"></span><span class="gateway-mote" style="--mote-x:43vw;--mote-rise:-25vh;--mote-y:36%;--mote-delay:1.4s;--mote-size:4px"></span><span class="gateway-mote" style="--mote-x:-45vw;--mote-rise:33vh;--mote-y:60%;--mote-delay:1.45s;--mote-size:5px"></span>
         <span class="gateway-bird" style="--bird-x:-62vw;--bird-rise:-27vh;--bird-delay:.75s;--bird-y:30%;--bird-size:46px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:58vw;--bird-rise:-32vh;--bird-delay:.86s;--bird-y:28%;--bird-size:38px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:-54vw;--bird-rise:-16vh;--bird-delay:1.03s;--bird-y:35%;--bird-size:32px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:66vw;--bird-rise:-15vh;--bird-delay:1.12s;--bird-y:32%;--bird-size:48px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:42vw;--bird-rise:-40vh;--bird-delay:.95s;--bird-y:25%;--bird-size:35px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span>
         <p class="gateway-status">WELCOME TO LUMIÈRE</p>
       </div>
@@ -380,8 +421,8 @@
       entryScreen.setAttribute('aria-labelledby','gateway-title');entryScreen.setAttribute('aria-describedby','gateway-description');
       academyGateway.hidden=false;academyGateway.classList.add('opening','home-gateway');gatewaySkip?.focus({preventScroll:true});
       scheduleEntry(()=>academyGateway.classList.add('revealed'),950);
-      scheduleEntry(()=>{document.body.classList.add('interface-revealing');academyGateway.classList.add('interface-revealing');const description=document.querySelector('#gateway-description');if(description)description.textContent='아카데미 안내가 차례로 나타납니다.'},2400);
-      scheduleEntry(completeEntry,5400);
+      scheduleEntry(()=>{document.body.classList.add('interface-revealing');academyGateway.classList.add('interface-revealing');const description=document.querySelector('#gateway-description');if(description)description.textContent='아카데미 안내가 차례로 나타납니다.'},3500);
+      scheduleEntry(completeEntry,6500);
     }
     // Fictional CLI playback only; commands are never executed and no connections are performed.
     const sessionBurst=[
