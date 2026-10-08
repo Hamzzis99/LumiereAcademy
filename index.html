@@ -45,6 +45,10 @@
     @media(max-width:650px){.security-console{width:calc(100% - 28px)}.console-titlebar{padding:10px 12px;gap:10px}.console-window-title{font-size:11px;gap:8px}.console-icon{font-size:13px}.console-continue{font-size:11px;padding:4px 7px}.console-body{padding:18px 16px;height:min(500px,calc(100svh - 145px))}.console-log{font-size:12px;line-height:1.9}.console-log li{min-height:25px}.console-time{font-size:11px;margin-right:8px}.console-footer{padding:5px 16px 12px;font-size:10px}.console-command{padding-bottom:13px}}
     @media(max-height:560px){.security-console{max-height:calc(100% - 40px)}.console-body{height:calc(100svh - 145px);padding-top:15px;padding-bottom:12px}}
 
+    .academy-gateway{position:absolute;inset:0;z-index:10;overflow:hidden;background:#0a1420;isolation:isolate}.gateway-stage{position:absolute;inset:0;overflow:hidden}.gateway-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 50%;filter:brightness(1.2) saturate(1.08)}.gateway-atmosphere{position:absolute;inset:0;background:radial-gradient(ellipse at 53% 22%,rgba(255,224,151,.2),transparent 63%),linear-gradient(0deg,rgba(5,14,23,.38),transparent 45%)}.gateway-doors{position:absolute;inset:0 5.5%;perspective:1500px;perspective-origin:50% 50%;transform-style:preserve-3d}.gate-door{position:absolute;top:-2%;bottom:-2%;width:50.1%;overflow:hidden;backface-visibility:hidden;border:2px solid #bda674;background:linear-gradient(100deg,#8b7b5e,#dfd3b2 8%,#c7b993 18%,#ebdfbc 47%,#c7b68b 82%,#8e7b54);box-shadow:inset 0 0 80px rgba(79,61,28,.38);transform-style:preserve-3d}.gate-door.left{left:0;transform-origin:0 50%}.gate-door.right{right:0;transform-origin:100% 50%;background:linear-gradient(-100deg,#8b7b5e,#dfd3b2 8%,#c7b993 18%,#ebdfbc 47%,#c7b68b 82%,#8e7b54)}.gate-door:before{content:'';position:absolute;inset:3% 7%;border:1px solid rgba(105,80,40,.6);box-shadow:inset 0 0 0 5px rgba(255,244,207,.22),0 0 0 5px rgba(80,61,30,.12);background:repeating-linear-gradient(90deg,transparent 0 18%,rgba(124,102,61,.07) 18% 18.4%,transparent 18.4% 36%)}.gate-door-art{position:absolute;inset:7% 9%;width:82%;height:86%;fill:none;stroke:#897044;stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:.7}.gate-door.right .gate-door-art{scale:-1 1}.gate-crest{position:absolute;width:126px;height:126px;border-radius:50%;top:calc(50% - 63px);border:2px solid #c8ae71;background:radial-gradient(circle,#384d5d,#1a2b39);box-shadow:0 0 0 6px rgba(152,125,69,.23),0 0 0 8px rgba(108,84,35,.45);display:grid;place-items:center;color:#f0de9f;font-family:var(--serif);font-size:60px;text-shadow:0 0 20px rgba(255,231,161,.35)}.gate-door.left .gate-crest{right:-63px}.gate-door.right .gate-crest{left:-63px}.gate-crest:after{content:'';position:absolute;inset:12px;border:1px solid rgba(240,222,159,.45);border-radius:50%}.gate-pillar{position:absolute;top:-1%;bottom:-1%;width:5.7%;z-index:4;background:repeating-linear-gradient(0deg,transparent 0 110px,rgba(112,91,48,.3) 110px 112px),linear-gradient(90deg,#887657,#e7dabb 45%,#c6b48a 72%,#786246);box-shadow:0 0 35px rgba(3,9,16,.6)}.gate-pillar.left{left:0}.gate-pillar.right{right:0;scale:-1 1}.gateway-light{position:absolute;inset:-15% -30%;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 47%,rgba(255,247,215,.52),rgba(255,221,143,.14) 31%,transparent 64%);mix-blend-mode:screen}.gateway-seam{position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:2px;z-index:3;background:#fff3c8;box-shadow:0 0 35px 8px rgba(255,232,153,.6);opacity:0}.gateway-bird{position:absolute;z-index:5;left:50%;top:var(--bird-y,40%);width:var(--bird-size,38px);color:#fff2d0;opacity:0;pointer-events:none;filter:drop-shadow(0 0 5px rgba(251,231,180,.25))}.gateway-bird svg{display:block;width:100%;height:auto;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}.gateway-skip{position:absolute;z-index:8;right:28px;bottom:26px;padding:9px 17px;border:1px solid rgba(248,231,185,.4);background:rgba(12,25,37,.7);color:#f0e2bf;font-family:var(--sans);font-size:12px;cursor:pointer;backdrop-filter:blur(6px)}.gateway-skip:focus-visible{outline-color:#f0dfaa}.gateway-status{position:absolute;left:0;right:0;bottom:28px;z-index:6;text-align:center;color:#f7e9c8;font-family:var(--english);font-size:14px;letter-spacing:.23em;pointer-events:none;text-shadow:0 1px 10px #101b25;opacity:0}.academy-gateway.opening .gate-door.left{animation:gate-left-open 1.85s .18s cubic-bezier(.4,0,.2,1) both}.academy-gateway.opening .gate-door.right{animation:gate-right-open 1.85s .18s cubic-bezier(.4,0,.2,1) both}.academy-gateway.opening .gateway-image{animation:gateway-view 2.8s ease-out both}.academy-gateway.opening .gateway-light{animation:gateway-light 2.7s ease-out both}.academy-gateway.opening .gateway-seam{animation:gateway-seam 1.7s ease both}.academy-gateway.opening .gate-pillar{animation:gate-frame 2.5s ease both}.academy-gateway.opening .gateway-bird{animation:gateway-flight 1.6s var(--bird-delay,.8s) ease-in both}.academy-gateway.opening .gateway-bird svg{animation:gateway-wing .32s ease-in-out infinite alternate}.academy-gateway.revealed .gateway-status{animation:gateway-caption 1.5s ease both}.academy-gateway.departing{opacity:0;transition:opacity .45s ease}.entry-screen.gate-active{padding:0;background:transparent;overflow:hidden}.entry-screen.gate-active::backdrop{background:transparent}.entry-screen.gate-active:before{display:none}.entry-screen.gate-active>.entry-background,.entry-screen.gate-active>.entry-grid,.entry-screen.gate-active>.entry-scan,.entry-screen.gate-active>.entry-corner,.entry-screen.gate-active>.entry-content,.entry-screen.gate-active>.entry-footer{display:none}
+    @keyframes gate-left-open{0%{transform:rotateY(0)}100%{transform:rotateY(88deg)}}@keyframes gate-right-open{0%{transform:rotateY(0)}100%{transform:rotateY(-88deg)}}@keyframes gateway-view{from{transform:scale(1.07);filter:brightness(1.18) saturate(1.08)}to{transform:scale(1);filter:brightness(1.05) saturate(1.02)}}@keyframes gateway-light{0%{opacity:0;scale:.2 1}22%{opacity:.55}55%{opacity:.65;scale:1 1}100%{opacity:0;scale:1.15 1}}@keyframes gateway-seam{0%{opacity:0}12%,25%{opacity:1}85%,100%{opacity:0;scale:20 1}}@keyframes gate-frame{0%,50%{opacity:1}100%{opacity:0}}@keyframes gateway-flight{0%{opacity:0;transform:translate(-50%,0) scale(.7)}12%{opacity:.9}80%{opacity:.9}100%{opacity:0;transform:translate(var(--bird-x,60vw),var(--bird-rise,-25vh)) scale(.6)}}@keyframes gateway-wing{from{transform:scaleY(.5)}to{transform:scaleY(1)}}@keyframes gateway-caption{0%{opacity:0}18%,80%{opacity:.85}100%{opacity:0}}
+    @media(max-width:650px){.gateway-doors{left:6%;right:6%;perspective:900px}.gate-pillar{width:6.3%}.gate-crest{width:88px;height:88px;top:calc(50% - 44px);font-size:45px}.gate-door.left .gate-crest{right:-44px}.gate-door.right .gate-crest{left:-44px}.gateway-skip{right:18px;bottom:18px;font-size:11px;padding:8px 12px}.gateway-status{bottom:72px;font-size:12px;letter-spacing:.15em}.gateway-bird{width:calc(var(--bird-size,38px)*.8)}}
+    @media(prefers-reduced-motion:reduce){.academy-gateway .gateway-bird,.academy-gateway .gateway-light,.academy-gateway .gateway-seam{display:none}}
   </style>
 </head>
 <body>
@@ -68,6 +72,19 @@
         <ol class="console-log" id="console-log" role="log" aria-label="Connection activity" aria-live="off"></ol>
       </div>
       <div class="console-footer"><p id="connection-label" role="status" aria-live="polite" aria-atomic="true">session 07-c1: attached</p><span class="console-operator">connector: Sohyeon</span></div>
+    </section>
+    <section class="academy-gateway" id="academy-gateway" hidden aria-labelledby="gateway-title">
+      <h2 class="sr-only" id="gateway-title">루미에르 아카데미에 입장합니다</h2>
+      <div class="gateway-stage" aria-hidden="true">
+        <img class="gateway-image" id="gateway-image" alt="">
+        <div class="gateway-atmosphere"></div>
+        <div class="gateway-doors"><div class="gate-door left"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div><div class="gate-door right"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div></div>
+        <div class="gate-pillar left"></div><div class="gate-pillar right"></div><div class="gateway-seam"></div><div class="gateway-light"></div>
+        <span class="gateway-bird" style="--bird-x:-62vw;--bird-rise:-27vh;--bird-delay:.75s;--bird-y:30%;--bird-size:46px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:58vw;--bird-rise:-32vh;--bird-delay:.86s;--bird-y:28%;--bird-size:38px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:-54vw;--bird-rise:-16vh;--bird-delay:1.03s;--bird-y:35%;--bird-size:32px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:66vw;--bird-rise:-15vh;--bird-delay:1.12s;--bird-y:32%;--bird-size:48px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:42vw;--bird-rise:-40vh;--bird-delay:.95s;--bird-y:25%;--bird-size:35px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span>
+        <p class="gateway-status">WELCOME TO LUMIÈRE</p>
+      </div>
+      <button class="gateway-skip" id="gateway-skip" type="button">연출 스킵</button>
+      <p class="sr-only" id="gateway-description" role="status" aria-live="polite">아카데미 정문이 열립니다.</p>
     </section>
     <div class="entry-footer"><span>LUMIÈRE ACADEMY</span><span id="entry-state">AWAITING ENTRY</span></div>
   </dialog>
@@ -302,12 +319,15 @@
     const entryBackground=document.querySelector('#entry-background');
     const entryConnection=document.querySelector('#entry-connection');
     const entrySkip=document.querySelector('#entry-skip');
+    const academyGateway=document.querySelector('#academy-gateway');
+    const gatewaySkip=document.querySelector('#gateway-skip');
     const connectionLabel=document.querySelector('#connection-label');
     const consoleLog=document.querySelector('#console-log');
     const consoleViewport=document.querySelector('.console-body');
     const entryState=document.querySelector('#entry-state');
     const entryTimers=new Set();
     let entryConnecting=false;
+    let gatewayOpening=false;
     function completeEntry(){
       if(!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
       entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
@@ -316,6 +336,20 @@
       const shell=document.querySelector('#site-shell');shell?.classList.add('site-reveal');
       const heading=document.querySelector(`[data-view="${activeView}"] h1`);if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
       setTimeout(()=>shell?.classList.remove('site-reveal'),600);
+    }
+    function openAcademyGate(){
+      if(gatewayOpening||!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
+      if(!(academyGateway instanceof HTMLElement)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){completeEntry();return}
+      gatewayOpening=true;entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
+      if(entryConnection)entryConnection.hidden=true;
+      entryScreen.classList.add('gate-active');
+      entryScreen.setAttribute('aria-labelledby','gateway-title');entryScreen.setAttribute('aria-describedby','gateway-description');
+      const image=document.querySelector('#gateway-image');const artwork=document.querySelector('#academy-image');
+      if(image instanceof HTMLImageElement&&artwork instanceof HTMLImageElement)image.src=artwork.src;
+      academyGateway.hidden=false;academyGateway.classList.add('opening');gatewaySkip?.focus({preventScroll:true});
+      scheduleEntry(()=>academyGateway.classList.add('revealed'),950);
+      scheduleEntry(()=>academyGateway.classList.add('departing'),2450);
+      scheduleEntry(completeEntry,2900);
     }
     // Fictional CLI playback only; commands are never executed and no connections are performed.
     const sessionBurst=[
@@ -383,8 +417,7 @@
     function advanceConsole(index,delay=75){
       if(index<consoleEvents.length-1){scheduleEntry(()=>showConsoleLine(index+1),delay);return}
       if(connectionLabel)connectionLabel.textContent='Session active. Handoff pending.';
-      scheduleEntry(()=>entryScreen.classList.add('leaving'),400);
-      scheduleEntry(completeEntry,760);
+      scheduleEntry(openAcademyGate,400);
     }
     function showConsoleLine(index){
       if(!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open||!consoleLog)return;
@@ -434,6 +467,7 @@
     }
     entryButton?.addEventListener('click',enterAcademy);
     entrySkip?.addEventListener('click',completeEntry);
+    gatewaySkip?.addEventListener('click',completeEntry);
     entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting){event.preventDefault();if(!event.repeat)enterAcademy()}});
     entryScreen?.addEventListener('cancel',event=>event.preventDefault());
     renderCharacters();updateView();
