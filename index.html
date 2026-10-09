@@ -140,6 +140,7 @@
     .gate-architecture .gate-crest:after{border-color:rgba(191,170,121,.38)}
     .entry-screen .entry-english{color:#cad5e1}
     .entry-screen .entry-enter{background:rgba(12,24,38,.7);border-color:rgba(220,229,240,.65)}
+    .music-control{position:fixed;right:24px;bottom:88px;z-index:30;display:flex;align-items:center;gap:9px;min-height:42px;padding:9px 15px;border:1px solid rgba(211,183,121,.4);border-radius:3px;background:rgba(10,18,30,.88);backdrop-filter:blur(12px);color:#e1d3b2;font:inherit;font-size:11px;letter-spacing:.05em;box-shadow:0 8px 25px rgba(0,0,0,.2);cursor:pointer}.music-control:hover{background:#1a2b3f;border-color:var(--gold)}.music-control[aria-pressed="false"]{color:#9eabbc;border-color:rgba(158,171,188,.3)}.entry-active .music-control{display:none}@media(max-width:650px){.music-control{right:16px;bottom:112px;padding:8px 12px}}
   </style>
 </head>
 <body>
@@ -254,8 +255,73 @@
     <div class="lightbox-stage" id="lightbox-stage"></div>
     <div class="lightbox-foot"><button type="button" id="lightbox-prev">이전 이미지</button><span id="lightbox-counter"></span><button type="button" id="lightbox-next">다음 이미지</button></div>
   </dialog>
+  <audio id="academy-theme" src="./arcademy.mp3" preload="auto" loop></audio>
+  <button class="music-control" id="music-toggle" type="button" aria-label="배경음악 끄기" aria-pressed="true"><span aria-hidden="true">♪</span><span id="music-label">음악 ON</span></button>
+  <p class="sr-only" id="music-status" role="status" aria-live="polite"></p>
   <script>
     'use strict';
+    const academyTheme=(()=>{
+      const audio=document.querySelector('#academy-theme');
+      const button=document.querySelector('#music-toggle');
+      const label=document.querySelector('#music-label');
+      const status=document.querySelector('#music-status');
+      const preferenceKey='LumiereAcademy.themeEnabled';
+      let enabled=true;try{enabled=localStorage.getItem(preferenceKey)!=='false'}catch{}
+      let entered=false;let blocked=false;let attempt=0;let fadeFrame=0;
+      const volume=.42;
+      function updateControl(){
+        if(!button||!audio)return;
+        button.setAttribute('aria-pressed',String(enabled&&!blocked));
+        button.setAttribute('aria-label',blocked?'배경음악 재생':enabled?'배경음악 끄기':'배경음악 켜기');
+        button.dataset.playing=String(enabled&&entered&&!audio.paused&&!document.hidden&&audio.volume>0);
+        if(label)label.textContent=blocked?'음악 켜기':enabled?'음악 ON':'음악 OFF';
+      }
+      function cancelFade(){cancelAnimationFrame(fadeFrame);fadeFrame=0}
+      function fadeIn(){
+        cancelFade();const start=performance.now();const initial=audio.volume;
+        function frame(now){
+          if(!enabled||document.hidden||audio.paused){cancelFade();return}
+          const progress=Math.min(1,(now-start)/800);audio.volume=initial+(volume-initial)*progress;
+          if(progress<1)fadeFrame=requestAnimationFrame(frame);else fadeFrame=0;
+          updateControl();
+        }
+        fadeFrame=requestAnimationFrame(frame);
+      }
+      function stop(){attempt++;cancelFade();audio.pause();audio.volume=0;updateControl()}
+      function reportFailure(){
+        blocked=true;cancelFade();updateControl();
+        if(status)status.textContent='음악을 재생하지 못했습니다. 음악 켜기 버튼을 눌러주세요.';
+      }
+      function play(){
+        if(!(audio instanceof HTMLAudioElement)||!enabled||document.hidden)return;
+        const currentAttempt=++attempt;blocked=false;
+        try{
+          audio.play().then(()=>{
+            if(currentAttempt!==attempt)return;
+            if(!enabled||document.hidden){stop();return}
+            if(entered)fadeIn();else audio.volume=0;
+            updateControl();
+          }).catch(()=>{if(currentAttempt===attempt&&enabled)reportFailure()});
+        }catch{reportFailure()}
+        updateControl();
+      }
+      function prepare(){if(!enabled||!(audio instanceof HTMLAudioElement))return;audio.volume=0;play()}
+      function begin(){
+        if(!(audio instanceof HTMLAudioElement))return;
+        entered=true;cancelFade();audio.volume=0;
+        if(audio.readyState>0){try{audio.currentTime=0}catch{}}
+        if(enabled)play();else stop();
+      }
+      button?.addEventListener('click',()=>{
+        if(blocked){enabled=true;blocked=false}else enabled=!enabled;
+        try{localStorage.setItem(preferenceKey,String(enabled))}catch{}
+        if(enabled)play();else stop();
+        if(status)status.textContent=enabled?'배경음악이 켜졌습니다.':'배경음악이 꺼졌습니다.';
+      });
+      audio?.addEventListener('error',()=>{if(enabled)reportFailure()});
+      document.addEventListener('visibilitychange',()=>{if(!entered)return;if(document.hidden)stop();else if(enabled)play()});
+      updateControl();return {prepare,begin};
+    })();
     const menuToggle=document.querySelector('.menu-toggle');
     const navigation=document.querySelector('#navigation');
     menuToggle?.addEventListener('click',()=>{const open=menuToggle.getAttribute('aria-expanded')!=='true';menuToggle.setAttribute('aria-expanded',String(open));navigation?.classList.toggle('open',open)});
@@ -435,6 +501,7 @@
       entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
       document.body.classList.remove('scene-entering','interface-revealing');
       entryScreen.close();document.body.classList.remove('entry-active');
+      academyTheme.begin();
       const heading=document.querySelector(`[data-view="${activeView}"] h1`);if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
     }
     function openAcademyGate(){
@@ -589,6 +656,7 @@
     function enterAcademy(){
       if(entryConnecting||!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
       entryConnecting=true;
+      academyTheme.prepare();
       if(entryButton)entryButton.disabled=true;
       const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(reducedMotion){completeEntry();return}
