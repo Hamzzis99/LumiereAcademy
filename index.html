@@ -212,6 +212,13 @@
     body:not(.scene-entering) .button:active,.filter:active,.menu-toggle:active,.music-control:active,.lightbox-foot button:not(:disabled):active{translate:0 0;scale:.975}
     @media(max-width:650px){.story-links{gap:12px}.story-links>a,.story-links>a+a{padding:25px}.music-control{min-width:114px}.profile,.faculty,.document-label,.rank-note{backdrop-filter:blur(8px)}}
     @media(prefers-reduced-motion:reduce){.click-spark{display:none}.button,.filter,.music-control,.menu-toggle,.person-thumb,.person-name,.story-links>a,.brand-symbol{translate:none!important;scale:none!important}.button:after,.filter:after,.music-control:after,.menu-toggle:after{display:none}.profile:before,.faculty:before,.document-label:before,.story-links>a:before{background:none}}
+    .entry-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(420px,100%);margin:0 auto}
+    .entry-buttons .entry-enter{width:100%;min-width:0;min-height:76px;padding-inline:16px;justify-content:center}
+    .entry-screen .entry-truth{border-color:rgba(211,183,121,.5);background:rgba(12,24,38,.56);color:#e1d3b2;backdrop-filter:blur(8px);cursor:default}
+    .entry-truth>span{font-family:var(--serif);font-size:16px;letter-spacing:.025em;padding-left:0;white-space:nowrap}
+    .entry-truth:focus-visible{outline-color:var(--gold)}
+    @media(max-width:650px){.entry-buttons{gap:12px;width:min(360px,100%)}.entry-buttons .entry-enter{min-height:74px;padding-inline:10px}.entry-truth>span{font-size:14px}}
+    @media(max-width:360px){.entry-buttons{gap:10px}.entry-truth>span{font-size:13px}}
   </style>
 </head>
 <body>
@@ -225,7 +232,7 @@
       <div class="entry-ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
       <h1 class="entry-title" id="entry-title"><span>루미에르</span><span>아카데미</span></h1>
       <p class="entry-english">LUMIÈRE ACADEMY</p>
-      <div class="entry-action"><button class="entry-enter" id="entry-enter" type="button" autofocus><span>ENTER</span><small>접속하기</small></button><p id="entry-hint">ENTER 키를 누르거나 버튼을 선택하세요</p></div>
+      <div class="entry-action"><div class="entry-buttons"><button class="entry-enter entry-truth" id="entry-truth" type="button" aria-disabled="true" title="콘텐츠 준비 중"><span>아카데미의 진실</span></button><button class="entry-enter" id="entry-enter" type="button" autofocus><span>ENTER</span><small>접속하기</small></button></div><p id="entry-hint">ENTER를 눌러 아카데미에 입장하세요</p></div>
     </div>
     <section class="security-console" id="entry-connection" hidden lang="en" aria-labelledby="console-heading">
       <div class="console-titlebar"><p class="console-window-title"><span class="console-icon" aria-hidden="true">&gt;_</span><span>nma — Sohyeon@node-03</span></p><button class="console-continue" id="entry-skip" type="button" lang="ko">연출 스킵</button></div>
@@ -838,7 +845,7 @@
     entryButton?.addEventListener('click',enterAcademy);
     entrySkip?.addEventListener('click',completeEntry);
     gatewaySkip?.addEventListener('click',completeEntry);
-    entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting){event.preventDefault();if(!event.repeat)enterAcademy()}});
+    entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting&&!(event.target instanceof Element&&event.target.closest('#entry-truth'))){event.preventDefault();if(!event.repeat)enterAcademy()}});
     entryScreen?.addEventListener('cancel',event=>event.preventDefault());
     renderCharacters();updateView();
     if(entryScreen instanceof HTMLDialogElement){if(entryGateArchitecture instanceof HTMLElement)entryScreen.prepend(entryGateArchitecture);entryScreen.showModal();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
