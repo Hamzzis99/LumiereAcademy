@@ -261,10 +261,13 @@
     .character-part-controls .filter{display:grid;grid-template-columns:1fr auto;gap:3px 12px;align-items:center;min-width:0;min-height:76px;padding:12px 15px;text-align:left;border-radius:7px}
     .part-filter strong{font-size:17px;line-height:1.45;font-weight:500;grid-column:1}.part-filter small{font-size:13px;line-height:1.45;grid-column:1;color:inherit;opacity:.9}.part-filter .part-count{display:inline-flex;align-items:center;justify-content:center;grid-column:2;grid-row:1/3;align-self:center;min-width:34px;min-height:32px;padding:2px 6px;margin-left:0;border:1px solid rgba(158,171,188,.18);border-radius:6px;background:rgba(158,171,188,.05);font-family:var(--sans);font-size:18px;line-height:1.25;font-weight:500;font-variant-numeric:tabular-nums}.part-filter.active .part-count{border-color:rgba(211,183,121,.3);background:rgba(211,183,121,.08)}
     .character-subcontrols{margin-bottom:25px}.part-filter-options{display:grid;grid-template-columns:repeat(3,112px);gap:10px}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(4,112px)}.part-filter-options .filter{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:46px;padding:8px 10px;border-radius:5px;font-size:14px;line-height:1.4;white-space:nowrap}.part-filter-options .filter>span:not(.click-spark){display:inline-flex;align-items:center;justify-content:center;min-width:22px;min-height:22px;margin-left:0;border-radius:4px;background:rgba(158,171,188,.07);font-family:var(--sans);font-size:12px;line-height:1.3;font-variant-numeric:tabular-nums}
+    .part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(5,112px)}
     .character-layout .profile{top:auto}
     @media(max-width:650px){.characters-scene .music-control{bottom:20px}}
     .character-empty{padding:68px 28px;text-align:center;border:1px solid var(--line);border-radius:5px;background:linear-gradient(145deg,rgba(29,46,65,.55),rgba(11,23,39,.55))}.character-empty h2{font-family:var(--serif);font-weight:500;font-size:26px;margin:19px 0 12px}.character-empty p{font-size:14px;color:var(--muted);margin:0;line-height:1.9}
     @media(max-width:650px){.character-part-controls{gap:6px}.character-part-controls .filter{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:102px;padding:10px 5px;text-align:center}.part-filter strong{font-size:15px}.part-filter small{display:flex;align-items:center;justify-content:center;min-height:29px;max-width:100%;font-size:10.5px;line-height:1.4}.part-filter .part-count{min-width:28px;min-height:25px;padding:2px 5px;font-size:14px}.part-filter-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options .filter{gap:5px;min-height:44px;padding:7px 6px;font-size:13px}.part-filter-options .filter>span:not(.click-spark){min-width:20px;min-height:20px;margin-left:0;font-size:11px}.character-empty{padding:32px 20px}.character-empty h2{font-size:20px}}
+    @media(max-width:650px){.part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:360px){.part-filter-options[data-part-filters="all"] .filter{padding-inline:5px;font-size:12px;gap:4px}}
   </style>
 </head>
 <body>
@@ -376,7 +379,10 @@
         <button type="button" class="filter part-filter" data-character-part="continent" aria-pressed="false"><strong>2부</strong><small>(레온하트 대륙)</small><span class="part-count">0</span></button>
       </div>
       <div class="roster-controls character-subcontrols" id="character-subcontrols" hidden>
-        <div class="part-filter-options" data-part-filters="academy" role="group" aria-label="1부 인물 분류">
+        <div class="part-filter-options" data-part-filters="all" role="group" aria-label="전체 인물 분류 바로가기">
+          <button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>0</span></button>
+        </div>
+        <div class="part-filter-options" data-part-filters="academy" role="group" aria-label="1부 인물 분류" hidden>
           <button type="button" class="filter active" data-filter-part="academy" data-filter="all" aria-pressed="true">전체 <span>13</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button>
         </div>
         <div class="part-filter-options" data-part-filters="continent" role="group" aria-label="2부 인물 분류" hidden>
@@ -654,7 +660,7 @@
       const character=visible.find(item=>item.id===selectedId)||visible[0];
       selectedId=character?.id??null;
       document.querySelectorAll('[data-character-part]').forEach(button=>{const part=button.dataset.characterPart;const selected=part===activePart;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('.part-count').textContent=matchingCharacters(part,'all').length});
-      const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=activePart==='all';
+      const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=false;
       document.querySelectorAll('[data-part-filters]').forEach(group=>group.hidden=group.dataset.partFilters!==activePart);
       document.querySelectorAll('[data-filter]').forEach(button=>{const selected=button.dataset.filterPart===activePart&&button.dataset.filter===activeFilter;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('span').textContent=matchingCharacters(button.dataset.filterPart,button.dataset.filter).length});
       const layout=document.querySelector('#character-layout');const empty=document.querySelector('#character-empty');
@@ -728,7 +734,12 @@
       const partButton=target?.closest('[data-character-part]');
       if(partButton){selectCharacterGroup(partButton.dataset.characterPart);return}
       const filterButton=target?.closest('[data-filter]');
-      if(filterButton){selectCharacterGroup(filterButton.dataset.filterPart,filterButton.dataset.filter);return}
+      if(filterButton){
+        selectCharacterGroup(filterButton.dataset.filterPart,filterButton.dataset.filter);
+        const selectedFilter=document.querySelector(`[data-part-filters="${activePart}"] [data-filter="${activeFilter}"]`);
+        if(selectedFilter instanceof HTMLButtonElement)selectedFilter.focus({preventScroll:true});
+        return;
+      }
       if(target?.closest('a[href^="#"]')){navigation?.classList.remove('open');menuToggle?.setAttribute('aria-expanded','false')}
     });
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menuToggle?.getAttribute('aria-expanded')==='true'){navigation?.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus()}});
