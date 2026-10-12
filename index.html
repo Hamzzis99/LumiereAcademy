@@ -257,6 +257,14 @@
     @media(max-width:900px){.truth-scene .truth-science-graphic{display:none}}
     @media(max-width:1104px){.webtoon-size-toggle{display:none}}
     @media(max-width:600px){.truth-scene .header,.truth-scene .header-inner{min-height:64px}.truth-scene .header-inner{width:calc(100% - 32px);gap:12px}.truth-scene .brand{gap:9px}.truth-scene .truth-brand-mark{width:38px;height:32px;font-size:10px}.truth-brand-text strong{font-size:11px}.truth-brand-text small{font-size:8px}.truth-scene .truth-return-label{display:none}.truth-scene .truth-return-short{display:inline}.truth-scene .truth-header-return{font-size:11px;gap:6px;padding:6px 10px}.truth-scene .truth-view{width:100%;padding-top:32px}.truth-scene .truth-view .page-heading{margin-inline:16px;margin-bottom:18px;padding-bottom:24px}.truth-scene .truth-view .page-heading h1{font-size:29px}.truth-scene .truth-view .page-heading p{font-size:13px}.truth-scene .phase-nav{top:76px;margin-inline:12px;margin-bottom:23px}.truth-scene .phase-tab{font-size:12px}.truth-scene .webtoon-reader-head{padding-inline:16px;gap:10px}.truth-scene .webtoon-reader-head h2{font-size:15px}.truth-scene .webtoon-reader-head p{font-size:10px}.webtoon-reader-meta{gap:0}.truth-scene .webtoon-sheet{border-inline:0}.truth-scene .webtoon-placeholder{padding:45px 22px 64px;gap:50px}.truth-scene .webtoon-placeholder-heading h3{font-size:24px}.truth-scene .webtoon-pagination{margin-inline:16px}.truth-scene .footer-inner{width:calc(100% - 32px)}}
+    .character-part-controls{display:grid;grid-template-columns:minmax(100px,.55fr) repeat(2,minmax(0,1fr));gap:12px;max-width:850px;margin-bottom:16px}
+    .character-part-controls .filter{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;min-height:76px;padding:12px 18px;text-align:left;border-radius:5px}
+    .part-filter strong{font-size:14px;font-weight:500;grid-column:1}.part-filter small{font-size:12px;line-height:1.6;grid-column:1;color:inherit;opacity:.85}.part-filter .part-count{grid-column:2;grid-row:1/3;align-self:center;margin-left:0;font-size:23px}.part-filter[data-character-part="all"] strong{grid-row:1/3}
+    .character-subcontrols{margin-bottom:25px}.part-filter-options{display:flex;flex-wrap:wrap;gap:12px}.part-filter-options .filter{border-radius:4px}
+    .character-layout .profile{top:auto}
+    @media(max-width:650px){.characters-scene .music-control{bottom:20px}}
+    .character-empty{padding:68px 28px;text-align:center;border:1px solid var(--line);border-radius:5px;background:linear-gradient(145deg,rgba(29,46,65,.55),rgba(11,23,39,.55))}.character-empty h2{font-family:var(--serif);font-weight:500;font-size:26px;margin:19px 0 12px}.character-empty p{font-size:14px;color:var(--muted);margin:0;line-height:1.9}
+    @media(max-width:650px){.character-part-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.part-filter[data-character-part="all"]{grid-column:1/-1;min-height:48px}.character-part-controls .filter{padding:10px 12px;gap:2px 6px}.part-filter small{font-size:11px}.part-filter .part-count{font-size:20px}.part-filter-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options .filter{padding:7px 8px;font-size:13px;white-space:nowrap}.part-filter-options .filter span{margin-left:6px;font-size:15px}.character-empty{padding:32px 20px}.character-empty h2{font-size:20px}}
   </style>
 </head>
 <body>
@@ -361,9 +369,22 @@
       <div class="page-next"><span>이곳에서 각자의 미래를 꿈꾸는 사람들</span><a class="button" href="#characters">인물 명부 열람</a></div>
     </section>
     <section class="page-view wrap" id="characters" data-view="characters" hidden aria-labelledby="characters-title">
-      <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>같은 아카데미, 다른 신념. 인물을 선택해 그들의 이야기를 살펴보세요.</p></div>
-      <div class="roster-controls" role="group" aria-label="인물 분류"><button type="button" class="filter active" data-filter="all" aria-pressed="true">전체 <span>13</span></button><button type="button" class="filter" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button></div>
-      <div class="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div><article class="profile" id="profile" aria-live="polite"></article></div>
+      <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>루미에르 아카데미에서 레온하트 대륙까지. 인물을 선택해 그들의 이야기를 살펴보세요.</p></div>
+      <div class="roster-controls character-part-controls" role="group" aria-label="등장인물 이야기 구분">
+        <button type="button" class="filter part-filter active" data-character-part="all" aria-pressed="true"><strong>전체</strong><span class="part-count">13</span></button>
+        <button type="button" class="filter part-filter" data-character-part="academy" aria-pressed="false"><strong>1부</strong><small>(아카데미 소속)</small><span class="part-count">13</span></button>
+        <button type="button" class="filter part-filter" data-character-part="continent" aria-pressed="false"><strong>2부</strong><small>(레온하트 대륙)</small><span class="part-count">0</span></button>
+      </div>
+      <div class="roster-controls character-subcontrols" id="character-subcontrols" hidden>
+        <div class="part-filter-options" data-part-filters="academy" role="group" aria-label="1부 인물 분류">
+          <button type="button" class="filter active" data-filter-part="academy" data-filter="all" aria-pressed="true">전체 <span>13</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button>
+        </div>
+        <div class="part-filter-options" data-part-filters="continent" role="group" aria-label="2부 인물 분류" hidden>
+          <button type="button" class="filter active" data-filter-part="continent" data-filter="all" aria-pressed="true">전체 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>0</span></button>
+        </div>
+      </div>
+      <div class="character-layout" id="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div><article class="profile" id="profile" aria-live="polite"></article></div>
+      <div class="character-empty" id="character-empty" role="status" hidden><span class="eyebrow" id="character-empty-label">PART II · LEONHART</span><h2 id="character-empty-title">인물 소개 준비 중</h2><p>이 분류의 인물 소개는 준비 중입니다.</p></div>
     </section>
     <section class="page-view wrap truth-view" id="truth" data-view="truth" hidden aria-labelledby="truth-title">
       <div class="page-heading"><span class="eyebrow">NMA / SOHYEON'S STORY</span><h1 id="truth-title" tabindex="-1">이소현의 진실</h1><p>그녀가 문을 넘은 이유, 그 너머에 남겨진 이야기.</p><div class="truth-science-graphic" aria-hidden="true"><svg viewBox="0 0 260 190" fill="none"><g stroke="currentColor" stroke-width="1"><path d="M24 16h18M24 16v18m212-18h-18m18 0v18M24 174h18m-18 0v-18m212 18h-18m18 0v-18"/><path d="M40 95h180M130 25v140" stroke-dasharray="2 6"/><circle cx="130" cy="95" r="64"/><circle cx="130" cy="95" r="42" stroke-dasharray="3 5"/><path d="m130 49 40 23v46l-40 23-40-23V72l40-23Zm0 46 40-23m-40 23L90 72m40 23v46m0-92v46m-40 23 40-23 40 23"/><path d="M72 54 188 136M72 136 188 54" opacity=".3"/><circle cx="130" cy="49" r="3" fill="currentColor"/><circle cx="170" cy="72" r="3" fill="currentColor"/><circle cx="170" cy="118" r="3" fill="currentColor"/><circle cx="130" cy="141" r="3" fill="currentColor"/><circle cx="90" cy="118" r="3" fill="currentColor"/><circle cx="90" cy="72" r="3" fill="currentColor"/><circle cx="130" cy="95" r="5" fill="currentColor"/></g></svg></div></div>
@@ -568,7 +589,8 @@
       {id:10,name:'오필리아',group:'staff',role:'마법학부 교수',rank:null,subtitle:'지식을 중시하는 엄격한 마법사',description:'은회색 단발과 붉은 눈, 검은 드레스풍 교수복이 돋보이는 마법학부 교수. 냉정하고 우아한 태도를 지녔다.',note:'마법 지식에 대한 자부심이 강하다. 위계에 엄격하며 반항과 무능을 용납하지 않는 지도 방식을 보인다.',tags:['마법학부','지식','엄격함']},
       {id:11,name:'세라피나',group:'staff',role:'아카데미 이사장',rank:null,subtitle:'재능과 성장을 관찰하는 이사장',description:'푸른 긴 머리와 붉은 눈, 검은 메이드복을 즐겨 입는 이사장. 느긋한 존댓말과 옅은 미소로 사람들을 대한다.',note:'공식 석상에만 머물기보다 교내를 순회한다. 학생들의 재능과 성장, 전투 성향을 관심 있게 관찰한다.',tags:['이사장','교내 순회','재능 관찰']},
       {id:12,name:'이소현',group:'staff',role:'루미에르 아카데미 학장',rank:null,subtitle:'차분하고 세심한 아카데미의 학장',description:'은빛 긴 머리와 푸른 눈, 단정한 인상의 루미에르 아카데미 학장. 조용하고 세심하며 자립심과 자존심이 강하다.',note:'사실과 근거를 중시하며 정중하고 명료하게 설명한다. 상대의 말을 세심히 듣고, 필요할 때는 단호하게 의견을 밝힌다.',tags:['학장','명료함','이성적 판단']}
-    ];
+    ].map(character=>({part:'academy',...character}));
+    // Part 2 records use part:'continent' and group:'royal', 'labyrinth', or 'sins'; keep each id unique.
     // Each portrait is shared by the roster and main profile. Fill gallery with four image URLs or relative paths.
     // Leave slots empty until the matching character photographs/artwork are ready.
     const characterMedia={
@@ -589,7 +611,12 @@
     const views=[...document.querySelectorAll('[data-view]')];
     const roster=document.querySelector('#roster');
     const profile=document.querySelector('#profile');
+    const characterParts={
+      academy:{label:'1부 · 아카데미 소속',eyebrow:'PART I · ACADEMY',filters:[{key:'all',label:'전체'},{key:'student',label:'학생'},{key:'staff',label:'교직원'}]},
+      continent:{label:'2부 · 레온하트 대륙',eyebrow:'PART II · LEONHART',filters:[{key:'all',label:'전체'},{key:'royal',label:'왕선'},{key:'labyrinth',label:'미궁'},{key:'sins',label:'7대죄악'}]}
+    };
     let activeView='home';
+    let activePart='all';
     let activeFilter='all';
     let selectedId=0;
     // Add each Phase's webtoon images in reading order: {src:'./image.webp',alt:'장면 설명'}.
@@ -610,16 +637,40 @@
       return `<span class="media-fallback" ${url?'hidden':''}><span>${escapeHtml(label)}</span>${caption?`<small>${escapeHtml(caption)}</small>`:''}</span>${url?`<img data-media-image src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" style="object-position:${escapeHtml(/^\d{1,3}% \d{1,3}%$/.test(position)?position:'50% 30%')}">`:''}`;
     }
     function galleryFor(character){const gallery=characterMedia[character.id]?.gallery;return Array.from({length:4},(_,index)=>Array.isArray(gallery)&&typeof gallery[index]==='string'?gallery[index]:'')}
+    function validCharacterPart(part){return part==='all'||Object.prototype.hasOwnProperty.call(characterParts,part)}
+    function characterFilters(part){return characterParts[part]?.filters||[{key:'all',label:'전체'}]}
+    function matchingCharacters(part=activePart,filter=activeFilter){return characters.filter(character=>(part==='all'||character.part===part)&&(filter==='all'||character.group===filter))}
+    function characterHash(id=selectedId){return activePart==='all'?'characters'+(id===null?'':'/'+id):'characters/'+activePart+'/'+activeFilter+(id===null?'':'/'+id)}
+    function selectCharacterGroup(part,filter='all',id=selectedId){
+      if(!validCharacterPart(part))return;
+      activePart=part;activeFilter=characterFilters(part).some(item=>item.key===filter)?filter:'all';
+      const visible=matchingCharacters();selectedId=(visible.find(item=>item.id===id)||visible[0])?.id??null;
+      location.hash=characterHash();renderCharacters();
+    }
     function renderCharacters(){
       if(!roster||!profile)return;
       const focusedPerson=document.activeElement instanceof HTMLElement?document.activeElement.dataset.person:undefined;
-      const visible=characters.filter(character=>activeFilter==='all'||character.group===activeFilter);
-      const character=characters.find(item=>item.id===selectedId)||characters[0];
-      roster.innerHTML=visible.map(item=>`<button type="button" class="person ${item.id===selectedId?'active':''}" data-person="${item.id}" aria-pressed="${item.id===selectedId}"><span class="person-thumb" aria-hidden="true">${mediaMarkup(characterMedia[item.id]?.portrait,'',String(item.id+1).padStart(2,'0'),'',characterMedia[item.id]?.position)}</span><span class="person-name"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.role)}</small></span></button>`).join('');
+      const visible=matchingCharacters();
+      const character=visible.find(item=>item.id===selectedId)||visible[0];
+      selectedId=character?.id??null;
+      document.querySelectorAll('[data-character-part]').forEach(button=>{const part=button.dataset.characterPart;const selected=part===activePart;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('.part-count').textContent=matchingCharacters(part,'all').length});
+      const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=activePart==='all';
+      document.querySelectorAll('[data-part-filters]').forEach(group=>group.hidden=group.dataset.partFilters!==activePart);
+      document.querySelectorAll('[data-filter]').forEach(button=>{const selected=button.dataset.filterPart===activePart&&button.dataset.filter===activeFilter;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('span').textContent=matchingCharacters(button.dataset.filterPart,button.dataset.filter).length});
+      const layout=document.querySelector('#character-layout');const empty=document.querySelector('#character-empty');
+      if(layout)layout.hidden=!character;if(empty)empty.hidden=!!character;
+      if(!character){
+        roster.innerHTML='';profile.innerHTML='';
+        const part=characterParts[activePart];const category=characterFilters(activePart).find(item=>item.key===activeFilter);
+        document.querySelector('#character-empty-label').textContent=part?.eyebrow||'THE CHARACTERS';
+        document.querySelector('#character-empty-title').textContent=(part?(activeFilter==='all'?part.label.split(' · ')[0]:category.label):'등장인물')+' 인물 소개 준비 중';
+        return;
+      }
+      roster.innerHTML=visible.map(item=>`<button type="button" class="person ${item.id===selectedId?'active':''}" data-person="${item.id}" aria-pressed="${item.id===selectedId}"><span class="person-thumb" aria-hidden="true">${mediaMarkup(characterMedia[item.id]?.portrait,'',String(characters.indexOf(item)+1).padStart(2,'0'),'',characterMedia[item.id]?.position)}</span><span class="person-name"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.role)}</small></span></button>`).join('');
       const media=characterMedia[character.id]||{};
+      const categoryLabel=characterFilters(character.part).find(item=>item.key===character.group)?.label||'미분류';
       const gallery=galleryFor(character);
-      profile.innerHTML=`<div class="profile-top"><span class="eyebrow">CHARACTER DOSSIER</span><span class="profile-count">${String(character.id+1).padStart(2,'0')} / 13</span></div><div class="profile-hero"><div class="portrait-slot">${mediaMarkup(media.portrait,character.name+' 인물 사진','인물 사진','사진 준비 중',media.position)}</div><div><h2>${escapeHtml(character.name)}</h2><p class="profile-subtitle">${escapeHtml(character.subtitle)}</p></div></div><p class="profile-description">${escapeHtml(character.description)}</p><dl class="profile-facts"><div><dt>소속 · 직책</dt><dd>${escapeHtml(character.role)}</dd></div><div><dt>${character.rank?'학급 랭킹 · CR':'구분'}</dt><dd>${escapeHtml(character.rank||'교직원')}</dd></div></dl><h3>인물의 결</h3><p class="profile-note">${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div><section class="profile-gallery" aria-label="${escapeHtml(character.name)} 장면 사진"><div class="gallery-heading"><h3>이미지 미리보기</h3><span>4장</span></div><div class="gallery-grid">${gallery.map((source,index)=>`<figure class="gallery-item"><button class="gallery-slot" type="button" data-gallery-person="${character.id}" data-gallery-index="${index}" aria-label="${escapeHtml(character.name)} 장면 ${index+1} ${mediaSource(source)?'크게 보기':'사진 준비 중'}" ${mediaSource(source)?'':'disabled'}><span class="gallery-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${mediaMarkup(source,character.name+' 장면 '+(index+1),'장면 '+(index+1),'사진 준비 중','50% 50%')}${mediaSource(source)?'<span class="gallery-enlarge" aria-hidden="true">크게 보기</span>':''}</button><figcaption>장면 ${String(index+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div><p class="gallery-note">${gallery.some(source=>mediaSource(source))?'사진을 선택하면 크게 볼 수 있습니다.':'이 인물의 장면 사진은 준비 중입니다.'}</p></section>`;
-      document.querySelectorAll('[data-filter]').forEach(button=>{const selected=button.dataset.filter===activeFilter;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected))});
+      profile.innerHTML=`<div class="profile-top"><span class="eyebrow">CHARACTER DOSSIER</span><span class="profile-count">${String(characters.indexOf(character)+1).padStart(2,'0')} / ${characters.length}</span></div><div class="profile-hero"><div class="portrait-slot">${mediaMarkup(media.portrait,character.name+' 인물 사진','인물 사진','사진 준비 중',media.position)}</div><div><h2>${escapeHtml(character.name)}</h2><p class="profile-subtitle">${escapeHtml(character.subtitle)}</p></div></div><p class="profile-description">${escapeHtml(character.description)}</p><dl class="profile-facts"><div><dt>소속 · 직책</dt><dd>${escapeHtml(character.role)}</dd></div><div><dt>${character.rank?(character.part==='academy'?'학급 랭킹 · CR':'랭킹'):'구분'}</dt><dd>${escapeHtml(character.rank||categoryLabel)}</dd></div></dl><h3>인물의 결</h3><p class="profile-note">${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div><section class="profile-gallery" aria-label="${escapeHtml(character.name)} 장면 사진"><div class="gallery-heading"><h3>이미지 미리보기</h3><span>4장</span></div><div class="gallery-grid">${gallery.map((source,index)=>`<figure class="gallery-item"><button class="gallery-slot" type="button" data-gallery-person="${character.id}" data-gallery-index="${index}" aria-label="${escapeHtml(character.name)} 장면 ${index+1} ${mediaSource(source)?'크게 보기':'사진 준비 중'}" ${mediaSource(source)?'':'disabled'}><span class="gallery-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${mediaMarkup(source,character.name+' 장면 '+(index+1),'장면 '+(index+1),'사진 준비 중','50% 50%')}${mediaSource(source)?'<span class="gallery-enlarge" aria-hidden="true">크게 보기</span>':''}</button><figcaption>장면 ${String(index+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div><p class="gallery-note">${gallery.some(source=>mediaSource(source))?'사진을 선택하면 크게 볼 수 있습니다.':'이 인물의 장면 사진은 준비 중입니다.'}</p></section>`;
       if(focusedPerson!==undefined)roster.querySelector(`[data-person="${focusedPerson}"]`)?.focus({preventScroll:true});
     }
     function renderTruth(){
@@ -644,9 +695,19 @@
       const requestedPhase=truthPhases.find(phase=>String(phase.number)===parts[1])?.number||1;
       const phaseChanged=nextView==='truth'&&requestedPhase!==activeTruthPhase;
       if(nextView==='truth')activeTruthPhase=requestedPhase;
-      if(nextView==='characters'&&parts[1]!==undefined){const candidate=characters.find(item=>String(item.id)===parts[1]);if(candidate){selectedId=candidate.id;if(activeFilter!=='all'&&activeFilter!==candidate.group)activeFilter=candidate.group}}
+      if(nextView==='characters'){
+        if(parts[1]!==undefined&&validCharacterPart(parts[1])){
+          activePart=parts[1];activeFilter=characterFilters(activePart).some(item=>item.key===parts[2])?parts[2]:'all';
+          const candidate=matchingCharacters().find(item=>String(item.id)===parts[3]);selectedId=candidate?.id??null;
+        }else if(parts[1]!==undefined){
+          activePart='all';activeFilter='all';
+          const candidate=characters.find(item=>String(item.id)===parts[1]);
+          selectedId=candidate?.id??null;
+        }else{activePart='all';activeFilter='all'}
+      }
       activeView=nextView;
       document.body.classList.toggle('home-scene',activeView==='home');
+      document.body.classList.toggle('characters-scene',activeView==='characters');
       document.body.classList.toggle('truth-scene',activeView==='truth');
       views.forEach(view=>view.hidden=view.dataset.view!==activeView);
       if(lightbox instanceof HTMLDialogElement&&lightbox.open&&(switched||lightboxState?.person!==selectedId))lightbox.close();
@@ -663,9 +724,11 @@
       const galleryButton=target?.closest('[data-gallery-person]');
       if(galleryButton instanceof HTMLButtonElement&&!galleryButton.disabled){openLightbox(Number(galleryButton.dataset.galleryPerson),Number(galleryButton.dataset.galleryIndex),galleryButton);return}
       const personButton=target?.closest('[data-person]');
-      if(personButton){const candidate=characters.find(item=>String(item.id)===personButton.dataset.person);if(candidate){selectedId=candidate.id;location.hash='characters/'+candidate.id;renderCharacters();roster?.querySelector(`[data-person="${candidate.id}"]`)?.focus()}return}
+      if(personButton){const candidate=characters.find(item=>String(item.id)===personButton.dataset.person);if(candidate){selectCharacterGroup(activePart,activeFilter,candidate.id);roster?.querySelector(`[data-person="${candidate.id}"]`)?.focus()}return}
+      const partButton=target?.closest('[data-character-part]');
+      if(partButton){selectCharacterGroup(partButton.dataset.characterPart);return}
       const filterButton=target?.closest('[data-filter]');
-      if(filterButton){activeFilter=filterButton.dataset.filter||'all';const visible=characters.filter(item=>activeFilter==='all'||item.group===activeFilter);if(!visible.some(item=>item.id===selectedId)&&visible[0]){selectedId=visible[0].id;history.replaceState(null,'','#characters/'+selectedId)}renderCharacters();return}
+      if(filterButton){selectCharacterGroup(filterButton.dataset.filterPart,filterButton.dataset.filter);return}
       if(target?.closest('a[href^="#"]')){navigation?.classList.remove('open');menuToggle?.setAttribute('aria-expanded','false')}
     });
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menuToggle?.getAttribute('aria-expanded')==='true'){navigation?.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus()}});
