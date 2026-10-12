@@ -268,6 +268,29 @@
     @media(max-width:650px){.character-part-controls{gap:6px}.character-part-controls .filter{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:102px;padding:10px 5px;text-align:center}.part-filter strong{font-size:15px}.part-filter small{display:flex;align-items:center;justify-content:center;min-height:29px;max-width:100%;font-size:10.5px;line-height:1.4}.part-filter .part-count{min-width:28px;min-height:25px;padding:2px 5px;font-size:14px}.part-filter-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options .filter{gap:5px;min-height:44px;padding:7px 6px;font-size:13px}.part-filter-options .filter>span:not(.click-spark){min-width:20px;min-height:20px;margin-left:0;font-size:11px}.character-empty{padding:32px 20px}.character-empty h2{font-size:20px}}
     @media(max-width:650px){.part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:360px){.part-filter-options[data-part-filters="all"] .filter{padding-inline:5px;font-size:12px;gap:4px}}
+    .academy-page-background{display:none;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}.academy-page-background img{width:100%;height:100%;display:block;object-fit:cover;object-position:64% 50%}.academy-page-background:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,13,26,.42),rgba(5,13,26,.18) 65%,rgba(5,13,26,.12)),linear-gradient(0deg,rgba(5,13,26,.56),rgba(5,13,26,.08) 72%)}
+    .fantasy-scene .academy-page-background:before{content:'';position:absolute;inset:0;background:rgba(3,9,18,.32)}
+    .fantasy-scene #site-shell{position:relative;isolation:isolate;min-height:100svh}.fantasy-scene .academy-page-background{display:block}.fantasy-scene #main,.fantasy-scene .footer{position:relative;z-index:1}
+    .fantasy-scene .header,.fantasy-scene .header.is-scrolled{background:rgba(8,17,29,.58);border-bottom-color:rgba(225,215,186,.2);box-shadow:0 5px 24px rgba(2,8,17,.12)}.fantasy-scene .footer{background:rgba(8,17,29,.63);backdrop-filter:blur(10px)}
+    .fantasy-scene .page-view{padding-top:44px}.fantasy-scene .page-heading{padding:27px 32px 29px;margin-bottom:30px;border:1px solid rgba(225,215,186,.23);border-radius:11px;background:rgba(9,21,36,.54);box-shadow:inset 0 1px rgba(255,244,210,.07),0 14px 42px rgba(2,8,17,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .fantasy-scene .page-heading h1{margin-top:12px;margin-bottom:13px;text-shadow:0 2px 16px rgba(0,0,0,.24)}.fantasy-scene .page-heading h1:focus{outline:none}.fantasy-scene .page-heading p{color:#d0dae5}
+    .fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child,.fantasy-scene .theme-grid article,.fantasy-scene .page-next{padding:28px 30px;border:1px solid rgba(225,215,186,.2);border-radius:10px;background:rgba(9,21,36,.63);box-shadow:inset 0 1px rgba(255,244,210,.05),0 14px 40px rgba(2,8,17,.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .fantasy-scene .world-layout{gap:28px}.fantasy-scene .world-article>p,.fantasy-scene .theme-grid p,.fantasy-scene .faculty>p,.fantasy-scene .life-grid .muted,.fantasy-scene .life-list details p,.fantasy-scene .rank-note p,.fantasy-scene .profile-description,.fantasy-scene .profile-note{color:#cbd7e4}.fantasy-scene .theme-grid article{padding:24px 25px}.fantasy-scene .page-next{padding:20px 25px}
+    .fantasy-scene .profile,.fantasy-scene .faculty,.fantasy-scene .faculty.magic,.fantasy-scene .document-label,.fantasy-scene .rank-note,.fantasy-scene .character-empty{background:linear-gradient(135deg,rgba(22,39,58,.68),rgba(8,20,35,.67));border-color:rgba(225,215,186,.23);border-radius:10px;box-shadow:inset 0 1px rgba(255,244,210,.065),0 14px 42px rgba(2,8,17,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .fantasy-scene .faculty.magic{background:linear-gradient(135deg,rgba(31,37,61,.66),rgba(8,20,35,.68))}.fantasy-scene .pullquote{background:rgba(15,31,49,.46)}
+    .fantasy-scene .roster{padding:5px;border:1px solid rgba(225,215,186,.2);border-radius:9px;background:rgba(9,21,36,.61);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden}.fantasy-scene .person{background:transparent}.fantasy-scene .person:last-child{border-bottom:0}.fantasy-scene .person.active{background:rgba(41,61,82,.69);box-shadow:inset 2px 0 var(--gold)}.fantasy-scene .person-name small{color:#becddb}
+    .fantasy-scene .filter{background:rgba(9,21,36,.61);color:#c5d2df;border-color:rgba(225,215,186,.23)}.fantasy-scene .filter.active{background:linear-gradient(120deg,rgba(56,65,71,.75),rgba(27,43,61,.73));color:var(--gold);border-color:var(--gold)}
+    @media(hover:hover) and (pointer:fine){.fantasy-scene .person:hover{background:rgba(36,54,74,.5)}.fantasy-scene .filter:not(.active):hover{background:rgba(30,48,68,.74);border-color:var(--gold)}}
+    @media(max-width:900px){.fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child{padding:25px}}
+    @media(max-width:650px){.fantasy-scene .page-view{padding-top:25px}.fantasy-scene .page-heading{padding:21px 19px 23px;margin-bottom:24px;border-radius:9px}.fantasy-scene .page-heading h1{font-size:29px;line-height:1.6}.fantasy-scene .page-heading p{font-size:14px}.fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child,.fantasy-scene .theme-grid article{padding:22px 20px}.fantasy-scene .world-layout{gap:22px}.fantasy-scene .page-next{padding:20px}.fantasy-scene .roster{padding:3px}.fantasy-scene .page-heading,.fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child,.fantasy-scene .theme-grid article,.fantasy-scene .page-next,.fantasy-scene .profile,.fantasy-scene .faculty,.fantasy-scene .document-label,.fantasy-scene .rank-note,.fantasy-scene .character-empty,.fantasy-scene .roster{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
+    .characters-scene .filter:before{content:'';position:absolute;left:12px;right:12px;bottom:0;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent,var(--gold),#f1e1b8,var(--gold),transparent);opacity:0;transform:scaleX(.2);transition:transform .32s var(--ease-out),opacity .25s ease}
+    .characters-scene .filter.active:before{opacity:1;transform:scaleX(1)}.characters-scene .filter.active{box-shadow:inset 0 1px rgba(255,238,193,.12),0 4px 20px rgba(211,183,121,.1)}
+    .characters-scene .part-filter strong,.characters-scene .part-filter small,.characters-scene .part-count{transition:translate .25s var(--ease-out),color .25s ease,border-color .3s ease,background .3s ease}
+    .characters-scene .part-filter.active .part-count{animation:character-count-select .34s var(--ease-out) both}
+    body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter{animation:academy-content-in .4s var(--ease-out) backwards}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(2){animation-delay:.045s}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(3){animation-delay:.09s}
+    @keyframes character-count-select{0%{scale:.92}55%{scale:1.06}100%{scale:1}}
+    @media(hover:hover) and (pointer:fine){.characters-scene .filter:hover{box-shadow:inset 0 1px rgba(255,238,193,.12),0 8px 25px rgba(1,7,15,.28),0 0 20px rgba(211,183,121,.16)}.characters-scene .part-filter:hover strong{translate:0 -1px}.characters-scene .part-filter:hover .part-count{translate:0 -2px;border-color:rgba(211,183,121,.45)}}
+    .characters-scene .filter:focus-visible{box-shadow:0 0 0 3px rgba(211,183,121,.14),0 8px 25px rgba(1,7,15,.25)}.characters-scene .filter:active{scale:.965;translate:0 0}
   </style>
 </head>
 <body>
@@ -317,6 +340,7 @@
     <div class="entry-footer"><span>LUMIÈRE ACADEMY</span><span id="entry-state">AWAITING ENTRY</span></div>
   </dialog>
   <div id="site-shell">
+  <div class="academy-page-background" aria-hidden="true"><img id="academy-page-image" alt="" decoding="async"></div>
   <a class="skip" href="#main">본문으로 바로가기</a>
   <header class="header">
     <div class="header-inner wrap">
@@ -615,6 +639,9 @@
       12:{portrait:'',position:'50% 30%',gallery:['','','','']}
     };
     const views=[...document.querySelectorAll('[data-view]')];
+    const academyPageImage=document.querySelector('#academy-page-image');
+    const academySceneImage=document.querySelector('#academy-image');
+    if(academyPageImage instanceof HTMLImageElement&&academySceneImage instanceof HTMLImageElement){academyPageImage.src=academySceneImage.currentSrc||academySceneImage.src}
     const roster=document.querySelector('#roster');
     const profile=document.querySelector('#profile');
     const characterParts={
@@ -625,6 +652,9 @@
     let activePart='all';
     let activeFilter='all';
     let selectedId=0;
+    let characterRenderKey='';
+    const characterMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const characterTransitions=new WeakMap();
     // Add each Phase's webtoon images in reading order: {src:'./image.webp',alt:'장면 설명'}.
     const truthPhases=[{number:1,images:[]},{number:2,images:[]},{number:3,images:[]}];
     let activeTruthPhase=1;
@@ -653,12 +683,31 @@
       const visible=matchingCharacters();selectedId=(visible.find(item=>item.id===id)||visible[0])?.id??null;
       location.hash=characterHash();renderCharacters();
     }
+    function animateCharacterGroup(groupChanged){
+      if(!groupChanged||activeView!=='characters'||document.body.classList.contains('entry-active')||characterMotionPreference.matches)return;
+      const group=document.querySelector(`[data-part-filters="${activePart}"]`);
+      const buttons=group?.querySelectorAll('.filter')||[];
+      const animate=(element,delay,distance,duration)=>{
+        if(!(element instanceof HTMLElement)||typeof element.animate!=='function'||element.hidden)return;
+        characterTransitions.get(element)?.cancel();
+        const animation=element.animate([{opacity:.55,transform:`translateY(${distance}px)`},{opacity:1,transform:'translateY(0)'}],{duration,delay,easing:'cubic-bezier(.2,.75,.25,1)',fill:'none'});
+        characterTransitions.set(element,animation);
+      };
+      buttons.forEach((button,index)=>animate(button,index*25,6,280));
+      if(selectedId===null)animate(document.querySelector('#character-empty'),35,9,340);
+      else{animate(roster,35,8,320);animate(profile,60,10,340)}
+    }
     function renderCharacters(){
       if(!roster||!profile)return;
       const focusedPerson=document.activeElement instanceof HTMLElement?document.activeElement.dataset.person:undefined;
       const visible=matchingCharacters();
       const character=visible.find(item=>item.id===selectedId)||visible[0];
       selectedId=character?.id??null;
+      const nextRenderKey=JSON.stringify([activePart,activeFilter,selectedId]);
+      if(nextRenderKey===characterRenderKey)return;
+      const previousGroup=characterRenderKey?JSON.parse(characterRenderKey).slice(0,2):[];
+      const groupChanged=previousGroup[0]!==activePart||previousGroup[1]!==activeFilter;
+      characterRenderKey=nextRenderKey;
       document.querySelectorAll('[data-character-part]').forEach(button=>{const part=button.dataset.characterPart;const selected=part===activePart;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('.part-count').textContent=matchingCharacters(part,'all').length});
       const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=false;
       document.querySelectorAll('[data-part-filters]').forEach(group=>group.hidden=group.dataset.partFilters!==activePart);
@@ -670,6 +719,7 @@
         const part=characterParts[activePart];const category=characterFilters(activePart).find(item=>item.key===activeFilter);
         document.querySelector('#character-empty-label').textContent=part?.eyebrow||'THE CHARACTERS';
         document.querySelector('#character-empty-title').textContent=(part?(activeFilter==='all'?part.label.split(' · ')[0]:category.label):'등장인물')+' 인물 소개 준비 중';
+        animateCharacterGroup(groupChanged);
         return;
       }
       roster.innerHTML=visible.map(item=>`<button type="button" class="person ${item.id===selectedId?'active':''}" data-person="${item.id}" aria-pressed="${item.id===selectedId}"><span class="person-thumb" aria-hidden="true">${mediaMarkup(characterMedia[item.id]?.portrait,'',String(characters.indexOf(item)+1).padStart(2,'0'),'',characterMedia[item.id]?.position)}</span><span class="person-name"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.role)}</small></span></button>`).join('');
@@ -678,6 +728,7 @@
       const gallery=galleryFor(character);
       profile.innerHTML=`<div class="profile-top"><span class="eyebrow">CHARACTER DOSSIER</span><span class="profile-count">${String(characters.indexOf(character)+1).padStart(2,'0')} / ${characters.length}</span></div><div class="profile-hero"><div class="portrait-slot">${mediaMarkup(media.portrait,character.name+' 인물 사진','인물 사진','사진 준비 중',media.position)}</div><div><h2>${escapeHtml(character.name)}</h2><p class="profile-subtitle">${escapeHtml(character.subtitle)}</p></div></div><p class="profile-description">${escapeHtml(character.description)}</p><dl class="profile-facts"><div><dt>소속 · 직책</dt><dd>${escapeHtml(character.role)}</dd></div><div><dt>${character.rank?(character.part==='academy'?'학급 랭킹 · CR':'랭킹'):'구분'}</dt><dd>${escapeHtml(character.rank||categoryLabel)}</dd></div></dl><h3>인물의 결</h3><p class="profile-note">${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div><section class="profile-gallery" aria-label="${escapeHtml(character.name)} 장면 사진"><div class="gallery-heading"><h3>이미지 미리보기</h3><span>4장</span></div><div class="gallery-grid">${gallery.map((source,index)=>`<figure class="gallery-item"><button class="gallery-slot" type="button" data-gallery-person="${character.id}" data-gallery-index="${index}" aria-label="${escapeHtml(character.name)} 장면 ${index+1} ${mediaSource(source)?'크게 보기':'사진 준비 중'}" ${mediaSource(source)?'':'disabled'}><span class="gallery-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${mediaMarkup(source,character.name+' 장면 '+(index+1),'장면 '+(index+1),'사진 준비 중','50% 50%')}${mediaSource(source)?'<span class="gallery-enlarge" aria-hidden="true">크게 보기</span>':''}</button><figcaption>장면 ${String(index+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div><p class="gallery-note">${gallery.some(source=>mediaSource(source))?'사진을 선택하면 크게 볼 수 있습니다.':'이 인물의 장면 사진은 준비 중입니다.'}</p></section>`;
       if(focusedPerson!==undefined)roster.querySelector(`[data-person="${focusedPerson}"]`)?.focus({preventScroll:true});
+      animateCharacterGroup(groupChanged);
     }
     function renderTruth(){
       const phase=truthPhases.find(item=>item.number===activeTruthPhase)||truthPhases[0];
@@ -713,6 +764,7 @@
       }
       activeView=nextView;
       document.body.classList.toggle('home-scene',activeView==='home');
+      document.body.classList.toggle('fantasy-scene',['world','academy','characters'].includes(activeView));
       document.body.classList.toggle('characters-scene',activeView==='characters');
       document.body.classList.toggle('truth-scene',activeView==='truth');
       views.forEach(view=>view.hidden=view.dataset.view!==activeView);
