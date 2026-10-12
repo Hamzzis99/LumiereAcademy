@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#0e1928">
   <meta name="description" content="검과 마법이 공존하는 루미에르 아카데미. 성장과 교류, 경쟁과 선택이 얽힌 중세 판타지 작품 소개.">
   <title>루미에르 아카데미 | Lumière Academy</title>
+  <link rel="preload" as="image" href="./academy-gate.png">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e1928'/%3E%3Cpath d='M32 7L38 25L56 32L38 39L32 57L26 39L8 32L26 25Z' fill='%23d3b779'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -291,6 +292,9 @@
     @keyframes character-count-select{0%{scale:.92}55%{scale:1.06}100%{scale:1}}
     @media(hover:hover) and (pointer:fine){.characters-scene .filter:hover{box-shadow:inset 0 1px rgba(255,238,193,.12),0 8px 25px rgba(1,7,15,.28),0 0 20px rgba(211,183,121,.16)}.characters-scene .part-filter:hover strong{translate:0 -1px}.characters-scene .part-filter:hover .part-count{translate:0 -2px;border-color:rgba(211,183,121,.45)}}
     .characters-scene .filter:focus-visible{box-shadow:0 0 0 3px rgba(211,183,121,.14),0 8px 25px rgba(1,7,15,.25)}.characters-scene .filter:active{scale:.965;translate:0 0}
+    .painted-gate{position:absolute;inset:0;isolation:isolate;perspective:1400px;perspective-origin:50% 48%}.painted-gate-frame,.painted-gate-leaf{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}.painted-gate-frame{z-index:2}.painted-gate-leaf{z-index:1;backface-visibility:hidden}.painted-gate-leaf.left{transform-origin:var(--gate-left-hinge,27.81%) 50%}.painted-gate-leaf.right{transform-origin:var(--gate-right-hinge,72.25%) 50%}
+    .academy-gateway.opening .painted-gate-leaf{will-change:transform}.academy-gateway.opening .painted-gate-leaf.left{animation:gate-left-pass .72s .04s cubic-bezier(.18,.7,.25,1) both}.academy-gateway.opening .painted-gate-leaf.right{animation:gate-right-pass .72s .04s cubic-bezier(.18,.7,.25,1) both}
+    @media(max-width:650px){.painted-gate{perspective:1000px}}
   </style>
 </head>
 <body>
@@ -300,7 +304,6 @@
     <div class="entry-corner top-left" aria-hidden="true"></div><div class="entry-corner top-right" aria-hidden="true"></div>
     <div class="entry-corner bottom-left" aria-hidden="true"></div><div class="entry-corner bottom-right" aria-hidden="true"></div>
     <div class="entry-content">
-      <p class="entry-edition">SWORD & MAGIC · ACADEMY CHRONICLE</p>
       <div class="entry-ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
       <h1 class="entry-title" id="entry-title"><span>루미에르</span><span>아카데미</span></h1>
       <p class="entry-english">LUMIÈRE ACADEMY</p>
@@ -321,9 +324,23 @@
         <div class="gateway-atmosphere"></div>
         <div class="gateway-whiteveil"></div>
         <div class="gate-architecture" id="gate-architecture" aria-hidden="true">
-        <div class="gateway-doors"><div class="gate-door left"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div><div class="gate-door right"><svg class="gate-door-art" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M30 780V190Q30 135 95 95L365 25V780M65 780V215Q65 160 120 125L330 60V780M95 750V245Q95 190 145 155L300 110V750"/><path d="M30 550H365M65 580H330M95 615H300M30 670H365M65 700H330"/><path d="M165 290L200 240L235 290L200 340ZM165 445L200 395L235 445L200 495Z"/><path d="M140 720H260M155 735H245"/></svg><span class="gate-crest">✦</span></div></div>
-        <div class="gate-sidewall left"><div class="gate-banner"><svg viewBox="0 0 50 74"><path d="M25 3L45 14V47L25 69L5 47V14ZM25 13V59M14 32H36M25 18L31 32L25 46L19 32Z"/></svg><span>LUMIÈRE</span></div></div><div class="gate-sidewall right"><div class="gate-banner"><svg viewBox="0 0 50 74"><path d="M25 3L45 14V47L25 69L5 47V14ZM25 13V59M14 32H36M25 18L31 32L25 46L19 32Z"/></svg><span>LUMIÈRE</span></div></div>
-        <div class="gate-pillar left"></div><div class="gate-pillar right"></div><div class="gate-cornice">✦ &nbsp; LUMIÈRE &nbsp; ✦</div>
+          <div class="painted-gate">
+            <svg class="painted-gate-frame" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <defs>
+                <path id="gate-left-shape" d="M836 0C662 47 511 170 465 324V887H836Z"/>
+                <path id="gate-right-shape" d="M836 0C1010 47 1161 170 1208 324V887H836Z"/>
+                <clipPath id="gate-left-cutout" clipPathUnits="userSpaceOnUse"><use href="#gate-left-shape"/></clipPath>
+                <clipPath id="gate-right-cutout" clipPathUnits="userSpaceOnUse"><use href="#gate-right-shape"/></clipPath>
+                <mask id="gate-frame-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941">
+                  <rect width="1672" height="941" fill="white"/>
+                  <use href="#gate-left-shape" fill="black"/><use href="#gate-right-shape" fill="black"/>
+                </mask>
+              </defs>
+              <image href="./academy-gate.png" width="1672" height="941" mask="url(#gate-frame-cutout)"/>
+            </svg>
+            <svg class="painted-gate-leaf left" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="./academy-gate.png" width="1672" height="941" clip-path="url(#gate-left-cutout)"/></svg>
+            <svg class="painted-gate-leaf right" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="./academy-gate.png" width="1672" height="941" clip-path="url(#gate-right-cutout)"/></svg>
+          </div>
         </div>
         <div class="gateway-transit-effects" id="gateway-transit-effects">
         <div class="gateway-seam"></div><div class="gateway-light"></div>
@@ -862,6 +879,19 @@
     const entryScreen=document.querySelector('#entry-screen');
     const entryButton=document.querySelector('#entry-enter');
     const entryGateArchitecture=document.querySelector('#gate-architecture');
+    function updateGateHinges(){
+      if(!(entryGateArchitecture instanceof HTMLElement))return;
+      const width=entryGateArchitecture.clientWidth;const height=entryGateArchitecture.clientHeight;
+      if(!width||!height)return;
+      const scale=Math.max(width/1672,height/941);
+      const offset=width/2-836*scale;
+      entryGateArchitecture.style.setProperty('--gate-left-hinge',`${offset+465*scale}px`);
+      entryGateArchitecture.style.setProperty('--gate-right-hinge',`${offset+1208*scale}px`);
+    }
+    if(entryGateArchitecture instanceof HTMLElement){
+      if(typeof ResizeObserver==='function')new ResizeObserver(updateGateHinges).observe(entryGateArchitecture);
+      else window.addEventListener('resize',updateGateHinges,{passive:true});
+    }
     const entryConnection=document.querySelector('#entry-connection');
     const entrySkip=document.querySelector('#entry-skip');
     const academyGateway=document.querySelector('#academy-gateway');
@@ -894,6 +924,7 @@
       const architecture=entryGateArchitecture;const transitEffects=document.querySelector('#gateway-transit-effects');const stage=academyGateway.querySelector('.gateway-stage');
       if(!(architecture instanceof HTMLElement)||!(transitEffects instanceof HTMLElement)||!(stage instanceof HTMLElement)){completeEntry();return}
       stage.append(architecture);
+      updateGateHinges();
       academyGateway.dataset.phase='passing';
       academyGateway.hidden=false;academyGateway.classList.add('opening','home-gateway');gatewaySkip?.focus({preventScroll:true});
       scheduleEntry(()=>{architecture.hidden=true;transitEffects.hidden=true;academyGateway.dataset.phase='white'},1050);
@@ -1053,7 +1084,7 @@
     entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting&&!(event.target instanceof Element&&event.target.closest('#entry-truth'))){event.preventDefault();if(!event.repeat)enterAcademy()}});
     entryScreen?.addEventListener('cancel',event=>event.preventDefault());
     renderCharacters();updateView();
-    if(entryScreen instanceof HTMLDialogElement){if(entryGateArchitecture instanceof HTMLElement)entryScreen.prepend(entryGateArchitecture);entryScreen.showModal();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
+    if(entryScreen instanceof HTMLDialogElement){if(entryGateArchitecture instanceof HTMLElement)entryScreen.prepend(entryGateArchitecture);entryScreen.showModal();updateGateHinges();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
   </script>
 </body>
 </html>
