@@ -310,6 +310,155 @@
     .painted-gate{position:absolute;inset:0;isolation:isolate;perspective:1400px;perspective-origin:50% 48%}.painted-gate-frame,.painted-gate-leaf{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}.painted-gate-frame{z-index:2}.painted-gate-leaf{z-index:1;backface-visibility:hidden}.painted-gate-leaf.left{transform-origin:var(--gate-left-hinge,27.81%) 50%}.painted-gate-leaf.right{transform-origin:var(--gate-right-hinge,72.25%) 50%}
     .academy-gateway.opening .painted-gate-leaf{will-change:transform}.academy-gateway.opening .painted-gate-leaf.left{animation:gate-left-pass .72s .04s cubic-bezier(.18,.7,.25,1) both}.academy-gateway.opening .painted-gate-leaf.right{animation:gate-right-pass .72s .04s cubic-bezier(.18,.7,.25,1) both}
     @media(max-width:650px){.painted-gate{perspective:1000px}}
+    /* Character archive: image cards and a separate detail dialog. */
+    #character-layout{display:block;grid-template-columns:none;min-width:0}
+    #character-layout #roster{display:block;padding:0;border:0;border-radius:0;background:transparent;overflow:visible;backdrop-filter:none;-webkit-backdrop-filter:none}
+    .character-group{margin:0 0 48px;min-width:0}
+    .character-group:last-child{margin-bottom:0}
+    .character-group-heading{display:flex;align-items:center;gap:18px;margin:0 0 23px;padding:0 0 14px;border-bottom:1px solid rgba(211,183,121,.25)}
+    .character-group-heading:before{content:'\2726';flex-shrink:0;color:var(--gold);font-family:var(--english);font-size:25px;line-height:1}
+    .character-group-label{margin:0;color:var(--ivory);font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.035em;line-height:1.5}
+    .character-group-count{margin-left:auto;color:var(--gold);font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .character-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 26px;min-width:0}
+    .character-card{position:relative;display:block;min-width:0;width:100%;padding:0;border:0;background:transparent;color:var(--ivory);text-align:left;isolation:isolate;transition:translate .3s var(--ease-out),opacity .3s ease}
+    .character-card-image{display:grid;place-items:center;position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(211,183,121,.42);background:radial-gradient(ellipse at 65% 30%,rgba(109,133,156,.2),transparent 62%),linear-gradient(135deg,rgba(25,44,66,.96),rgba(8,20,34,.96));box-shadow:0 10px 28px rgba(3,10,19,.2);transition:border-color .3s ease,box-shadow .3s ease}
+    .character-card-image:before{content:'';position:absolute;inset:9px;z-index:2;border:1px solid rgba(227,218,195,.26);pointer-events:none;transition:border-color .3s ease}
+    .character-card-image:after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 65%,rgba(3,11,21,.2));transition:opacity .3s ease}
+    .character-card-image img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease-out)}
+    .character-card-image .media-fallback{min-width:0;max-width:100%;padding:24px;color:#c4cfdb;font-family:var(--serif);font-size:clamp(19px,2.3vw,28px);letter-spacing:.07em;line-height:1.65}
+    .character-card-image .media-fallback small{font-family:var(--sans);color:#859ab0;font-size:11px;font-weight:400;letter-spacing:.14em}
+    .character-card-image.is-unavailable img{display:none}
+    .character-card-caption{display:flex;flex-direction:column;gap:5px;padding:14px 1px 0;min-width:0}
+    .character-card-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0}
+    .character-card-title .name{font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.6;letter-spacing:-.035em;min-width:0;overflow-wrap:anywhere}
+    .character-card-age{flex-shrink:0;color:#cfb57c;font-size:12px;font-variant-numeric:tabular-nums}
+    .character-card-role{color:#abb9c9;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+    .character-card-open{display:block;width:max-content;max-width:100%;margin-top:4px;color:var(--gold);font-size:12px;letter-spacing:.015em;transition:translate .3s var(--ease-out),color .3s ease}
+    .character-card:focus-visible{outline:2px solid var(--gold);outline-offset:7px;border-radius:1px}
+    .character-card:active{translate:0 1px}
+    @media(hover:hover) and (pointer:fine){
+      .character-card:hover{translate:0 -3px}
+      .character-card:hover .character-card-image{border-color:#e6d1a2;box-shadow:0 16px 35px rgba(3,10,19,.32),0 0 20px rgba(211,183,121,.08)}
+      .character-card:hover .character-card-image:before{border-color:rgba(241,227,195,.48)}
+      .character-card:hover .character-card-image img{transform:scale(1.035)}
+      .character-card:hover .character-card-open{translate:4px 0;color:#ead3a3}
+    }
+    body.character-dialog-active{overflow:hidden}
+    #character-dialog.character-dialog{position:fixed;width:min(1240px,calc(100% - 40px));max-width:none;max-height:calc(100svh - 40px);margin:auto;padding:0;overflow:auto;overscroll-behavior:contain;border:1px solid rgba(211,183,121,.42);border-radius:0;background:#0b1725;color:var(--ivory);box-shadow:0 28px 100px rgba(0,4,10,.55);scrollbar-width:thin;scrollbar-color:#526173 #0b1725}
+    #character-dialog:not([open]){display:none}
+    #character-dialog::backdrop{background:rgba(3,8,14,.83);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    #character-dialog[open]{animation:character-detail-in .32s var(--ease-out) both}
+    .character-dialog-close{position:absolute;top:14px;right:14px;z-index:5;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(211,183,121,.32);background:rgba(9,20,33,.9);color:#e8dcc0;font-size:25px;font-weight:400;line-height:1;transition:border-color .2s ease,background .2s ease,rotate .25s var(--ease-out)}
+    .character-dialog-close:hover{border-color:var(--gold);background:#213043;rotate:90deg}
+    .character-detail-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:center;min-height:620px;min-width:0}
+    .character-detail-visual{min-width:0;position:relative}
+    .character-scene-stage{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:3/2;overflow:hidden;background:radial-gradient(ellipse at 57% 42%,rgba(98,122,148,.19),transparent 65%),linear-gradient(140deg,#172c41,#07121f);isolation:isolate}
+    .character-scene-stage img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+    .character-scene-stage .media-fallback{max-width:100%;padding:32px 70px 58px;min-height:100%;color:#d2dce7;font-family:var(--serif);font-size:clamp(23px,2.6vw,33px);letter-spacing:.065em;line-height:1.65}
+    .character-scene-stage .media-fallback small{font-family:var(--sans);font-size:12px;color:#8a9fb7;font-weight:400;letter-spacing:.12em}
+    .character-scene-stage.is-unavailable img{display:none}
+    .character-scene-nav{position:absolute;inset:0;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:0 15px;pointer-events:none}
+    .character-scene-nav button{display:grid;place-items:center;width:44px;height:48px;padding:0;border:1px solid rgba(229,218,189,.34);background:rgba(6,14,24,.7);color:#efdfbb;font-family:var(--english);font-size:27px;line-height:1;pointer-events:auto;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .2s ease,border-color .2s ease,translate .2s ease}
+    .character-scene-nav button:hover:not(:disabled){background:rgba(39,55,73,.94);border-color:var(--gold)}
+    .character-scene-nav button:active:not(:disabled){translate:0 1px}
+    .character-scene-nav button:disabled{opacity:.25;pointer-events:none}
+    .character-scene-caption{position:absolute;inset:auto 0 0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;min-height:80px;padding:24px 25px 19px;background:linear-gradient(transparent,rgba(4,12,21,.85));color:#eadfc7;font-size:14px;line-height:1.6;pointer-events:none}
+    .character-scene-caption span:last-child{font-family:var(--english);font-size:14px;letter-spacing:.15em;white-space:nowrap;font-variant-numeric:tabular-nums}
+    #profile.character-detail-profile{position:static;min-width:0;margin:0;padding:52px 34px 32px;border:0;border-radius:0;background:transparent;overflow:visible;backdrop-filter:none;-webkit-backdrop-filter:none}
+    .character-detail-affiliation{margin:0 52px 16px 0;color:var(--gold);font-size:11px;font-weight:500;line-height:1.7;letter-spacing:.13em;text-transform:uppercase}
+    #profile.character-detail-profile h2{margin:0 0 8px;color:var(--ivory);font-family:var(--serif);font-size:40px;font-weight:500;letter-spacing:-.055em;line-height:1.5;overflow-wrap:anywhere}
+    #profile .character-detail-subtitle{margin:0 0 25px;color:#afbdd0;font-family:var(--serif);font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+    #profile.character-detail-profile .profile-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;padding:0 0 25px;margin:24px 0 26px;border-top:0;border-bottom:1px solid rgba(211,183,121,.24)}
+    #profile .profile-facts>div{min-width:0}
+    #profile .profile-facts>div:last-child:nth-child(odd){grid-column:auto}
+    #profile .profile-facts dt{margin:0 0 6px;color:#92a4b9;font-size:11px;line-height:1.6}
+    #profile .profile-facts dd{margin:0;color:#e2d8c2;font-family:var(--sans);font-size:14px;line-height:1.75;overflow-wrap:anywhere}
+    .character-scene-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:0 0 16px}
+    #profile .character-scene-heading h3{margin:0;color:#e0e5ea;font-family:var(--sans);font-size:14px;font-weight:500;line-height:1.7}
+    .character-scene-heading>span{flex-shrink:0;color:#9cacbf;font-size:10px;letter-spacing:.1em;font-variant-numeric:tabular-nums}
+    .character-scene-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .character-scene-option{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:60px;padding:9px 5px;border:1px solid rgba(211,183,121,.23);background:rgba(5,14,23,.28);color:#adb9c8;font-size:12px;line-height:1.6;overflow-wrap:anywhere;transition:border-color .2s ease,background .2s ease,color .2s ease,translate .25s var(--ease-out)}
+    .character-scene-option small{color:#8a9aab;font-family:var(--english);font-size:10px;line-height:1.2;letter-spacing:.1em}
+    .character-scene-option[aria-pressed="true"]{border-color:rgba(211,183,121,.74);background:rgba(211,183,121,.09);color:#e8cfa0;box-shadow:inset 0 1px rgba(244,223,178,.06)}
+    .character-scene-option[aria-pressed="true"] small{color:var(--gold)}
+    .character-scene-option:hover{border-color:rgba(211,183,121,.65);background:rgba(40,57,74,.48);color:#e7d8b9;translate:0 -1px}
+    .character-scene-option:active{translate:0 0}
+    .character-scene-hint{margin:17px 0 23px;color:#8fa0b3;font-size:11px;line-height:1.9}
+    .character-story{padding-top:19px;border-top:1px solid rgba(211,183,121,.24)}
+    .character-story summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0;cursor:pointer;list-style:none;color:#cfdae6;font-size:13px;font-weight:500;line-height:1.8}
+    .character-story summary::-webkit-details-marker{display:none}
+    .character-story summary:after{content:'+';color:var(--gold);font-family:var(--english);font-size:22px;font-weight:400;line-height:1}
+    .character-story[open] summary:after{content:'\2212'}
+    .character-story p{margin:17px 0 0;color:#afbfce;font-size:13px;line-height:2.05}
+    .character-story .profile-tags{margin-top:18px;gap:6px}
+    .character-story .profile-tags span{padding:3px 8px;background:rgba(32,49,69,.6);color:#c7b88f;border-color:rgba(211,183,121,.16);font-size:11px;line-height:1.7}
+    @keyframes character-detail-in{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @media(max-width:1000px){
+      .character-detail-layout{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+      #profile.character-detail-profile{padding-left:25px;padding-right:25px}
+      #profile.character-detail-profile h2{font-size:35px}
+      .character-scene-options{gap:6px}
+      .character-scene-option{font-size:11px;min-height:57px}
+    }
+    @media(max-width:760px){
+      #character-dialog.character-dialog{width:calc(100% - 24px);max-height:calc(100svh - 24px)}
+      .character-detail-layout{display:block;min-height:0}
+      .character-detail-visual{padding-top:62px;background:#0b1725}
+      .character-scene-stage{aspect-ratio:4/3}
+      .character-scene-stage .media-fallback{font-size:26px;padding:28px 62px 56px}
+      .character-dialog-close{top:10px;right:10px;width:40px;height:40px;font-size:23px}
+      #profile.character-detail-profile{padding:26px 25px 27px}
+      .character-detail-affiliation{margin-right:0;margin-bottom:12px}
+      #profile.character-detail-profile h2{font-size:33px}
+      #profile .character-detail-subtitle{margin-bottom:21px}
+      #profile.character-detail-profile .profile-facts{margin-top:20px;margin-bottom:23px;padding-bottom:22px;gap:15px 18px}
+      .character-scene-option{font-size:12px;min-height:58px;padding:9px 4px}
+      .character-scene-heading>span{font-size:10px}
+      .character-scene-caption{padding:22px 20px 16px;font-size:13px}
+      .character-scene-nav{padding:0 12px}
+      .character-scene-nav button{width:39px;height:44px}
+      .character-story p{font-size:13px}
+    }
+    @media(max-width:650px){
+      .character-group{margin-bottom:34px}
+      .character-group-heading{gap:12px;margin-bottom:19px;padding-bottom:12px}
+      .character-group-heading:before{font-size:22px}
+      .character-group-label{font-size:20px}
+      .character-group-count{font-size:11px}
+      .character-card-grid{grid-template-columns:minmax(0,1fr);gap:25px}
+      .character-card-image:before{inset:8px}
+      .character-card-image .media-fallback{font-size:24px;padding:20px}
+      .character-card-caption{padding-top:12px;gap:3px}
+      .character-card-title .name{font-size:22px}
+      .character-card-role{font-size:12px}
+      .character-card-open{font-size:11px}
+    }
+    @media(max-width:360px){
+      #profile.character-detail-profile{padding:23px 18px}
+      #profile.character-detail-profile h2{font-size:30px}
+      #profile .profile-facts dd{font-size:13px}
+      .character-detail-affiliation{font-size:10px;letter-spacing:.08em}
+      .character-scene-options{gap:6px}
+      .character-scene-option{font-size:11px;min-height:57px}
+      .character-scene-stage .media-fallback{font-size:22px;padding-left:48px;padding-right:48px}
+      .character-scene-stage .media-fallback small{font-size:10px}
+      .character-scene-nav{padding:0 9px}
+      .character-scene-nav button{width:34px;height:41px}
+      .character-scene-caption{padding-left:16px;padding-right:16px;font-size:12px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .character-card,.character-card-image,.character-card-image:before,.character-card-image:after,.character-card-image img,.character-card-open,.character-dialog-close,.character-scene-nav button,.character-scene-option{transition:none}
+      #character-dialog[open]{animation:none}
+      .character-card:hover,.character-card:active,.character-card:hover .character-card-open,.character-scene-option:hover,.character-scene-nav button:active:not(:disabled){translate:none}
+      .character-card:hover .character-card-image img{transform:none}
+      .character-dialog-close:hover{rotate:none}
+    }
+
+    .character-group-label small{display:inline-block;margin-left:14px;color:#9daaba;font-family:var(--sans);font-size:10px;letter-spacing:.1em;vertical-align:middle}
+    .character-detail-cr{display:inline-block;margin-left:12px;padding:0 6px;border:1px solid rgba(211,183,121,.25);font-size:10px;letter-spacing:0;white-space:nowrap}
+    .character-dialog-tools{position:sticky;top:0;height:0;z-index:5}
+    @media(max-width:650px){.character-group-label small{margin-left:9px;font-size:9px}}
+
   </style>
 </head>
 <body>
@@ -428,7 +577,7 @@
       <div class="page-next"><span>이곳에서 각자의 미래를 꿈꾸는 사람들</span><a class="button" href="#characters">인물 명부 열람</a></div>
     </section>
     <section class="page-view wrap" id="characters" data-view="characters" hidden aria-labelledby="characters-title">
-      <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>루미에르 아카데미에서 레온하트 대륙까지. 인물을 선택해 그들의 이야기를 살펴보세요.</p></div>
+      <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>루미에르 아카데미에서 레온하트 대륙까지. 카드를 선택해 인물의 이야기와 순간의 기록을 살펴보세요.</p></div>
       <div class="roster-controls character-part-controls" role="group" aria-label="등장인물 이야기 구분">
         <button type="button" class="filter part-filter active" data-character-part="all" aria-pressed="true"><strong>전체</strong><small>모든 인물</small><span class="part-count">15</span></button>
         <button type="button" class="filter part-filter" data-character-part="academy" aria-pressed="false"><strong>1부</strong><small>(아카데미 소속)</small><span class="part-count">13</span></button>
@@ -445,7 +594,7 @@
           <button type="button" class="filter active" data-filter-part="continent" data-filter="all" aria-pressed="true">전체 <span>2</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>1</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>1</span></button>
         </div>
       </div>
-      <div class="character-layout" id="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div><article class="profile" id="profile" aria-live="polite"></article></div>
+      <div class="character-layout" id="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div></div>
       <div class="character-empty" id="character-empty" role="status" hidden><span class="eyebrow" id="character-empty-label">PART II · LEONHART</span><h2 id="character-empty-title">인물 소개 준비 중</h2><p>이 분류의 인물 소개는 준비 중입니다.</p></div>
     </section>
     <section class="page-view wrap truth-view" id="truth" data-view="truth" hidden aria-labelledby="truth-title">
@@ -472,10 +621,16 @@
     <p id="spoiler-message">작품의 주요 내용이 포함되어 있습니다.<br>계속 확인하시겠습니까?</p>
     <div class="spoiler-actions"><button class="button primary" id="spoiler-yes" type="button">예</button><button class="button" id="spoiler-no" type="button" autofocus>아니오</button></div>
   </dialog>
-  <dialog class="media-lightbox" id="media-lightbox" aria-labelledby="lightbox-title">
-    <div class="lightbox-head"><h2 id="lightbox-title">이미지 미리보기</h2><button class="lightbox-close" type="button" id="lightbox-close" aria-label="확대 이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div>
-    <div class="lightbox-stage" id="lightbox-stage"></div>
-    <div class="lightbox-foot"><button type="button" id="lightbox-prev">이전 이미지</button><span id="lightbox-counter"></span><button type="button" id="lightbox-next">다음 이미지</button></div>
+  <dialog class="character-dialog" id="character-dialog" aria-labelledby="character-detail-title">
+    <div class="character-dialog-tools"><button class="character-dialog-close" id="character-dialog-close" type="button" aria-label="인물 상세 닫기" autofocus>×</button></div>
+    <div class="character-detail-layout">
+      <div class="character-detail-visual">
+        <div class="character-scene-stage" id="character-scene-stage" aria-live="polite"></div>
+        <div class="character-scene-nav" aria-label="장면 이동"><button type="button" id="character-scene-prev" aria-label="이전 장면">‹</button><button type="button" id="character-scene-next" aria-label="다음 장면">›</button></div>
+        <div class="character-scene-caption"><span id="character-scene-label"></span><span id="character-scene-counter"></span></div>
+      </div>
+      <article class="character-detail-profile" id="profile"></article>
+    </div>
   </dialog>
   <audio id="academy-theme" data-src="./arcademy.mp3" preload="none" loop></audio>
   <button class="music-control" id="music-toggle" type="button" aria-label="음소거" aria-pressed="true"><span class="music-spectrum" aria-hidden="true"><i></i><i></i><i></i></span><span id="music-label">음소거</span></button>
@@ -922,24 +1077,24 @@
       }
     ];
     // Part 2 records use part:'continent' and group:'royal', 'labyrinth', or 'sins'; keep each id unique.
-    // Each portrait is shared by the roster and main profile. Fill gallery with four image URLs or relative paths.
+    // portrait is the card cover; gallery follows characterSceneLabels, or provide scenes:[{label:'웃음',src:'./image.webp'}].
     // Leave slots empty until the matching character photographs/artwork are ready.
     const characterMedia={
-      0:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      1:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      2:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      3:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      4:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      5:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      6:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      7:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      8:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      9:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      10:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      11:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      12:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      13:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      14:{portrait:'',position:'50% 30%',gallery:['','','','']}
+      0:{portrait:'',position:'50% 30%',gallery:[]},
+      1:{portrait:'',position:'50% 30%',gallery:[]},
+      2:{portrait:'',position:'50% 30%',gallery:[]},
+      3:{portrait:'',position:'50% 30%',gallery:[]},
+      4:{portrait:'',position:'50% 30%',gallery:[]},
+      5:{portrait:'',position:'50% 30%',gallery:[]},
+      6:{portrait:'',position:'50% 30%',gallery:[]},
+      7:{portrait:'',position:'50% 30%',gallery:[]},
+      8:{portrait:'',position:'50% 30%',gallery:[]},
+      9:{portrait:'',position:'50% 30%',gallery:[]},
+      10:{portrait:'',position:'50% 30%',gallery:[]},
+      11:{portrait:'',position:'50% 30%',gallery:[]},
+      12:{portrait:'',position:'50% 30%',gallery:[]},
+      13:{portrait:'',position:'50% 30%',gallery:[]},
+      14:{portrait:'',position:'50% 30%',gallery:[]}
     };
     const views=[...document.querySelectorAll('[data-view]')];
     const academyPageImage=document.querySelector('#academy-page-image');
@@ -961,7 +1116,7 @@
     let activeView='home';
     let activePart='all';
     let activeFilter='all';
-    let selectedId=0;
+    let selectedId=null;
     let characterRenderKey='';
     const characterMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
     const characterTransitions=new WeakMap();
@@ -980,7 +1135,7 @@
     }
     // Keep URLs out of src until entry is complete and the image is near the viewport.
     const mediaMargin=400;
-    function visibleMedia(image){return image.isConnected&&!image.closest('[hidden]')&&image.getClientRects().length>0}
+    function visibleMedia(image){return image.isConnected&&!image.closest('[hidden]')&&(!document.body.classList.contains('character-dialog-active')||!!image.closest('#character-dialog'))&&image.getClientRects().length>0}
     function nearMedia(image){const rect=image.getBoundingClientRect();return rect.bottom>=-mediaMargin&&rect.top<=window.innerHeight+mediaMargin&&rect.right>=0&&rect.left<=window.innerWidth}
     function loadMedia(image){
       if(!mediaEntered||!(image instanceof HTMLImageElement)||!image.isConnected)return;
@@ -1029,16 +1184,15 @@
       if(character.group==='student'&&character.rank)facts.push(['학급 랭킹 · CR',character.rank]);
       return facts.map(([label,value])=>'<div><dt>'+escapeHtml(label)+'</dt><dd>'+escapeHtml(value)+'</dd></div>').join('');
     }
-    function galleryFor(character){const gallery=characterMedia[character.id]?.gallery;return Array.from({length:4},(_,index)=>Array.isArray(gallery)&&typeof gallery[index]==='string'?gallery[index]:'')}
     function validCharacterPart(part){return part==='all'||Object.prototype.hasOwnProperty.call(characterParts,part)}
     function characterFilters(part){return characterParts[part]?.filters||[{key:'all',label:'전체'}]}
     function matchingCharacters(part=activePart,filter=activeFilter){return characters.filter(character=>(part==='all'||character.part===part)&&(filter==='all'||character.group===filter))}
     function characterHash(id=selectedId){return activePart==='all'?'characters'+(id===null?'':'/'+id):'characters/'+activePart+'/'+activeFilter+(id===null?'':'/'+id)}
-    function selectCharacterGroup(part,filter='all',id=selectedId){
+    function selectCharacterGroup(part,filter='all',id=null){
       if(!validCharacterPart(part))return;
       activePart=part;activeFilter=characterFilters(part).some(item=>item.key===filter)?filter:'all';
-      const visible=matchingCharacters();selectedId=(visible.find(item=>item.id===id)||visible[0])?.id??null;
-      location.hash=characterHash();renderCharacters();
+      selectedId=matchingCharacters().some(item=>item.id===id)?id:null;
+      location.hash=characterHash();updateView();
     }
     function animateCharacterGroup(groupChanged){
       if(!groupChanged||activeView!=='characters'||document.body.classList.contains('entry-active')||characterMotionPreference.matches)return;
@@ -1051,42 +1205,146 @@
         characterTransitions.set(element,animation);
       };
       buttons.forEach((button,index)=>animate(button,index*25,6,280));
-      if(selectedId===null)animate(document.querySelector('#character-empty'),35,9,340);
-      else{animate(roster,35,8,320);animate(profile,60,10,340)}
+      if(!matchingCharacters().length)animate(document.querySelector('#character-empty'),35,9,340);
+      else animate(roster,35,8,320);
+    }
+    const characterGroups=[
+      {part:'academy',key:'student',label:'학생',english:'STUDENTS'},
+      {part:'academy',key:'staff',label:'교직원',english:'FACULTY'},
+      {part:'continent',key:'royal',label:'왕선',english:'ROYAL SELECTION'},
+      {part:'continent',key:'labyrinth',label:'미궁',english:'THE LABYRINTH'},
+      {part:'continent',key:'sins',label:'7대죄악',english:'SEVEN SINS'}
+    ];
+    const characterSceneLabels=['웃음','눈물','분노','경멸','당황','부끄러움','공포 / 패닉','전투','부상 / 전투패배','키스','결혼'];
+    const characterDialog=document.querySelector('#character-dialog');
+    const characterStage=document.querySelector('#character-scene-stage');
+    const characterDialogClose=document.querySelector('#character-dialog-close');
+    const characterScenePrev=document.querySelector('#character-scene-prev');
+    const characterSceneNext=document.querySelector('#character-scene-next');
+    let characterDetailId=null;
+    let characterSceneIndex=0;
+    let characterOpener=null;
+    let characterCloseReason='user';
+    function characterListHash(){return activePart==='all'?'characters':'characters/'+activePart+'/'+activeFilter}
+    function scenesFor(character){
+      const media=characterMedia[character.id]||{};
+      if(Array.isArray(media.scenes)&&media.scenes.length){
+        const validScenes=media.scenes.filter(scene=>scene&&typeof scene==='object').map((scene,index)=>({label:typeof scene.label==='string'&&scene.label.trim()?scene.label.trim():'장면 '+(index+1),src:mediaSource(scene.src),position:scene.position||'50% 50%'}));
+        if(validScenes.length)return validScenes;
+      }
+      const gallery=Array.isArray(media.gallery)?media.gallery:[];
+      return characterSceneLabels.map((label,index)=>({label,src:mediaSource(gallery[index]),position:'50% 50%'}));
+    }
+    function updateCharacterCards(){
+      roster?.querySelectorAll('[data-person]').forEach(card=>{
+        const expanded=!!characterDialog?.open&&Number(card.dataset.person)===characterDetailId;
+        card.setAttribute('aria-expanded',String(expanded));card.classList.toggle('active',expanded);
+      });
     }
     function renderCharacters(){
-      if(!roster||!profile)return;
-      const focusedPerson=document.activeElement instanceof HTMLElement?document.activeElement.dataset.person:undefined;
+      if(!roster)return;
       const visible=matchingCharacters();
-      const character=visible.find(item=>item.id===selectedId)||visible[0];
-      selectedId=character?.id??null;
-      const nextRenderKey=JSON.stringify([activePart,activeFilter,selectedId]);
-      if(nextRenderKey===characterRenderKey)return;
-      const previousGroup=characterRenderKey?JSON.parse(characterRenderKey).slice(0,2):[];
-      const groupChanged=previousGroup[0]!==activePart||previousGroup[1]!==activeFilter;
+      if(!visible.some(item=>item.id===selectedId))selectedId=null;
+      const nextRenderKey=JSON.stringify([activePart,activeFilter]);
+      if(nextRenderKey===characterRenderKey){updateCharacterCards();return}
+      const groupChanged=!!characterRenderKey;
       characterRenderKey=nextRenderKey;
       document.querySelectorAll('[data-character-part]').forEach(button=>{const part=button.dataset.characterPart;const selected=part===activePart;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('.part-count').textContent=matchingCharacters(part,'all').length});
       const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=false;
       document.querySelectorAll('[data-part-filters]').forEach(group=>group.hidden=group.dataset.partFilters!==activePart);
       document.querySelectorAll('[data-filter]').forEach(button=>{const selected=button.dataset.filterPart===activePart&&button.dataset.filter===activeFilter;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('span').textContent=matchingCharacters(button.dataset.filterPart,button.dataset.filter).length});
       const layout=document.querySelector('#character-layout');const empty=document.querySelector('#character-empty');
-      if(layout)layout.hidden=!character;if(empty)empty.hidden=!!character;
-      if(!character){
-        roster.innerHTML='';profile.innerHTML='';
+      if(layout)layout.hidden=!visible.length;if(empty)empty.hidden=!!visible.length;
+      if(!visible.length){
+        roster.innerHTML='';
         const part=characterParts[activePart];const category=characterFilters(activePart).find(item=>item.key===activeFilter);
         document.querySelector('#character-empty-label').textContent=part?.eyebrow||'THE CHARACTERS';
         document.querySelector('#character-empty-title').textContent=(part?(activeFilter==='all'?part.label.split(' · ')[0]:category.label):'등장인물')+' 인물 소개 준비 중';
-        refreshMedia();animateCharacterGroup(groupChanged);
-        return;
+        refreshMedia();animateCharacterGroup(groupChanged);return;
       }
-      roster.innerHTML=visible.map(item=>`<button type="button" class="person ${item.id===selectedId?'active':''}" data-person="${item.id}" aria-pressed="${item.id===selectedId}"><span class="person-thumb" aria-hidden="true">${mediaMarkup(characterMedia[item.id]?.portrait,'',String(characters.indexOf(item)+1).padStart(2,'0'),'',characterMedia[item.id]?.position)}</span><span class="person-name"><strong>${escapeHtml(item.name)}</strong><span class="person-meta"><small>나이 ${escapeHtml(characterAge(item))}</small><small>${escapeHtml(item.role)}</small></span></span></button>`).join('');
-      const media=characterMedia[character.id]||{};
-      const categoryLabel=characterFilters(character.part).find(item=>item.key===character.group)?.label||'미분류';
-      const gallery=galleryFor(character);
-      profile.innerHTML=`<div class="profile-top"><span class="eyebrow">CHARACTER DOSSIER</span><span class="profile-count">${String(characters.indexOf(character)+1).padStart(2,'0')} / ${characters.length}</span></div><div class="profile-hero"><div class="portrait-slot">${mediaMarkup(media.portrait,character.name+' 인물 사진','인물 사진','사진 준비 중',media.position)}</div><div><h2>${escapeHtml(character.name)}</h2><p class="profile-subtitle">${escapeHtml(character.subtitle)}</p></div></div><p class="profile-description">${escapeHtml(character.description)}</p><dl class="profile-facts">${characterFacts(character)}</dl><h3>인물의 결</h3><p class="profile-note">${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div><section class="profile-gallery" aria-label="${escapeHtml(character.name)} 장면 사진"><div class="gallery-heading"><h3>이미지 미리보기</h3><span>4장</span></div><div class="gallery-grid">${gallery.map((source,index)=>`<figure class="gallery-item"><button class="gallery-slot" type="button" data-gallery-person="${character.id}" data-gallery-index="${index}" aria-label="${escapeHtml(character.name)} 장면 ${index+1} ${mediaSource(source)?'크게 보기':'사진 준비 중'}" ${mediaSource(source)?'':'disabled'}><span class="gallery-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${mediaMarkup(source,character.name+' 장면 '+(index+1),'장면 '+(index+1),'사진 준비 중','50% 50%')}${mediaSource(source)?'<span class="gallery-enlarge" aria-hidden="true">크게 보기</span>':''}</button><figcaption>장면 ${String(index+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div><p class="gallery-note">${gallery.some(source=>mediaSource(source))?'사진을 선택하면 크게 볼 수 있습니다.':'이 인물의 장면 사진은 준비 중입니다.'}</p></section>`;
-      if(focusedPerson!==undefined)roster.querySelector(`[data-person="${focusedPerson}"]`)?.focus({preventScroll:true});
-      refreshMedia();animateCharacterGroup(groupChanged);
+      roster.innerHTML=characterGroups.map(group=>{
+        const members=visible.filter(character=>character.part===group.part&&character.group===group.key);
+        if(!members.length)return '';
+        return `<section class="character-group" aria-labelledby="character-group-${group.key}"><div class="character-group-heading"><h2 class="character-group-label" id="character-group-${group.key}">${escapeHtml(group.label)} <small>${escapeHtml(group.english)}</small></h2><span class="character-group-count">${String(members.length).padStart(2,'0')}명</span></div><div class="character-card-grid">${members.map(item=>`<button type="button" class="character-card" data-person="${item.id}" aria-haspopup="dialog" aria-controls="character-dialog" aria-expanded="false" aria-label="${escapeHtml(item.name)}, 나이 ${escapeHtml(characterAge(item))}, ${escapeHtml(item.role)} — 인물 기록 보기"><span class="character-card-image">${mediaMarkup(characterMedia[item.id]?.portrait,item.name+' 인물 사진',item.name,'인물 사진 준비 중',characterMedia[item.id]?.position)}</span><span class="character-card-caption"><span class="character-card-title"><strong class="name">${escapeHtml(item.name)}</strong><span class="character-card-age">${escapeHtml(characterAge(item))}</span></span><small class="character-card-role">${escapeHtml(item.role)}</small><span class="character-card-open">인물 기록 →</span></span></button>`).join('')}</div></section>`;
+      }).join('');
+      updateCharacterCards();refreshMedia();animateCharacterGroup(groupChanged);
     }
+    function updateCharacterScene(){
+      const character=characters.find(item=>item.id===characterDetailId);
+      if(!character||!characterStage)return;
+      const scenes=scenesFor(character);if(!scenes.length)return;
+      characterSceneIndex=Math.max(0,Math.min(characterSceneIndex,scenes.length-1));
+      const scene=scenes[characterSceneIndex];
+      characterStage.classList.remove('is-unavailable');
+      characterStage.innerHTML=mediaMarkup(scene.src,character.name+' · '+scene.label,character.name+'의 '+scene.label,'이미지 준비 중',scene.position);
+      loadMedia(characterStage.querySelector('img'));
+      document.querySelector('#character-scene-label').textContent=scene.label;
+      document.querySelector('#character-scene-counter').textContent=String(characterSceneIndex+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');
+      profile?.querySelectorAll('[data-character-scene]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.characterScene)===characterSceneIndex)));
+      if(characterScenePrev)characterScenePrev.disabled=scenes.length<2;
+      if(characterSceneNext)characterSceneNext.disabled=scenes.length<2;
+    }
+    function renderCharacterDetail(character){
+      if(!profile)return;
+      const group=characterGroups.find(item=>item.part===character.part&&item.key===character.group);
+      const scenes=scenesFor(character);
+      profile.innerHTML=`<p class="character-detail-affiliation">${escapeHtml(group?.label||'인물')} / ${escapeHtml(group?.english||'CHARACTERS')}${character.group==='student'&&character.rank?`<span class="character-detail-cr">CR ${escapeHtml(character.rank)}</span>`:''}</p><h2 id="character-detail-title">${escapeHtml(character.name)}</h2><p class="character-detail-subtitle">${escapeHtml(character.subtitle)}</p><dl class="profile-facts"><div><dt>나이</dt><dd>${escapeHtml(characterAge(character))}</dd></div><div><dt>직업 · 직책</dt><dd>${escapeHtml(character.role)}</dd></div></dl><div class="character-scene-heading"><h3>순간의 기록</h3><span>${scenes.length} SCENES</span></div><div class="character-scene-options" role="group" aria-label="상황 선택">${scenes.map((scene,index)=>`<button class="character-scene-option" type="button" data-character-scene="${index}" aria-pressed="${index===characterSceneIndex}" aria-label="${escapeHtml(scene.label)} 이미지"><small>${String(index+1).padStart(2,'0')}</small><span>${escapeHtml(scene.label)}</span></button>`).join('')}</div><p class="character-scene-hint">상황을 선택하거나 좌우 화살표로 넘겨 보세요.</p><details class="character-story"><summary>인물 소개</summary><p>${escapeHtml(character.description)}</p><p>${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div></details>`;
+    }
+    function syncCharacterDetail(){
+      if(!(characterDialog instanceof HTMLDialogElement))return;
+      const character=activeView==='characters'?matchingCharacters().find(item=>item.id===selectedId):null;
+      if(!mediaEntered||!character){
+        if(characterDialog.open){characterCloseReason='route';characterDialog.close('route')}
+        updateCharacterCards();return;
+      }
+      const changed=characterDetailId!==character.id;
+      if(changed){
+        characterDetailId=character.id;characterSceneIndex=0;
+        if(!(characterOpener instanceof HTMLElement)||characterOpener.dataset.person!==String(character.id))characterOpener=roster?.querySelector(`[data-person="${character.id}"]`)||null;
+        renderCharacterDetail(character);
+      }
+      if(!characterDialog.open){characterCloseReason='user';characterDialog.scrollTop=0;characterDialog.showModal();document.body.classList.add('character-dialog-active');characterDialogClose?.focus({preventScroll:true})}
+      if(changed)updateCharacterScene();
+      updateCharacterCards();refreshMedia();
+    }
+    function moveCharacterScene(direction){
+      const character=characters.find(item=>item.id===characterDetailId);if(!character)return;
+      const length=scenesFor(character).length;if(!length)return;
+      characterSceneIndex=(characterSceneIndex+direction+length)%length;updateCharacterScene();
+    }
+    characterDialogClose?.addEventListener('click',()=>{characterCloseReason='user';characterDialog?.close('user')});
+    characterScenePrev?.addEventListener('click',()=>moveCharacterScene(-1));
+    characterSceneNext?.addEventListener('click',()=>moveCharacterScene(1));
+    profile?.addEventListener('click',event=>{
+      const button=event.target instanceof Element?event.target.closest('[data-character-scene]'):null;
+      if(!(button instanceof HTMLButtonElement))return;
+      const index=Number(button.dataset.characterScene);const character=characters.find(item=>item.id===characterDetailId);
+      if(!character||!Number.isInteger(index)||index<0||index>=scenesFor(character).length)return;
+      characterSceneIndex=index;updateCharacterScene();
+    });
+    characterDialog?.addEventListener('keydown',event=>{
+      if(event.key!=='ArrowLeft'&&event.key!=='ArrowRight')return;
+      event.preventDefault();moveCharacterScene(event.key==='ArrowLeft'?-1:1);
+      if(event.target instanceof Element&&event.target.closest('[data-character-scene]'))profile?.querySelector(`[data-character-scene="${characterSceneIndex}"]`)?.focus({preventScroll:true});
+    });
+    characterDialog?.addEventListener('cancel',()=>{characterCloseReason='user'});
+    characterDialog?.addEventListener('close',()=>{
+      if(characterDialog.open)return; // A previous close event must not clear a newly opened detail.
+      const closedId=characterDetailId;
+      const routeClose=characterCloseReason==='route';
+      document.body.classList.remove('character-dialog-active');
+      characterDetailId=null;characterSceneIndex=0;characterCloseReason='user';
+      if(!routeClose&&activeView==='characters'){selectedId=null;history.replaceState(null,'','#'+characterListHash())}
+      if(characterStage)characterStage.innerHTML='';if(profile)profile.innerHTML='';
+      updateCharacterCards();refreshMedia();
+      const canFocus=element=>element instanceof HTMLElement&&element.isConnected&&!element.closest('[hidden]')&&element.getClientRects().length>0;
+      const matchingCard=roster?.querySelector(`[data-person="${closedId}"]`);
+      const heading=document.querySelector(`[data-view="${activeView}"] h1`);
+      const destination=activeView==='characters'?(canFocus(characterOpener)?characterOpener:canFocus(matchingCard)?matchingCard:heading):heading;
+      if(destination instanceof HTMLElement){if(destination===heading)destination.setAttribute('tabindex','-1');destination.focus({preventScroll:true})}
+      characterOpener=null;
+    });
+
     function renderTruth(){
       const phase=truthPhases.find(item=>item.number===activeTruthPhase)||truthPhases[0];
       const sheet=document.querySelector('#webtoon-sheet');
@@ -1118,7 +1376,7 @@
           activePart='all';activeFilter='all';
           const candidate=characters.find(item=>String(item.id)===parts[1]);
           selectedId=candidate?.id??null;
-        }else{activePart='all';activeFilter='all'}
+        }else{activePart='all';activeFilter='all';selectedId=null}
       }
       activeView=nextView;
       document.body.classList.toggle('home-scene',activeView==='home');
@@ -1126,23 +1384,23 @@
       document.body.classList.toggle('characters-scene',activeView==='characters');
       document.body.classList.toggle('truth-scene',activeView==='truth');
       views.forEach(view=>view.hidden=view.dataset.view!==activeView);
-      if(lightbox instanceof HTMLDialogElement&&lightbox.open&&(switched||lightboxState?.person!==selectedId))lightbox.close();
+
       navigation?.querySelectorAll('a').forEach(link=>{const current=link.hash==='#'+activeView;link.classList.toggle('active',current);if(current)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
       navigation?.classList.remove('open');menuToggle?.setAttribute('aria-expanded','false');
       if(activeView==='characters')renderCharacters();
       if(activeView==='truth')renderTruth();
       if(document.body.classList.contains('scene-entering')&&requested!=='home')completeEntry();
-      if(switched||phaseChanged){window.scrollTo({top:0,behavior:'instant'});const heading=document.querySelector(phaseChanged&&!switched?'#truth-phase-title':`[data-view="${activeView}"] h1`);if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}
+      if(switched||phaseChanged){window.scrollTo({top:0,behavior:'instant'});const heading=document.querySelector(phaseChanged&&!switched?'#truth-phase-title':`[data-view="${activeView}"] h1`);if(heading&&!characterDialog?.open){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}
       if(requested==='introduction'||requested==='main')document.getElementById(requested)?.scrollIntoView();
       if(mediaEntered)prepareAcademyBackground();
-      refreshMedia();
+      refreshMedia();syncCharacterDetail();
     }
     document.addEventListener('click',event=>{
       const target=event.target instanceof Element?event.target:null;
-      const galleryButton=target?.closest('[data-gallery-person]');
-      if(galleryButton instanceof HTMLButtonElement&&!galleryButton.disabled){openLightbox(Number(galleryButton.dataset.galleryPerson),Number(galleryButton.dataset.galleryIndex),galleryButton);return}
+
+
       const personButton=target?.closest('[data-person]');
-      if(personButton){const candidate=characters.find(item=>String(item.id)===personButton.dataset.person);if(candidate){selectCharacterGroup(activePart,activeFilter,candidate.id);roster?.querySelector(`[data-person="${candidate.id}"]`)?.focus()}return}
+      if(personButton){const candidate=characters.find(item=>String(item.id)===personButton.dataset.person);if(candidate){characterOpener=personButton;selectCharacterGroup(activePart,activeFilter,candidate.id)}return}
       const partButton=target?.closest('[data-character-part]');
       if(partButton){selectCharacterGroup(partButton.dataset.characterPart);return}
       const filterButton=target?.closest('[data-filter]');
@@ -1156,62 +1414,6 @@
     });
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menuToggle?.getAttribute('aria-expanded')==='true'){navigation?.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus()}});
     window.addEventListener('hashchange',updateView);
-    const lightbox=document.querySelector('#media-lightbox');
-    const lightboxStage=document.querySelector('#lightbox-stage');
-    const lightboxTitle=document.querySelector('#lightbox-title');
-    const lightboxCounter=document.querySelector('#lightbox-counter');
-    const lightboxClose=document.querySelector('#lightbox-close');
-    const lightboxPrev=document.querySelector('#lightbox-prev');
-    const lightboxNext=document.querySelector('#lightbox-next');
-    let lightboxState=null;
-    let lightboxOpener=null;
-    function updateLightbox(){
-      if(!lightboxState||!lightboxStage||!lightboxTitle||!lightboxCounter)return;
-      const character=characters.find(item=>item.id===lightboxState.person);
-      if(!character)return;
-      const sources=galleryFor(character);
-      const index=lightboxState.index;
-      lightboxTitle.textContent=character.name+' · 장면 '+(index+1);
-      lightboxCounter.textContent=(index+1)+' / 4';
-      lightboxStage.classList.remove('is-unavailable');
-      lightboxStage.innerHTML=mediaMarkup(sources[index],character.name+' 확대 장면 '+(index+1),'사진 준비 중','','50% 50%');
-      loadMedia(lightboxStage.querySelector('img')); // The visitor explicitly requested this full-size image.
-      if(lightboxPrev)lightboxPrev.disabled=!sources.some((source,other)=>other<index&&mediaSource(source));
-      if(lightboxNext)lightboxNext.disabled=!sources.some((source,other)=>other>index&&mediaSource(source));
-    }
-    function openLightbox(person,index,opener){
-      const character=characters.find(item=>item.id===person);
-      if(!(lightbox instanceof HTMLDialogElement)||!character||!Number.isInteger(index)||index<0||index>3||!mediaSource(galleryFor(character)[index]))return;
-      lightboxState={person,index};lightboxOpener=opener;
-      updateLightbox();
-      if(!lightbox.open)lightbox.showModal();
-      document.body.classList.add('lightbox-active');
-      lightboxClose?.focus({preventScroll:true});
-    }
-    function moveLightbox(direction){
-      if(!lightboxState)return;
-      const character=characters.find(item=>item.id===lightboxState.person);
-      if(!character)return;
-      const sources=galleryFor(character);
-      for(let index=lightboxState.index+direction;index>=0&&index<4;index+=direction){if(mediaSource(sources[index])){lightboxState.index=index;updateLightbox();break}}
-    }
-    lightboxClose?.addEventListener('click',()=>lightbox?.close());
-    lightboxPrev?.addEventListener('click',()=>moveLightbox(-1));
-    lightboxNext?.addEventListener('click',()=>moveLightbox(1));
-    lightbox?.addEventListener('click',event=>{if(event.target===lightbox){const rect=lightbox.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)lightbox.close()}});
-    lightbox?.addEventListener('keydown',event=>{
-      if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();moveLightbox(event.key==='ArrowLeft'?-1:1)}
-      if(event.key==='Tab'){const buttons=[...lightbox.querySelectorAll('button:not(:disabled)')];if(buttons.length){event.preventDefault();const current=buttons.indexOf(document.activeElement);const next=(current+(event.shiftKey?-1:1)+buttons.length)%buttons.length;buttons[next].focus({preventScroll:true})}}
-    });
-    lightbox?.addEventListener('close',()=>{
-      document.body.classList.remove('lightbox-active');lightboxState=null;
-      const canFocus=element=>element instanceof HTMLElement&&element.isConnected&&!element.closest('[hidden]')&&!(element instanceof HTMLButtonElement&&element.disabled)&&element.getClientRects().length>0;
-      const selectedPerson=roster?.querySelector('[aria-pressed="true"]');
-      const heading=document.querySelector(`[data-view="${activeView}"] h1`);
-      const destination=canFocus(lightboxOpener)?lightboxOpener:canFocus(selectedPerson)?selectedPerson:heading;
-      if(destination instanceof HTMLElement){if(destination===heading)destination.setAttribute('tabindex','-1');destination.focus({preventScroll:true})}
-      lightboxOpener=null;
-    });
     document.addEventListener('error',event=>{
       const image=event.target;
       if(!(image instanceof HTMLImageElement)||!image.hasAttribute('data-media-image'))return;
@@ -1254,6 +1456,7 @@
       mediaEntered=true;prepareAcademyBackground();refreshMedia();
       academyTheme.begin();
       const heading=document.querySelector(`[data-view="${activeView}"] h1`);if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
+      syncCharacterDetail();
     }
     function openAcademyGate(){
       if(gatewayOpening||!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
