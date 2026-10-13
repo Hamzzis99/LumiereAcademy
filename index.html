@@ -297,6 +297,8 @@
     @media(hover:hover) and (pointer:fine){.fantasy-scene .person:hover{background:rgba(36,54,74,.5)}.fantasy-scene .filter:not(.active):hover{background:rgba(30,48,68,.74);border-color:var(--gold)}}
     @media(max-width:900px){.fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child{padding:25px}}
     @media(max-width:650px){.fantasy-scene .page-view{padding-top:25px}.fantasy-scene .page-heading{padding:21px 19px 23px;margin-bottom:24px;border-radius:9px}.fantasy-scene .page-heading h1{font-size:29px;line-height:1.6}.fantasy-scene .page-heading p{font-size:14px}.fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child,.fantasy-scene .theme-grid article{padding:22px 20px}.fantasy-scene .world-layout{gap:22px}.fantasy-scene .page-next{padding:20px}.fantasy-scene .roster{padding:3px}.fantasy-scene .page-heading,.fantasy-scene .world-article,.fantasy-scene .life-list,.fantasy-scene .life-grid>div:first-child,.fantasy-scene .theme-grid article,.fantasy-scene .page-next,.fantasy-scene .profile,.fantasy-scene .faculty,.fantasy-scene .document-label,.fantasy-scene .rank-note,.fantasy-scene .character-empty,.fantasy-scene .roster{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}}
+    .person-meta{display:flex;flex-wrap:wrap;gap:2px 9px;align-items:baseline}.person-meta small:first-child{color:#9eafc2;font-variant-numeric:tabular-nums}
+    .profile-facts>div:last-child:nth-child(odd){grid-column:1/-1}
     .characters-scene .filter:before{content:'';position:absolute;left:12px;right:12px;bottom:0;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent,var(--gold),#f1e1b8,var(--gold),transparent);opacity:0;transform:scaleX(.2);transition:transform .32s var(--ease-out),opacity .25s ease}
     .characters-scene .filter.active:before{opacity:1;transform:scaleX(1)}.characters-scene .filter.active{box-shadow:inset 0 1px rgba(255,238,193,.12),0 4px 20px rgba(211,183,121,.1)}
     .characters-scene .part-filter strong,.characters-scene .part-filter small,.characters-scene .part-count{transition:translate .25s var(--ease-out),color .25s ease,border-color .3s ease,background .3s ease}
@@ -407,7 +409,7 @@
     <section class="story-links wrap" aria-label="루미에르 아카데미 더 알아보기">
       <a href="#world"><span class="eyebrow">THE WORLD</span><h2>명예와 서열의 이면</h2><p>미래를 약속하는 제국의 배움터.<br>그곳의 질서와 경쟁을 들여다본다.</p><span class="text-link">세계관 읽기</span></a>
       <a href="#academy"><span class="eyebrow">ACADEMY LIFE</span><h2>검을 들고, 마법을 배우다</h2><p>수련과 학업, 축제와 대련.<br>아카데미의 일상을 살펴본다.</p><span class="text-link">아카데미 알아보기</span></a>
-      <a href="#characters"><span class="eyebrow">THE CHARACTERS</span><h2>서로 다른 열세 개의 이야기</h2><p>저마다의 꿈과 신념을 가진<br>학생과 교직원을 만난다.</p><span class="text-link">인물 명부 열람</span></a>
+      <a href="#characters"><span class="eyebrow">THE CHARACTERS</span><h2>서로 다른 꿈과 신념의 이야기</h2><p>저마다의 꿈과 신념을 가진<br>아카데미와 대륙의 인물들을 만난다.</p><span class="text-link">인물 명부 열람</span></a>
     </section>
     <div class="closing wrap"><span class="ornament" aria-hidden="true">✦</span><p>검을 쥐는 이유도, 마법을 배우는 이유도.<br>이곳에서는 누구도 같지 않다.</p><span class="eyebrow">LUMIÈRE ACADEMY</span></div>
     </div>
@@ -420,7 +422,7 @@
     </section>
     <section class="page-view wrap" id="academy" data-view="academy" hidden aria-labelledby="academy-title">
       <div class="page-heading"><span class="eyebrow">II. ACADEMY LIFE</span><h1 id="academy-title" tabindex="-1">검과 마법의 배움터.</h1><p>혹독한 수련과 평범한 일상, 그 사이에서 자라나는 이야기.</p></div>
-      <div class="faculty-grid"><article class="faculty"><div class="faculty-top"><span class="eyebrow">SWORDSMANSHIP</span><span class="faculty-number">01</span></div><h2>검술학부</h2><p class="faculty-lead">검을 다루는 힘.<br>그리고 그 힘을 쓸 때의 판단.</p><p>훈련과 대련을 통해 실력을 갈고닦는다. 호쾌한 검술학부 교수 레온은 학생들에게 혹독한 훈련을 요구하면서도, 성장과 몸 상태를 세심하게 살핀다.</p><div class="faculty-person"><span>담당 교수</span><a href="#characters/9">레온</a></div></article><article class="faculty magic"><div class="faculty-top"><span class="eyebrow">MAGIC</span><span class="faculty-number">02</span></div><h2>마법학부</h2><p class="faculty-lead">현상을 이해하는 지식.<br>그 지식을 현실로 옮기는 마법.</p><p>마법에 대한 지식과 운용을 배운다. 냉정하고 우아한 마법학부 교수 오필리아는 지식에 대한 강한 자부심을 지니며, 학생들을 엄격하게 지도한다.</p><div class="faculty-person"><span>담당 교수</span><a href="#characters/10">오필리아</a></div></article></div>
+      <div class="faculty-grid"><article class="faculty"><div class="faculty-top"><span class="eyebrow">SWORDSMANSHIP</span><span class="faculty-number">01</span></div><h2>검술학부</h2><p class="faculty-lead">검을 다루는 힘.<br>그리고 그 힘을 쓸 때의 판단.</p><p>훈련과 대련을 통해 실력을 갈고닦는다. 호쾌한 검술학부 교수 노엘은 학생들에게 혹독한 훈련을 요구하면서도, 성장과 몸 상태를 세심하게 살핀다.</p><div class="faculty-person"><span>담당 교수</span><a href="#characters/9">노엘</a></div></article><article class="faculty magic"><div class="faculty-top"><span class="eyebrow">MAGIC</span><span class="faculty-number">02</span></div><h2>마법학부</h2><p class="faculty-lead">현상을 이해하는 지식.<br>그 지식을 현실로 옮기는 마법.</p><p>마법에 대한 지식과 운용을 배운다. 냉정하고 우아한 마법학부 교수 오필리아는 지식에 대한 강한 자부심을 지니며, 학생들을 엄격하게 지도한다.</p><div class="faculty-person"><span>담당 교수</span><a href="#characters/10">오필리아</a></div></article></div>
       <div class="life-grid"><div><span class="eyebrow">LIFE BETWEEN LESSONS</span><h2 class="life-heading">수업이 끝나도,<br>이야기는 계속된다.</h2><p class="muted">배움, 만남, 경쟁. 아카데미의 일상은 서로 이어져 있다.</p></div><div class="life-list"><details open><summary><span>01</span>수업과 시험</summary><p>성과를 증명하고 진로를 준비하는 시간. 각자의 재능과 목표는 수업과 시험을 통해 드러난다.</p></details><details><summary><span>02</span>기숙사와 동아리</summary><p>전원 기숙제 생활 속에서 학생들은 서로의 일상을 공유한다. 동아리와 학생회 활동은 교실 밖의 관계를 만든다.</p></details><details><summary><span>03</span>사교행사와 축제</summary><p>연습과 공부에서 잠시 벗어나는 만남의 자리. 새로운 인연이 생기는 동시에, 신분과 파벌의 영향력도 드러난다.</p></details><details><summary><span>04</span>공개 랭킹전</summary><p>중앙대련장에서 이루어지는 공개 대련. 승리가 확정되면 승자와 패자의 학급 랭킹이 교환되며, 다른 학생의 순위는 유지된다. 랭킹은 전투력 그 자체와 같지 않다.</p></details><details><summary><span>05</span>현장실습과 진로</summary><p>아카데미에서 쌓은 배움을 외부 현장에서 시험한다. 졸업 이후의 진로를 두고 귀족 가문과 기사단, 마법기관의 관심과 학생들의 경쟁이 맞물린다.</p></details></div></div>
       <div class="rank-note"><span class="eyebrow">PUBLIC RANKING</span><h2>학급 랭킹, CR</h2><p>학급 안에서 공개되는 서열. 실력뿐 아니라 신분, 인맥, 후원과 학생 사이의 관계가 경쟁에 얽힌다. 높은 순위의 명예와 낮은 순위의 압박은 학생마다 서로 다른 선택으로 이어진다.</p></div>
       <div class="page-next"><span>이곳에서 각자의 미래를 꿈꾸는 사람들</span><a class="button" href="#characters">인물 명부 열람</a></div>
@@ -428,19 +430,19 @@
     <section class="page-view wrap" id="characters" data-view="characters" hidden aria-labelledby="characters-title">
       <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>루미에르 아카데미에서 레온하트 대륙까지. 인물을 선택해 그들의 이야기를 살펴보세요.</p></div>
       <div class="roster-controls character-part-controls" role="group" aria-label="등장인물 이야기 구분">
-        <button type="button" class="filter part-filter active" data-character-part="all" aria-pressed="true"><strong>전체</strong><small>모든 인물</small><span class="part-count">13</span></button>
+        <button type="button" class="filter part-filter active" data-character-part="all" aria-pressed="true"><strong>전체</strong><small>모든 인물</small><span class="part-count">15</span></button>
         <button type="button" class="filter part-filter" data-character-part="academy" aria-pressed="false"><strong>1부</strong><small>(아카데미 소속)</small><span class="part-count">13</span></button>
-        <button type="button" class="filter part-filter" data-character-part="continent" aria-pressed="false"><strong>2부</strong><small>(레온하트 대륙)</small><span class="part-count">0</span></button>
+        <button type="button" class="filter part-filter" data-character-part="continent" aria-pressed="false"><strong>2부</strong><small>(레온하트 대륙)</small><span class="part-count">2</span></button>
       </div>
       <div class="roster-controls character-subcontrols" id="character-subcontrols" hidden>
         <div class="part-filter-options" data-part-filters="all" role="group" aria-label="전체 인물 분류 바로가기">
-          <button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>0</span></button>
+          <button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>1</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>1</span></button>
         </div>
         <div class="part-filter-options" data-part-filters="academy" role="group" aria-label="1부 인물 분류" hidden>
           <button type="button" class="filter active" data-filter-part="academy" data-filter="all" aria-pressed="true">전체 <span>13</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button>
         </div>
         <div class="part-filter-options" data-part-filters="continent" role="group" aria-label="2부 인물 분류" hidden>
-          <button type="button" class="filter active" data-filter-part="continent" data-filter="all" aria-pressed="true">전체 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>0</span></button>
+          <button type="button" class="filter active" data-filter-part="continent" data-filter="all" aria-pressed="true">전체 <span>2</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>1</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>0</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>1</span></button>
         </div>
       </div>
       <div class="character-layout" id="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div><article class="profile" id="profile" aria-live="polite"></article></div>
@@ -648,20 +650,277 @@
     // Public synopsis only. Internal simulation rules and unrevealed identities are excluded.
     // Edit the public copy here; the template uses no libraries, API keys, or build step.
     const characters=[
-      {id:0,name:'아이리스',group:'student',role:'레이피어 사용자',rank:'80위',subtitle:'밝은 미소로 다가오는 학생',description:'분홍빛 긴 머리와 분홍 눈이 돋보이는 학생. 화사한 미소와 붙임성 있는 태도로 사람들에게 먼저 다가간다.',note:'“괜찮아”라는 말로 상대를 안심시키곤 한다. 아카데미에서 살아남고 성장하기 위해 필사적으로 노력한다.',tags:['레이피어','붙임성','성장']},
-      {id:1,name:'샬럿',group:'student',role:'대검 소환 사용자',rank:'67위',subtitle:'나른한 눈빛, 거대한 대검',description:'푸른 긴 머리를 양갈래로 땋은 과묵한 학생. 늘 졸린 눈을 하고 있으며, 복잡한 일보다 단순하고 직접적인 해결을 선호한다.',note:'마법으로 거대한 대검을 소환해 근접 공격과 투척에 활용한다. 말수가 적고 무표정하지만, 가까운 사람에게는 관심을 기울인다.',tags:['대검 소환','과묵함','나른함']},
-      {id:2,name:'노엘',group:'student',role:'검술 수련 학생',rank:'18위',subtitle:'정의로운 검사를 꿈꾸다',description:'붉은 긴 머리를 높게 묶은 호탕한 학생. 직설적이고 행동이 빠르며, 검술 수련에 열정적이다.',note:'동화 속 정의로운 왕자를 동경하며 정의로운 검사를 꿈꾼다. 감정을 솔직하게 드러내고, 칭찬을 받으면 크게 기뻐한다.',tags:['검술','정의','솔직함']},
-      {id:3,name:'세라',group:'student',role:'명문 귀족 영애',rank:'5위',subtitle:'타고난 재능과 귀족의 품위',description:'은빛 긴 머리와 푸른 눈, 검은 리본이 돋보이는 명문 귀족 영애. 자존심이 강하고 품위를 중시한다.',note:'검술을 보고 따라 하는 뛰어난 재능으로 높은 랭킹을 유지한다. 호의나 칭찬을 받으면 쉽게 당황하지만, 감정을 드러내는 일에는 서툴다.',tags:['검술 재능','귀족','자존심']},
-      {id:4,name:'루시아',group:'student',role:'검술 수련 학생',rank:'15위',subtitle:'장난기 뒤에 숨은 치열한 노력',description:'분홍빛 긴 트윈테일과 장난스러운 눈매를 가진 학생. 사교적이고 눈치가 빠르며, 친해질수록 상대를 놀리는 것을 즐긴다.',note:'검술에는 진지한 태도를 보인다. 타고난 천재가 아니라는 자각 속에서도 혹독한 노력과 강한 자존심으로 자신을 증명한다.',tags:['검술','노력','장난기']},
-      {id:5,name:'이사벨라',group:'student',role:'아카데미 학생',rank:'최하위',subtitle:'조용한 구석에 머무는 학생',description:'헝클어진 긴 흑발과 짙은 다크서클, 구부정한 자세가 인상적인 학생. 혼자 있거나 구석에 머무는 것을 선호한다.',note:'다른 사람의 시선을 피하고 작은 목소리로 중얼거리곤 한다. 칭찬을 쉽게 믿지 못하며 자신에게 부정적인 말을 건넨다.',tags:['혼자 있는 시간','조용함','시선 회피']},
-      {id:6,name:'알프레도',group:'student',role:'아르젠트 공작가 후계자',rank:'2위',subtitle:'가문의 이름으로 세운 권위',description:'백발과 날카로운 눈매, 단정한 차림의 귀족 학생. 아르젠트 공작가의 후계자로서 체면과 권위를 중시한다.',note:'학생 사회에 큰 영향력을 행사한다. 인맥과 회유, 압박을 통해 자신의 위치를 지키며, 자신보다 낮은 신분이나 실력을 가진 이를 깔보는 태도를 보인다.',tags:['공작가','학생 파벌','권위']},
-      {id:7,name:'테오',group:'student',role:'검은 장검 사용자',rank:'40위',subtitle:'조용하고 다정한 검의 주인',description:'흑발과 푸른 눈, 검은 장검이 인상적인 학생. 조용하고 차분하며, 다정함 속에 은근한 능글맞음을 지녔다.',note:'계급이나 권위에 큰 관심을 두지 않는다. 악행이나 약자를 유린하는 행동을 그냥 지나치지 않으며, 선을 넘는 상황에서는 단호해진다.',tags:['장검','차분함','자신의 정의']},
-      {id:8,name:'로이드',group:'student',role:'알프레도의 보좌관',rank:'1위',subtitle:'결과로 실력을 증명하는 학생',description:'흑발과 검은 눈, 차가운 무표정의 학생. 학급 랭킹 1위이며 알프레도를 보좌한다.',note:'과묵하고 냉정하다. 결과를 엄격하게 평가하며, 스스로에게도 같은 기준을 적용한다. 알프레도에게는 존댓말을 사용한다.',tags:['랭킹 1위','결과 중시','냉정함']},
-      {id:9,name:'레온',group:'staff',role:'검술학부 교수',rank:null,subtitle:'혹독한 훈련을 이끄는 호쾌한 교수',description:'붉은 머리와 큰 체격의 검술학부 교수. 큰 목소리와 농담, 호쾌한 성격이 특징이며 수업에서는 중장갑을 착용한다.',note:'학생들에게 혹독한 훈련을 요구한다. 성장을 크게 기뻐하면서도, 뒤에서는 상처와 몸 상태를 세심하게 살핀다.',tags:['검술학부','혹독한 훈련','학생의 성장']},
-      {id:10,name:'오필리아',group:'staff',role:'마법학부 교수',rank:null,subtitle:'지식을 중시하는 엄격한 마법사',description:'은회색 단발과 붉은 눈, 검은 드레스풍 교수복이 돋보이는 마법학부 교수. 냉정하고 우아한 태도를 지녔다.',note:'마법 지식에 대한 자부심이 강하다. 위계에 엄격하며 반항과 무능을 용납하지 않는 지도 방식을 보인다.',tags:['마법학부','지식','엄격함']},
-      {id:11,name:'세라피나',group:'staff',role:'아카데미 이사장',rank:null,subtitle:'재능과 성장을 관찰하는 이사장',description:'푸른 긴 머리와 붉은 눈, 검은 메이드복을 즐겨 입는 이사장. 느긋한 존댓말과 옅은 미소로 사람들을 대한다.',note:'공식 석상에만 머물기보다 교내를 순회한다. 학생들의 재능과 성장, 전투 성향을 관심 있게 관찰한다.',tags:['이사장','교내 순회','재능 관찰']},
-      {id:12,name:'이소현',group:'staff',role:'루미에르 아카데미 학장',rank:null,subtitle:'차분하고 세심한 아카데미의 학장',description:'은빛 긴 머리와 푸른 눈, 단정한 인상의 루미에르 아카데미 학장. 조용하고 세심하며 자립심과 자존심이 강하다.',note:'사실과 근거를 중시하며 정중하고 명료하게 설명한다. 상대의 말을 세심히 듣고, 필요할 때는 단호하게 의견을 밝힌다.',tags:['학장','명료함','이성적 판단']}
-    ].map(character=>({part:'academy',...character}));
+      {
+        "id": 0,
+        "name": "아이리스",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "80위",
+        "age": null,
+        "grade": "D",
+        "subtitle": "밝은 미소로 건네는 “괜찮아”",
+        "description": "분홍빛 긴 머리와 분홍 눈이 돋보이는 학생. 밝고 붙임성 있는 태도로 사람들에게 먼저 다가간다.",
+        "note": "힘든 순간에도 웃으며 상대를 안심시키곤 한다. 자신을 위해 희생한 부모의 마음이 헛되지 않도록 성장에 필사적이다.",
+        "tags": [
+          "붙임성",
+          "밝은 미소",
+          "성장"
+        ]
+      },
+      {
+        "id": 1,
+        "name": "샬럿",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "67위",
+        "age": null,
+        "grade": "C",
+        "subtitle": "나른한 눈빛 속 단순한 해답",
+        "description": "푸른 긴 머리를 양갈래로 땋은 과묵한 학생. 늘 졸린 눈을 하고 있으며, 귀찮은 일과 복잡한 생각을 피한다.",
+        "note": "말보다 행동으로 일을 해결하는 편이다. 주변에 있는 사람 외에는 좀처럼 관심을 기울이지 않는다.",
+        "tags": [
+          "과묵함",
+          "나른함",
+          "직접적인 해결"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "실비아",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "18위",
+        "age": null,
+        "grade": "B",
+        "subtitle": "여유로운 미소로 판을 읽는 학생",
+        "description": "금발 긴 머리와 붉은 눈, 성숙한 인상이 돋보이는 명문가 출신 학생. 나긋한 말투와 옅은 미소로 좀처럼 속내를 드러내지 않는다.",
+        "note": "상대의 약점과 이해관계를 빠르게 파악한다. 아르젠트 공작가와 대립하며 가문과 학내 정치에 적극적으로 관여한다.",
+        "tags": [
+          "명문가",
+          "학내 정치",
+          "거래"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "세라",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "2위",
+        "age": null,
+        "grade": "A",
+        "subtitle": "귀족의 품위 뒤에 품은 자유",
+        "description": "은빛 긴 머리와 푸른 눈, 검은 리본이 돋보이는 명문 귀족 영애. 자존심이 강하고 품위를 중시하며 새침한 태도를 보인다.",
+        "note": "가문의 뜻에 따라 입학했지만 서열 자체에는 큰 관심이 없다. 호의와 칭찬에는 쉽게 당황하며 자유롭고 소박한 삶을 바란다.",
+        "tags": [
+          "귀족 영애",
+          "자존심",
+          "자유"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "루시아",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "15위",
+        "age": null,
+        "grade": "B",
+        "subtitle": "달콤한 장난 뒤에 숨은 탐욕의 마녀",
+        "description": "분홍빛 긴 트윈테일과 분홍 눈을 가진 사교적인 학생이자 탐욕의 마녀. 친근한 말투와 가벼운 장난으로 상대의 반응을 살피지만 속내는 계산적이고 집요하다.",
+        "note": "욕망과 불안, 약점을 이용해 사람의 정신을 지배한다. 소유와 통제를 위해 학내 파벌과 정치적 갈등을 부추기는 데 주저하지 않는다.",
+        "tags": [
+          "탐욕의 마녀",
+          "소유욕",
+          "정신 지배"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "알프레도",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "7위",
+        "age": null,
+        "grade": "B",
+        "subtitle": "가문의 이름으로 지키는 권위",
+        "description": "백발과 날카로운 눈매, 단정한 차림이 돋보이는 아르젠트 공작가의 후계자. 체면과 자존심을 중시하며 낮은 신분이나 실력을 가진 이를 깔본다.",
+        "note": "인맥과 회유, 압박을 통해 학생 사회에 영향력을 행사한다. 가문의 기대를 충족해야 한다는 부담 속에서 자신의 입지를 지키려 한다.",
+        "tags": [
+          "공작가 후계자",
+          "학생 파벌",
+          "권위"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "이사벨라",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "꼴등",
+        "age": null,
+        "grade": "S",
+        "subtitle": "시선을 피해 조용한 구석으로",
+        "description": "헝클어진 긴 흑발과 짙은 다크서클, 구부정한 자세가 인상적인 학생. 혼자 있거나 구석에 머무르며 작은 목소리로 중얼거린다.",
+        "note": "싸움과 주목을 피하는 탓에 랭킹은 꼴등이다. 칭찬을 쉽게 믿지 못하고 자신을 부정적으로 바라보면서도 누군가에게 인정받고 싶어 한다.",
+        "tags": [
+          "혼자 있는 시간",
+          "시선 회피",
+          "인정"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "테오",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "40위",
+        "age": null,
+        "grade": "B",
+        "subtitle": "장난스럽지만 선은 분명하게",
+        "description": "흑발과 푸른 눈을 가진 유쾌하고 사교적인 학생. 엉뚱한 농담과 짓궂은 놀림을 즐기지만 상대가 불편해하면 물러난다.",
+        "note": "계급이나 권위보다 자신의 신념을 중시한다. 악행이나 약자를 유린하는 행동을 마주하면 장난을 거두고 냉철하게 나선다.",
+        "tags": [
+          "유쾌함",
+          "장난기",
+          "신념"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "로이드",
+        "part": "academy",
+        "group": "student",
+        "role": "아카데미 학생",
+        "rank": "1위",
+        "age": null,
+        "grade": "S",
+        "subtitle": "굴복을 모르는 절대적인 자존심",
+        "description": "흑발과 검은 눈, 차가운 무표정이 인상적인 랭킹 1위 학생. 과묵하고 냉혹하며 타인의 명령이나 간섭을 받아들이지 않는다.",
+        "note": "절대적인 힘을 추구하며 목적을 위해 수단을 가리지 않는다. 강자 앞에서도 굴복하지 않고 패배할수록 더욱 집요해진다.",
+        "tags": [
+          "랭킹 1위",
+          "오만함",
+          "힘의 추구"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "오필리아",
+        "part": "academy",
+        "group": "staff",
+        "role": "마법 교수",
+        "rank": null,
+        "age": null,
+        "grade": "S",
+        "subtitle": "지식과 위계를 중시하는 엄격한 교수",
+        "description": "은회색 단발과 붉은 눈, 검은 드레스풍 교수복이 돋보이는 마법 교수. 냉정하고 우아하며 자신의 지식에 강한 자부심을 갖고 있다.",
+        "note": "강화약을 제조·판매하며 금기약 밀매에도 관여한다. 법이나 학생의 안전보다 자신의 이익을 앞세우고 노엘의 훈련 방식은 비효율적이라고 평가한다.",
+        "tags": [
+          "마법 교수",
+          "금기약",
+          "이익 우선"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "노엘",
+        "part": "academy",
+        "group": "staff",
+        "role": "검술 교수",
+        "rank": null,
+        "age": null,
+        "grade": "A",
+        "subtitle": "혹독한 훈련 뒤에 숨은 세심함",
+        "description": "붉은 긴 머리를 높게 묶은 호탕한 검술 교수. 큰 목소리와 농담으로 학생들을 대하지만 훈련에서는 쉽게 타협하지 않는다.",
+        "note": "학생의 성장을 크게 기뻐하고 뒤에서는 상처와 몸 상태를 살핀다. 학생을 망가뜨리는 강화 방식에는 단호하게 반대한다.",
+        "tags": [
+          "검술 교수",
+          "혹독한 훈련",
+          "학생의 성장"
+        ]
+      },
+      {
+        "id": 11,
+        "name": "세라피나",
+        "part": "academy",
+        "group": "staff",
+        "role": "학장",
+        "rank": null,
+        "age": null,
+        "grade": "U",
+        "subtitle": "교정을 거닐며 재능을 살피는 학장",
+        "description": "푸른 긴 머리와 붉은 눈, 검은 메이드복을 즐겨 입는 아카데미 학장. 느긋한 존댓말과 옅은 미소로 사람들을 대한다.",
+        "note": "학생을 성장할수록 가치가 높아지는 전투 자산으로 바라본다. 성장한 학생들을 블랙 경기와 피의 난투에 내보내 거액을 벌 계획이며 살상에 대한 거부감도 희박하다.",
+        "tags": [
+          "학장",
+          "전투 자산",
+          "재능 관찰"
+        ]
+      },
+      {
+        "id": 12,
+        "name": "이소현",
+        "part": "academy",
+        "group": "staff",
+        "role": "이사장",
+        "rank": null,
+        "age": null,
+        "grade": "??",
+        "subtitle": "차분한 판단과 세심한 경청",
+        "description": "은빛 긴 머리와 푸른 눈, 단정한 인상의 아카데미 이사장. 조용하고 세심하며 침착한 태도로 감정을 절제한다.",
+        "note": "사실과 근거를 중시하고 논리적으로 핵심을 짚는다. 상대의 말을 세심히 듣되 필요할 때는 명료하고 단호하게 의견을 밝힌다.",
+        "tags": [
+          "이사장",
+          "명료함",
+          "이성적 판단"
+        ]
+      },
+      {
+        "id": 13,
+        "name": "아이린",
+        "part": "continent",
+        "group": "sins",
+        "role": "타락사제",
+        "rank": null,
+        "age": null,
+        "grade": "U",
+        "subtitle": "죄 없는 세계를 바라는 진노의 마녀",
+        "description": "분홍빛 긴 머리와 푸른 눈을 가진 가녀린 타락사제. 차분한 존댓말을 사용하며 신성력을 다룬다.",
+        "note": "마을과 고아원을 운영하며 자신의 기준에 따라 책임을 다하려 한다. 작은 범죄도 더 큰 악의 씨앗으로 여겨 가혹하게 처벌한다.",
+        "tags": [
+          "7대죄악",
+          "진노의 마녀",
+          "무범죄 세계"
+        ]
+      },
+      {
+        "id": 14,
+        "name": "소피아",
+        "part": "continent",
+        "group": "royal",
+        "role": "왕녀",
+        "rank": null,
+        "age": null,
+        "grade": "E",
+        "subtitle": "책임과 자유 사이에서 세상을 향해",
+        "description": "금발 긴 머리와 보라색 눈, 온화한 인상의 왕녀. 정치와 외교 경험이 풍부하며 인간의 선함과 백성의 삶을 소중히 여긴다.",
+        "note": "신분을 숨긴 채 세상을 직접 탐방하며 자유와 왕녀의 책임 사이에서 고민한다. 생활 실무에는 서툴지만 직접 해보겠다는 고집으로 종종 작은 실수를 한다.",
+        "tags": [
+          "왕녀",
+          "세상 탐방",
+          "자유"
+        ]
+      }
+    ];
     // Part 2 records use part:'continent' and group:'royal', 'labyrinth', or 'sins'; keep each id unique.
     // Each portrait is shared by the roster and main profile. Fill gallery with four image URLs or relative paths.
     // Leave slots empty until the matching character photographs/artwork are ready.
@@ -678,7 +937,9 @@
       9:{portrait:'',position:'50% 30%',gallery:['','','','']},
       10:{portrait:'',position:'50% 30%',gallery:['','','','']},
       11:{portrait:'',position:'50% 30%',gallery:['','','','']},
-      12:{portrait:'',position:'50% 30%',gallery:['','','','']}
+      12:{portrait:'',position:'50% 30%',gallery:['','','','']},
+      13:{portrait:'',position:'50% 30%',gallery:['','','','']},
+      14:{portrait:'',position:'50% 30%',gallery:['','','','']}
     };
     const views=[...document.querySelectorAll('[data-view]')];
     const academyPageImage=document.querySelector('#academy-page-image');
@@ -758,6 +1019,16 @@
       const url=mediaSource(source);
       return `<span class="media-fallback" ${url?'hidden':''}><span>${escapeHtml(label)}</span>${caption?`<small>${escapeHtml(caption)}</small>`:''}</span>${url?`<img data-media-image data-src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" style="object-position:${escapeHtml(/^\d{1,3}% \d{1,3}%$/.test(position)?position:'50% 30%')}">`:''}`;
     }
+    function characterAge(character){
+      return Number.isInteger(character.age)&&character.age>0?character.age+'세':typeof character.age==='string'&&character.age.trim()?character.age.trim():'미정';
+    }
+    function characterFacts(character){
+      const category=characterFilters(character.part).find(item=>item.key===character.group)?.label||'';
+      const affiliation=(character.part==='academy'?'루미에르 아카데미':'레온하트 대륙')+(category?' · '+category:'');
+      const facts=[['나이',characterAge(character)],['직업 · 직책',character.role],['소속',affiliation]];
+      if(character.group==='student'&&character.rank)facts.push(['학급 랭킹 · CR',character.rank]);
+      return facts.map(([label,value])=>'<div><dt>'+escapeHtml(label)+'</dt><dd>'+escapeHtml(value)+'</dd></div>').join('');
+    }
     function galleryFor(character){const gallery=characterMedia[character.id]?.gallery;return Array.from({length:4},(_,index)=>Array.isArray(gallery)&&typeof gallery[index]==='string'?gallery[index]:'')}
     function validCharacterPart(part){return part==='all'||Object.prototype.hasOwnProperty.call(characterParts,part)}
     function characterFilters(part){return characterParts[part]?.filters||[{key:'all',label:'전체'}]}
@@ -808,11 +1079,11 @@
         refreshMedia();animateCharacterGroup(groupChanged);
         return;
       }
-      roster.innerHTML=visible.map(item=>`<button type="button" class="person ${item.id===selectedId?'active':''}" data-person="${item.id}" aria-pressed="${item.id===selectedId}"><span class="person-thumb" aria-hidden="true">${mediaMarkup(characterMedia[item.id]?.portrait,'',String(characters.indexOf(item)+1).padStart(2,'0'),'',characterMedia[item.id]?.position)}</span><span class="person-name"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.role)}</small></span></button>`).join('');
+      roster.innerHTML=visible.map(item=>`<button type="button" class="person ${item.id===selectedId?'active':''}" data-person="${item.id}" aria-pressed="${item.id===selectedId}"><span class="person-thumb" aria-hidden="true">${mediaMarkup(characterMedia[item.id]?.portrait,'',String(characters.indexOf(item)+1).padStart(2,'0'),'',characterMedia[item.id]?.position)}</span><span class="person-name"><strong>${escapeHtml(item.name)}</strong><span class="person-meta"><small>나이 ${escapeHtml(characterAge(item))}</small><small>${escapeHtml(item.role)}</small></span></span></button>`).join('');
       const media=characterMedia[character.id]||{};
       const categoryLabel=characterFilters(character.part).find(item=>item.key===character.group)?.label||'미분류';
       const gallery=galleryFor(character);
-      profile.innerHTML=`<div class="profile-top"><span class="eyebrow">CHARACTER DOSSIER</span><span class="profile-count">${String(characters.indexOf(character)+1).padStart(2,'0')} / ${characters.length}</span></div><div class="profile-hero"><div class="portrait-slot">${mediaMarkup(media.portrait,character.name+' 인물 사진','인물 사진','사진 준비 중',media.position)}</div><div><h2>${escapeHtml(character.name)}</h2><p class="profile-subtitle">${escapeHtml(character.subtitle)}</p></div></div><p class="profile-description">${escapeHtml(character.description)}</p><dl class="profile-facts"><div><dt>소속 · 직책</dt><dd>${escapeHtml(character.role)}</dd></div><div><dt>${character.rank?(character.part==='academy'?'학급 랭킹 · CR':'랭킹'):'구분'}</dt><dd>${escapeHtml(character.rank||categoryLabel)}</dd></div></dl><h3>인물의 결</h3><p class="profile-note">${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div><section class="profile-gallery" aria-label="${escapeHtml(character.name)} 장면 사진"><div class="gallery-heading"><h3>이미지 미리보기</h3><span>4장</span></div><div class="gallery-grid">${gallery.map((source,index)=>`<figure class="gallery-item"><button class="gallery-slot" type="button" data-gallery-person="${character.id}" data-gallery-index="${index}" aria-label="${escapeHtml(character.name)} 장면 ${index+1} ${mediaSource(source)?'크게 보기':'사진 준비 중'}" ${mediaSource(source)?'':'disabled'}><span class="gallery-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${mediaMarkup(source,character.name+' 장면 '+(index+1),'장면 '+(index+1),'사진 준비 중','50% 50%')}${mediaSource(source)?'<span class="gallery-enlarge" aria-hidden="true">크게 보기</span>':''}</button><figcaption>장면 ${String(index+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div><p class="gallery-note">${gallery.some(source=>mediaSource(source))?'사진을 선택하면 크게 볼 수 있습니다.':'이 인물의 장면 사진은 준비 중입니다.'}</p></section>`;
+      profile.innerHTML=`<div class="profile-top"><span class="eyebrow">CHARACTER DOSSIER</span><span class="profile-count">${String(characters.indexOf(character)+1).padStart(2,'0')} / ${characters.length}</span></div><div class="profile-hero"><div class="portrait-slot">${mediaMarkup(media.portrait,character.name+' 인물 사진','인물 사진','사진 준비 중',media.position)}</div><div><h2>${escapeHtml(character.name)}</h2><p class="profile-subtitle">${escapeHtml(character.subtitle)}</p></div></div><p class="profile-description">${escapeHtml(character.description)}</p><dl class="profile-facts">${characterFacts(character)}</dl><h3>인물의 결</h3><p class="profile-note">${escapeHtml(character.note)}</p><div class="profile-tags">${character.tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div><section class="profile-gallery" aria-label="${escapeHtml(character.name)} 장면 사진"><div class="gallery-heading"><h3>이미지 미리보기</h3><span>4장</span></div><div class="gallery-grid">${gallery.map((source,index)=>`<figure class="gallery-item"><button class="gallery-slot" type="button" data-gallery-person="${character.id}" data-gallery-index="${index}" aria-label="${escapeHtml(character.name)} 장면 ${index+1} ${mediaSource(source)?'크게 보기':'사진 준비 중'}" ${mediaSource(source)?'':'disabled'}><span class="gallery-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${mediaMarkup(source,character.name+' 장면 '+(index+1),'장면 '+(index+1),'사진 준비 중','50% 50%')}${mediaSource(source)?'<span class="gallery-enlarge" aria-hidden="true">크게 보기</span>':''}</button><figcaption>장면 ${String(index+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div><p class="gallery-note">${gallery.some(source=>mediaSource(source))?'사진을 선택하면 크게 볼 수 있습니다.':'이 인물의 장면 사진은 준비 중입니다.'}</p></section>`;
       if(focusedPerson!==undefined)roster.querySelector(`[data-person="${focusedPerson}"]`)?.focus({preventScroll:true});
       refreshMedia();animateCharacterGroup(groupChanged);
     }
