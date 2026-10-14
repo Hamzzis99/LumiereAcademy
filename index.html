@@ -459,23 +459,25 @@
     .character-dialog-tools{position:sticky;top:0;height:0;z-index:5}
     @media(max-width:650px){.character-group-label small{margin-left:9px;font-size:9px}}
 
+    .home-scene .hero-content{padding-bottom:90px}
+    .home-scene .footer{display:none}
     .ambient-fireflies{position:fixed;inset:0;z-index:2;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.8s ease}
     .ambient-fireflies[hidden]{display:none}
     .ambient-fireflies[data-active="true"]{opacity:1}
-    .ambient-firefly{position:absolute;left:var(--firefly-x);top:var(--firefly-y);width:var(--firefly-size,3px);height:var(--firefly-size,3px);border-radius:50%;background:#f7e6b5;box-shadow:0 0 5px 2px rgba(247,225,164,.28),0 0 16px 5px rgba(239,207,130,.07);opacity:0;animation:ambient-firefly-drift var(--firefly-duration,26s) var(--firefly-delay,0s) ease-in-out infinite;animation-play-state:paused}
+    .ambient-firefly{position:absolute;left:var(--firefly-x);top:var(--firefly-y);width:var(--firefly-size,3px);height:var(--firefly-size,3px);border-radius:50%;background:#fff0c4;box-shadow:0 0 7px 2px rgba(247,225,164,.42),0 0 22px 6px rgba(239,207,130,.12);opacity:0;animation:ambient-firefly-drift var(--firefly-duration,26s) var(--firefly-delay,0s) ease-in-out infinite;animation-play-state:paused}
     .ambient-fireflies[data-active="true"] .ambient-firefly{animation-play-state:running}
     body.entry-active .ambient-fireflies,body.scene-entering .ambient-fireflies,body.truth-scene .ambient-fireflies,body.character-dialog-active .ambient-fireflies,body.spoiler-active .ambient-fireflies{opacity:0}
     body.entry-active .ambient-fireflies .ambient-firefly,body.scene-entering .ambient-fireflies .ambient-firefly,body.truth-scene .ambient-fireflies .ambient-firefly,body.character-dialog-active .ambient-fireflies .ambient-firefly,body.spoiler-active .ambient-fireflies .ambient-firefly{animation-play-state:paused}
     @keyframes ambient-firefly-drift{
       0%{opacity:0;transform:translate3d(0,0,0) scale(.7)}
-      16%{opacity:.22}
-      32%{opacity:var(--firefly-glow,.58);transform:translate3d(calc(var(--firefly-sway) * .4),calc(var(--firefly-rise) * .3),0) scale(1)}
-      50%{opacity:.15;transform:translate3d(calc(var(--firefly-sway) * -.2),calc(var(--firefly-rise) * .52),0) scale(.85)}
-      68%{opacity:var(--firefly-glow,.58);transform:translate3d(calc(var(--firefly-sway) * .65),calc(var(--firefly-rise) * .72),0) scale(1)}
-      84%{opacity:.18}
+      16%{opacity:.32}
+      32%{opacity:var(--firefly-glow,.72);transform:translate3d(calc(var(--firefly-sway) * .4),calc(var(--firefly-rise) * .3),0) scale(1)}
+      50%{opacity:.28;transform:translate3d(calc(var(--firefly-sway) * -.2),calc(var(--firefly-rise) * .52),0) scale(.85)}
+      68%{opacity:var(--firefly-glow,.72);transform:translate3d(calc(var(--firefly-sway) * .65),calc(var(--firefly-rise) * .72),0) scale(1)}
+      84%{opacity:.26}
       100%{opacity:0;transform:translate3d(var(--firefly-sway),var(--firefly-rise),0) scale(.65)}
     }
-    @media(max-width:650px){.ambient-firefly:nth-child(n+7){display:none}}
+    @media(max-width:650px){.ambient-firefly:nth-child(n+15){display:none}}
     @media(prefers-reduced-motion:reduce){.ambient-fireflies{display:none}}
 
   </style>
@@ -542,16 +544,30 @@
   <div id="site-shell">
   <div class="academy-page-background" aria-hidden="true"><img id="academy-page-image" alt="" decoding="async"></div>
   <div class="ambient-fireflies" id="ambient-fireflies" aria-hidden="true" data-active="false" hidden>
-    <span class="ambient-firefly" style="--firefly-x:8vw;--firefly-y:84vh;--firefly-sway:38px;--firefly-rise:-94px;--firefly-duration:25s;--firefly-delay:-8s;--firefly-size:3px"></span>
-    <span class="ambient-firefly" style="--firefly-x:88vw;--firefly-y:66vh;--firefly-sway:-46px;--firefly-rise:-116px;--firefly-duration:31s;--firefly-delay:-20s;--firefly-size:3.5px"></span>
-    <span class="ambient-firefly" style="--firefly-x:23vw;--firefly-y:45vh;--firefly-sway:34px;--firefly-rise:-82px;--firefly-duration:28s;--firefly-delay:-4s;--firefly-size:2.5px;--firefly-glow:.4"></span>
-    <span class="ambient-firefly" style="--firefly-x:69vw;--firefly-y:88vh;--firefly-sway:-40px;--firefly-rise:-102px;--firefly-duration:24s;--firefly-delay:-15s;--firefly-size:3px"></span>
-    <span class="ambient-firefly" style="--firefly-x:96vw;--firefly-y:34vh;--firefly-sway:-30px;--firefly-rise:-74px;--firefly-duration:29s;--firefly-delay:-12s;--firefly-size:2.5px;--firefly-glow:.42"></span>
-    <span class="ambient-firefly" style="--firefly-x:43vw;--firefly-y:58vh;--firefly-sway:28px;--firefly-rise:-98px;--firefly-duration:33s;--firefly-delay:-27s;--firefly-size:2px;--firefly-glow:.35"></span>
-    <span class="ambient-firefly" style="--firefly-x:14vw;--firefly-y:24vh;--firefly-sway:42px;--firefly-rise:-86px;--firefly-duration:27s;--firefly-delay:-17s;--firefly-size:2.5px;--firefly-glow:.45"></span>
-    <span class="ambient-firefly" style="--firefly-x:78vw;--firefly-y:49vh;--firefly-sway:-36px;--firefly-rise:-114px;--firefly-duration:30s;--firefly-delay:-6s;--firefly-size:3px"></span>
-    <span class="ambient-firefly" style="--firefly-x:57vw;--firefly-y:73vh;--firefly-sway:32px;--firefly-rise:-92px;--firefly-duration:26s;--firefly-delay:-23s;--firefly-size:2.5px;--firefly-glow:.4"></span>
-    <span class="ambient-firefly" style="--firefly-x:34vw;--firefly-y:36vh;--firefly-sway:-28px;--firefly-rise:-78px;--firefly-duration:32s;--firefly-delay:-11s;--firefly-size:2px;--firefly-glow:.38"></span>
+    <span class="ambient-firefly" style="--firefly-x:5vw;--firefly-y:84vh;--firefly-sway:34px;--firefly-rise:-96px;--firefly-duration:25s;--firefly-delay:-8s;--firefly-size:3.5px;--firefly-glow:0.74"></span>
+    <span class="ambient-firefly" style="--firefly-x:49vw;--firefly-y:69vh;--firefly-sway:-30px;--firefly-rise:-110px;--firefly-duration:29s;--firefly-delay:-19s;--firefly-size:4px;--firefly-glow:0.76"></span>
+    <span class="ambient-firefly" style="--firefly-x:95vw;--firefly-y:56vh;--firefly-sway:-40px;--firefly-rise:-92px;--firefly-duration:31s;--firefly-delay:-9s;--firefly-size:4.5px;--firefly-glow:0.82"></span>
+    <span class="ambient-firefly" style="--firefly-x:25vw;--firefly-y:41vh;--firefly-sway:28px;--firefly-rise:-74px;--firefly-duration:27s;--firefly-delay:-17s;--firefly-size:3px;--firefly-glow:0.57"></span>
+    <span class="ambient-firefly" style="--firefly-x:72vw;--firefly-y:86vh;--firefly-sway:-36px;--firefly-rise:-108px;--firefly-duration:24s;--firefly-delay:-15s;--firefly-size:4px;--firefly-glow:0.78"></span>
+    <span class="ambient-firefly" style="--firefly-x:11vw;--firefly-y:30vh;--firefly-sway:36px;--firefly-rise:-78px;--firefly-duration:28s;--firefly-delay:-5s;--firefly-size:3.5px;--firefly-glow:0.68"></span>
+    <span class="ambient-firefly" style="--firefly-x:57vw;--firefly-y:42vh;--firefly-sway:30px;--firefly-rise:-88px;--firefly-duration:26s;--firefly-delay:-8s;--firefly-size:3.5px;--firefly-glow:0.68"></span>
+    <span class="ambient-firefly" style="--firefly-x:85vw;--firefly-y:25vh;--firefly-sway:-32px;--firefly-rise:-82px;--firefly-duration:32s;--firefly-delay:-21s;--firefly-size:3px;--firefly-glow:0.67"></span>
+    <span class="ambient-firefly" style="--firefly-x:38vw;--firefly-y:88vh;--firefly-sway:26px;--firefly-rise:-116px;--firefly-duration:30s;--firefly-delay:-20s;--firefly-size:4px;--firefly-glow:0.71"></span>
+    <span class="ambient-firefly" style="--firefly-x:44vw;--firefly-y:32vh;--firefly-sway:-28px;--firefly-rise:-72px;--firefly-duration:25s;--firefly-delay:-4s;--firefly-size:3px;--firefly-glow:0.62"></span>
+    <span class="ambient-firefly" style="--firefly-x:19vw;--firefly-y:66vh;--firefly-sway:32px;--firefly-rise:-90px;--firefly-duration:28s;--firefly-delay:-19s;--firefly-size:3.5px;--firefly-glow:0.71"></span>
+    <span class="ambient-firefly" style="--firefly-x:92vw;--firefly-y:90vh;--firefly-sway:-40px;--firefly-rise:-104px;--firefly-duration:27s;--firefly-delay:-7s;--firefly-size:4px;--firefly-glow:0.8"></span>
+    <span class="ambient-firefly" style="--firefly-x:63vw;--firefly-y:65vh;--firefly-sway:30px;--firefly-rise:-96px;--firefly-duration:31s;--firefly-delay:-19s;--firefly-size:3.5px;--firefly-glow:0.73"></span>
+    <span class="ambient-firefly" style="--firefly-x:77vw;--firefly-y:48vh;--firefly-sway:-34px;--firefly-rise:-86px;--firefly-duration:29s;--firefly-delay:-9s;--firefly-size:4px;--firefly-glow:0.78"></span>
+    <span class="ambient-firefly" style="--firefly-x:4vw;--firefly-y:53vh;--firefly-sway:38px;--firefly-rise:-78px;--firefly-duration:32s;--firefly-delay:-20s;--firefly-size:3px;--firefly-glow:0.65"></span>
+    <span class="ambient-firefly" style="--firefly-x:96vw;--firefly-y:34vh;--firefly-sway:-32px;--firefly-rise:-84px;--firefly-duration:26s;--firefly-delay:-8s;--firefly-size:3.5px;--firefly-glow:0.77"></span>
+    <span class="ambient-firefly" style="--firefly-x:33vw;--firefly-y:59vh;--firefly-sway:26px;--firefly-rise:-98px;--firefly-duration:30s;--firefly-delay:-19s;--firefly-size:3px;--firefly-glow:0.62"></span>
+    <span class="ambient-firefly" style="--firefly-x:52vw;--firefly-y:88vh;--firefly-sway:-28px;--firefly-rise:-116px;--firefly-duration:27s;--firefly-delay:-6s;--firefly-size:4px;--firefly-glow:0.72"></span>
+    <span class="ambient-firefly" style="--firefly-x:67vw;--firefly-y:29vh;--firefly-sway:-30px;--firefly-rise:-72px;--firefly-duration:28s;--firefly-delay:-18s;--firefly-size:3px;--firefly-glow:0.62"></span>
+    <span class="ambient-firefly" style="--firefly-x:82vw;--firefly-y:73vh;--firefly-sway:34px;--firefly-rise:-104px;--firefly-duration:25s;--firefly-delay:-7s;--firefly-size:4px;--firefly-glow:0.78"></span>
+    <span class="ambient-firefly" style="--firefly-x:14vw;--firefly-y:93vh;--firefly-sway:30px;--firefly-rise:-112px;--firefly-duration:31s;--firefly-delay:-20s;--firefly-size:3.5px;--firefly-glow:0.71"></span>
+    <span class="ambient-firefly" style="--firefly-x:30vw;--firefly-y:27vh;--firefly-sway:-28px;--firefly-rise:-74px;--firefly-duration:29s;--firefly-delay:-5s;--firefly-size:3px;--firefly-glow:0.58"></span>
+    <span class="ambient-firefly" style="--firefly-x:56vw;--firefly-y:55vh;--firefly-sway:26px;--firefly-rise:-90px;--firefly-duration:24s;--firefly-delay:-15s;--firefly-size:3.5px;--firefly-glow:0.69"></span>
+    <span class="ambient-firefly" style="--firefly-x:88vw;--firefly-y:45vh;--firefly-sway:-36px;--firefly-rise:-88px;--firefly-duration:33s;--firefly-delay:-11s;--firefly-size:3.5px;--firefly-glow:0.72"></span>
   </div>
   <a class="skip" href="#main">본문으로 바로가기</a>
   <header class="header">
@@ -577,25 +593,12 @@
         <p class="hero-copy">같은 문을 넘었지만,<br>꿈꾸는 미래는 서로 다르다.</p>
         <div class="hero-actions"><a class="button primary" href="#truth/1" data-truth-confirm>아카데미 진실 확인</a><a class="button" href="#characters">인물 만나보기</a></div>
       </div>
-      <div class="hero-bottom wrap"><span class="hero-genres">중세 판타지 · 성장 · 교류 · 연애 · 전투 · 군상극</span><a class="discover" href="#introduction">DISCOVER THE STORY</a></div>
+      <div class="hero-bottom wrap"><span class="hero-genres">중세 판타지 · 성장 · 교류 · 연애 · 전투 · 군상극</span></div>
     </section>
-    <section class="intro wrap" id="introduction" aria-labelledby="intro-title">
-      <div class="section-heading"><span class="section-no">I.</span><h2 id="intro-title">빛나는 꿈, 그 너머의 이야기</h2></div>
-      <div class="intro-grid">
-        <div><p class="intro-lead">미래를 약속하는 배움터.<br>그 미래를 차지하기 위한 경쟁.</p><p class="intro-body">제국 수도의 전원 기숙제 사관학교, 루미에르 아카데미. 기사와 마법사, 학자와 관료를 꿈꾸는 성인 학생들이 이곳에 모인다.<br><br>수업과 수련, 우정과 갈등. 귀족 가문의 영향력과 치열한 랭킹 경쟁 속에서 각자의 욕망은 서로 다른 성장의 이야기로 이어진다.</p></div>
-        <div class="intro-facts"><div class="fact"><span class="fact-no">01</span><div><h3>검과 마법이 공존하는 세계</h3><p>검술과 마법, 서로 다른 배움이 하나의 아카데미에서 만난다.</p></div></div><div class="fact"><span class="fact-no">02</span><div><h3>일상 속에서 시작되는 관계</h3><p>수업, 기숙사, 동아리와 축제. 작은 만남이 인물들의 삶을 바꾼다.</p></div></div><div class="fact"><span class="fact-no">03</span><div><h3>명예의 이면에 놓인 서열</h3><p>랭킹과 후원, 신분과 파벌이 기회와 미래를 가른다.</p></div></div></div>
-      </div>
-    </section>
-    <section class="story-links wrap" aria-label="루미에르 아카데미 더 알아보기">
-      <a href="#world"><span class="eyebrow">THE WORLD</span><h2>명예와 서열의 이면</h2><p>미래를 약속하는 제국의 배움터.<br>그곳의 질서와 경쟁을 들여다본다.</p><span class="text-link">세계관 읽기</span></a>
-      <a href="#academy"><span class="eyebrow">ACADEMY LIFE</span><h2>검을 들고, 마법을 배우다</h2><p>수련과 학업, 축제와 대련.<br>아카데미의 일상을 살펴본다.</p><span class="text-link">아카데미 알아보기</span></a>
-      <a href="#characters"><span class="eyebrow">THE CHARACTERS</span><h2>서로 다른 꿈과 신념의 이야기</h2><p>저마다의 꿈과 신념을 가진<br>아카데미와 대륙의 인물들을 만난다.</p><span class="text-link">인물 명부 열람</span></a>
-    </section>
-    <div class="closing wrap"><span class="ornament" aria-hidden="true">✦</span><p>검을 쥐는 이유도, 마법을 배우는 이유도.<br>이곳에서는 누구도 같지 않다.</p><span class="eyebrow">LUMIÈRE ACADEMY</span></div>
     </div>
     <section class="page-view wrap" id="world" data-view="world" hidden aria-labelledby="world-title">
       <div class="page-heading"><span class="eyebrow">I. WORLD & STORY</span><h1 id="world-title" tabindex="-1">명예를 약속하는 곳,<br><span>꿈이 부딪히는 곳.</span></h1><p>제국 수도의 중심에서, 서로 다른 욕망이 하나의 이야기를 만든다.</p></div>
-      <div class="world-layout"><aside class="document-label"><span class="eyebrow">LUMIÈRE</span><span class="document-mark">검과 마법이<br>공존하는 세계</span><dl><div><dt>배경</dt><dd>중세 판타지 · 제국 수도</dd></div><div><dt>교육기관</dt><dd>전원 기숙제 사관학교</dd></div><div><dt>등장인물</dt><dd>의무교육을 마친 성인</dd></div></dl></aside><article class="world-article"><h2>루미에르 아카데미</h2><p>레온하트 대륙의 제국 수도에 자리한 대륙 최고의 전원 기숙제 사관형 고등학부. 의무교육을 마친 성인들이 입학하며, 입학생들은 이미 제국 평균 이상의 실력을 갖추고 있다. 귀족과 평민은 같은 아카데미에 모이지만, 신분과 가문이 만드는 기회의 차이까지 사라지지는 않는다.</p><p>아카데미에는 학년과 학부 구분이 없다. 모든 학생이 검술과 마법을 필수로 배우며, 서로 다른 숙련도와 특화, 출신을 바탕으로 성과와 랭킹을 통해 자신의 위치를 증명한다.</p><h2>성장이 기회가 되고, 서열이 미래가 된다</h2><p>졸업은 제국 평균 이상의 직위와 수입, 생활을 보장한다. 랭킹과 성과에 따라 교육과 생활, 장비와 진로의 기회가 달라지며, 학생들은 그 미래를 차지하기 위해 치열하게 경쟁한다.</p><p>랭킹은 단순한 명부의 숫자가 아니다. 수업반과 시설, 장비와 기숙사, 장학금과 진로에까지 영향을 미친다. 귀족 가문의 후원과 학생 파벌은 그 경쟁을 더욱 복잡하게 만든다.</p><div class="pullquote"><span class="eyebrow">BEYOND THE HONOR</span><p>재능만으로는 설명할 수 없는 서열.<br>힘만으로는 지켜낼 수 없는 관계.</p></div><h2>아카데미 너머, 레온하트 대륙</h2><p>왕실의 평화 노선과 무력 통일을 둘러싼 대립, 흑요 모험단의 탐험, 루벤 마을의 질서. 교정 밖에서도 각자의 신념과 욕망은 서로 다른 선택으로 이어진다. 25층으로 이루어진 미궁에는 다섯 층마다 강적이 기다리며, 모험가들은 더 깊은 곳을 향해 나아간다.</p></article></div>
+      <div class="world-layout"><aside class="document-label"><span class="eyebrow">LUMIÈRE</span><span class="document-mark">검과 마법이<br>공존하는 세계</span><dl><div><dt>배경</dt><dd>중세 판타지 · 제국 수도</dd></div><div><dt>교육기관</dt><dd>전원 기숙제 사관학교</dd></div><div><dt>등장인물</dt><dd>의무교육을 마친 성인</dd></div></dl></aside><article class="world-article"><h2>루미에르 아카데미</h2><p>레온하트 대륙의 제국 수도에 자리한 대륙 최고의 전원 기숙제 사관형 고등학부. 의무교육을 마친 성인들이 입학하며, 입학생들은 이미 제국 평균 이상의 실력을 갖추고 있다. 귀족과 평민은 같은 아카데미에 모이지만, 신분과 가문이 만드는 기회의 차이까지 사라지지는 않는다.</p><p>아카데미에는 학년과 학부 구분이 없다. 모든 학생이 검술과 마법을 필수로 배우며, 서로 다른 숙련도와 특화, 출신을 바탕으로 성과와 랭킹을 통해 자신의 위치를 증명한다.</p><h2>성장이 기회가 되고, 서열이 미래가 된다</h2><p>졸업은 제국 평균 이상의 직위와 수입, 생활을 보장한다. 랭킹과 성과에 따라 교육과 생활, 장비와 진로의 기회가 달라지며, 학생들은 그 미래를 차지하기 위해 치열하게 경쟁한다.</p><p>랭킹은 단순한 명부의 숫자가 아니다. 수업반과 시설, 장비와 기숙사, 장학금과 진로에까지 영향을 미친다. 귀족 가문의 후원과 학생 파벌은 그 경쟁을 더욱 복잡하게 만든다.</p><div class="pullquote"><span class="eyebrow">BEYOND THE HONOR</span><p>재능만으로는 설명할 수 없는 서열.<br>힘만으로는 지켜낼 수 없는 관계.</p></div><h2>아카데미 너머, 레온하트 대륙</h2><p>왕실의 평화 노선과 무력 통일을 둘러싼 대립, 흑요 모험단의 탐험, 루벨 마을의 질서. 교정 밖에서도 각자의 신념과 욕망은 서로 다른 선택으로 이어진다. 25층으로 이루어진 미궁에는 다섯 층마다 강적이 기다리며, 모험가들은 더 깊은 곳을 향해 나아간다.</p></article></div>
       <div class="section-heading lower-heading"><span class="section-no">II.</span><h2>관계와 선택이 만드는 군상극</h2></div>
       <div class="theme-grid"><article><span class="eyebrow">GROWTH</span><h3>수련과 학업</h3><p>수업, 시험, 훈련과 대련 속에서 재능과 노력이 마주한다. 성장은 실력뿐 아니라 자신의 길을 찾는 과정이 된다.</p></article><article><span class="eyebrow">RELATIONSHIP</span><h3>교류와 연애</h3><p>기숙사 생활, 동아리, 사교행사와 축제. 서로를 알아가는 시간 속에서 우정과 애정, 경쟁과 갈등이 쌓인다.</p></article><article><span class="eyebrow">CONFLICT</span><h3>정치와 모험</h3><p>귀족 가문과 학생 파벌의 이해관계는 교내 일상에 스며든다. 현장실습과 진로 경쟁은 아카데미 너머의 세계와 이어진다.</p></article></div>
       <div class="page-next"><span>이 세계에서의 하루가 궁금하다면</span><a class="button" href="#academy">아카데미 살펴보기</a></div>
@@ -843,11 +846,11 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "80위",
-        "age": null,
+        "age": 20,
         "grade": "D",
-        "subtitle": "밝은 미소로 건네는 “괜찮아”",
+        "subtitle": "밝은 미소 뒤에 감춘 불안",
         "description": "분홍빛 긴 머리와 분홍 눈이 돋보이는 학생. 밝고 붙임성 있는 태도로 사람들에게 먼저 다가간다.",
-        "note": "힘든 순간에도 웃으며 상대를 안심시키곤 한다. 자신을 위해 희생한 부모의 마음이 헛되지 않도록 성장에 필사적이다.",
+        "note": "힘든 순간에도 웃으며 불안과 고통을 감추곤 한다. 자신을 위해 희생한 부모의 마음이 헛되지 않도록 성장에 필사적이다.",
         "tags": [
           "붙임성",
           "밝은 미소",
@@ -861,7 +864,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "67위",
-        "age": null,
+        "age": 20,
         "grade": "C",
         "subtitle": "나른한 눈빛 속 단순한 해답",
         "description": "푸른 긴 머리를 양갈래로 땋은 과묵한 학생. 늘 졸린 눈을 하고 있으며, 귀찮은 일과 복잡한 생각을 피한다.",
@@ -879,7 +882,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "18위",
-        "age": null,
+        "age": 20,
         "grade": "B",
         "subtitle": "여유로운 미소로 판을 읽는 학생",
         "description": "금발 긴 머리와 붉은 눈, 성숙한 인상이 돋보이는 명문가 출신 학생. 나긋한 말투와 옅은 미소로 좀처럼 속내를 드러내지 않는다.",
@@ -897,7 +900,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "2위",
-        "age": null,
+        "age": 20,
         "grade": "A",
         "subtitle": "귀족의 품위 뒤에 품은 자유",
         "description": "은빛 긴 머리와 푸른 눈, 검은 리본이 돋보이는 명문 귀족 영애. 자존심이 강하고 품위를 중시하며 새침한 태도를 보인다.",
@@ -915,7 +918,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "15위",
-        "age": null,
+        "age": 20,
         "grade": "B",
         "subtitle": "달콤한 장난 뒤에 숨은 탐욕의 마녀",
         "description": "분홍빛 긴 트윈테일과 분홍 눈을 가진 사교적인 학생이자 탐욕의 마녀. 친근한 말투와 가벼운 장난으로 상대의 반응을 살피지만 속내는 계산적이고 집요하다.",
@@ -933,7 +936,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "꼴등",
-        "age": null,
+        "age": 20,
         "grade": "S",
         "subtitle": "시선을 피해 조용한 구석으로",
         "description": "헝클어진 긴 흑발과 짙은 다크서클, 구부정한 자세가 인상적인 학생. 혼자 있거나 구석에 머무르며 작은 목소리로 중얼거린다.",
@@ -951,7 +954,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "7위",
-        "age": null,
+        "age": 20,
         "grade": "B",
         "subtitle": "가문의 이름으로 지키는 권위",
         "description": "백발과 날카로운 눈매, 단정한 차림이 돋보이는 아르젠트 공작가의 후계자. 체면과 자존심을 중시하며 낮은 신분이나 실력을 가진 이를 깔본다.",
@@ -969,7 +972,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "40위",
-        "age": null,
+        "age": 20,
         "grade": "B",
         "subtitle": "장난스럽지만 선은 분명하게",
         "description": "흑발과 푸른 눈을 가진 유쾌하고 사교적인 학생. 엉뚱한 농담과 짓궂은 놀림을 즐기지만 상대가 불편해하면 물러난다.",
@@ -987,7 +990,7 @@
         "group": "student",
         "role": "아카데미 학생",
         "rank": "1위",
-        "age": null,
+        "age": 20,
         "grade": "S",
         "subtitle": "굴복을 모르는 절대적인 자존심",
         "description": "흑발과 검은 눈, 차가운 무표정이 인상적인 랭킹 1위 학생. 과묵하고 냉혹하며 타인의 명령이나 간섭을 받아들이지 않는다.",
@@ -1005,7 +1008,7 @@
         "group": "staff",
         "role": "검술 교수",
         "rank": null,
-        "age": null,
+        "age": 32,
         "grade": "A",
         "subtitle": "혹독한 훈련 뒤에 숨은 세심함",
         "description": "붉은 긴 머리를 높게 묶은 호탕한 검술 교수. 큰 목소리와 농담으로 학생들을 대하지만 훈련에서는 쉽게 타협하지 않는다.",
@@ -1023,14 +1026,14 @@
         "group": "staff",
         "role": "마법 교수",
         "rank": null,
-        "age": null,
+        "age": 32,
         "grade": "S",
         "subtitle": "지식과 위계를 중시하는 엄격한 교수",
         "description": "은회색 단발과 붉은 눈, 검은 드레스풍 교수복이 돋보이는 마법 교수. 냉정하고 우아하며 자신의 지식에 강한 자부심을 갖고 있다.",
-        "note": "강화약을 제조·판매하며 금기약 밀매에도 관여한다. 법이나 학생의 안전보다 자신의 이익을 앞세우고 노엘의 훈련 방식은 비효율적이라고 평가한다.",
+        "note": "금단의 스테로이드를 제조·밀매한다. 신체를 강화하면서도 손상을 일으키는 약을 다루며, 법이나 학생의 안전보다 자신의 이익을 앞세운다. 노엘의 훈련 방식은 비효율적이라고 평가한다.",
         "tags": [
           "마법 교수",
-          "금기약",
+          "금단의 스테로이드",
           "이익 우선"
         ]
       },
@@ -1041,11 +1044,11 @@
         "group": "staff",
         "role": "학장",
         "rank": null,
-        "age": null,
+        "age": 29,
         "grade": "U",
         "subtitle": "교정을 거닐며 재능을 살피는 학장",
         "description": "푸른 긴 머리와 붉은 눈, 검은 메이드복을 즐겨 입는 아카데미 학장. 느긋한 존댓말과 옅은 미소로 사람들을 대한다.",
-        "note": "학생을 성장할수록 가치가 높아지는 전투 자산으로 바라본다. 성장한 학생들을 블랙 경기와 피의 난투에 내보내 거액을 벌 계획이며 살상에 대한 거부감도 희박하다.",
+        "note": "학생을 성장할수록 가치가 높아지는 전투 자산으로 바라본다. 성적이 오르거나 논란을 일으키는 학생에게 주목하며, 성장한 학생을 미궁에 투입한다. 학생의 안전보다 전력 강화를 우선하고 살상에 대한 거부감도 희박하다.",
         "tags": [
           "학장",
           "전투 자산",
@@ -1059,7 +1062,7 @@
         "group": "staff",
         "role": "이사장",
         "rank": null,
-        "age": null,
+        "age": 30,
         "grade": "??",
         "subtitle": "차분한 판단과 세심한 경청",
         "description": "은빛 긴 머리와 푸른 눈, 단정한 인상의 아카데미 이사장. 조용하고 세심하며 침착한 태도로 감정을 절제한다.",
@@ -1072,16 +1075,16 @@
       },
       {
         "id": 13,
-        "name": "아일린",
+        "name": "아이린",
         "part": "continent",
         "group": "sins",
         "role": "타락사제",
         "rank": null,
-        "age": null,
+        "age": 39,
         "grade": "U",
         "subtitle": "죄 없는 세계를 바라는 진노의 마녀",
         "description": "분홍빛 긴 머리와 푸른 눈을 가진 가녀린 타락사제이자 진노의 마녀. 차분한 존댓말을 사용하며 신성력을 다룬다.",
-        "note": "루벤 마을과 고아원을 운영하며 범죄 없는 세계를 바라지만, 작은 범죄도 더 큰 악의 씨앗으로 여겨 가혹하게 처벌한다. 자신의 기준에 따른 선의와 책임감을 중시하며 영역 밖의 일에는 관심을 두지 않는다.",
+        "note": "루벨 마을과 고아원을 운영하며 범죄 없는 세계를 바란다. 약물을 특히 혐오하고 작은 범죄도 더 큰 악의 씨앗으로 여겨 가혹하게 처벌한다. 자신의 기준에 따른 선의와 책임감을 중시하며 영역 밖의 일에는 관심을 두지 않는다.",
         "tags": [
           "7대죄악",
           "진노의 마녀",
@@ -1095,7 +1098,7 @@
         "group": "royal",
         "role": "왕녀",
         "rank": null,
-        "age": null,
+        "age": 23,
         "grade": "E",
         "subtitle": "책임과 자유 사이에서 세상을 향해",
         "description": "금발 긴 머리와 보라색 눈, 온화한 인상의 왕녀. 정치와 외교 경험이 풍부하며 인간의 선함과 백성의 삶을 소중히 여긴다.",
@@ -1113,7 +1116,7 @@
         "group": "royal",
         "role": "왕자 · 기사",
         "rank": null,
-        "age": null,
+        "age": 28,
         "grade": "U",
         "subtitle": "제국의 무력으로 이루려는 통일",
         "description": "전쟁 경험이 풍부한 왕자이자 기사. 강경한 태도를 보이며 자신만의 정의를 중시하고, 제국의 무력으로 대륙을 통일하고 지배하려 한다.",
@@ -1131,7 +1134,7 @@
         "group": "royal",
         "role": "국왕",
         "rank": null,
-        "age": null,
+        "age": 57,
         "grade": "C",
         "subtitle": "세력의 균형으로 지키는 평화",
         "description": "소피아와 아드리안의 아버지이자 국왕. 온건한 태도로 정세를 바라보며 여러 세력의 대립과 균형이 평화를 지킨다고 믿는다.",
@@ -1149,7 +1152,7 @@
         "group": "royal",
         "role": "벨루아 왕국 왕자",
         "rank": null,
-        "age": null,
+        "age": 27,
         "grade": "S",
         "subtitle": "다정한 말투 뒤에 숨은 계산",
         "description": "사교적이고 다정한 말투를 사용하는 벨루아 왕국의 왕자. 소피아를 사랑하지만 소유욕과 집착도 강하며, 부드러운 태도 뒤에 계산적인 속내를 감춘다.",
@@ -1167,7 +1170,7 @@
         "group": "labyrinth",
         "role": "흑요 모험단 단장",
         "rank": null,
-        "age": null,
+        "age": 28,
         "grade": "S",
         "subtitle": "힘과 실적을 자부하는 모험단장",
         "description": "루미에르 아카데미를 졸업한 흑요 모험단의 단장. 모험을 사랑했으나 최강의 모험가라는 명성을 얻은 뒤 오만하고 과묵해졌으며 짧은 명령조로 말한다.",
@@ -1185,7 +1188,7 @@
         "group": "labyrinth",
         "role": "흑요 모험단 마법사",
         "rank": null,
-        "age": null,
+        "age": 28,
         "grade": "A",
         "subtitle": "헌신과 자기 존중 사이의 선택",
         "description": "자주색 긴 머리와 보라색 눈, 성숙한 인상을 가진 흑요 모험단의 마법사. 차분하고 다정하며 인내심이 깊고 가까운 사람에게는 부드러운 반말을 쓴다.",
@@ -1203,7 +1206,7 @@
         "group": "labyrinth",
         "role": "흑요 모험단 서포터",
         "rank": null,
-        "age": null,
+        "age": 22,
         "grade": "B",
         "subtitle": "눈치를 살피는 서투른 서포터",
         "description": "어리바리하고 덜렁대는 흑요 모험단의 서포터. 주변의 눈치를 자주 살피고 어버버한 말투를 보이며, 당황하면 말이 쉽게 꼬인다.",
@@ -1535,7 +1538,7 @@
       if(activeView==='truth')renderTruth();
       if(document.body.classList.contains('scene-entering')&&requested!=='home')completeEntry();
       if(switched||phaseChanged){window.scrollTo({top:0,behavior:'instant'});const heading=document.querySelector(phaseChanged&&!switched?'#truth-phase-title':`[data-view="${activeView}"] h1`);if(heading&&!characterDialog?.open){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}
-      if(requested==='introduction'||requested==='main')document.getElementById(requested)?.scrollIntoView();
+      if(requested==='main')document.getElementById(requested)?.scrollIntoView();
       if(mediaEntered)prepareAcademyBackground();
       refreshMedia();syncCharacterDetail();syncAcademyAmbience();
     }
