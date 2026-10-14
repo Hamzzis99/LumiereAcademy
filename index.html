@@ -1185,16 +1185,11 @@
       }
     ];
     // Part 2 records use part:'continent' and group:'royal', 'labyrinth', or 'sins'; keep each id unique.
-    // Public image slots retain the supplied NPC/state numbers; paired states use the first available slot.
-    // IDs 15–20 are pending on the image host. Remove their IDs below once their images are published.
-    const pendingCharacterImages=new Set([15,16,17,18,19,20]);
-    const characterMedia=Object.fromEntries(characters.map(character=>{
-      const ready=!pendingCharacterImages.has(character.id);
-      const imageBase='https://igx.kr/p/Cdc/'+character.id;
-      const gallery=[];
-      if(ready)[1,2,8,9,11,12,22,23,24,25,26,28,31].forEach(state=>{gallery[state]=imageBase+'/'+state});
-      return [character.id,{portrait:ready?imageBase+'/0':'',position:'50% 30%',gallery}];
-    }));
+    // Leave every portrait and state image empty until artwork is provided for the website.
+    // When images are added, gallery uses the original state numbers rather than the button order.
+    const characterMedia=Object.fromEntries(characters.map(character=>[
+      character.id,{portrait:'',position:'50% 30%',gallery:[]}
+    ]));
     const views=[...document.querySelectorAll('[data-view]')];
     const academyPageImage=document.querySelector('#academy-page-image');
     const academySceneImage=document.querySelector('#academy-image');
