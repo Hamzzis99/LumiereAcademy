@@ -276,12 +276,13 @@
     .part-filter strong{font-size:17px;line-height:1.45;font-weight:500;grid-column:1}.part-filter small{font-size:13px;line-height:1.45;grid-column:1;color:inherit;opacity:.9}.part-filter .part-count{display:inline-flex;align-items:center;justify-content:center;grid-column:2;grid-row:1/3;align-self:center;min-width:34px;min-height:32px;padding:2px 6px;margin-left:0;border:1px solid rgba(158,171,188,.18);border-radius:6px;background:rgba(158,171,188,.05);font-family:var(--sans);font-size:18px;line-height:1.25;font-weight:500;font-variant-numeric:tabular-nums}.part-filter.active .part-count{border-color:rgba(211,183,121,.3);background:rgba(211,183,121,.08)}
     .character-subcontrols{margin-bottom:25px}.part-filter-options{display:grid;grid-template-columns:repeat(3,112px);gap:10px}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(4,112px)}.part-filter-options .filter{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:46px;padding:8px 10px;border-radius:5px;font-size:14px;line-height:1.4;white-space:nowrap}.part-filter-options .filter>span:not(.click-spark){display:inline-flex;align-items:center;justify-content:center;min-width:22px;min-height:22px;margin-left:0;border-radius:4px;background:rgba(158,171,188,.07);font-family:var(--sans);font-size:12px;line-height:1.3;font-variant-numeric:tabular-nums}
     .part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(5,112px)}
+    .part-filter-options .filter[data-filter="labyrinth"],.part-filter-options .filter[data-filter="sins"]{padding-inline:6px;gap:6px;font-size:13px}
     .character-layout .profile{top:auto}
     @media(max-width:650px){.characters-scene .music-control{bottom:20px}}
     .character-empty{padding:68px 28px;text-align:center;border:1px solid var(--line);border-radius:5px;background:linear-gradient(145deg,rgba(29,46,65,.55),rgba(11,23,39,.55))}.character-empty h2{font-family:var(--serif);font-weight:500;font-size:26px;margin:19px 0 12px}.character-empty p{font-size:14px;color:var(--muted);margin:0;line-height:1.9}
     @media(max-width:650px){.character-part-controls{gap:6px}.character-part-controls .filter{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:102px;padding:10px 5px;text-align:center}.part-filter strong{font-size:15px}.part-filter small{display:flex;align-items:center;justify-content:center;min-height:29px;max-width:100%;font-size:10.5px;line-height:1.4}.part-filter .part-count{min-width:28px;min-height:25px;padding:2px 5px;font-size:14px}.part-filter-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options .filter{gap:5px;min-height:44px;padding:7px 6px;font-size:13px}.part-filter-options .filter>span:not(.click-spark){min-width:20px;min-height:20px;margin-left:0;font-size:11px}.character-empty{padding:32px 20px}.character-empty h2{font-size:20px}}
     @media(max-width:650px){.part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:360px){.part-filter-options[data-part-filters="all"] .filter{padding-inline:5px;font-size:12px;gap:4px}}
+    @media(max-width:400px){.part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options[data-part-filters="all"] .filter{padding-inline:5px;font-size:12px;gap:4px}}
     .academy-page-background{display:none;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}.academy-page-background img{width:100%;height:100%;display:block;object-fit:cover;object-position:64% 50%}.academy-page-background:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,13,26,.42),rgba(5,13,26,.18) 65%,rgba(5,13,26,.12)),linear-gradient(0deg,rgba(5,13,26,.56),rgba(5,13,26,.08) 72%)}
     .fantasy-scene .academy-page-background:before{content:'';position:absolute;inset:0;background:rgba(3,9,18,.32)}
     .fantasy-scene #site-shell{position:relative;isolation:isolate;min-height:100svh}.fantasy-scene .academy-page-background{display:block}.fantasy-scene #main,.fantasy-scene .footer{position:relative;z-index:1}
@@ -464,7 +465,11 @@
     .ambient-fireflies{position:fixed;inset:0;z-index:2;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.8s ease}
     .ambient-fireflies[hidden]{display:none}
     .ambient-fireflies[data-active="true"]{opacity:1}
+    .ambient-fireflies{-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+    .fantasy-scene .ambient-fireflies{z-index:1}
+    .fantasy-scene #main,.fantasy-scene .footer{z-index:2}
     .ambient-firefly{position:absolute;left:var(--firefly-x);top:var(--firefly-y);width:var(--firefly-size,3px);height:var(--firefly-size,3px);border-radius:50%;background:#fff0c4;box-shadow:0 0 7px 2px rgba(247,225,164,.42),0 0 22px 6px rgba(239,207,130,.12);opacity:0;animation:ambient-firefly-drift var(--firefly-duration,26s) var(--firefly-delay,0s) ease-in-out infinite;animation-play-state:paused}
+    .ambient-firefly.is-center{background:#fff4d2;box-shadow:0 0 8px 3px rgba(247,225,164,.52),0 0 24px 7px rgba(239,207,130,.16)}
     .ambient-fireflies[data-active="true"] .ambient-firefly{animation-play-state:running}
     body.entry-active .ambient-fireflies,body.scene-entering .ambient-fireflies,body.truth-scene .ambient-fireflies,body.character-dialog-active .ambient-fireflies,body.spoiler-active .ambient-fireflies{opacity:0}
     body.entry-active .ambient-fireflies .ambient-firefly,body.scene-entering .ambient-fireflies .ambient-firefly,body.truth-scene .ambient-fireflies .ambient-firefly,body.character-dialog-active .ambient-fireflies .ambient-firefly,body.spoiler-active .ambient-fireflies .ambient-firefly{animation-play-state:paused}
@@ -545,19 +550,19 @@
   <div class="academy-page-background" aria-hidden="true"><img id="academy-page-image" alt="" decoding="async"></div>
   <div class="ambient-fireflies" id="ambient-fireflies" aria-hidden="true" data-active="false" hidden>
     <span class="ambient-firefly" style="--firefly-x:5vw;--firefly-y:84vh;--firefly-sway:34px;--firefly-rise:-96px;--firefly-duration:25s;--firefly-delay:-8s;--firefly-size:3.5px;--firefly-glow:0.74"></span>
-    <span class="ambient-firefly" style="--firefly-x:49vw;--firefly-y:69vh;--firefly-sway:-30px;--firefly-rise:-110px;--firefly-duration:29s;--firefly-delay:-19s;--firefly-size:4px;--firefly-glow:0.76"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:49vw;--firefly-y:64vh;--firefly-sway:-30px;--firefly-rise:-110px;--firefly-duration:29s;--firefly-delay:-19s;--firefly-size:4.8px;--firefly-glow:0.88"></span>
     <span class="ambient-firefly" style="--firefly-x:95vw;--firefly-y:56vh;--firefly-sway:-40px;--firefly-rise:-92px;--firefly-duration:31s;--firefly-delay:-9s;--firefly-size:4.5px;--firefly-glow:0.82"></span>
-    <span class="ambient-firefly" style="--firefly-x:25vw;--firefly-y:41vh;--firefly-sway:28px;--firefly-rise:-74px;--firefly-duration:27s;--firefly-delay:-17s;--firefly-size:3px;--firefly-glow:0.57"></span>
-    <span class="ambient-firefly" style="--firefly-x:72vw;--firefly-y:86vh;--firefly-sway:-36px;--firefly-rise:-108px;--firefly-duration:24s;--firefly-delay:-15s;--firefly-size:4px;--firefly-glow:0.78"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:43vw;--firefly-y:53vh;--firefly-sway:28px;--firefly-rise:-74px;--firefly-duration:27s;--firefly-delay:-17s;--firefly-size:4.3px;--firefly-glow:0.84"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:62vw;--firefly-y:85vh;--firefly-sway:-36px;--firefly-rise:-108px;--firefly-duration:24s;--firefly-delay:-15s;--firefly-size:4.5px;--firefly-glow:0.86"></span>
     <span class="ambient-firefly" style="--firefly-x:11vw;--firefly-y:30vh;--firefly-sway:36px;--firefly-rise:-78px;--firefly-duration:28s;--firefly-delay:-5s;--firefly-size:3.5px;--firefly-glow:0.68"></span>
-    <span class="ambient-firefly" style="--firefly-x:57vw;--firefly-y:42vh;--firefly-sway:30px;--firefly-rise:-88px;--firefly-duration:26s;--firefly-delay:-8s;--firefly-size:3.5px;--firefly-glow:0.68"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:55vw;--firefly-y:48vh;--firefly-sway:30px;--firefly-rise:-88px;--firefly-duration:26s;--firefly-delay:-8s;--firefly-size:4.2px;--firefly-glow:0.86"></span>
     <span class="ambient-firefly" style="--firefly-x:85vw;--firefly-y:25vh;--firefly-sway:-32px;--firefly-rise:-82px;--firefly-duration:32s;--firefly-delay:-21s;--firefly-size:3px;--firefly-glow:0.67"></span>
-    <span class="ambient-firefly" style="--firefly-x:38vw;--firefly-y:88vh;--firefly-sway:26px;--firefly-rise:-116px;--firefly-duration:30s;--firefly-delay:-20s;--firefly-size:4px;--firefly-glow:0.71"></span>
-    <span class="ambient-firefly" style="--firefly-x:44vw;--firefly-y:32vh;--firefly-sway:-28px;--firefly-rise:-72px;--firefly-duration:25s;--firefly-delay:-4s;--firefly-size:3px;--firefly-glow:0.62"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:46vw;--firefly-y:82vh;--firefly-sway:26px;--firefly-rise:-116px;--firefly-duration:30s;--firefly-delay:-20s;--firefly-size:4.5px;--firefly-glow:0.85"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:50vw;--firefly-y:36vh;--firefly-sway:-28px;--firefly-rise:-72px;--firefly-duration:25s;--firefly-delay:-4s;--firefly-size:4px;--firefly-glow:0.8"></span>
     <span class="ambient-firefly" style="--firefly-x:19vw;--firefly-y:66vh;--firefly-sway:32px;--firefly-rise:-90px;--firefly-duration:28s;--firefly-delay:-19s;--firefly-size:3.5px;--firefly-glow:0.71"></span>
     <span class="ambient-firefly" style="--firefly-x:92vw;--firefly-y:90vh;--firefly-sway:-40px;--firefly-rise:-104px;--firefly-duration:27s;--firefly-delay:-7s;--firefly-size:4px;--firefly-glow:0.8"></span>
-    <span class="ambient-firefly" style="--firefly-x:63vw;--firefly-y:65vh;--firefly-sway:30px;--firefly-rise:-96px;--firefly-duration:31s;--firefly-delay:-19s;--firefly-size:3.5px;--firefly-glow:0.73"></span>
-    <span class="ambient-firefly" style="--firefly-x:77vw;--firefly-y:48vh;--firefly-sway:-34px;--firefly-rise:-86px;--firefly-duration:29s;--firefly-delay:-9s;--firefly-size:4px;--firefly-glow:0.78"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:59vw;--firefly-y:72vh;--firefly-sway:30px;--firefly-rise:-96px;--firefly-duration:31s;--firefly-delay:-19s;--firefly-size:4.6px;--firefly-glow:0.88"></span>
+    <span class="ambient-firefly is-center" style="--firefly-x:65vw;--firefly-y:58vh;--firefly-sway:-34px;--firefly-rise:-86px;--firefly-duration:29s;--firefly-delay:-9s;--firefly-size:4.3px;--firefly-glow:0.84"></span>
     <span class="ambient-firefly" style="--firefly-x:4vw;--firefly-y:53vh;--firefly-sway:38px;--firefly-rise:-78px;--firefly-duration:32s;--firefly-delay:-20s;--firefly-size:3px;--firefly-glow:0.65"></span>
     <span class="ambient-firefly" style="--firefly-x:96vw;--firefly-y:34vh;--firefly-sway:-32px;--firefly-rise:-84px;--firefly-duration:26s;--firefly-delay:-8s;--firefly-size:3.5px;--firefly-glow:0.77"></span>
     <span class="ambient-firefly" style="--firefly-x:33vw;--firefly-y:59vh;--firefly-sway:26px;--firefly-rise:-98px;--firefly-duration:30s;--firefly-delay:-19s;--firefly-size:3px;--firefly-glow:0.62"></span>
@@ -619,13 +624,13 @@
       </div>
       <div class="roster-controls character-subcontrols" id="character-subcontrols" hidden>
         <div class="part-filter-options" data-part-filters="all" role="group" aria-label="전체 인물 분류 바로가기">
-          <button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>3</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>1</span></button>
+          <button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">흑요 모험단 <span>3</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">루벨 마을 <span>1</span></button>
         </div>
         <div class="part-filter-options" data-part-filters="academy" role="group" aria-label="1부 인물 분류" hidden>
           <button type="button" class="filter active" data-filter-part="academy" data-filter="all" aria-pressed="true">전체 <span>13</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="student" aria-pressed="false">학생 <span>9</span></button><button type="button" class="filter" data-filter-part="academy" data-filter="staff" aria-pressed="false">교직원 <span>4</span></button>
         </div>
         <div class="part-filter-options" data-part-filters="continent" role="group" aria-label="2부 인물 분류" hidden>
-          <button type="button" class="filter active" data-filter-part="continent" data-filter="all" aria-pressed="true">전체 <span>8</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">미궁 <span>3</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">7대죄악 <span>1</span></button>
+          <button type="button" class="filter active" data-filter-part="continent" data-filter="all" aria-pressed="true">전체 <span>8</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="royal" aria-pressed="false">왕선 <span>4</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="labyrinth" aria-pressed="false">흑요 모험단 <span>3</span></button><button type="button" class="filter" data-filter-part="continent" data-filter="sins" aria-pressed="false">루벨 마을 <span>1</span></button>
         </div>
       </div>
       <div class="character-layout" id="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div></div>
@@ -1086,7 +1091,7 @@
         "description": "분홍빛 긴 머리와 푸른 눈을 가진 가녀린 타락사제이자 진노의 마녀. 차분한 존댓말을 사용하며 신성력을 다룬다.",
         "note": "루벨 마을과 고아원을 운영하며 범죄 없는 세계를 바란다. 약물을 특히 혐오하고 작은 범죄도 더 큰 악의 씨앗으로 여겨 가혹하게 처벌한다. 자신의 기준에 따른 선의와 책임감을 중시하며 영역 밖의 일에는 관심을 두지 않는다.",
         "tags": [
-          "7대죄악",
+          "루벨 마을",
           "진노의 마녀",
           "무범죄 세계"
         ]
@@ -1239,7 +1244,7 @@
     const profile=document.querySelector('#profile');
     const characterParts={
       academy:{label:'1부 · 아카데미 소속',eyebrow:'PART I · ACADEMY',filters:[{key:'all',label:'전체'},{key:'student',label:'학생'},{key:'staff',label:'교직원'}]},
-      continent:{label:'2부 · 레온하트 대륙',eyebrow:'PART II · LEONHART',filters:[{key:'all',label:'전체'},{key:'royal',label:'왕선'},{key:'labyrinth',label:'미궁'},{key:'sins',label:'7대죄악'}]}
+      continent:{label:'2부 · 레온하트 대륙',eyebrow:'PART II · LEONHART',filters:[{key:'all',label:'전체'},{key:'royal',label:'왕선'},{key:'labyrinth',label:'흑요 모험단'},{key:'sins',label:'루벨 마을'}]}
     };
     let activeView='home';
     let activePart='all';
@@ -1249,13 +1254,48 @@
     const characterMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
     const characterTransitions=new WeakMap();
     const ambientFireflies=document.querySelector('#ambient-fireflies');
+    let ambienceMaskFrame=0;
+    let ambienceMaskTimer=0;
+    let lastAmbienceMask='';
+    function refreshAmbienceMask(){
+      if(ambienceMaskFrame)return;
+      ambienceMaskFrame=requestAnimationFrame(()=>{
+        ambienceMaskFrame=0;
+        if(!(ambientFireflies instanceof HTMLElement)||ambientFireflies.hidden||ambientFireflies.dataset.active!=='true')return;
+        const width=ambientFireflies.clientWidth,height=ambientFireflies.clientHeight;
+        if(!width||!height)return;
+        const holes=[];
+        document.querySelectorAll('a[href],button,input,select,textarea,summary,label[for],[role="button"]').forEach(control=>{
+          if(control.closest('[hidden]')||!control.getClientRects().length)return;
+          const rect=control.getBoundingClientRect();
+          if(rect.bottom<=0||rect.top>=height||rect.right<=0||rect.left>=width)return;
+          const padding=8;
+          const left=Math.max(0,Math.floor(rect.left-padding)),top=Math.max(0,Math.floor(rect.top-padding));
+          const right=Math.min(width,Math.ceil(rect.right+padding)),bottom=Math.min(height,Math.ceil(rect.bottom+padding));
+          if(right<=left||bottom<=top)return;
+          holes.push('<rect x="'+left+'" y="'+top+'" width="'+(right-left)+'" height="'+(bottom-top)+'" rx="4" fill="black"/>');
+        });
+        const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'" viewBox="0 0 '+width+' '+height+'"><defs><mask id="controls" maskUnits="userSpaceOnUse" x="0" y="0" width="'+width+'" height="'+height+'" style="mask-type:luminance"><rect width="'+width+'" height="'+height+'" fill="white"/>'+holes.join('')+'</mask></defs><rect width="'+width+'" height="'+height+'" fill="white" mask="url(#controls)"/></svg>';
+        if(svg===lastAmbienceMask)return;
+        lastAmbienceMask=svg;
+        const source='url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';
+        ambientFireflies.style.maskImage=source;
+        ambientFireflies.style.webkitMaskImage=source;
+      });
+    }
     function syncAcademyAmbience(){
       if(!(ambientFireflies instanceof HTMLElement))return;
       ambientFireflies.hidden=!mediaEntered||characterMotionPreference.matches;
       ambientFireflies.dataset.active=String(mediaEntered&&!characterMotionPreference.matches&&!document.hidden&&['home','world','academy','characters'].includes(activeView));
+      refreshAmbienceMask();
+      clearTimeout(ambienceMaskTimer);
+      if(ambientFireflies.dataset.active==='true')ambienceMaskTimer=setTimeout(refreshAmbienceMask,750);
     }
     characterMotionPreference.addEventListener('change',syncAcademyAmbience);
     document.addEventListener('visibilitychange',syncAcademyAmbience);
+    window.addEventListener('scroll',refreshAmbienceMask,{passive:true,capture:true});
+    window.addEventListener('resize',refreshAmbienceMask,{passive:true});
+    ['toggle','close','transitionend','animationend'].forEach(event=>document.addEventListener(event,refreshAmbienceMask,true));
     // Add each Phase's images in reading order; use actual pixel dimensions to keep scroll positions stable: {src:'./image.webp',alt:'장면 설명',width:1000,height:2400}.
     const truthPhases=[{number:1,images:[]},{number:2,images:[]},{number:3,images:[]}];
     let activeTruthPhase=1;
@@ -1348,8 +1388,8 @@
       {part:'academy',key:'student',label:'학생',english:'STUDENTS'},
       {part:'academy',key:'staff',label:'교직원',english:'FACULTY'},
       {part:'continent',key:'royal',label:'왕선',english:'ROYAL SELECTION'},
-      {part:'continent',key:'labyrinth',label:'미궁',english:'THE LABYRINTH'},
-      {part:'continent',key:'sins',label:'7대죄악',english:'SEVEN SINS'}
+      {part:'continent',key:'labyrinth',label:'흑요 모험단',english:'OBSIDIAN ADVENTURERS'},
+      {part:'continent',key:'sins',label:'루벨 마을',english:'RUBEL VILLAGE'}
     ];
     const characterSceneDefinitions=[
       {label:'일반대화',states:[1,2]},
