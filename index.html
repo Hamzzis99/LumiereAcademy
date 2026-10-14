@@ -459,6 +459,25 @@
     .character-dialog-tools{position:sticky;top:0;height:0;z-index:5}
     @media(max-width:650px){.character-group-label small{margin-left:9px;font-size:9px}}
 
+    .ambient-fireflies{position:fixed;inset:0;z-index:2;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.8s ease}
+    .ambient-fireflies[hidden]{display:none}
+    .ambient-fireflies[data-active="true"]{opacity:1}
+    .ambient-firefly{position:absolute;left:var(--firefly-x);top:var(--firefly-y);width:var(--firefly-size,3px);height:var(--firefly-size,3px);border-radius:50%;background:#f7e6b5;box-shadow:0 0 5px 2px rgba(247,225,164,.28),0 0 16px 5px rgba(239,207,130,.07);opacity:0;animation:ambient-firefly-drift var(--firefly-duration,26s) var(--firefly-delay,0s) ease-in-out infinite;animation-play-state:paused}
+    .ambient-fireflies[data-active="true"] .ambient-firefly{animation-play-state:running}
+    body.entry-active .ambient-fireflies,body.scene-entering .ambient-fireflies,body.truth-scene .ambient-fireflies,body.character-dialog-active .ambient-fireflies,body.spoiler-active .ambient-fireflies{opacity:0}
+    body.entry-active .ambient-fireflies .ambient-firefly,body.scene-entering .ambient-fireflies .ambient-firefly,body.truth-scene .ambient-fireflies .ambient-firefly,body.character-dialog-active .ambient-fireflies .ambient-firefly,body.spoiler-active .ambient-fireflies .ambient-firefly{animation-play-state:paused}
+    @keyframes ambient-firefly-drift{
+      0%{opacity:0;transform:translate3d(0,0,0) scale(.7)}
+      16%{opacity:.22}
+      32%{opacity:var(--firefly-glow,.58);transform:translate3d(calc(var(--firefly-sway) * .4),calc(var(--firefly-rise) * .3),0) scale(1)}
+      50%{opacity:.15;transform:translate3d(calc(var(--firefly-sway) * -.2),calc(var(--firefly-rise) * .52),0) scale(.85)}
+      68%{opacity:var(--firefly-glow,.58);transform:translate3d(calc(var(--firefly-sway) * .65),calc(var(--firefly-rise) * .72),0) scale(1)}
+      84%{opacity:.18}
+      100%{opacity:0;transform:translate3d(var(--firefly-sway),var(--firefly-rise),0) scale(.65)}
+    }
+    @media(max-width:650px){.ambient-firefly:nth-child(n+7){display:none}}
+    @media(prefers-reduced-motion:reduce){.ambient-fireflies{display:none}}
+
   </style>
 </head>
 <body>
@@ -522,6 +541,18 @@
   </dialog>
   <div id="site-shell">
   <div class="academy-page-background" aria-hidden="true"><img id="academy-page-image" alt="" decoding="async"></div>
+  <div class="ambient-fireflies" id="ambient-fireflies" aria-hidden="true" data-active="false" hidden>
+    <span class="ambient-firefly" style="--firefly-x:8vw;--firefly-y:84vh;--firefly-sway:38px;--firefly-rise:-94px;--firefly-duration:25s;--firefly-delay:-8s;--firefly-size:3px"></span>
+    <span class="ambient-firefly" style="--firefly-x:88vw;--firefly-y:66vh;--firefly-sway:-46px;--firefly-rise:-116px;--firefly-duration:31s;--firefly-delay:-20s;--firefly-size:3.5px"></span>
+    <span class="ambient-firefly" style="--firefly-x:23vw;--firefly-y:45vh;--firefly-sway:34px;--firefly-rise:-82px;--firefly-duration:28s;--firefly-delay:-4s;--firefly-size:2.5px;--firefly-glow:.4"></span>
+    <span class="ambient-firefly" style="--firefly-x:69vw;--firefly-y:88vh;--firefly-sway:-40px;--firefly-rise:-102px;--firefly-duration:24s;--firefly-delay:-15s;--firefly-size:3px"></span>
+    <span class="ambient-firefly" style="--firefly-x:96vw;--firefly-y:34vh;--firefly-sway:-30px;--firefly-rise:-74px;--firefly-duration:29s;--firefly-delay:-12s;--firefly-size:2.5px;--firefly-glow:.42"></span>
+    <span class="ambient-firefly" style="--firefly-x:43vw;--firefly-y:58vh;--firefly-sway:28px;--firefly-rise:-98px;--firefly-duration:33s;--firefly-delay:-27s;--firefly-size:2px;--firefly-glow:.35"></span>
+    <span class="ambient-firefly" style="--firefly-x:14vw;--firefly-y:24vh;--firefly-sway:42px;--firefly-rise:-86px;--firefly-duration:27s;--firefly-delay:-17s;--firefly-size:2.5px;--firefly-glow:.45"></span>
+    <span class="ambient-firefly" style="--firefly-x:78vw;--firefly-y:49vh;--firefly-sway:-36px;--firefly-rise:-114px;--firefly-duration:30s;--firefly-delay:-6s;--firefly-size:3px"></span>
+    <span class="ambient-firefly" style="--firefly-x:57vw;--firefly-y:73vh;--firefly-sway:32px;--firefly-rise:-92px;--firefly-duration:26s;--firefly-delay:-23s;--firefly-size:2.5px;--firefly-glow:.4"></span>
+    <span class="ambient-firefly" style="--firefly-x:34vw;--firefly-y:36vh;--firefly-sway:-28px;--firefly-rise:-78px;--firefly-duration:32s;--firefly-delay:-11s;--firefly-size:2px;--firefly-glow:.38"></span>
+  </div>
   <a class="skip" href="#main">본문으로 바로가기</a>
   <header class="header">
     <div class="header-inner wrap">
@@ -1214,6 +1245,14 @@
     let characterRenderKey='';
     const characterMotionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
     const characterTransitions=new WeakMap();
+    const ambientFireflies=document.querySelector('#ambient-fireflies');
+    function syncAcademyAmbience(){
+      if(!(ambientFireflies instanceof HTMLElement))return;
+      ambientFireflies.hidden=!mediaEntered||characterMotionPreference.matches;
+      ambientFireflies.dataset.active=String(mediaEntered&&!characterMotionPreference.matches&&!document.hidden&&['home','world','academy','characters'].includes(activeView));
+    }
+    characterMotionPreference.addEventListener('change',syncAcademyAmbience);
+    document.addEventListener('visibilitychange',syncAcademyAmbience);
     // Add each Phase's images in reading order; use actual pixel dimensions to keep scroll positions stable: {src:'./image.webp',alt:'장면 설명',width:1000,height:2400}.
     const truthPhases=[{number:1,images:[]},{number:2,images:[]},{number:3,images:[]}];
     let activeTruthPhase=1;
@@ -1498,7 +1537,7 @@
       if(switched||phaseChanged){window.scrollTo({top:0,behavior:'instant'});const heading=document.querySelector(phaseChanged&&!switched?'#truth-phase-title':`[data-view="${activeView}"] h1`);if(heading&&!characterDialog?.open){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}
       if(requested==='introduction'||requested==='main')document.getElementById(requested)?.scrollIntoView();
       if(mediaEntered)prepareAcademyBackground();
-      refreshMedia();syncCharacterDetail();
+      refreshMedia();syncCharacterDetail();syncAcademyAmbience();
     }
     document.addEventListener('click',event=>{
       const target=event.target instanceof Element?event.target:null;
@@ -1558,7 +1597,7 @@
       entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
       document.body.classList.remove('scene-entering','interface-revealing');
       entryScreen.close();document.body.classList.remove('entry-active');
-      mediaEntered=true;prepareAcademyBackground();refreshMedia();
+      mediaEntered=true;prepareAcademyBackground();refreshMedia();syncAcademyAmbience();
       academyTheme.begin();
       const heading=document.querySelector(`[data-view="${activeView}"] h1`);if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
       syncCharacterDetail();
