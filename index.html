@@ -7,7 +7,8 @@
   <meta name="theme-color" content="#0e1928">
   <meta name="description" content="검과 마법이 공존하는 루미에르 아카데미. 성장과 교류, 경쟁과 선택이 얽힌 중세 판타지 작품 소개.">
   <title>루미에르 아카데미 | Lumière Academy</title>
-  <link rel="preload" as="image" href="./academy-gate.webp">
+  <link rel="preload" as="image" href="./academy-gate.webp" media="not all and (orientation: portrait) and (max-width: 760px)">
+  <link rel="preload" as="image" href="./academy-gate-portrait.webp" media="(orientation: portrait) and (max-width: 760px)">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e1928'/%3E%3Cpath d='M32 7L38 25L56 32L38 39L32 57L26 39L8 32L26 25Z' fill='%23d3b779'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,27 +25,82 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
     .story-links{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:30px}.story-links a{padding:34px 30px 34px 0;transition:background .2s}.story-links a+a{border-left:1px solid var(--line);padding-left:30px}.story-links h2{font-family:var(--serif);font-size:21px;font-weight:500;margin:14px 0}.story-links p{color:var(--muted);font-size:14px;line-height:1.9;margin:0 0 22px}.text-link{display:inline-block;color:var(--gold);font-size:14px;border-bottom:1px solid rgba(211,183,121,.35);padding-bottom:4px}.story-links a:hover .text-link{border-color:var(--gold)}.closing{text-align:center;padding:64px 0 76px}.closing p{font-family:var(--serif);font-size:22px;line-height:2;margin:18px 0 22px}.ornament{color:var(--gold);font-size:22px}
     .page-view{padding-top:66px;padding-bottom:75px;min-height:calc(100svh - 170px)}.page-heading{margin-bottom:48px;padding-bottom:35px;border-bottom:1px solid var(--line)}.page-heading h1{font-family:var(--serif);font-size:clamp(31px,4vw,48px);font-weight:500;letter-spacing:-.05em;line-height:1.6;margin:15px 0 18px}.page-heading h1 span{color:var(--gold)}.page-heading p{color:var(--muted);margin:0;font-size:16px;line-height:1.9}.world-layout{display:grid;grid-template-columns:285px 1fr;gap:80px}.document-label{padding:27px 25px;border:1px solid var(--line);align-self:start;background:linear-gradient(145deg,#17273a,#101c2c)}.document-mark{display:block;font-family:var(--serif);font-size:25px;line-height:1.8;margin:28px 0 30px}.document-label dl{margin:0;padding-top:22px;border-top:1px solid var(--line)}.document-label dl div{margin-bottom:17px}.document-label dt{font-size:12px;color:var(--gold);margin-bottom:4px}.document-label dd{margin:0;font-size:14px;color:#b5c0ce}.world-article h2{font-family:var(--serif);font-size:23px;font-weight:500;margin:0 0 18px}.world-article h2:not(:first-child){margin-top:35px}.world-article>p{font-size:16px;color:#b5c0ce;line-height:2.05;margin:0 0 18px}.pullquote{padding:25px 30px;margin:35px 0;border-left:2px solid var(--gold);background:rgba(23,39,58,.5)}.pullquote p{font-family:var(--serif);font-size:22px;margin:12px 0 0;line-height:1.9}.lower-heading{margin-top:70px}.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:38px}.theme-grid article{border-top:1px solid var(--line);padding-top:24px}.theme-grid h3{font-family:var(--serif);font-weight:500;font-size:21px;margin:12px 0}.theme-grid p{font-size:15px;color:var(--muted);line-height:1.95;margin:0}.page-next{margin-top:65px;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:25px;align-items:center}.page-next>span{font-family:var(--serif);color:#b5c0ce;font-size:17px}
-    .faculty-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.faculty{background:linear-gradient(135deg,#1a2b3d,#111d2d);border:1px solid var(--line);padding:34px;position:relative}.faculty.magic{background:linear-gradient(135deg,#20273d,#141b2e)}.faculty-top{display:flex;align-items:center;justify-content:space-between;gap:20px}.faculty-number{font-family:var(--english);font-size:28px;color:rgba(211,183,121,.65)}.faculty h2{font-family:var(--serif);font-size:30px;font-weight:500;margin:10px 0 20px}.faculty-lead{font-family:var(--serif);font-size:20px;line-height:1.9;margin:0 0 20px}.faculty>p:not(.faculty-lead){font-size:15px;color:#acb8c8;line-height:1.95;margin:0 0 25px}.faculty-person{padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;font-size:14px}.faculty-person span{color:var(--muted)}.faculty-person a{color:var(--gold);border-bottom:1px solid transparent}.faculty-person a:hover{border-bottom-color:var(--gold)}.life-grid{margin-top:75px;display:grid;grid-template-columns:1fr 1.4fr;gap:65px}.life-heading{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.65;letter-spacing:-.04em;margin:18px 0}.life-grid .muted{font-size:15px;line-height:1.95}.life-list{border-top:1px solid var(--line)}.life-list details{border-bottom:1px solid var(--line);padding:17px 0}.life-list summary{cursor:pointer;font-family:var(--serif);font-size:18px;list-style:none;padding-right:25px;position:relative}.life-list summary::-webkit-details-marker{display:none}.life-list summary:after{content:'+';position:absolute;right:0;color:var(--gold);font:22px var(--english)}.life-list details[open] summary:after{content:'−'}.life-list summary span{font-family:var(--english);font-size:19px;color:var(--gold);display:inline-block;width:40px}.life-list details p{color:var(--muted);font-size:15px;line-height:1.95;margin:15px 0 5px 40px}.rank-note{margin-top:60px;border:1px solid var(--line);padding:28px 35px;background:#111f30}.rank-note h2{font-family:var(--serif);font-size:24px;font-weight:500;margin:12px 0}.rank-note p{color:#aebccc;font-size:15px;line-height:1.95;margin:0;max-width:800px}
+    .faculty-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.faculty{background:linear-gradient(135deg,#1a2b3d,#111d2d);border:1px solid var(--line);padding:34px;position:relative}.faculty.magic{background:linear-gradient(135deg,#20273d,#141b2e)}.faculty-top{display:flex;align-items:center;justify-content:space-between;gap:20px}.faculty-number{font-family:var(--english);font-size:28px;color:rgba(211,183,121,.65)}.faculty h2{font-family:var(--serif);font-size:30px;font-weight:500;margin:10px 0 20px}.faculty-lead{font-family:var(--serif);font-size:20px;line-height:1.9;margin:0 0 20px}.faculty>p:not(.faculty-lead){font-size:15px;color:#acb8c8;line-height:1.95;margin:0 0 25px}.faculty-person{padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;font-size:14px}.faculty-person span{color:var(--muted)}.faculty-person a{color:var(--gold);border-bottom:1px solid transparent}.faculty-person a:hover{border-bottom-color:var(--gold)}.life-grid{margin-top:75px;display:grid;grid-template-columns:1fr 1.4fr;gap:65px}.life-heading{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.65;letter-spacing:-.04em;margin:18px 0}.life-grid .muted{font-size:15px;line-height:1.95}.life-list{border-top:1px solid var(--line)}.life-list details{border-bottom:1px solid var(--line);padding:17px 0}.life-list summary{cursor:pointer;font-family:var(--serif);font-size:18px;list-style:none;padding-right:25px;position:relative}.life-list summary::-webkit-details-marker{display:none}.life-list summary:after{content:'+';position:absolute;right:0;color:var(--gold);font:22px var(--english)}.life-list details[open] summary:after{content:'−'}.life-list summary span{font-family:var(--english);font-size:19px;color:var(--gold);display:inline-block;width:40px}.life-list details p{color:var(--muted);font-size:15px;line-height:1.95;margin:15px 0 5px 40px}.rank-note{margin-top:60px;border:1px solid var(--line);padding:28px 35px;background:#111f30}.rank-note h2{font-family:var(--serif);font-size:24px;font-weight:500;margin:12px 0}.rank-note p+h2{margin-top:28px}.rank-note p{color:#aebccc;font-size:15px;line-height:1.95;margin:0;max-width:800px}
     .roster-controls{display:flex;gap:12px;margin-bottom:25px;flex-wrap:wrap}.filter{border:1px solid var(--line);color:var(--muted);background:transparent;padding:8px 20px;font-size:14px}.filter span{font-family:var(--english);font-size:16px;margin-left:10px}.filter.active{border-color:var(--gold);color:var(--gold);background:rgba(211,183,121,.07)}.filter:hover{border-color:var(--gold)}.character-layout{display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:start}.roster{border-top:1px solid var(--line)}.person{border:0;border-bottom:1px solid var(--line);background:none;display:flex;align-items:center;gap:17px;padding:14px 16px;width:100%;color:var(--muted);text-align:left;min-height:78px}.person-number{font-family:var(--english);font-size:24px;color:#718199;min-width:28px}.person-name{display:flex;flex-direction:column;gap:2px}.person-name strong{font-family:var(--serif);font-weight:500;font-size:18px;color:#c8d0db}.person-name small{font-size:12px;line-height:1.7}.person.active{background:#1c2d42;border-left:2px solid var(--gold);padding-left:14px}.person.active .person-number,.person.active strong{color:var(--gold)}.person:hover{background:#15263b}.profile{position:sticky;top:115px;background:#142236;border:1px solid var(--line);padding:35px 40px;overflow:hidden}.profile-top{display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:18px}.profile h2{font-family:var(--serif);font-size:46px;font-weight:500;letter-spacing:-.05em;margin:28px 0 8px;line-height:1.5}.profile-subtitle{color:var(--gold);font-family:var(--serif);font-size:19px;margin:0 0 30px}.profile-description{color:#c1cbd7;font-size:16px;line-height:2;margin:0 0 28px}.profile-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 25px}.profile-facts dt{font-size:12px;color:var(--muted);margin-bottom:5px}.profile-facts dd{font-family:var(--serif);font-size:17px;margin:0}.profile h3{font-family:var(--serif);font-size:19px;font-weight:500;margin:0 0 12px}.profile-note{color:#aebccc;line-height:1.95;font-size:15px;margin:0 0 25px}.profile-tags{display:flex;flex-wrap:wrap;gap:8px}.profile-tags span{font-size:12px;padding:4px 11px;background:#1b2c42;color:#c5b68f;border:1px solid rgba(211,183,121,.18)}.profile-count{font-family:var(--english);letter-spacing:.1em;color:var(--gold)}
     @media(max-width:900px){.world-layout{grid-template-columns:230px 1fr;gap:35px}.story-links h2{font-size:18px}.story-links a{padding-right:22px}.story-links a+a{padding-left:22px}.character-layout{grid-template-columns:230px 1fr;gap:20px}.profile{padding:28px}.faculty{padding:27px}.life-grid{gap:35px}.theme-grid{gap:25px}.profile h2{font-size:38px}}
     @media(max-width:650px){.story-links{grid-template-columns:1fr}.story-links a,.story-links a+a{border-left:0;padding:26px 0}.story-links a+a{border-top:1px solid var(--line)}.story-links h2{font-size:21px}.closing{padding:35px 0 60px}.closing p{font-size:18px}.page-view{padding-top:42px;padding-bottom:50px}.page-heading{margin-bottom:30px;padding-bottom:28px}.page-heading h1{font-size:31px;line-height:1.65}.page-heading p{font-size:15px}.world-layout{grid-template-columns:1fr;gap:35px}.document-label{padding:22px}.document-mark{font-size:25px;margin:18px 0}.document-label dl{display:grid;grid-template-columns:1fr;gap:10px}.document-label dl div{margin-bottom:5px}.theme-grid,.faculty-grid{grid-template-columns:1fr}.theme-grid{gap:28px}.lower-heading{margin-top:45px}.pullquote{padding:22px}.pullquote p{font-size:19px}.life-grid{grid-template-columns:1fr;margin-top:45px;gap:20px}.life-heading{font-size:28px}.faculty{padding:25px}.rank-note{padding:24px;margin-top:40px}.page-next{margin-top:40px;align-items:flex-start;flex-direction:column}.character-layout{grid-template-columns:1fr;gap:28px}.roster{display:grid;grid-template-columns:1fr 1fr;gap:0}.person{padding:12px 9px;gap:10px;min-height:75px}.person.active{padding-left:7px}.person-name strong{font-size:16px}.person-name small{font-size:12px}.person-number{font-size:20px;min-width:22px}.filter{padding:7px 14px}.profile{position:static;padding:25px}.profile h2{font-size:36px}.profile-top{gap:10px;font-size:11px}.profile-facts{gap:20px}.profile-facts dd{font-size:16px}.faculty-lead{font-size:19px}}
     @media(min-width:601px) and (max-width:700px){.nav{gap:15px}.nav a{font-size:13px}.brand-text strong{font-size:15px}}
     @media(max-width:360px){.hero h1{font-size:44px}.hero-actions{gap:10px}.hero-actions .button{padding:10px 17px;font-size:13px}.roster{grid-template-columns:1fr}.hero-english{font-size:14px}}
-    body.entry-active,body.lightbox-active{overflow:hidden}.entry-screen{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:45px;border:0;background:#070e18;color:#fff;overflow:auto;isolation:isolate;display:grid;place-items:center;text-align:center}.entry-screen:not([open]){display:none}.entry-screen::backdrop{background:#070e18}.entry-background{position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:64% 50%;opacity:.3;filter:blur(3px) saturate(.65);transform:scale(1.045)}.entry-screen:before{content:'';position:absolute;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 47%,rgba(16,35,54,.2),rgba(3,9,17,.84) 80%),linear-gradient(0deg,#070e18,transparent 35%,rgba(5,12,21,.3))}.entry-grid{position:absolute;inset:0;z-index:-2;opacity:.07;background-image:linear-gradient(rgba(209,234,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(209,234,255,.4) 1px,transparent 1px);background-size:85px 85px;mask-image:radial-gradient(ellipse,transparent 40%,#000 90%)}.entry-content{width:min(780px,100%);position:relative;padding:42px 0}.entry-edition{color:#adbdcb;letter-spacing:.26em;font-size:12px;line-height:2;margin:0 0 35px}.entry-ornament{display:flex;align-items:center;justify-content:center;gap:22px;margin-bottom:20px;color:#eef5fc}.entry-ornament span{width:90px;height:1px;background:linear-gradient(90deg,transparent,rgba(234,243,255,.7))}.entry-ornament span:last-child{transform:rotate(180deg)}.entry-ornament b{font-size:24px;font-weight:400}.entry-title{font-family:var(--serif);color:#fff;font-size:clamp(52px,7.5vw,98px);font-weight:500;line-height:1.55;letter-spacing:.095em;margin:0;text-shadow:0 2px 3px #020811,0 0 24px rgba(210,231,255,.18),0 0 80px rgba(191,219,255,.13)}.entry-title span{display:block}.entry-title span:last-child{font-size:.72em;letter-spacing:.22em;padding-left:.22em;line-height:1.7}.entry-english{font-family:var(--english);font-size:21px;letter-spacing:.42em;line-height:1.8;color:#d8e3ef;margin:22px 0 40px;padding-left:.42em}.entry-enter{border:1px solid rgba(225,239,255,.65);background:rgba(16,31,48,.45);color:white;min-width:185px;padding:15px 28px;display:inline-flex;flex-direction:column;align-items:center;gap:2px;transition:background .25s,border-color .25s,box-shadow .25s}.entry-enter>span{font-family:var(--english);font-size:21px;letter-spacing:.3em;padding-left:.3em;line-height:1.6}.entry-enter small{font-size:12px;color:#b8c8d8;letter-spacing:.15em}.entry-enter:hover{border-color:#fff;background:rgba(42,66,89,.75);box-shadow:0 0 35px rgba(185,219,250,.1)}.entry-enter:focus-visible{outline-color:#fff}.entry-action p{font-size:12px;color:#90a3b8;margin:17px 0 0}.entry-footer{position:absolute;bottom:28px;left:45px;right:45px;display:flex;justify-content:space-between;gap:20px;font-family:var(--english);font-size:12px;letter-spacing:.18em;color:#8b9eb2}.entry-corner{position:absolute;width:26px;height:26px;opacity:.4;border-color:#c5dcec;border-style:solid}.top-left{top:28px;left:28px;border-width:1px 0 0 1px}.top-right{top:28px;right:28px;border-width:1px 1px 0 0}.bottom-left{bottom:28px;left:28px;border-width:0 0 1px 1px}.bottom-right{bottom:28px;right:28px;border-width:0 1px 1px 0}.entry-connection{width:min(270px,100%);margin:0 auto;min-height:100px}.entry-connection p{font-family:var(--serif);font-size:16px;color:#e0eefb;margin:0 0 16px}.entry-connection progress{display:block;width:100%;height:2px;border:0;appearance:none;background:#24384d;color:#d6edff}.entry-connection progress::-webkit-progress-bar{background:#24384d}.entry-connection progress::-webkit-progress-value{background:#d6edff;box-shadow:0 0 14px #b3dbff;transition:width .3s}.entry-connection progress::-moz-progress-bar{background:#d6edff}.entry-connection>span{display:block;font-family:var(--english);font-size:12px;letter-spacing:.18em;color:#90aecb;margin-top:14px}.entry-scan{position:absolute;z-index:2;left:0;right:0;top:0;height:1px;background:rgba(199,229,255,.8);box-shadow:0 0 45px 10px rgba(151,209,255,.08);opacity:0;pointer-events:none}.entry-screen.connecting .entry-scan{animation:entry-scan 1.1s ease-in-out both}.entry-screen.connecting .entry-title{animation:entry-focus 1.1s ease-in-out both}.entry-screen.leaving{opacity:0;transform:scale(1.015);transition:opacity .35s ease,transform .35s ease}.site-reveal{animation:site-reveal .55s ease-out both}@keyframes entry-scan{0%{opacity:0;top:15%}25%{opacity:.55}85%{opacity:.3}100%{opacity:0;top:90%}}@keyframes entry-focus{from{opacity:1}to{opacity:.68;filter:blur(.5px);transform:scale(1.025)}}@keyframes site-reveal{from{opacity:.4;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    body.entry-active,body.lightbox-active{overflow:hidden}.entry-screen{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:45px;border:0;background:#070e18;color:#fff;overflow:auto;isolation:isolate;display:grid;place-items:center;text-align:center}.entry-screen:not([open]){display:none}.entry-screen::backdrop{background:#070e18}.entry-background{position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:64% 50%;opacity:.3;filter:blur(3px) saturate(.65);transform:scale(1.045)}.entry-screen:before{content:'';position:absolute;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 47%,rgba(16,35,54,.2),rgba(3,9,17,.84) 80%),linear-gradient(0deg,#070e18,transparent 35%,rgba(5,12,21,.3))}.entry-grid{position:absolute;inset:0;z-index:-2;opacity:.07;background-image:linear-gradient(rgba(209,234,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(209,234,255,.4) 1px,transparent 1px);background-size:85px 85px;mask-image:radial-gradient(ellipse,transparent 40%,#000 90%)}.entry-content{width:min(780px,100%);position:relative;padding:42px 0}.entry-edition{color:#adbdcb;letter-spacing:.26em;font-size:12px;line-height:2;margin:0 0 35px}.entry-ornament{display:flex;align-items:center;justify-content:center;gap:22px;margin-bottom:20px;color:#eef5fc}.entry-ornament span{width:90px;height:1px;background:linear-gradient(90deg,transparent,rgba(234,243,255,.7))}.entry-ornament span:last-child{transform:rotate(180deg)}.entry-ornament b{font-size:24px;font-weight:400}.entry-enter{border:1px solid rgba(225,239,255,.65);background:rgba(16,31,48,.45);color:white;min-width:185px;padding:15px 28px;display:inline-flex;flex-direction:column;align-items:center;gap:2px;transition:background .25s,border-color .25s,box-shadow .25s}.entry-enter>span{font-family:var(--english);font-size:21px;letter-spacing:.3em;padding-left:.3em;line-height:1.6}.entry-enter small{font-size:12px;color:#b8c8d8;letter-spacing:.15em}.entry-enter:hover{border-color:#fff;background:rgba(42,66,89,.75);box-shadow:0 0 35px rgba(185,219,250,.1)}.entry-enter:focus-visible{outline-color:#fff}.entry-footer{position:absolute;bottom:28px;left:45px;right:45px;display:flex;justify-content:flex-end;gap:20px;font-family:var(--english);font-size:12px;letter-spacing:.18em;color:#8b9eb2}.entry-corner{position:absolute;width:26px;height:26px;opacity:.4;border-color:#c5dcec;border-style:solid}.top-left{top:28px;left:28px;border-width:1px 0 0 1px}.top-right{top:28px;right:28px;border-width:1px 1px 0 0}.bottom-left{bottom:28px;left:28px;border-width:0 0 1px 1px}.bottom-right{bottom:28px;right:28px;border-width:0 1px 1px 0}.entry-connection{width:min(270px,100%);margin:0 auto;min-height:100px}.entry-connection p{font-family:var(--serif);font-size:16px;color:#e0eefb;margin:0 0 16px}.entry-connection progress{display:block;width:100%;height:2px;border:0;appearance:none;background:#24384d;color:#d6edff}.entry-connection progress::-webkit-progress-bar{background:#24384d}.entry-connection progress::-webkit-progress-value{background:#d6edff;box-shadow:0 0 14px #b3dbff;transition:width .3s}.entry-connection progress::-moz-progress-bar{background:#d6edff}.entry-connection>span{display:block;font-family:var(--english);font-size:12px;letter-spacing:.18em;color:#90aecb;margin-top:14px}.entry-scan{position:absolute;z-index:2;left:0;right:0;top:0;height:1px;background:rgba(199,229,255,.8);box-shadow:0 0 45px 10px rgba(151,209,255,.08);opacity:0;pointer-events:none}.entry-screen.connecting .entry-scan{animation:entry-scan 1.1s ease-in-out both}.entry-screen.leaving{opacity:0;transform:scale(1.015);transition:opacity .35s ease,transform .35s ease}.site-reveal{animation:site-reveal .55s ease-out both}@keyframes entry-scan{0%{opacity:0;top:15%}25%{opacity:.55}85%{opacity:.3}100%{opacity:0;top:90%}}@keyframes site-reveal{from{opacity:.4;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
     .person-thumb{width:46px;height:56px;flex-shrink:0;display:grid;place-items:center;border:1px solid rgba(211,183,121,.17);color:#8a9db5;background:#0e1b2b;overflow:hidden;position:relative;font-family:var(--english);font-size:24px}.person-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.person-thumb.is-unavailable img{display:none}.person-thumb .media-fallback{font-size:20px}.person .person-number{min-width:0}.profile{position:static}.profile-hero{display:grid;grid-template-columns:160px 1fr;gap:27px;margin:28px 0;align-items:center}.profile-hero h2{margin:0 0 8px;font-size:36px}.profile-hero .profile-subtitle{font-size:17px;margin:0;line-height:1.9}.portrait-slot{aspect-ratio:3/4;border:1px solid var(--line);background:#0d1a2b;display:grid;place-items:center;position:relative;overflow:hidden;color:#a3b3c8}.portrait-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.media-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px;color:#a9b8ca;text-align:center;font-size:14px;line-height:1.7}.media-fallback small{font-size:12px;color:#6f859e;letter-spacing:.08em}.portrait-slot.is-unavailable img,.gallery-slot.is-unavailable img,.lightbox-stage.is-unavailable img{display:none}.profile-gallery{margin-top:28px;padding-top:23px;border-top:1px solid var(--line)}.gallery-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.gallery-heading h3{font-family:var(--sans);font-size:14px;margin:0;color:#cfdae8}.gallery-heading span{font-size:12px;color:var(--gold)}.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.gallery-item{margin:0;min-width:0}.gallery-slot{display:grid;place-items:center;position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;padding:0;border:1px solid rgba(211,183,121,.23);background:#0e1b2b;color:#cdd8e6}.gallery-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}.gallery-slot:not(:disabled):hover img,.gallery-slot:focus-visible img{transform:scale(1.04)}.gallery-slot:disabled{opacity:1;cursor:default}.gallery-index{position:absolute;left:11px;top:8px;z-index:1;color:#c5d4e6;font-family:var(--english);font-size:14px;text-shadow:0 1px 5px #070e18}.gallery-enlarge{position:absolute;inset:auto 0 0;padding:10px;background:linear-gradient(transparent,rgba(5,13,23,.9));font-size:12px;opacity:0;transition:opacity .2s}.gallery-slot:not(:disabled):hover .gallery-enlarge,.gallery-slot:focus-visible .gallery-enlarge{opacity:1}.gallery-item figcaption{font-size:12px;color:#8195ad;margin-top:7px}.gallery-note{font-size:12px;color:#8396ad;margin:17px 0 0;line-height:1.8}
     .media-lightbox{width:min(1100px,calc(100% - 48px));max-width:none;max-height:calc(100svh - 48px);padding:0;border:1px solid rgba(211,183,121,.36);background:#0c1726;color:var(--ivory);overflow:auto}.media-lightbox::backdrop{background:rgba(3,8,15,.91);backdrop-filter:blur(7px)}.lightbox-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 23px;border-bottom:1px solid var(--line)}.lightbox-head h2{font-family:var(--sans);font-size:15px;font-weight:400;line-height:1.7;margin:0}.lightbox-close{background:none;border:0;padding:4px 8px;color:#ced8e4;font-size:14px;display:flex;align-items:center;gap:12px}.lightbox-close span{font-size:24px}.lightbox-stage{height:min(65svh,720px);display:grid;place-items:center;background:#070e18;padding:15px;position:relative}.lightbox-stage img{width:100%;height:100%;max-height:100%;object-fit:contain;display:block}.lightbox-stage .media-fallback{position:absolute}.lightbox-foot{display:flex;justify-content:space-between;align-items:center;padding:14px 23px;gap:16px}.lightbox-foot button{background:none;border:1px solid var(--line);padding:7px 13px;font-size:13px;color:var(--ivory)}.lightbox-foot button:disabled{opacity:.3}.lightbox-foot>span{font-family:var(--english);color:var(--gold);font-size:16px;letter-spacing:.1em}
     @media(max-width:900px){.profile-hero{grid-template-columns:125px 1fr;gap:20px}.profile-hero h2{font-size:30px}.profile-hero .profile-subtitle{font-size:16px}.person-thumb{width:37px;height:48px}.person{gap:12px}.entry-screen{padding:35px}}
-    @media(max-width:650px){.entry-screen{padding:25px 20px}.entry-content{padding:30px 0 55px}.entry-title{font-size:clamp(43px,10.5vw,65px);letter-spacing:.025em}.entry-title span:last-child{font-size:.8em;letter-spacing:.15em;padding-left:.15em}.entry-edition{font-size:10px;letter-spacing:.15em;margin-bottom:27px}.entry-english{font-size:16px;letter-spacing:.28em;padding-left:.28em;margin:23px 0 35px}.entry-footer{left:25px;right:25px;bottom:21px;font-size:10px}.entry-corner{width:16px;height:16px}.top-left{left:14px;top:14px}.top-right{right:14px;top:14px}.bottom-left{left:14px;bottom:14px}.bottom-right{right:14px;bottom:14px}.entry-ornament{gap:18px}.entry-ornament span{width:60px}.entry-enter{min-width:170px;padding:13px 22px}.person-thumb{width:34px;height:45px}.person{gap:10px}.person-name{min-width:0}.person-name small{line-height:1.6}.profile-hero{grid-template-columns:100px 1fr;gap:18px}.profile-hero h2{font-size:28px}.profile-hero .profile-subtitle{font-size:15px}.media-fallback{font-size:12px;padding:10px;gap:6px}.media-fallback small{font-size:10px}.gallery-grid{gap:10px}.media-lightbox{width:calc(100% - 24px);max-height:calc(100svh - 24px)}.lightbox-head,.lightbox-foot{padding:14px}.lightbox-head h2{font-size:14px}.lightbox-stage{height:60svh;padding:10px}.lightbox-foot{gap:8px}.lightbox-foot button{padding:7px 10px;font-size:12px}.gallery-note{font-size:12px}.profile-gallery{margin-top:24px}}
+    @media(max-width:650px){.entry-screen{padding:25px 20px}.entry-content{padding:30px 0 55px}.entry-edition{font-size:10px;letter-spacing:.15em;margin-bottom:27px}.entry-footer{left:25px;right:25px;bottom:21px;font-size:10px}.entry-corner{width:16px;height:16px}.top-left{left:14px;top:14px}.top-right{right:14px;top:14px}.bottom-left{left:14px;bottom:14px}.bottom-right{right:14px;bottom:14px}.entry-ornament{gap:18px}.entry-ornament span{width:60px}.entry-enter{min-width:170px;padding:13px 22px}.person-thumb{width:34px;height:45px}.person{gap:10px}.person-name{min-width:0}.person-name small{line-height:1.6}.profile-hero{grid-template-columns:100px 1fr;gap:18px}.profile-hero h2{font-size:28px}.profile-hero .profile-subtitle{font-size:15px}.media-fallback{font-size:12px;padding:10px;gap:6px}.media-fallback small{font-size:10px}.gallery-grid{gap:10px}.media-lightbox{width:calc(100% - 24px);max-height:calc(100svh - 24px)}.lightbox-head,.lightbox-foot{padding:14px}.lightbox-head h2{font-size:14px}.lightbox-stage{height:60svh;padding:10px}.lightbox-foot{gap:8px}.lightbox-foot button{padding:7px 10px;font-size:12px}.gallery-note{font-size:12px}.profile-gallery{margin-top:24px}}
     .entry-screen{overflow-x:hidden}.entry-background{transform:none}
-    @media(max-height:800px) and (min-width:651px){.entry-content{padding:10px 0}.entry-title{font-size:72px;line-height:1.35}.entry-title span:last-child{line-height:1.6}.entry-edition{margin-bottom:22px}.entry-ornament{margin-bottom:14px}.entry-english{margin:20px 0 28px}.entry-enter{padding:11px 25px}}
-    @media(max-height:630px) and (min-width:651px){.entry-content{padding:10px 0}.entry-title{font-size:55px;line-height:1.35}.entry-title span:last-child{line-height:1.6}.entry-edition{margin-bottom:15px}.entry-ornament{margin-bottom:10px}.entry-english{margin:15px 0 22px}.entry-footer{bottom:17px}.entry-enter{padding:8px 25px}}
-    @media(prefers-reduced-motion:reduce){.entry-screen.connecting .entry-scan{display:none}.entry-screen.connecting .entry-title{filter:none;transform:none;opacity:1}.entry-screen.leaving{transition:none}.site-reveal{animation:none}}
-    .security-console{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(900px,calc(100% - 80px));border:1px solid #303030;border-radius:4px;background:#000;color:#c4c7c9;text-align:left;font-family:Consolas,'Liberation Mono','Courier New',monospace;box-shadow:0 28px 110px rgba(0,0,0,.75),0 1px 0 rgba(255,255,255,.05);overflow:hidden;z-index:4}.console-titlebar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 16px;background:#000;border-bottom:1px solid #242424}.console-window-title{display:flex;align-items:center;gap:11px;margin:0;color:#b5b9bc;font-size:12px;line-height:1.7;letter-spacing:.015em;min-width:0}.console-icon{font-size:15px;color:#e0e1e2;flex-shrink:0}.console-continue{border:1px solid #333;border-radius:3px;background:#000;color:#c5c8ca;font-family:var(--sans);font-size:11px;line-height:1.6;padding:4px 10px;white-space:nowrap}.console-continue:hover{background:#151515;color:#fff}.console-continue:focus-visible{outline-color:#c2c8cc;outline-offset:3px}.console-body{padding:22px 24px;height:min(430px,calc(100svh - 160px));overflow:auto;scrollbar-color:#353535 #000;scrollbar-width:thin}.console-heading{font-family:inherit;font-size:12px;font-weight:400;letter-spacing:.1em;color:#e0e2e3;margin:0 0 7px;line-height:1.6}.console-session{color:#686f75;font-size:11px;line-height:1.8;margin:0 0 21px}.console-log{padding:0;margin:0;list-style:none;font-size:14px;line-height:1.9;letter-spacing:0;overflow-wrap:anywhere;word-break:normal}.console-log li{display:block;min-height:27px}.console-payload{white-space:pre-wrap}.console-time{color:#657078;white-space:nowrap;font-size:12px;margin-right:12px}.console-message{color:#aeb5b9}.console-log li[data-tone="muted"] .console-message{color:#727d84}.console-log li[data-tone="notice"] .console-message{color:#bdad83}.console-log li[data-tone="ready"] .console-message,.console-log li[data-tone="ready"] .console-tag{color:#84c99d}.console-log li[data-tone="error"] .console-message,.console-log li[data-tone="error"] .console-tag{color:#e18282}.console-tag{color:#8c959b}.console-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;background:#000;padding:7px 24px 15px;color:#5e6b71;font-size:11px;letter-spacing:0;line-height:1.8}.console-footer p{margin:0;color:#7b8b92}.entry-screen.connecting .entry-content{opacity:.2;filter:blur(1.5px);transition:opacity .2s,filter .2s;pointer-events:none}.entry-screen.connecting .entry-title{animation:none}.entry-screen.connecting .entry-scan{display:none}.entry-screen.connecting .entry-grid{opacity:.035}.entry-screen.connecting .entry-footer{opacity:.2}.entry-screen.connecting .entry-background{opacity:.2;transition:opacity .2s}.entry-screen.leaving{transform:none;transition:opacity .35s ease}.entry-screen.connecting .entry-corner{opacity:.1}
-    .console-tag{display:inline-block;min-width:8ch}.console-log li[data-tone="pending"] .console-tag{color:#b6c9d0}.console-log li[data-tone="pending"] .console-message{color:#aeb5b9}
-    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap;border:0}.console-command{padding-bottom:12px}.console-command .console-prompt{color:#84c99d;font-weight:600}.console-command .console-message{color:#e6e6e6}.console-command .console-time{display:none}
-    @media(max-width:650px){.security-console{width:calc(100% - 28px)}.console-titlebar{padding:10px 12px;gap:10px}.console-window-title{font-size:11px;gap:8px}.console-icon{font-size:13px}.console-continue{font-size:11px;padding:4px 7px}.console-body{padding:18px 16px;height:min(500px,calc(100svh - 145px))}.console-log{font-size:12px;line-height:1.9}.console-log li{min-height:25px}.console-time{font-size:11px;margin-right:8px}.console-footer{padding:5px 16px 12px;font-size:10px}.console-command{padding-bottom:13px}}
-    @media(max-height:560px){.security-console{max-height:calc(100% - 40px)}.console-body{height:calc(100svh - 145px);padding-top:15px;padding-bottom:12px}}
-
+    @media(max-height:800px) and (min-width:651px){.entry-content{padding:10px 0}.entry-edition{margin-bottom:22px}.entry-ornament{margin-bottom:14px}.entry-enter{padding:11px 25px}}
+    @media(max-height:630px) and (min-width:651px){.entry-content{padding:10px 0}.entry-edition{margin-bottom:15px}.entry-ornament{margin-bottom:10px}.entry-footer{bottom:17px}.entry-enter{padding:8px 25px}}
+    @media(prefers-reduced-motion:reduce){.entry-screen.connecting .entry-scan{display:none}.entry-screen.leaving{transition:none}.site-reveal{animation:none}}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap;border:0}
+    /* ENTER: the painted gate opens into sky, then the same home landscape. */
+    .academy-opening{--opening-duration:7.4s;position:absolute;inset:0;z-index:10;overflow:hidden;isolation:isolate;color:#23374c}
+    .opening-stage,.opening-sky-surface{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+    .opening-sky-surface{background:#f6fcff;transition:opacity 1.6s cubic-bezier(.2,.6,.2,1)}
+    .opening-world{position:absolute;inset:-8%;overflow:hidden;background:radial-gradient(ellipse at 63% 25%,#ffffffeb 0%,#ffffff00 44%),linear-gradient(180deg,#abd4ec 0%,#d9eff9 40%,#fff 68%,#ebf6fa 100%)}
+    .opening-cloud{position:absolute;filter:blur(2px);background:radial-gradient(ellipse 27% 31% at 24% 51%,#fff 36%,#ffffff00 100%),radial-gradient(ellipse 24% 43% at 44% 47%,#fff 38%,#ffffff00 100%),radial-gradient(ellipse 30% 42% at 68% 60%,#fff 42%,#ffffff00 100%),radial-gradient(ellipse 43% 21% at 50% 73%,#fff 40%,#ffffff00 100%)}
+    .opening-cloud.far{top:2%;left:-5%;width:67%;height:32%;opacity:.6}
+    .opening-cloud.left{top:8%;left:-43%;width:87%;height:74%;rotate:17deg;opacity:.92}
+    .opening-cloud.right{top:-26%;right:-42%;width:80%;height:98%;rotate:-20deg;opacity:.88}
+    .opening-reflection{position:absolute;inset:70% 0 0;background:linear-gradient(176deg,transparent 10%,#ffffffba 33%,transparent 34%,transparent 54%,#ffffffb3 55%,transparent 56%),linear-gradient(180deg,#ffffff00,#c8e6f266 65%,#e9f5fa);opacity:.65}
+    .opening-sunlight{position:absolute;inset:-30%;background:radial-gradient(ellipse 26% 16% at 71% 24%,#ffffffd9 12%,transparent 100%),conic-gradient(from 128deg at 72% 21%,transparent 0deg,#ffffff70 10deg,transparent 18deg,#ffffffa8 25deg,transparent 33deg);opacity:.4}
+    .opening-lights{position:absolute;inset:0;opacity:0}
+    .opening-lights>span{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);border-radius:50%;background:radial-gradient(circle,#fff 0% 18%,#fff9e6bd 35%,#e2c49200 76%);filter:drop-shadow(0 0 3px #fff8cf)}
+    .opening-lights>.light-shard{height:calc(var(--size)*2.3);border-radius:80% 12% 80% 18%;background:linear-gradient(150deg,#fff 15%,#fff7d4bd 65%,#ffffff00);filter:blur(.25px) drop-shadow(0 0 5px #fff7d4)}
+    .opening-lights>.light-bokeh{background:radial-gradient(circle,#fff7d770 0% 25%,#ffffff50 35%,transparent 74%);filter:blur(3px);opacity:.18}
+    .opening-white-veil{position:absolute;inset:0;background:#fff;opacity:0}
+    .opening-copy,.opening-title{position:absolute;inset:0;display:grid;place-items:center;opacity:0}
+    .opening-copy p{margin:0;padding:0 24px;font-family:var(--serif);font-weight:400;font-size:clamp(22px,3.1vw,36px);line-height:1.9;letter-spacing:.065em;color:#23374c;text-shadow:0 1px 18px #ffffffa6}
+    .opening-copy p>span{display:inline-block}.opening-copy p>span+span{margin-left:.35em}
+    .opening-logo{display:grid;place-items:center;position:relative;overflow:hidden;width:min(80vw,760px,110svh);aspect-ratio:1185/457}
+    .opening-logo img{position:absolute;left:50%;top:50%;width:141%;max-width:none;height:auto;transform:translate(-50%,-50%);filter:brightness(.22) sepia(.2) hue-rotate(155deg);opacity:0}
+    .opening-title-text{display:flex;flex-direction:column;align-items:flex-start;font-family:var(--serif);font-size:min(clamp(32px,6.8vw,83px),15svh);font-weight:400;line-height:1.25;letter-spacing:.025em;color:#23374c}
+    .opening-title-text>span+span{padding-left:1.1em}.opening-logo.has-logo img{opacity:1}.opening-logo.has-logo .opening-title-text{display:none}
+    .academy-opening .gateway-skip{z-index:12;min-height:44px;color:#334c61;background:#ffffff73;border-color:#4667834d;box-shadow:0 3px 22px #4267800a;transition:color .4s,background .4s,border-color .4s}
+    .academy-opening .gateway-skip:focus-visible{outline:2px solid #557b9b;outline-offset:4px}
+    .academy-opening[data-phase="passing"] .gateway-skip,.academy-opening.world-revealing .gateway-skip{color:#f0e2bf;background:#0c1925b3;border-color:#f8e7b966}
+    .academy-opening.opening .gate-architecture{z-index:3;animation:opening-gate-passage 1.75s cubic-bezier(.4,0,.2,1) both;will-change:transform,opacity}
+    .academy-opening.opening .painted-gate-leaf{will-change:transform}
+    .academy-opening.opening .painted-gate-leaf.left{animation:opening-left-door 1.6s .08s cubic-bezier(.18,.7,.25,1) both}
+    .academy-opening.opening .painted-gate-leaf.right{animation:opening-right-door 1.6s .08s cubic-bezier(.18,.7,.25,1) both}
+    .academy-opening.opening .opening-world{animation:opening-sky-focus var(--opening-duration) ease both}
+    .academy-opening.opening .opening-cloud{animation:opening-cloud-drift var(--opening-duration) ease both}
+    .academy-opening.opening .opening-sunlight{animation:opening-sunlight var(--opening-duration) ease both}
+    .academy-opening.opening .opening-white-veil{animation:opening-white-passage var(--opening-duration) ease both}
+    .academy-opening.opening .opening-lights{animation:opening-light-presence var(--opening-duration) ease both}
+    .academy-opening.opening .opening-lights>span{animation:opening-light-drift 5.6s var(--delay) ease both}
+    .academy-opening.opening .opening-lights>.light-bokeh{animation-name:opening-bokeh-drift}
+    .academy-opening.opening .opening-copy{animation:opening-quote var(--opening-duration) ease both}
+    .academy-opening.opening .opening-copy p>span+span{animation:opening-last-phrase var(--opening-duration) ease both}
+    .academy-opening.opening .opening-title{animation:opening-title-arrive var(--opening-duration) ease both}
+    .academy-opening.opening.title-departing .opening-title{animation:opening-title-depart 1.1s cubic-bezier(.3,0,.3,1) both}
+    .academy-opening.world-revealing .opening-sky-surface{opacity:0}
+    .scene-entering.world-revealing .hero-image{animation:opening-home-arrive 3.5s cubic-bezier(.2,.6,.2,1) both}
+    @keyframes opening-left-door{from{transform:rotateY(0)}to{transform:rotateY(-78deg)}}
+    @keyframes opening-right-door{from{transform:rotateY(0)}to{transform:rotateY(78deg)}}
+    @keyframes opening-gate-passage{0%,10%{opacity:1;transform:scale(1)}58%{opacity:.95}100%{opacity:0;transform:scale(1.24)}}
+    @keyframes opening-sky-focus{0%,22%{transform:scale(1.05);filter:blur(5px)}70%,100%{transform:scale(1);filter:blur(0)}}
+    @keyframes opening-cloud-drift{from{transform:translate(-18px,3px)}to{transform:translate(19px,-4px)}}
+    @keyframes opening-sunlight{0%,20%{opacity:.1;transform:rotate(-3deg)}40%{opacity:.75}100%{opacity:.3;transform:rotate(2deg)}}
+    @keyframes opening-white-passage{0%,8%{opacity:0}19%,26%{opacity:1}48%{opacity:.55}100%{opacity:.15}}
+    @keyframes opening-light-presence{0%,23%{opacity:0}39%,68%{opacity:.9}100%{opacity:.55}}
+    @keyframes opening-light-drift{0%,12%{opacity:0;transform:translate(0,0) rotate(0)}32%{opacity:.9}65%{opacity:.7}100%{opacity:.12;transform:translate(var(--drift),var(--rise)) rotate(36deg)}}
+    @keyframes opening-bokeh-drift{0%,12%{opacity:0;transform:translate(0,0)}32%,65%{opacity:.28}100%{opacity:.08;transform:translate(var(--drift),var(--rise))}}
+    @keyframes opening-quote{0%,33%{opacity:0;filter:blur(3px);transform:translateY(5px)}45%,70%{opacity:1;filter:blur(0);transform:translateY(0)}80%,100%{opacity:0;filter:blur(0);transform:translateY(-3px)}}
+    @keyframes opening-last-phrase{0%,46%{opacity:0}58%,100%{opacity:1}}
+    @keyframes opening-title-arrive{0%,80%{opacity:0;filter:blur(7px);transform:scale(1.025)}100%{opacity:1;filter:blur(0);transform:scale(1)}}
+    @keyframes opening-title-depart{from{opacity:1;filter:blur(0);transform:scale(1)}to{opacity:0;filter:blur(5px);transform:scale(1.035)}}
+    @keyframes opening-home-arrive{from{transform:scale(1.035)}to{transform:scale(1)}}
+    @media(max-width:600px){.opening-copy p{font-size:clamp(19px,5.1vw,26px)}.opening-logo{width:min(90vw,110svh)}.academy-opening .gateway-skip{right:18px;bottom:max(18px,env(safe-area-inset-bottom))}.opening-lights>.light-bokeh{filter:blur(2px)}}
+    @media(prefers-reduced-motion:reduce){.academy-opening *{animation:none!important;transition:none!important}.academy-opening .opening-title{opacity:1}.academy-opening .gate-architecture{display:none}}
     .academy-gateway{position:absolute;inset:0;z-index:10;overflow:hidden;background:#0a1420;isolation:isolate}.gateway-stage{position:absolute;inset:0;overflow:hidden}.gateway-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 50%;filter:brightness(1.2) saturate(1.08)}.gateway-atmosphere{position:absolute;inset:0;background:radial-gradient(ellipse at 53% 22%,rgba(255,224,151,.2),transparent 63%),linear-gradient(0deg,rgba(5,14,23,.38),transparent 45%)}.gateway-doors{position:absolute;inset:0 5.5%;perspective:1500px;perspective-origin:50% 50%;transform-style:preserve-3d}.gate-door{position:absolute;top:-2%;bottom:-2%;width:50.1%;overflow:hidden;backface-visibility:hidden;border:2px solid #bda674;background:linear-gradient(100deg,#8b7b5e,#dfd3b2 8%,#c7b993 18%,#ebdfbc 47%,#c7b68b 82%,#8e7b54);box-shadow:inset 0 0 80px rgba(79,61,28,.38);transform-style:preserve-3d}.gate-door.left{left:0;transform-origin:0 50%}.gate-door.right{right:0;transform-origin:100% 50%;background:linear-gradient(-100deg,#8b7b5e,#dfd3b2 8%,#c7b993 18%,#ebdfbc 47%,#c7b68b 82%,#8e7b54)}.gate-door:before{content:'';position:absolute;inset:3% 7%;border:1px solid rgba(105,80,40,.6);box-shadow:inset 0 0 0 5px rgba(255,244,207,.22),0 0 0 5px rgba(80,61,30,.12);background:repeating-linear-gradient(90deg,transparent 0 18%,rgba(124,102,61,.07) 18% 18.4%,transparent 18.4% 36%)}.gate-door-art{position:absolute;inset:7% 9%;width:82%;height:86%;fill:none;stroke:#897044;stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:.7}.gate-door.right .gate-door-art{scale:-1 1}.gate-crest{position:absolute;width:126px;height:126px;border-radius:50%;top:calc(50% - 63px);border:2px solid #c8ae71;background:radial-gradient(circle,#384d5d,#1a2b39);box-shadow:0 0 0 6px rgba(152,125,69,.23),0 0 0 8px rgba(108,84,35,.45);display:grid;place-items:center;color:#f0de9f;font-family:var(--serif);font-size:60px;text-shadow:0 0 20px rgba(255,231,161,.35)}.gate-door.left .gate-crest{right:-63px}.gate-door.right .gate-crest{left:-63px}.gate-crest:after{content:'';position:absolute;inset:12px;border:1px solid rgba(240,222,159,.45);border-radius:50%}.gate-pillar{position:absolute;top:-1%;bottom:-1%;width:5.7%;z-index:4;background:repeating-linear-gradient(0deg,transparent 0 110px,rgba(112,91,48,.3) 110px 112px),linear-gradient(90deg,#887657,#e7dabb 45%,#c6b48a 72%,#786246);box-shadow:0 0 35px rgba(3,9,16,.6)}.gate-pillar.left{left:0}.gate-pillar.right{right:0;scale:-1 1}.gateway-light{position:absolute;inset:-15% -30%;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 47%,rgba(255,247,215,.52),rgba(255,221,143,.14) 31%,transparent 64%);mix-blend-mode:screen}.gateway-seam{position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:2px;z-index:3;background:#fff3c8;box-shadow:0 0 35px 8px rgba(255,232,153,.6);opacity:0}.gateway-bird{position:absolute;z-index:5;left:50%;top:var(--bird-y,40%);width:var(--bird-size,38px);color:#fff2d0;opacity:0;pointer-events:none;filter:drop-shadow(0 0 5px rgba(251,231,180,.25))}.gateway-bird svg{display:block;width:100%;height:auto;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round}.gateway-skip{position:absolute;z-index:8;right:28px;bottom:26px;padding:9px 17px;border:1px solid rgba(248,231,185,.4);background:rgba(12,25,37,.7);color:#f0e2bf;font-family:var(--sans);font-size:12px;cursor:pointer;backdrop-filter:blur(6px)}.gateway-skip:focus-visible{outline-color:#f0dfaa}.gateway-status{position:absolute;left:0;right:0;bottom:28px;z-index:6;text-align:center;color:#f7e9c8;font-family:var(--english);font-size:14px;letter-spacing:.23em;pointer-events:none;text-shadow:0 1px 10px #101b25;opacity:0}.academy-gateway.opening .gate-door.left{animation:gate-left-open 1.85s .18s cubic-bezier(.4,0,.2,1) both}.academy-gateway.opening .gate-door.right{animation:gate-right-open 1.85s .18s cubic-bezier(.4,0,.2,1) both}.academy-gateway.opening .gateway-image{animation:gateway-view 2.8s ease-out both}.academy-gateway.opening .gateway-light{animation:gateway-light 2.7s ease-out both}.academy-gateway.opening .gateway-seam{animation:gateway-seam 1.7s ease both}.academy-gateway.opening .gate-pillar{animation:gate-frame 2.5s ease both}.academy-gateway.opening .gateway-bird{animation:gateway-flight 1.6s var(--bird-delay,.8s) ease-in both}.academy-gateway.opening .gateway-bird svg{animation:gateway-wing .32s ease-in-out infinite alternate}.academy-gateway.revealed .gateway-status{animation:gateway-caption 1.5s ease both}.academy-gateway.departing{opacity:0;transition:opacity .45s ease}.entry-screen.gate-active{padding:0;background:transparent;overflow:hidden}.entry-screen.gate-active::backdrop{background:transparent}.entry-screen.gate-active:before{display:none}.entry-screen.gate-active>.entry-background,.entry-screen.gate-active>.entry-grid,.entry-screen.gate-active>.entry-scan,.entry-screen.gate-active>.entry-corner,.entry-screen.gate-active>.entry-content,.entry-screen.gate-active>.entry-footer{display:none}
     @keyframes gate-left-open{0%{transform:rotateY(0)}100%{transform:rotateY(88deg)}}@keyframes gate-right-open{0%{transform:rotateY(0)}100%{transform:rotateY(-88deg)}}@keyframes gateway-view{from{transform:scale(1.07);filter:brightness(1.18) saturate(1.08)}to{transform:scale(1);filter:brightness(1.05) saturate(1.02)}}@keyframes gateway-light{0%{opacity:0;scale:.2 1}22%{opacity:.55}55%{opacity:.65;scale:1 1}100%{opacity:0;scale:1.15 1}}@keyframes gateway-seam{0%{opacity:0}12%,25%{opacity:1}85%,100%{opacity:0;scale:20 1}}@keyframes gate-frame{0%,50%{opacity:1}100%{opacity:0}}@keyframes gateway-flight{0%{opacity:0;transform:translate(-50%,0) scale(.7)}12%{opacity:.9}80%{opacity:.9}100%{opacity:0;transform:translate(var(--bird-x,60vw),var(--bird-rise,-25vh)) scale(.6)}}@keyframes gateway-wing{from{transform:scaleY(.5)}to{transform:scaleY(1)}}@keyframes gateway-caption{0%{opacity:0}18%,80%{opacity:.85}100%{opacity:0}}
     @media(max-width:650px){.gateway-doors{left:6%;right:6%;perspective:900px}.gate-pillar{width:6.3%}.gate-crest{width:88px;height:88px;top:calc(50% - 44px);font-size:45px}.gate-door.left .gate-crest{right:-44px}.gate-door.right .gate-crest{left:-44px}.gateway-skip{right:18px;bottom:18px;font-size:11px;padding:8px 12px}.gateway-status{bottom:72px;font-size:12px;letter-spacing:.15em}.gateway-bird{width:calc(var(--bird-size,38px)*.8)}}
@@ -133,8 +189,40 @@
     .entry-screen>.gate-architecture{z-index:-4;overflow:hidden;transition:filter .6s ease}
     .entry-screen>.gate-architecture .gate-crest{opacity:.55}
     .entry-screen:before{background:radial-gradient(ellipse at 50% 47%,rgba(4,10,18,.46),rgba(5,12,22,.28) 36%,rgba(5,12,22,.07) 77%,rgba(3,9,17,.24)),linear-gradient(0deg,rgba(4,10,18,.25),transparent 36%)}
-    .entry-screen .entry-content{z-index:1}
-    .entry-screen .entry-title{text-shadow:0 2px 5px #020811,0 0 28px rgba(3,10,19,.7),0 0 80px rgba(220,233,247,.18)}
+    .entry-screen:not(.gate-active){padding:0}
+    .entry-screen .entry-content {
+      z-index:1;
+      display:grid;
+      justify-items:center;
+      gap:12px;
+      padding:0;
+      transform:translateY(4px);
+    }
+    .entry-content .entry-ornament {
+      height:20px;
+      margin:0;
+      gap:14px;
+      line-height:1;
+    }
+    .entry-content .entry-ornament span{width:clamp(34px,11vw,48px)}
+    .entry-content .entry-ornament b{font-size:19px}
+    .entry-title {
+      position:relative;
+      overflow:hidden;
+      width:min(88%,660px,120svh);
+      aspect-ratio:1185/457;
+      margin:0;
+    }
+    .entry-title img {
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:141%;
+      max-width:none;
+      height:auto;
+      transform:translate(-50%,-50%);
+      filter:drop-shadow(0 3px 12px #020811b3);
+    }
     .entry-screen.connecting>.gate-architecture{filter:brightness(.6) saturate(.72)}
     .gate-architecture .gate-door{border-color:#756e60;background:linear-gradient(100deg,#172431,#414e5b 8%,#2e3b47 18%,#56616d 47%,#34414d 82%,#1b2936);box-shadow:inset 0 0 80px rgba(3,11,20,.5)}
     .gate-architecture .gate-door.right{background:linear-gradient(-100deg,#172431,#414e5b 8%,#2e3b47 18%,#56616d 47%,#34414d 82%,#1b2936)}
@@ -142,7 +230,6 @@
     .gate-architecture .gate-door-art{stroke:#a99a7a;opacity:.58}
     .gate-architecture .gate-crest{border-color:#9d8962;background:radial-gradient(circle,#30465b,#122638);box-shadow:0 0 0 6px rgba(102,87,60,.25),0 0 0 8px rgba(40,35,25,.48),0 0 24px rgba(120,154,186,.08);color:#d2c4a3;text-shadow:0 0 14px rgba(216,204,163,.15)}
     .gate-architecture .gate-crest:after{border-color:rgba(191,170,121,.38)}
-    .entry-screen .entry-english{color:#cad5e1}
     .entry-screen .entry-enter{background:rgba(12,24,38,.7);border-color:rgba(220,229,240,.65)}
     .music-control{--music-level:0;position:fixed;right:24px;bottom:88px;z-index:30;display:flex;align-items:center;gap:12px;min-height:44px;min-width:133px;padding:10px 15px;overflow:hidden;border:1px solid rgba(211,183,121,.4);border-radius:3px;background:rgba(10,18,30,.9);backdrop-filter:blur(12px);color:#e1d3b2;font:inherit;font-size:11px;letter-spacing:.05em;box-shadow:0 8px 25px rgba(0,0,0,.2);cursor:pointer;transition:color .85s ease,border-color .85s ease}.music-control:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(188,157,90,.16),transparent 62%);opacity:var(--music-level);pointer-events:none}.music-control>span{position:relative}.music-control:hover{border-color:var(--gold)}.music-control:focus-visible{outline:2px solid var(--gold);outline-offset:4px}.music-control[aria-pressed="false"]{color:#9eabbc;border-color:rgba(158,171,188,.3)}.entry-active .music-control{display:none}.music-spectrum{display:flex;align-items:flex-end;justify-content:center;gap:3px;width:39px;height:20px;opacity:calc(.35 + .65 * var(--music-level))}.music-spectrum i{display:block;flex:0 0 3px;height:20px;border-radius:2px;background:linear-gradient(to top,#6f8fa7,#d2b474 55%,#fff0c2);transform-origin:center bottom;transform:scaleY(var(--bar-level,.075));transition:transform .07s linear;will-change:transform}@media(max-width:650px){.music-control{right:16px;bottom:112px;min-width:126px;padding:9px 12px}}@media(prefers-reduced-motion:reduce){.music-spectrum i{transition:none}.music-control{transition:none}}
     /* Academy glass, warm highlights, and restrained interaction feedback. */
@@ -216,13 +303,23 @@
     body:not(.scene-entering) .button:active,.filter:active,.menu-toggle:active,.music-control:active,.lightbox-foot button:not(:disabled):active{translate:0 0;scale:.975}
     @media(max-width:650px){.story-links{gap:12px}.story-links>a,.story-links>a+a{padding:25px}.music-control{min-width:114px}.profile,.faculty,.document-label,.rank-note{backdrop-filter:blur(8px)}}
     @media(prefers-reduced-motion:reduce){.click-spark{display:none}.button,.filter,.music-control,.menu-toggle,.person-thumb,.person-name,.story-links>a,.brand-symbol{translate:none!important;scale:none!important}.button:after,.filter:after,.music-control:after,.menu-toggle:after{display:none}.profile:before,.faculty:before,.document-label:before,.story-links>a:before{background:none}}
-    .entry-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(420px,100%);margin:0 auto}
-    .entry-buttons .entry-enter{width:100%;min-width:0;min-height:76px;padding-inline:16px;justify-content:center}
-    .entry-screen .entry-truth{border-color:rgba(211,183,121,.5);background:rgba(12,24,38,.56);color:#e1d3b2;backdrop-filter:blur(8px)}
-    .entry-truth>span{font-family:var(--serif);font-size:16px;letter-spacing:.025em;padding-left:0;white-space:nowrap}
+    .entry-buttons {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      align-items:stretch;
+      gap:12px;
+      width:min(332px,calc(100% - 32px));
+      margin-block-start:8px;
+    }
+    .entry-buttons .entry-enter{width:100%;min-width:0;min-height:64px;padding:8px 10px;justify-content:center;border-radius:3px}
+    .entry-buttons .entry-enter>span{font-family:var(--serif);font-size:16px;letter-spacing:.025em;padding-left:0;white-space:nowrap}
+    .entry-screen .entry-buttons .entry-enter:not(.entry-truth){border-color:#ddc897c9;background:#141e2fe8;color:#fff1ce}
+    .entry-screen .entry-buttons .entry-enter:not(.entry-truth):hover{border-color:#ffdfa0;background:#333a47}
+    .entry-screen .entry-truth{border-color:#d4ddec56;background:#101a2abd;color:#e3dfd5;backdrop-filter:blur(8px)}
+    .entry-screen .entry-truth:hover{border-color:#d4ddecaf;background:#242e40}
     .entry-truth:focus-visible{outline-color:var(--gold)}
-    @media(max-width:650px){.entry-buttons{gap:12px;width:min(360px,100%)}.entry-buttons .entry-enter{min-height:74px;padding-inline:10px}.entry-truth>span{font-size:14px}}
-    @media(max-width:360px){.entry-buttons{gap:10px}.entry-truth>span{font-size:13px}}
+    @media(max-width:650px){.entry-buttons .entry-enter>span{font-size:14px}}
+    @media(max-width:360px){.entry-buttons{gap:10px}.entry-buttons .entry-enter>span{font-size:13px}}
     body.spoiler-active{overflow:hidden}
     .spoiler-dialog{width:min(460px,calc(100% - 36px));max-height:calc(100svh - 36px);padding:34px 32px 28px;border:1px solid rgba(211,183,121,.4);border-radius:14px;background:linear-gradient(145deg,rgba(22,36,53,.96),rgba(9,18,30,.97));color:var(--ivory);text-align:center;box-shadow:0 28px 100px rgba(0,0,0,.5),inset 0 1px rgba(255,255,255,.05);backdrop-filter:blur(20px)}
     .spoiler-dialog:not([open]){display:none}.spoiler-dialog[open]{animation:spoiler-notice-in .25s var(--ease-out) both}
@@ -234,44 +331,7 @@
     @media(max-width:400px){.spoiler-dialog{padding:28px 22px 22px}.spoiler-dialog h2{font-size:23px}.spoiler-dialog p{font-size:13px}}
     @media(prefers-reduced-motion:reduce){.spoiler-dialog[open]{animation:none}}
     @media(max-width:600px){.hero-actions{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;max-width:360px}.hero-actions .button{min-width:0;padding-inline:8px;white-space:nowrap}}
-    .truth-view{max-width:1000px}.truth-view .page-heading{margin-bottom:28px}.truth-view .page-heading h1{margin-bottom:12px}
-    .phase-nav{position:sticky;top:104px;z-index:12;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:9px;margin-bottom:28px;border:1px solid var(--line);border-radius:10px;background:rgba(10,18,30,.93);backdrop-filter:blur(18px)}
-    .phase-tab{display:flex;justify-content:center;align-items:center;min-width:0;min-height:48px;border:1px solid transparent;border-radius:6px;color:var(--muted);font-family:var(--english);font-size:16px;letter-spacing:.045em;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
-    .phase-tab[aria-current="page"]{background:linear-gradient(120deg,#c9aa68,#e0c88f);color:#172235;border-color:var(--gold);box-shadow:0 4px 18px rgba(141,111,54,.13)}
-    .webtoon-reader{width:min(760px,100%);margin:auto}.webtoon-reader-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.webtoon-reader-head h2{font-family:var(--english);font-weight:400;font-size:25px;letter-spacing:.08em;margin:0}.webtoon-reader-head p{font-size:12px;color:var(--muted);margin:0}
-    .webtoon-sheet{overflow:hidden;background:#efe9df;box-shadow:0 20px 65px rgba(2,8,17,.28)}.webtoon-image{margin:0;position:relative;aspect-ratio:var(--webtoon-ratio,1000 / 2400)}.webtoon-image img{display:block;width:100%;height:auto}.webtoon-image.is-unavailable img{display:none}.webtoon-image.is-unavailable .media-fallback{position:absolute;inset:0;min-height:0}.webtoon-image .media-fallback{min-height:300px;color:#756a5e;background:#e8e1d6}
-    .webtoon-placeholder{display:flex;flex-direction:column;gap:80px;min-height:1600px;padding:65px 48px 90px;background:linear-gradient(180deg,#f3eee5,#eae3d8)}.webtoon-placeholder-heading{text-align:center;color:#857456}.webtoon-placeholder-heading .eyebrow{color:#9b835a}.webtoon-placeholder-heading h3{font-family:var(--serif);font-weight:500;font-size:27px;color:#514d44;margin:18px 0 10px}.webtoon-placeholder-heading p{font-size:13px;color:#8e8578;margin:0}
-    .webtoon-placeholder-scene{position:relative;display:grid;place-items:center;flex:1;min-height:300px;border:1px solid rgba(123,109,85,.2);background:rgba(255,255,255,.18);color:#b0a38e;font-family:var(--english);font-size:22px;letter-spacing:.15em}.webtoon-placeholder-scene:before,.webtoon-placeholder-scene:after{content:'';position:absolute;width:28px;height:28px;border-color:#b4a27f;border-style:solid}.webtoon-placeholder-scene:before{top:-1px;left:-1px;border-width:1px 0 0 1px}.webtoon-placeholder-scene:after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
-    .webtoon-pagination{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}.webtoon-pagination .button{flex-direction:column;align-items:flex-start;gap:3px;min-width:0;min-height:84px;padding:15px 22px;border-radius:6px}.webtoon-pagination .button:last-child{align-items:flex-end}.webtoon-pagination small{font-size:11px;color:var(--muted)}.webtoon-pagination strong{font-family:var(--english);font-weight:400;font-size:19px}.webtoon-pagination button:disabled{opacity:.35;pointer-events:none}.webtoon-return{display:block;width:fit-content;margin:26px auto 0;font-size:13px;color:var(--muted)}
-    @media(hover:hover) and (pointer:fine){.phase-tab:not([aria-current="page"]):hover{color:var(--ivory);border-color:rgba(211,183,121,.35);background:rgba(211,183,121,.08)}.webtoon-return:hover{color:var(--gold)}}
-    @media(max-width:600px){.phase-nav{top:86px;gap:5px;padding:6px;margin-bottom:22px}.phase-tab{min-height:44px;font-size:13px;letter-spacing:0}.webtoon-reader-head h2{font-size:22px}.webtoon-reader-head p{font-size:11px}.webtoon-placeholder{min-height:1250px;padding:42px 18px 60px;gap:55px}.webtoon-placeholder-heading h3{font-size:23px}.webtoon-placeholder-scene{min-height:260px}.webtoon-pagination{gap:10px}.webtoon-pagination .button{padding:13px 14px}.webtoon-pagination strong{font-size:17px}}
-    .truth-brand-mark,.truth-brand-text,.truth-header-return,.truth-return-short{display:none}
-    body.truth-scene{background-color:#f7fafc;background-image:radial-gradient(ellipse at 87% 4%,rgba(139,199,218,.16),transparent 43%),radial-gradient(ellipse at 4% 44%,rgba(173,205,228,.09),transparent 45%),linear-gradient(rgba(76,116,142,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(76,116,142,.045) 1px,transparent 1px);background-size:auto,auto,64px 64px,64px 64px}
-    .truth-scene #site-shell,.truth-scene .music-control{--gold:#287c91;--ivory:#243443;--muted:#667888;--line:rgba(60,98,125,.16);--serif:var(--sans);--english:'Segoe UI',var(--sans)}
-    .truth-scene #site-shell{color:var(--ivory)}
-    .truth-scene .header,.truth-scene .header.is-scrolled{min-height:72px;background:rgba(255,255,255,.65);border-bottom:1px solid var(--line);box-shadow:0 1px 18px rgba(52,89,117,.025);backdrop-filter:blur(24px) saturate(1.15)}
-    .truth-scene .header-inner{min-height:72px;width:min(1240px,calc(100% - 64px))}.truth-scene .brand-symbol,.truth-scene .brand-text,.truth-scene .nav,.truth-scene .menu-toggle{display:none}
-    .truth-scene .truth-brand-mark{display:grid;place-items:center;width:46px;height:34px;border:1px solid rgba(40,124,145,.27);border-radius:6px;background:rgba(255,255,255,.45);color:var(--gold);font:600 11px ui-monospace,Consolas,monospace;letter-spacing:.08em;box-shadow:inset 0 1px rgba(255,255,255,.8)}
-    .truth-scene .truth-brand-text{display:flex;flex-direction:column;gap:2px;line-height:1.4}.truth-brand-text strong{font-size:13px;font-weight:600;letter-spacing:.12em}.truth-brand-text small{font-size:9px;color:var(--muted);letter-spacing:.14em}
-    .truth-scene .truth-header-return{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border:1px solid var(--line);border-radius:7px;color:var(--muted);font-size:12px;background:rgba(255,255,255,.3);transition:color .2s,border-color .2s,background .2s}
-    .truth-scene .truth-view{width:min(1240px,calc(100% - 64px));max-width:1240px;padding-top:48px}.truth-scene .truth-view .page-heading{position:relative;padding-bottom:28px;margin-bottom:24px}.truth-scene .truth-view .page-heading>.eyebrow{display:flex;align-items:center;gap:10px;font:11px ui-monospace,Consolas,monospace;letter-spacing:.16em}.truth-scene .truth-view .page-heading>.eyebrow:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(40,124,145,.07)}
-    .truth-scene .truth-view .page-heading h1{font-family:var(--sans);font-weight:600;font-size:clamp(29px,3.5vw,42px);letter-spacing:-.045em;margin-top:20px;margin-bottom:10px}.truth-scene .truth-view .page-heading p{font-size:14px;color:var(--muted)}
-    .truth-scene .phase-nav{top:86px;grid-template-columns:repeat(3,minmax(0,1fr));padding:6px;gap:6px;border-color:rgba(60,98,125,.13);background:rgba(255,255,255,.54);border-radius:10px;box-shadow:inset 0 1px rgba(255,255,255,.85),0 6px 28px rgba(52,89,117,.045);backdrop-filter:blur(24px) saturate(1.15)}
-    .truth-scene .phase-tab{font:500 13px ui-monospace,Consolas,monospace;letter-spacing:.015em;border-radius:6px;min-height:44px}.truth-scene .phase-tab[aria-current="page"]{background:rgba(255,255,255,.88);color:#216479;border-color:rgba(40,124,145,.22);box-shadow:inset 0 -2px rgba(40,124,145,.45),0 2px 10px rgba(52,89,117,.045)}
-    .truth-scene .webtoon-reader{width:min(1040px,100%)}.truth-scene .truth-view.reader-wide .webtoon-reader{width:100%}.truth-scene .webtoon-reader-head{margin-bottom:14px;gap:12px}.truth-scene .webtoon-reader-head h2{font:600 17px ui-monospace,Consolas,monospace;letter-spacing:0}.webtoon-reader-meta{display:flex;align-items:center;justify-content:flex-end;gap:18px}
-    .truth-scene .webtoon-size-toggle{min-height:34px;gap:7px;padding:5px 12px;font-size:11px;border-radius:6px;background:rgba(255,255,255,.55);color:var(--ivory);border-color:var(--line);letter-spacing:0;box-shadow:inset 0 1px rgba(255,255,255,.8)}
-    .truth-scene .webtoon-sheet{background:#050607;box-shadow:0 16px 44px rgba(24,51,72,.15);border:1px solid rgba(35,60,79,.12)}.truth-scene .webtoon-image .media-fallback{background:#080b0f;color:#adb7c0}
-    .truth-scene .webtoon-placeholder{background:#050607;padding:65px 64px 90px;gap:70px}.truth-scene .webtoon-placeholder-heading{color:#b6c2cc}.truth-scene .webtoon-placeholder-heading .eyebrow{color:#a5b9c7;font:11px ui-monospace,Consolas,monospace;letter-spacing:.14em}.truth-scene .webtoon-placeholder-heading h3{font-family:var(--sans);font-size:26px;font-weight:500;letter-spacing:-.04em;color:#f5f7f9}.truth-scene .webtoon-placeholder-heading p{color:#8b96a1;font-size:12px}
-    .truth-scene .webtoon-placeholder-scene{border:1px dashed rgba(201,219,230,.14);background:rgba(255,255,255,.015);color:#667680;font:400 18px ui-monospace,Consolas,monospace;letter-spacing:.08em;border-radius:3px}.truth-scene .webtoon-placeholder-scene:before,.truth-scene .webtoon-placeholder-scene:after{display:none}
-    .truth-scene .webtoon-pagination .button{background:rgba(255,255,255,.5);border-color:var(--line);color:var(--ivory);border-radius:8px;box-shadow:inset 0 1px rgba(255,255,255,.8)}.truth-scene .webtoon-pagination strong{font:500 16px ui-monospace,Consolas,monospace}.truth-scene .webtoon-pagination small{font-size:11px}.truth-scene .footer{background:rgba(255,255,255,.42);border-color:var(--line)}.truth-scene .footer-inner{width:min(1240px,calc(100% - 64px))}.truth-scene .footer-inner>span{display:none}
-    .truth-scene .music-control{bottom:20px;border-color:rgba(40,124,145,.22);border-radius:9px;background:rgba(255,255,255,.82);color:#28758a;box-shadow:inset 0 1px rgba(255,255,255,.9),0 6px 24px rgba(24,51,72,.12);backdrop-filter:blur(24px)}.truth-scene .music-control:before{background:linear-gradient(120deg,rgba(106,172,193,.12),transparent)}.truth-scene .music-control[data-audible="false"]{color:#778997;border-color:rgba(60,98,125,.16)}.truth-scene .music-spectrum i{background:linear-gradient(to top,#aecbd5,#699eaf 60%,#2b748a)}
-    .truth-scene .button:after{background:linear-gradient(110deg,transparent,rgba(137,188,207,.16),transparent)}.truth-scene .click-spark{background:radial-gradient(circle,rgba(116,182,201,.16),rgba(40,124,145,.05) 36%,transparent 68%)}
-    .truth-science-graphic{display:none}.truth-scene .truth-science-graphic{display:block;position:absolute;right:26px;top:-12px;width:250px;height:190px;color:#4c8aa7;opacity:.3;pointer-events:none}.truth-science-graphic svg{display:block;width:100%;height:100%}
-    @media(hover:hover) and (pointer:fine){.truth-scene .truth-header-return:hover{color:var(--ivory);border-color:rgba(40,124,145,.3);background:rgba(255,255,255,.72)}.truth-scene .phase-tab:not([aria-current="page"]):hover{background:rgba(230,241,247,.75);border-color:transparent;color:var(--ivory)}.truth-scene .webtoon-pagination .button:hover,.truth-scene .webtoon-size-toggle:hover{background:rgba(237,247,251,.85);border-color:rgba(40,124,145,.3)}}
-    @media(max-width:900px){.truth-scene .truth-science-graphic{display:none}}
-    @media(max-width:1104px){.webtoon-size-toggle{display:none}}
-    @media(max-width:600px){.truth-scene .header,.truth-scene .header-inner{min-height:64px}.truth-scene .header-inner{width:calc(100% - 32px);gap:12px}.truth-scene .brand{gap:9px}.truth-scene .truth-brand-mark{width:38px;height:32px;font-size:10px}.truth-brand-text strong{font-size:11px}.truth-brand-text small{font-size:8px}.truth-scene .truth-return-label{display:none}.truth-scene .truth-return-short{display:inline}.truth-scene .truth-header-return{font-size:11px;gap:6px;padding:6px 10px}.truth-scene .truth-view{width:100%;padding-top:32px}.truth-scene .truth-view .page-heading{margin-inline:16px;margin-bottom:18px;padding-bottom:24px}.truth-scene .truth-view .page-heading h1{font-size:29px}.truth-scene .truth-view .page-heading p{font-size:13px}.truth-scene .phase-nav{top:76px;margin-inline:12px;margin-bottom:23px}.truth-scene .phase-tab{font-size:12px}.truth-scene .webtoon-reader-head{padding-inline:16px;gap:10px}.truth-scene .webtoon-reader-head h2{font-size:15px}.truth-scene .webtoon-reader-head p{font-size:10px}.webtoon-reader-meta{gap:0}.truth-scene .webtoon-sheet{border-inline:0}.truth-scene .webtoon-placeholder{padding:45px 22px 64px;gap:50px}.truth-scene .webtoon-placeholder-heading h3{font-size:24px}.truth-scene .webtoon-pagination{margin-inline:16px}.truth-scene .footer-inner{width:calc(100% - 32px)}}
-    .character-part-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:660px;margin-bottom:14px}
+    .character-part-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:860px;margin-bottom:14px}
     .character-part-controls .filter{display:grid;grid-template-columns:1fr auto;gap:3px 12px;align-items:center;min-width:0;min-height:76px;padding:12px 15px;text-align:left;border-radius:7px}
     .part-filter strong{font-size:17px;line-height:1.45;font-weight:500;grid-column:1}.part-filter small{font-size:13px;line-height:1.45;grid-column:1;color:inherit;opacity:.9}.part-filter .part-count{display:inline-flex;align-items:center;justify-content:center;grid-column:2;grid-row:1/3;align-self:center;min-width:34px;min-height:32px;padding:2px 6px;margin-left:0;border:1px solid rgba(158,171,188,.18);border-radius:6px;background:rgba(158,171,188,.05);font-family:var(--sans);font-size:18px;line-height:1.25;font-weight:500;font-variant-numeric:tabular-nums}.part-filter.active .part-count{border-color:rgba(211,183,121,.3);background:rgba(211,183,121,.08)}
     .character-subcontrols{margin-bottom:25px}.part-filter-options{display:grid;grid-template-columns:repeat(3,112px);gap:10px}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(4,112px)}.part-filter-options .filter{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:46px;padding:8px 10px;border-radius:5px;font-size:14px;line-height:1.4;white-space:nowrap}.part-filter-options .filter>span:not(.click-spark){display:inline-flex;align-items:center;justify-content:center;min-width:22px;min-height:22px;margin-left:0;border-radius:4px;background:rgba(158,171,188,.07);font-family:var(--sans);font-size:12px;line-height:1.3;font-variant-numeric:tabular-nums}
@@ -280,9 +340,74 @@
     .character-layout .profile{top:auto}
     @media(max-width:650px){.characters-scene .music-control{bottom:20px}}
     .character-empty{padding:68px 28px;text-align:center;border:1px solid var(--line);border-radius:5px;background:linear-gradient(145deg,rgba(29,46,65,.55),rgba(11,23,39,.55))}.character-empty h2{font-family:var(--serif);font-weight:500;font-size:26px;margin:19px 0 12px}.character-empty p{font-size:14px;color:var(--muted);margin:0;line-height:1.9}
-    @media(max-width:650px){.character-part-controls{gap:6px}.character-part-controls .filter{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:102px;padding:10px 5px;text-align:center}.part-filter strong{font-size:15px}.part-filter small{display:flex;align-items:center;justify-content:center;min-height:29px;max-width:100%;font-size:10.5px;line-height:1.4}.part-filter .part-count{min-width:28px;min-height:25px;padding:2px 5px;font-size:14px}.part-filter-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}.part-filter-options[data-part-filters="continent"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options .filter{gap:5px;min-height:44px;padding:7px 6px;font-size:13px}.part-filter-options .filter>span:not(.click-spark){min-width:20px;min-height:20px;margin-left:0;font-size:11px}.character-empty{padding:32px 20px}.character-empty h2{font-size:20px}}
-    @media(max-width:650px){.part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:400px){.part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(2,minmax(0,1fr))}.part-filter-options[data-part-filters="all"] .filter{padding-inline:5px;font-size:12px;gap:4px}}
+    @media(max-width:650px){
+      .character-part-controls{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+        margin-bottom:12px;
+      }
+      .character-part-controls .filter{
+        grid-template-columns:minmax(0,1fr) auto;
+        align-content:center;
+        gap:4px 8px;
+        min-height:76px;
+        padding:10px 12px;
+      }
+      .part-filter strong{font-size:17px;font-weight:700}
+      .part-filter small{
+        grid-column:1/-1;
+        color:#d4deea;
+        font-size:13px;
+        line-height:1.4;
+        opacity:1;
+      }
+      .part-filter .part-count{
+        grid-row:1;
+        min-width:28px;
+        min-height:25px;
+        padding:2px 5px;
+        font-size:14px;
+        font-weight:600;
+      }
+      #characters :is(.character-part-controls,.part-filter-options) .filter{
+        background:rgba(11,22,37,.94);
+        border-color:#536175;
+        color:#f2f5fa;
+      }
+      #characters :is(.character-part-controls,.part-filter-options) .filter.active{
+        background:linear-gradient(120deg,rgba(49,54,58,.96),rgba(23,37,55,.96));
+        border-color:#e9ca86;
+        color:#fff0c8;
+      }
+      .part-filter.active small{color:#f1dfb8}
+      .part-filter-options{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:8px;
+        width:100%;
+      }
+      .part-filter-options[data-part-filters="all"],.part-filter-options[data-part-filters="continent"]{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      #characters .part-filter-options .filter{
+        gap:5px;
+        min-height:48px;
+        padding:8px 5px;
+        font-size:15px;
+        font-weight:600;
+        white-space:normal;
+      }
+      .part-filter-options .filter>span:not(.click-spark){
+        flex:none;
+        min-width:20px;
+        min-height:21px;
+        font-size:12px;
+      }
+      .character-empty{padding:32px 20px}
+      .character-empty h2{font-size:20px}
+    }
+    @media(min-width:401px) and (max-width:650px){
+      .part-filter-options[data-part-filters="all"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
     .academy-page-background{display:none;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}.academy-page-background img{width:100%;height:100%;display:block;object-fit:cover;object-position:64% 50%}.academy-page-background:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,13,26,.42),rgba(5,13,26,.18) 65%,rgba(5,13,26,.12)),linear-gradient(0deg,rgba(5,13,26,.56),rgba(5,13,26,.08) 72%)}
     .fantasy-scene .academy-page-background:before{content:'';position:absolute;inset:0;background:rgba(3,9,18,.32)}
     .fantasy-scene #site-shell{position:relative;isolation:isolate;min-height:100svh}.fantasy-scene .academy-page-background{display:block}.fantasy-scene #main,.fantasy-scene .footer{position:relative;z-index:1}
@@ -304,11 +429,30 @@
     .characters-scene .filter.active:before{opacity:1;transform:scaleX(1)}.characters-scene .filter.active{box-shadow:inset 0 1px rgba(255,238,193,.12),0 4px 20px rgba(211,183,121,.1)}
     .characters-scene .part-filter strong,.characters-scene .part-filter small,.characters-scene .part-count{transition:translate .25s var(--ease-out),color .25s ease,border-color .3s ease,background .3s ease}
     .characters-scene .part-filter.active .part-count{animation:character-count-select .34s var(--ease-out) both}
-    body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter{animation:academy-content-in .4s var(--ease-out) backwards}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(2){animation-delay:.045s}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(3){animation-delay:.09s}
+    body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter{animation:academy-content-in .4s var(--ease-out) backwards}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(2){animation-delay:.045s}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(3){animation-delay:.09s}body:not(.entry-active) #characters:not([hidden]) .character-part-controls>.filter:nth-child(4){animation-delay:.135s}
     @keyframes character-count-select{0%{scale:.92}55%{scale:1.06}100%{scale:1}}
     @media(hover:hover) and (pointer:fine){.characters-scene .filter:hover{box-shadow:inset 0 1px rgba(255,238,193,.12),0 8px 25px rgba(1,7,15,.28),0 0 20px rgba(211,183,121,.16)}.characters-scene .part-filter:hover strong{translate:0 -1px}.characters-scene .part-filter:hover .part-count{translate:0 -2px;border-color:rgba(211,183,121,.45)}}
     .characters-scene .filter:focus-visible{box-shadow:0 0 0 3px rgba(211,183,121,.14),0 8px 25px rgba(1,7,15,.25)}.characters-scene .filter:active{scale:.965;translate:0 0}
-    .painted-gate{position:absolute;inset:0;isolation:isolate;perspective:1400px;perspective-origin:50% 48%}.painted-gate-frame,.painted-gate-leaf{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}.painted-gate-frame{z-index:2}.painted-gate-leaf{z-index:1;backface-visibility:hidden}.painted-gate-leaf.left{transform-origin:var(--gate-left-hinge,27.81%) 50%}.painted-gate-leaf.right{transform-origin:var(--gate-right-hinge,72.25%) 50%}
+    .painted-gate {
+      position:absolute;
+      top:var(--gate-art-center-y,50%);
+      left:50%;
+      width:var(--gate-art-width,100%);
+      height:var(--gate-art-height,100%);
+      transform:translate(-50%,-50%);
+      isolation:isolate;
+      perspective:1400px;
+      perspective-origin:50% 48%;
+    }
+    .painted-gate-frame,.painted-gate-leaf{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;pointer-events:none}
+    .painted-gate-frame{z-index:2}
+    .painted-gate-leaf{z-index:1;backface-visibility:hidden}
+    .painted-gate-leaf.left{transform-origin:var(--gate-left-hinge,27.81%) 50%}
+    .painted-gate-leaf.right{transform-origin:var(--gate-right-hinge,72.25%) 50%}
+    .entry-screen>.gate-architecture .painted-gate {
+      background:var(--gate-art) center/100% 100% no-repeat;
+    }
+    .entry-screen>.gate-architecture .painted-gate svg{visibility:hidden}
     .academy-gateway.opening .painted-gate-leaf{will-change:transform}.academy-gateway.opening .painted-gate-leaf.left{animation:gate-left-pass .72s .04s cubic-bezier(.18,.7,.25,1) both}.academy-gateway.opening .painted-gate-leaf.right{animation:gate-right-pass .72s .04s cubic-bezier(.18,.7,.25,1) both}
     @media(max-width:650px){.painted-gate{perspective:1000px}}
     /* Character archive: image cards and a separate detail dialog. */
@@ -330,7 +474,7 @@
     .character-card-image .media-fallback small{font-family:var(--sans);color:#859ab0;font-size:11px;font-weight:400;letter-spacing:.14em}
     .character-card-image.is-unavailable img{display:none}
     .character-card-caption{display:flex;flex-direction:column;gap:5px;padding:14px 1px 0;min-width:0}
-    .character-card-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0}
+    .character-card-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0;margin:0}
     .character-card-title .name{font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.6;letter-spacing:-.035em;min-width:0;overflow-wrap:anywhere}
     .character-card-age{flex-shrink:0;color:#cfb57c;font-size:12px;font-variant-numeric:tabular-nums}
     .character-card-role{color:#abb9c9;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
@@ -460,6 +604,12 @@
     .character-dialog-tools{position:sticky;top:0;height:0;z-index:5}
     @media(max-width:650px){.character-group-label small{margin-left:9px;font-size:9px}}
 
+    .gateway-status{bottom:17%;display:flex;flex-direction:column;align-items:center;gap:9px;margin:0;padding:0 24px;letter-spacing:.12em;text-shadow:0 2px 20px rgba(3,10,18,.85)}
+    .gateway-status small{font-family:var(--sans);font-size:11px;letter-spacing:.3em}
+    .gateway-status strong{font-size:clamp(30px,4.5vw,55px);font-weight:400;line-height:1.3;letter-spacing:.035em}
+    .gateway-status>span{font-family:var(--serif);font-size:clamp(13px,1.5vw,17px);line-height:1.8;letter-spacing:.04em}
+    .academy-gateway.revealed .gateway-status{animation:academy-welcome .75s .25s ease both}
+    @keyframes academy-welcome{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     .home-scene .hero-content{padding-bottom:90px}
     .home-scene .footer{display:none}
     .ambient-fireflies{position:fixed;inset:0;z-index:2;overflow:hidden;pointer-events:none;opacity:0;transition:opacity 1.8s ease}
@@ -471,8 +621,8 @@
     .ambient-firefly{position:absolute;left:var(--firefly-x);top:var(--firefly-y);width:var(--firefly-size,3px);height:var(--firefly-size,3px);border-radius:50%;background:#fff0c4;box-shadow:0 0 7px 2px rgba(247,225,164,.42),0 0 22px 6px rgba(239,207,130,.12);opacity:0;animation:ambient-firefly-drift var(--firefly-duration,26s) var(--firefly-delay,0s) ease-in-out infinite;animation-play-state:paused}
     .ambient-firefly.is-center{background:#fff4d2;box-shadow:0 0 8px 3px rgba(247,225,164,.52),0 0 24px 7px rgba(239,207,130,.16)}
     .ambient-fireflies[data-active="true"] .ambient-firefly{animation-play-state:running}
-    body.entry-active .ambient-fireflies,body.scene-entering .ambient-fireflies,body.truth-scene .ambient-fireflies,body.character-dialog-active .ambient-fireflies,body.spoiler-active .ambient-fireflies{opacity:0}
-    body.entry-active .ambient-fireflies .ambient-firefly,body.scene-entering .ambient-fireflies .ambient-firefly,body.truth-scene .ambient-fireflies .ambient-firefly,body.character-dialog-active .ambient-fireflies .ambient-firefly,body.spoiler-active .ambient-fireflies .ambient-firefly{animation-play-state:paused}
+    body.entry-active .ambient-fireflies,body.scene-entering .ambient-fireflies,body.character-dialog-active .ambient-fireflies,body.spoiler-active .ambient-fireflies{opacity:0}
+    body.entry-active .ambient-fireflies .ambient-firefly,body.scene-entering .ambient-fireflies .ambient-firefly,body.character-dialog-active .ambient-fireflies .ambient-firefly,body.spoiler-active .ambient-fireflies .ambient-firefly{animation-play-state:paused}
     @keyframes ambient-firefly-drift{
       0%{opacity:0;transform:translate3d(0,0,0) scale(.7)}
       16%{opacity:.32}
@@ -485,66 +635,74 @@
     @media(max-width:650px){.ambient-firefly:nth-child(n+15){display:none}}
     @media(prefers-reduced-motion:reduce){.ambient-fireflies{display:none}}
 
+
   </style>
 </head>
 <body>
-  <dialog class="entry-screen" id="entry-screen" aria-labelledby="entry-title" aria-describedby="entry-hint">
+  <dialog class="entry-screen" id="entry-screen" aria-labelledby="entry-title">
     <div class="entry-grid" aria-hidden="true"></div>
     <div class="entry-scan" aria-hidden="true"></div>
     <div class="entry-corner top-left" aria-hidden="true"></div><div class="entry-corner top-right" aria-hidden="true"></div>
     <div class="entry-corner bottom-left" aria-hidden="true"></div><div class="entry-corner bottom-right" aria-hidden="true"></div>
     <div class="entry-content">
       <div class="entry-ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
-      <h1 class="entry-title" id="entry-title"><span>루미에르</span><span>아카데미</span></h1>
-      <p class="entry-english">LUMIÈRE ACADEMY</p>
-      <div class="entry-action"><div class="entry-buttons"><button class="entry-enter entry-truth" id="entry-truth" type="button" title="아카데미 웹툰 읽기"><span>아카데미의 진실</span></button><button class="entry-enter" id="entry-enter" type="button" autofocus><span>ENTER</span><small>접속하기</small></button></div><p id="entry-hint">ENTER를 눌러 아카데미에 입장하세요</p></div>
-    </div>
-    <section class="security-console" id="entry-connection" hidden lang="en" aria-labelledby="console-heading">
-      <div class="console-titlebar"><p class="console-window-title"><span class="console-icon" aria-hidden="true">&gt;_</span><span>nma — Sohyeon@node-03</span></p><button class="console-continue" id="entry-skip" type="button" lang="ko">연출 스킵</button></div>
-      <div class="console-body">
-        <h2 class="console-heading sr-only" id="console-heading">NMA session console</h2>
-        <ol class="console-log" id="console-log" role="log" aria-label="Connection activity" aria-live="off"></ol>
+      <h1 class="entry-title" id="entry-title">
+        <img src="./academy-title.webp" alt="루미에르 아카데미" width="1671" height="941">
+      </h1>
+      <div class="entry-buttons">
+        <button class="entry-enter entry-truth" id="entry-truth" type="button" title="스포일러 확인 후 NMA 사이트를 새 탭에서 엽니다"><span>아카데미의 진실</span></button>
+        <button class="entry-enter" id="entry-enter" type="button" autofocus><span>세계관 확인하기</span></button>
       </div>
-      <div class="console-footer"><p id="connection-label" role="status" aria-live="polite" aria-atomic="true">session 07-c1: attached</p></div>
-    </section>
-    <section class="academy-gateway" id="academy-gateway" hidden aria-labelledby="gateway-title">
-      <h2 class="sr-only" id="gateway-title">루미에르 아카데미에 입장합니다</h2>
-      <div class="gateway-stage" aria-hidden="true">
-        <img class="gateway-image" id="gateway-image" alt="">
-        <div class="gateway-atmosphere"></div>
-        <div class="gateway-whiteveil"></div>
+    </div>
+    <section class="academy-opening" id="academy-gateway" hidden aria-labelledby="gateway-title">
+      <h2 class="sr-only" id="gateway-title">하늘 너머, 루미에르 아카데미</h2>
+      <div class="opening-stage" aria-hidden="true">
+        <div class="opening-sky-surface">
+          <div class="opening-world">
+            <div class="opening-cloud far"></div><div class="opening-cloud left"></div><div class="opening-cloud right"></div>
+            <div class="opening-reflection"></div>
+          </div>
+          <div class="opening-sunlight"></div>
+          <div class="opening-lights">
+            <span style="--x:8%;--y:29%;--delay:.4s;--size:2px;--drift:22px;--rise:-10px"></span>
+            <span style="--x:26%;--y:64%;--delay:.9s;--size:3px;--drift:34px;--rise:-15px"></span>
+            <span style="--x:69%;--y:23%;--delay:.1s;--size:2px;--drift:20px;--rise:-9px"></span>
+            <span style="--x:82%;--y:58%;--delay:.65s;--size:2px;--drift:27px;--rise:-12px"></span>
+            <span style="--x:37%;--y:16%;--delay:1.2s;--size:2px;--drift:22px;--rise:-12px"></span>
+            <span class="light-shard" style="--x:5%;--y:70%;--delay:0s;--size:6px;--drift:140px;--rise:-60px"></span>
+            <span class="light-shard" style="--x:60%;--y:68%;--delay:.8s;--size:4px;--drift:110px;--rise:-44px"></span>
+            <span class="light-bokeh" style="--x:8%;--y:14%;--delay:.3s;--size:28px;--drift:85px;--rise:-20px"></span>
+            <span class="light-bokeh" style="--x:85%;--y:73%;--delay:1s;--size:42px;--drift:64px;--rise:-32px"></span>
+          </div>
+          <div class="opening-white-veil"></div>
+          <div class="opening-copy"><p><span>다른 세상에서도</span><span>너를.</span></p></div>
+          <div class="opening-title"><span class="opening-logo"><span class="opening-title-text"><span>루미에르</span><span>아카데미</span></span><img id="opening-logo" data-src="./academy-title.webp" width="1671" height="941" alt="" decoding="async"></span></div>
+        </div>
         <div class="gate-architecture" id="gate-architecture" aria-hidden="true">
           <div class="painted-gate">
-            <svg class="painted-gate-frame" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <svg class="painted-gate-frame" viewBox="0 0 1672 941" preserveAspectRatio="none" focusable="false">
               <defs>
                 <path id="gate-left-shape" d="M836 0C662 47 511 170 465 324V887H836Z"/>
                 <path id="gate-right-shape" d="M836 0C1010 47 1161 170 1208 324V887H836Z"/>
                 <clipPath id="gate-left-cutout" clipPathUnits="userSpaceOnUse"><use href="#gate-left-shape"/></clipPath>
                 <clipPath id="gate-right-cutout" clipPathUnits="userSpaceOnUse"><use href="#gate-right-shape"/></clipPath>
-                <mask id="gate-frame-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="1672" height="941">
-                  <rect width="1672" height="941" fill="white"/>
-                  <use href="#gate-left-shape" fill="black"/><use href="#gate-right-shape" fill="black"/>
+                <mask id="gate-frame-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+                  <rect width="100%" height="100%" fill="white"/>
+                  <use href="#gate-left-shape" fill="black" stroke="black" stroke-width="2"/>
+                  <use href="#gate-right-shape" fill="black" stroke="black" stroke-width="2"/>
                 </mask>
               </defs>
-              <image href="./academy-gate.webp" width="1672" height="941" mask="url(#gate-frame-cutout)"/>
+              <image width="100%" height="100%" mask="url(#gate-frame-cutout)"/>
             </svg>
-            <svg class="painted-gate-leaf left" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="./academy-gate.webp" width="1672" height="941" clip-path="url(#gate-left-cutout)"/></svg>
-            <svg class="painted-gate-leaf right" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="./academy-gate.webp" width="1672" height="941" clip-path="url(#gate-right-cutout)"/></svg>
+            <svg class="painted-gate-leaf left" viewBox="0 0 1672 941" preserveAspectRatio="none" focusable="false"><image width="100%" height="100%" clip-path="url(#gate-left-cutout)"/></svg>
+            <svg class="painted-gate-leaf right" viewBox="0 0 1672 941" preserveAspectRatio="none" focusable="false"><image width="100%" height="100%" clip-path="url(#gate-right-cutout)"/></svg>
           </div>
         </div>
-        <div class="gateway-transit-effects" id="gateway-transit-effects">
-        <div class="gateway-seam"></div><div class="gateway-light"></div>
-        <svg class="gateway-speed" viewBox="0 0 1000 600" preserveAspectRatio="none"><path d="M440 280L-100 -100M400 320L-160 200M435 370L-100 630M470 400L330 800M530 400L670 800M565 370L1100 630M600 320L1160 200M560 280L1100 -100M500 260L500 -200M470 270L300 -150M530 270L700 -150M500 410L500 900"/></svg>
-        <svg class="gateway-wind" viewBox="0 0 1000 600" preserveAspectRatio="none"><path class="wind-ribbon" style="--wind-delay:.65s" d="M490 345C395 320 380 415 265 390S65 280 -120 440"/><path class="wind-ribbon" style="--wind-delay:.85s" d="M510 330C625 285 630 405 765 370S945 315 1120 470"/><path class="wind-ribbon" style="--wind-delay:.95s" d="M480 295C360 220 365 315 225 275S60 120 -120 190"/><path class="wind-ribbon" style="--wind-delay:1.1s" d="M525 285C670 195 650 315 810 250S980 180 1115 225"/><path class="wind-ribbon" style="--wind-delay:1.15s" d="M500 380C435 460 325 420 200 515S70 610 -100 570"/><path class="wind-ribbon" style="--wind-delay:1.3s" d="M515 375C610 490 740 420 850 520S1000 650 1110 555"/></svg>
-        <span class="gateway-mote" style="--mote-x:-57vw;--mote-rise:-22vh;--mote-y:38%;--mote-delay:.75s;--mote-size:4px"></span><span class="gateway-mote" style="--mote-x:62vw;--mote-rise:-15vh;--mote-y:45%;--mote-delay:.85s;--mote-size:6px"></span><span class="gateway-mote leaf" style="--mote-x:-58vw;--mote-rise:22vh;--mote-y:52%;--mote-delay:1s;--mote-turn:280deg"></span><span class="gateway-mote" style="--mote-x:50vw;--mote-rise:31vh;--mote-y:50%;--mote-delay:1.1s;--mote-size:4px"></span><span class="gateway-mote leaf" style="--mote-x:63vw;--mote-rise:-32vh;--mote-y:40%;--mote-delay:1.15s;--mote-turn:-240deg"></span><span class="gateway-mote" style="--mote-x:-51vw;--mote-rise:-38vh;--mote-y:44%;--mote-delay:1.2s;--mote-size:5px"></span><span class="gateway-mote" style="--mote-x:54vw;--mote-rise:8vh;--mote-y:58%;--mote-delay:1.3s;--mote-size:7px"></span><span class="gateway-mote leaf" style="--mote-x:-64vw;--mote-rise:4vh;--mote-y:48%;--mote-delay:1.35s;--mote-turn:190deg"></span><span class="gateway-mote" style="--mote-x:43vw;--mote-rise:-25vh;--mote-y:36%;--mote-delay:1.4s;--mote-size:4px"></span><span class="gateway-mote" style="--mote-x:-45vw;--mote-rise:33vh;--mote-y:60%;--mote-delay:1.45s;--mote-size:5px"></span>
-        </div>
-        <span class="gateway-bird" style="--bird-x:-62vw;--bird-rise:-27vh;--bird-delay:.75s;--bird-y:30%;--bird-size:46px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:58vw;--bird-rise:-32vh;--bird-delay:.86s;--bird-y:28%;--bird-size:38px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:-54vw;--bird-rise:-16vh;--bird-delay:1.03s;--bird-y:35%;--bird-size:32px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:66vw;--bird-rise:-15vh;--bird-delay:1.12s;--bird-y:32%;--bird-size:48px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span><span class="gateway-bird" style="--bird-x:42vw;--bird-rise:-40vh;--bird-delay:.95s;--bird-y:25%;--bird-size:35px"><svg viewBox="0 0 100 45"><path d="M50 32Q28 6 7 16M50 32Q72 6 93 16"/></svg></span>
-        <p class="gateway-status">WELCOME TO LUMIÈRE</p>
       </div>
       <button class="gateway-skip" id="gateway-skip" type="button">연출 스킵</button>
       <p class="sr-only" id="gateway-description" role="status" aria-live="polite">아카데미 정문이 열립니다.</p>
     </section>
-    <div class="entry-footer"><span>LUMIÈRE ACADEMY</span><span id="entry-state">AWAITING ENTRY</span></div>
+    <div class="entry-footer"><span id="entry-state">AWAITING ENTRY</span></div>
   </dialog>
   <div id="site-shell">
   <div class="academy-page-background" aria-hidden="true"><img id="academy-page-image" alt="" decoding="async"></div>
@@ -580,11 +738,9 @@
       <a class="brand" href="#home" aria-label="루미에르 아카데미 작품 소개">
         <svg class="brand-symbol" viewBox="0 0 40 52" fill="none" aria-hidden="true"><path d="M20 2 37 11v21L20 49 3 32V11Z" stroke="currentColor"/><path d="M20 10v30M10 22h20M20 13l4 9-4 9-4-9Z" stroke="currentColor"/><path d="m12 36 8 7 8-7" stroke="currentColor"/></svg>
         <span class="brand-text"><strong>루미에르 아카데미</strong><small>LUMIÈRE ACADEMY</small></span>
-        <span class="truth-brand-mark" aria-hidden="true">NMA</span><span class="truth-brand-text"><strong>NMA ARCHIVE</strong><small>SOHYEON'S STORY</small></span>
       </a>
       <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">메뉴</button>
       <nav class="nav" id="navigation" aria-label="주요 메뉴"><a class="active" href="#home" aria-current="page">작품 소개</a><a href="#world">세계관</a><a href="#academy">아카데미</a><a href="#characters">인물 소개</a></nav>
-      <a class="truth-header-return" href="#home" aria-label="아카데미로 돌아가기"><span aria-hidden="true">←</span><span class="truth-return-label">아카데미로 돌아가기</span><span class="truth-return-short" aria-hidden="true">아카데미</span></a>
     </div>
   </header>
   <main id="main">
@@ -596,14 +752,14 @@
         <p class="hero-english">LUMIÈRE ACADEMY</p>
         <h1 id="hero-title"><span>루미에르</span><span>아카데미</span></h1>
         <p class="hero-copy">같은 문을 넘었지만,<br>꿈꾸는 미래는 서로 다르다.</p>
-        <div class="hero-actions"><a class="button primary" href="#truth/1" data-truth-confirm>아카데미 진실 확인</a><a class="button" href="#characters">인물 만나보기</a></div>
+        <div class="hero-actions"><a class="button primary" href="../NMA/index.html" data-truth-confirm>아카데미 진실 확인</a><a class="button" href="#characters">인물 만나보기</a></div>
       </div>
       <div class="hero-bottom wrap"><span class="hero-genres">중세 판타지 · 성장 · 교류 · 연애 · 전투 · 군상극</span></div>
     </section>
     </div>
     <section class="page-view wrap" id="world" data-view="world" hidden aria-labelledby="world-title">
       <div class="page-heading"><span class="eyebrow">I. WORLD & STORY</span><h1 id="world-title" tabindex="-1">명예를 약속하는 곳,<br><span>꿈이 부딪히는 곳.</span></h1><p>제국 수도의 중심에서, 서로 다른 욕망이 하나의 이야기를 만든다.</p></div>
-      <div class="world-layout"><aside class="document-label"><span class="eyebrow">LUMIÈRE</span><span class="document-mark">검과 마법이<br>공존하는 세계</span><dl><div><dt>배경</dt><dd>중세 판타지 · 제국 수도</dd></div><div><dt>교육기관</dt><dd>전원 기숙제 사관학교</dd></div><div><dt>등장인물</dt><dd>의무교육을 마친 성인</dd></div></dl></aside><article class="world-article"><h2>루미에르 아카데미</h2><p>레온하트 대륙의 제국 수도에 자리한 대륙 최고의 전원 기숙제 사관형 고등학부. 의무교육을 마친 성인들이 입학하며, 입학생들은 이미 제국 평균 이상의 실력을 갖추고 있다. 귀족과 평민은 같은 아카데미에 모이지만, 신분과 가문이 만드는 기회의 차이까지 사라지지는 않는다.</p><p>아카데미에는 학년과 학부 구분이 없다. 모든 학생이 검술과 마법을 필수로 배우며, 서로 다른 숙련도와 특화, 출신을 바탕으로 성과와 랭킹을 통해 자신의 위치를 증명한다.</p><h2>성장이 기회가 되고, 서열이 미래가 된다</h2><p>졸업은 제국 평균 이상의 직위와 수입, 생활을 보장한다. 랭킹과 성과에 따라 교육과 생활, 장비와 진로의 기회가 달라지며, 학생들은 그 미래를 차지하기 위해 치열하게 경쟁한다.</p><p>랭킹은 단순한 명부의 숫자가 아니다. 수업반과 시설, 장비와 기숙사, 장학금과 진로에까지 영향을 미친다. 귀족 가문의 후원과 학생 파벌은 그 경쟁을 더욱 복잡하게 만든다.</p><div class="pullquote"><span class="eyebrow">BEYOND THE HONOR</span><p>재능만으로는 설명할 수 없는 서열.<br>힘만으로는 지켜낼 수 없는 관계.</p></div><h2>아카데미 너머, 레온하트 대륙</h2><p>왕실의 평화 노선과 무력 통일을 둘러싼 대립, 흑요 모험단의 탐험, 루벨 마을의 질서. 교정 밖에서도 각자의 신념과 욕망은 서로 다른 선택으로 이어진다. 25층으로 이루어진 미궁에는 다섯 층마다 강적이 기다리며, 모험가들은 더 깊은 곳을 향해 나아간다.</p></article></div>
+      <div class="world-layout"><aside class="document-label"><span class="eyebrow">LUMIÈRE</span><span class="document-mark">검과 마법이<br>공존하는 세계</span><dl><div><dt>배경</dt><dd>중세 판타지 · 제국 수도</dd></div><div><dt>교육기관</dt><dd>전원 기숙제 사관학교</dd></div><div><dt>입학생</dt><dd>의무교육을 마친 성인</dd></div></dl></aside><article class="world-article"><h2>루미에르 아카데미</h2><p>레온하트 대륙의 제국 수도에 자리한 대륙 최고의 전원 기숙제 사관형 고등학부. 의무교육을 마친 성인들이 입학하며, 입학생들은 이미 제국 평균 이상의 실력을 갖추고 있다. 귀족과 평민은 같은 아카데미에 모이지만, 신분과 가문이 만드는 기회의 차이까지 사라지지는 않는다.</p><p>아카데미에는 학년과 학부 구분이 없다. 모든 학생이 검술과 마법을 필수로 배우며, 서로 다른 숙련도와 특화, 출신을 바탕으로 성과와 랭킹을 통해 자신의 위치를 증명한다.</p><h2>성장이 기회가 되고, 서열이 미래가 된다</h2><p>졸업은 제국 평균 이상의 직위와 수입, 생활을 보장한다. 랭킹과 성과에 따라 교육과 생활, 장비와 진로의 기회가 달라지며, 학생들은 그 미래를 차지하기 위해 치열하게 경쟁한다.</p><p>랭킹은 단순한 명부의 숫자가 아니다. 수업반과 시설, 장비와 기숙사, 장학금과 진로에까지 영향을 미친다. 귀족 가문의 후원과 학생 파벌은 그 경쟁을 더욱 복잡하게 만든다.</p><div class="pullquote"><span class="eyebrow">BEYOND THE HONOR</span><p>재능만으로는 설명할 수 없는 서열.<br>힘만으로는 지켜낼 수 없는 관계.</p></div><h2>아카데미 너머, 레온하트 대륙</h2><p>왕실의 평화 노선과 무력 통일을 둘러싼 대립, 흑요 모험단의 탐험, 루벨 마을의 질서. 교정 밖에서도 각자의 신념과 욕망은 서로 다른 선택으로 이어진다. 20층으로 이루어진 미궁에는 다섯 층마다 강적이 기다리며, 모험가들은 더 깊은 곳을 향해 나아간다.</p></article></div>
       <div class="section-heading lower-heading"><span class="section-no">II.</span><h2>관계와 선택이 만드는 군상극</h2></div>
       <div class="theme-grid"><article><span class="eyebrow">GROWTH</span><h3>수련과 학업</h3><p>수업, 시험, 훈련과 대련 속에서 재능과 노력이 마주한다. 성장은 실력뿐 아니라 자신의 길을 찾는 과정이 된다.</p></article><article><span class="eyebrow">RELATIONSHIP</span><h3>교류와 연애</h3><p>기숙사 생활, 동아리, 사교행사와 축제. 서로를 알아가는 시간 속에서 우정과 애정, 경쟁과 갈등이 쌓인다.</p></article><article><span class="eyebrow">CONFLICT</span><h3>정치와 모험</h3><p>귀족 가문과 학생 파벌의 이해관계는 교내 일상에 스며든다. 현장실습과 진로 경쟁은 아카데미 너머의 세계와 이어진다.</p></article></div>
       <div class="page-next"><span>이 세계에서의 하루가 궁금하다면</span><a class="button" href="#academy">아카데미 살펴보기</a></div>
@@ -612,15 +768,16 @@
       <div class="page-heading"><span class="eyebrow">II. ACADEMY LIFE</span><h1 id="academy-title" tabindex="-1">검과 마법의 배움터.</h1><p>혹독한 수련과 평범한 일상, 그 사이에서 자라나는 이야기.</p></div>
       <div class="faculty-grid"><article class="faculty"><div class="faculty-top"><span class="eyebrow">SWORDSMANSHIP</span><span class="faculty-number">01</span></div><h2>검술 수업</h2><p class="faculty-lead">검을 다루는 힘.<br>그리고 그 힘을 쓸 때의 판단.</p><p>훈련과 대련을 통해 실력을 갈고닦는다. 호쾌한 검술 교수 노엘은 학생들에게 혹독한 훈련을 요구하면서도, 성장과 몸 상태를 세심하게 살핀다.</p><div class="faculty-person"><span>담당 교수</span><a href="#characters/9">노엘</a></div></article><article class="faculty magic"><div class="faculty-top"><span class="eyebrow">MAGIC</span><span class="faculty-number">02</span></div><h2>마법 수업</h2><p class="faculty-lead">현상을 이해하는 지식.<br>그 지식을 현실로 옮기는 마법.</p><p>마법에 대한 지식과 운용을 배운다. 냉정하고 우아한 마법 교수 오필리아는 지식에 대한 강한 자부심을 지니며, 학생들을 엄격하게 지도한다.</p><div class="faculty-person"><span>담당 교수</span><a href="#characters/10">오필리아</a></div></article></div>
       <div class="life-grid"><div><span class="eyebrow">LIFE BETWEEN LESSONS</span><h2 class="life-heading">수업이 끝나도,<br>이야기는 계속된다.</h2><p class="muted">배움, 만남, 경쟁. 아카데미의 일상은 서로 이어져 있다.</p></div><div class="life-list"><details open><summary><span>01</span>수업과 시험</summary><p>성과를 증명하고 진로를 준비하는 시간. 각자의 재능과 목표는 수업과 시험을 통해 드러난다.</p></details><details><summary><span>02</span>기숙사와 동아리</summary><p>전원 기숙제 생활 속에서 학생들은 서로의 일상을 공유한다. 동아리와 학생회 활동은 교실 밖의 관계를 만든다.</p></details><details><summary><span>03</span>사교행사와 축제</summary><p>연습과 공부에서 잠시 벗어나는 만남의 자리. 새로운 인연이 생기는 동시에, 신분과 파벌의 영향력도 드러난다.</p></details><details><summary><span>04</span>공개 랭킹전</summary><p>중앙대련장에서 이루어지는 공개 대련. 승리가 확정되면 승자와 패자의 학급 랭킹이 교환되며, 다른 학생의 순위는 유지된다. 랭킹은 전투력 그 자체와 같지 않다.</p></details><details><summary><span>05</span>현장실습과 진로</summary><p>아카데미에서 쌓은 배움을 외부 현장에서 시험한다. 졸업 이후의 진로를 두고 귀족 가문과 기사단, 마법기관의 관심과 학생들의 경쟁이 맞물린다.</p></details></div></div>
-      <div class="rank-note"><span class="eyebrow">PUBLIC RANKING</span><h2>학급 랭킹, CR</h2><p>학급 안에서 공개되는 서열. 실력뿐 아니라 신분, 인맥, 후원과 학생 사이의 관계가 경쟁에 얽힌다. 높은 순위의 명예와 낮은 순위의 압박은 학생마다 서로 다른 선택으로 이어진다.</p></div>
+      <div class="rank-note"><span class="eyebrow">PUBLIC RANKING</span><h2>학급 랭킹, CR</h2><p>학급 안에서 공개되는 서열. 실력뿐 아니라 신분, 인맥, 후원과 학생 사이의 관계가 경쟁에 얽힌다. 높은 순위의 명예와 낮은 순위의 압박은 학생마다 서로 다른 선택으로 이어진다.</p><h2>실비아파와 알프레도파</h2><p>발렌티스 공작가와 아르젠트 공작가의 오랜 반목은 교내에서도 이어진다. 실비아와 알프레도를 중심으로 두 파벌이 맞서며, 어느 쪽과 관계를 맺느냐에 따라 교내 대우와 후원, 진로 기회가 달라진다. 어느 파벌에도 속하지 않은 학생은 기회에서 밀려나기도 한다.</p></div>
       <div class="page-next"><span>이곳에서 각자의 미래를 꿈꾸는 사람들</span><a class="button" href="#characters">인물 명부 열람</a></div>
     </section>
     <section class="page-view wrap" id="characters" data-view="characters" hidden aria-labelledby="characters-title">
-      <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>루미에르 아카데미에서 레온하트 대륙까지. 카드를 선택해 인물의 이야기와 순간의 기록을 살펴보세요.</p></div>
+      <div class="page-heading"><span class="eyebrow">III. THE CHARACTERS</span><h1 id="characters-title" tabindex="-1">서로 다른 꿈을 가진 이들.</h1><p>루미에르 아카데미에서 레온하트 대륙까지. 인물의 이야기와 순간의 기록을 살펴보세요.</p></div>
       <div class="roster-controls character-part-controls" role="group" aria-label="등장인물 이야기 구분">
-        <button type="button" class="filter part-filter active" data-character-part="all" aria-pressed="true"><strong>전체</strong><small>모든 인물</small><span class="part-count">21</span></button>
+        <button type="button" class="filter part-filter active" data-character-part="all" aria-pressed="true"><strong>전체</strong><small>주요 인물</small><span class="part-count">21</span></button>
         <button type="button" class="filter part-filter" data-character-part="academy" aria-pressed="false"><strong>1부</strong><small>(아카데미 소속)</small><span class="part-count">13</span></button>
         <button type="button" class="filter part-filter" data-character-part="continent" aria-pressed="false"><strong>2부</strong><small>(레온하트 대륙)</small><span class="part-count">8</span></button>
+        <button type="button" class="filter part-filter" data-character-part="extras" aria-pressed="false"><strong>단역</strong><small>인물 유형</small><span class="part-count">10</span></button>
       </div>
       <div class="roster-controls character-subcontrols" id="character-subcontrols" hidden>
         <div class="part-filter-options" data-part-filters="all" role="group" aria-label="전체 인물 분류 바로가기">
@@ -636,20 +793,6 @@
       <div class="character-layout" id="character-layout"><div class="roster" id="roster" aria-label="인물 명부"></div></div>
       <div class="character-empty" id="character-empty" role="status" hidden><span class="eyebrow" id="character-empty-label">PART II · LEONHART</span><h2 id="character-empty-title">인물 소개 준비 중</h2><p>이 분류의 인물 소개는 준비 중입니다.</p></div>
     </section>
-    <section class="page-view wrap truth-view" id="truth" data-view="truth" hidden aria-labelledby="truth-title">
-      <div class="page-heading"><span class="eyebrow">NMA / SOHYEON'S STORY</span><h1 id="truth-title" tabindex="-1">이소현의 진실</h1><p>그녀가 문을 넘은 이유, 그 너머에 남겨진 이야기.</p><div class="truth-science-graphic" aria-hidden="true"><svg viewBox="0 0 260 190" fill="none"><g stroke="currentColor" stroke-width="1"><path d="M24 16h18M24 16v18m212-18h-18m18 0v18M24 174h18m-18 0v-18m212 18h-18m18 0v-18"/><path d="M40 95h180M130 25v140" stroke-dasharray="2 6"/><circle cx="130" cy="95" r="64"/><circle cx="130" cy="95" r="42" stroke-dasharray="3 5"/><path d="m130 49 40 23v46l-40 23-40-23V72l40-23Zm0 46 40-23m-40 23L90 72m40 23v46m0-92v46m-40 23 40-23 40 23"/><path d="M72 54 188 136M72 136 188 54" opacity=".3"/><circle cx="130" cy="49" r="3" fill="currentColor"/><circle cx="170" cy="72" r="3" fill="currentColor"/><circle cx="170" cy="118" r="3" fill="currentColor"/><circle cx="130" cy="141" r="3" fill="currentColor"/><circle cx="90" cy="118" r="3" fill="currentColor"/><circle cx="90" cy="72" r="3" fill="currentColor"/><circle cx="130" cy="95" r="5" fill="currentColor"/></g></svg></div></div>
-      <nav class="phase-nav" aria-label="웹툰 Phase 선택">
-        <a class="phase-tab" href="#truth/1" data-truth-phase="1" aria-current="page">Phase 1</a>
-        <a class="phase-tab" href="#truth/2" data-truth-phase="2">Phase 2</a>
-        <a class="phase-tab" href="#truth/3" data-truth-phase="3">Phase 3</a>
-      </nav>
-      <article class="webtoon-reader" aria-labelledby="truth-phase-title">
-        <div class="webtoon-reader-head"><h2 id="truth-phase-title" tabindex="-1">Phase 1</h2><div class="webtoon-reader-meta"><p>아래로 스크롤하여 읽기 · <span id="truth-progress">01 / 03</span></p><button class="button webtoon-size-toggle" id="webtoon-size-toggle" type="button" aria-pressed="false">넓게 보기</button></div></div>
-        <div class="webtoon-sheet" id="webtoon-sheet"></div>
-        <nav class="webtoon-pagination" id="webtoon-pagination" aria-label="웹툰 페이지 이동"></nav>
-        <a class="webtoon-return" href="#home">작품 소개로 돌아가기</a>
-      </article>
-    </section>
   </main>
   <footer class="footer"><div class="wrap footer-inner"><a class="footer-title" href="#home">LUMIÈRE ACADEMY</a><span>검과 마법이 공존하는 아카데미의 이야기</span><a href="#home">처음으로</a></div></footer>
   </div>
@@ -658,7 +801,7 @@
     <h2 id="spoiler-title">스포일러 주의</h2>
     <!-- Temporary notice copy; replace when the final wording is ready. -->
     <p id="spoiler-message">작품의 주요 내용이 포함되어 있습니다.<br>계속 확인하시겠습니까?</p>
-    <div class="spoiler-actions"><button class="button primary" id="spoiler-yes" type="button">예</button><button class="button" id="spoiler-no" type="button" autofocus>아니오</button></div>
+    <div class="spoiler-actions"><a class="button primary" id="spoiler-yes" href="../NMA/index.html" target="_blank" rel="noopener noreferrer" aria-label="예, NMA 사이트 새 탭에서 열기">예</a><button class="button" id="spoiler-no" type="button" autofocus>아니오</button></div>
   </dialog>
   <dialog class="character-dialog" id="character-dialog" aria-labelledby="character-detail-title">
     <div class="character-dialog-tools"><button class="character-dialog-close" id="character-dialog-close" type="button" aria-label="인물 상세 닫기" autofocus>×</button></div>
@@ -852,7 +995,6 @@
         "role": "아카데미 학생",
         "rank": "80위",
         "age": 20,
-        "grade": "D",
         "subtitle": "밝은 미소 뒤에 감춘 불안",
         "description": "분홍빛 긴 머리와 분홍 눈이 돋보이는 학생. 밝고 붙임성 있는 태도로 사람들에게 먼저 다가간다.",
         "note": "힘든 순간에도 웃으며 불안과 고통을 감추곤 한다. 자신을 위해 희생한 부모의 마음이 헛되지 않도록 성장에 필사적이다.",
@@ -870,7 +1012,6 @@
         "role": "아카데미 학생",
         "rank": "67위",
         "age": 20,
-        "grade": "C",
         "subtitle": "나른한 눈빛 속 단순한 해답",
         "description": "푸른 긴 머리를 양갈래로 땋은 과묵한 학생. 늘 졸린 눈을 하고 있으며, 귀찮은 일과 복잡한 생각을 피한다.",
         "note": "말보다 행동으로 일을 해결하는 편이다. 주변에 있는 사람 외에는 좀처럼 관심을 기울이지 않는다.",
@@ -888,14 +1029,13 @@
         "role": "아카데미 학생",
         "rank": "18위",
         "age": 20,
-        "grade": "B",
-        "subtitle": "여유로운 미소로 판을 읽는 학생",
-        "description": "금발 긴 머리와 붉은 눈, 성숙한 인상이 돋보이는 명문가 출신 학생. 나긋한 말투와 옅은 미소로 좀처럼 속내를 드러내지 않는다.",
-        "note": "상대의 약점과 이해관계를 빠르게 파악한다. 아르젠트 공작가와 대립하며 가문과 학내 정치에 적극적으로 관여한다.",
+        "subtitle": "미소로 복종을 요구하는 파벌의 수장",
+        "description": "금발 긴 머리와 붉은 눈, 성숙한 인상이 돋보이는 발렌티스 공작가의 영애이자 실비아파의 수장. 나긋한 명령조와 여유로운 미소에 경멸과 위협을 담는다.",
+        "note": "신분과 실력이 낮은 이를 멸시하고 친절과 약점까지 통제의 수단으로 삼는다. 아르젠트 공작가와 대립하며 가문의 체면과 권력을 위해 희생을 마다하지 않고, 불복하거나 자신을 무시하는 이에게는 모함과 보복을 가한다.",
         "tags": [
-          "명문가",
-          "학내 정치",
-          "거래"
+          "발렌티스 공작가",
+          "실비아파",
+          "권위와 통제"
         ]
       },
       {
@@ -906,10 +1046,9 @@
         "role": "아카데미 학생",
         "rank": "2위",
         "age": 20,
-        "grade": "A",
         "subtitle": "귀족의 품위 뒤에 품은 자유",
-        "description": "은빛 긴 머리와 푸른 눈, 검은 리본이 돋보이는 명문 귀족 영애. 자존심이 강하고 품위를 중시하며 새침한 태도를 보인다.",
-        "note": "가문의 뜻에 따라 입학했지만 서열 자체에는 큰 관심이 없다. 호의와 칭찬에는 쉽게 당황하며 자유롭고 소박한 삶을 바란다.",
+        "description": "은빛 긴 머리와 푸른 눈, 리본이 돋보이는 명문 귀족 영애. 자존심이 강하고 품위를 중시하며 툴툴대는 반말로 속마음을 감춘다.",
+        "note": "가문의 뜻에 따라 입학했지만 서열 자체에는 큰 관심이 없다. 호의와 칭찬에는 쉽게 당황하며 자유롭고 소박한 삶을 바란다. 평민 문화와 봉사활동을 남몰래 즐기고 귀여운 것을 유난히 좋아한다.",
         "tags": [
           "귀족 영애",
           "자존심",
@@ -924,9 +1063,8 @@
         "role": "아카데미 학생",
         "rank": "15위",
         "age": 20,
-        "grade": "B",
         "subtitle": "달콤한 장난 뒤에 숨은 탐욕의 마녀",
-        "description": "분홍빛 긴 트윈테일과 분홍 눈을 가진 사교적인 학생이자 탐욕의 마녀. 친근한 말투와 가벼운 장난으로 상대의 반응을 살피지만 속내는 계산적이고 집요하다.",
+        "description": "검은 트윈테일과 붉은 눈을 가진 사교적인 학생이자 탐욕의 마녀. 친근한 말투와 가벼운 장난으로 상대의 반응을 살피지만 속내는 계산적이고 집요하다.",
         "note": "욕망과 불안, 약점을 이용해 사람의 정신을 지배한다. 소유와 통제를 위해 학내 파벌과 정치적 갈등을 부추기는 데 주저하지 않는다.",
         "tags": [
           "탐욕의 마녀",
@@ -942,14 +1080,13 @@
         "role": "아카데미 학생",
         "rank": "꼴등",
         "age": 20,
-        "grade": "S",
         "subtitle": "시선을 피해 조용한 구석으로",
-        "description": "헝클어진 긴 흑발과 짙은 다크서클, 구부정한 자세가 인상적인 학생. 혼자 있거나 구석에 머무르며 작은 목소리로 중얼거린다.",
-        "note": "싸움과 주목을 피하는 탓에 랭킹은 꼴등이다. 칭찬을 쉽게 믿지 못하고 자신을 부정적으로 바라보면서도 누군가에게 인정받고 싶어 한다.",
+        "description": "헝클어진 긴 흑발과 짙은 다크서클이 인상적인 학생이자 암살자. 혼자 있거나 구석에 머무르며 작은 목소리로 중얼거린다.",
+        "note": "싸움과 주목을 피하는 탓에 랭킹은 꼴등이다. 칭찬을 쉽게 믿지 못하고 자신의 가치를 부정한다. 애착이 깊어지면 버림받을지 모른다는 두려움으로 상대의 행동과 교우관계를 통제하려 한다.",
         "tags": [
           "혼자 있는 시간",
           "시선 회피",
-          "인정"
+          "유기 불안"
         ]
       },
       {
@@ -958,15 +1095,14 @@
         "part": "academy",
         "group": "student",
         "role": "아카데미 학생",
-        "rank": "7위",
+        "rank": "5위",
         "age": 20,
-        "grade": "B",
         "subtitle": "가문의 이름으로 지키는 권위",
-        "description": "백발과 날카로운 눈매, 단정한 차림이 돋보이는 아르젠트 공작가의 후계자. 체면과 자존심을 중시하며 낮은 신분이나 실력을 가진 이를 깔본다.",
-        "note": "인맥과 회유, 압박을 통해 학생 사회에 영향력을 행사한다. 가문의 기대를 충족해야 한다는 부담 속에서 자신의 입지를 지키려 한다.",
+        "description": "금발과 단정한 차림이 돋보이는 장신의 아르젠트 공작가 후계자. 체면과 자존심을 중시하며 낮은 신분이나 실력을 가진 이를 깔본다.",
+        "note": "알프레도파를 이끌며 인맥과 회유, 압박으로 학생 사회에 영향력을 행사한다. 가문의 기대를 충족해야 한다는 부담 속에서 자신의 입지를 지키려 한다. 아이리스에게는 외모뿐 아니라 성격에도 마음을 둔다.",
         "tags": [
           "공작가 후계자",
-          "학생 파벌",
+          "알프레도파",
           "권위"
         ]
       },
@@ -978,9 +1114,8 @@
         "role": "아카데미 학생",
         "rank": "40위",
         "age": 20,
-        "grade": "B",
         "subtitle": "장난스럽지만 선은 분명하게",
-        "description": "흑발과 푸른 눈을 가진 유쾌하고 사교적인 학생. 엉뚱한 농담과 짓궂은 놀림을 즐기지만 상대가 불편해하면 물러난다.",
+        "description": "흑발과 푸른 눈을 가진 유쾌하고 사교적인 학생. 단순하고 장난기가 많으며 친구처럼 편하게 말을 건네고 과장된 반응으로 웃음을 만든다.",
         "note": "계급이나 권위보다 자신의 신념을 중시한다. 악행이나 약자를 유린하는 행동을 마주하면 장난을 거두고 냉철하게 나선다.",
         "tags": [
           "유쾌함",
@@ -996,14 +1131,13 @@
         "role": "아카데미 학생",
         "rank": "1위",
         "age": 20,
-        "grade": "S",
         "subtitle": "굴복을 모르는 절대적인 자존심",
         "description": "흑발과 검은 눈, 차가운 무표정이 인상적인 랭킹 1위 학생. 과묵하고 냉혹하며 타인의 명령이나 간섭을 받아들이지 않는다.",
-        "note": "절대적인 힘을 추구하며 목적을 위해 수단을 가리지 않는다. 강자 앞에서도 굴복하지 않고 패배할수록 더욱 집요해진다.",
+        "note": "마녀라는 누명을 쓴 부모를 잃은 뒤, 그때의 무력함을 증오하며 복수를 위해 힘을 추구한다. 나약함과 예속을 경멸하고 범죄를 혐오하지만, 목적을 위해 수단을 가리지 않는다.",
         "tags": [
           "랭킹 1위",
           "오만함",
-          "힘의 추구"
+          "복수"
         ]
       },
       {
@@ -1014,10 +1148,9 @@
         "role": "검술 교수",
         "rank": null,
         "age": 32,
-        "grade": "A",
         "subtitle": "혹독한 훈련 뒤에 숨은 세심함",
         "description": "붉은 긴 머리를 높게 묶은 호탕한 검술 교수. 큰 목소리와 농담으로 학생들을 대하지만 훈련에서는 쉽게 타협하지 않는다.",
-        "note": "학생의 성장을 크게 기뻐하고 뒤에서는 상처와 몸 상태를 살핀다. 학생을 망가뜨리는 강화 방식에는 단호하게 반대한다.",
+        "note": "학생의 성장을 크게 기뻐하고 뒤에서는 상처와 몸 상태를 살핀다. 학생을 망가뜨리는 강화 방식에는 단호하게 반대한다. 대련을 심판할 때는 승부가 나면 즉시 중단시키고 추가 공격을 제지한다.",
         "tags": [
           "검술 교수",
           "혹독한 훈련",
@@ -1032,10 +1165,9 @@
         "role": "마법 교수",
         "rank": null,
         "age": 32,
-        "grade": "S",
         "subtitle": "지식과 위계를 중시하는 엄격한 교수",
         "description": "은회색 단발과 붉은 눈, 검은 드레스풍 교수복이 돋보이는 마법 교수. 냉정하고 우아하며 자신의 지식에 강한 자부심을 갖고 있다.",
-        "note": "금단의 스테로이드를 제조·밀매한다. 신체를 강화하면서도 손상을 일으키는 약을 다루며, 법이나 학생의 안전보다 자신의 이익을 앞세운다. 노엘의 훈련 방식은 비효율적이라고 평가한다.",
+        "note": "금단의 스테로이드를 제조·판매한다. 신체를 강화하면서도 손상을 일으키는 약을 다루며, 법이나 학생의 안전보다 자신의 이익을 앞세운다. 노엘의 훈련 방식은 비효율적이라고 평가한다.",
         "tags": [
           "마법 교수",
           "금단의 스테로이드",
@@ -1050,7 +1182,6 @@
         "role": "학장",
         "rank": null,
         "age": 29,
-        "grade": "U",
         "subtitle": "교정을 거닐며 재능을 살피는 학장",
         "description": "푸른 긴 머리와 붉은 눈, 검은 메이드복을 즐겨 입는 아카데미 학장. 느긋한 존댓말과 옅은 미소로 사람들을 대한다.",
         "note": "학생을 성장할수록 가치가 높아지는 전투 자산으로 바라본다. 성적이 오르거나 논란을 일으키는 학생에게 주목하며, 성장한 학생을 미궁에 투입한다. 학생의 안전보다 전력 강화를 우선하고 살상에 대한 거부감도 희박하다.",
@@ -1067,11 +1198,10 @@
         "group": "staff",
         "role": "이사장",
         "rank": null,
-        "age": 30,
-        "grade": "??",
+        "age": 32,
         "subtitle": "차분한 판단과 세심한 경청",
         "description": "은빛 긴 머리와 푸른 눈, 단정한 인상의 아카데미 이사장. 조용하고 세심하며 침착한 태도로 감정을 절제한다.",
-        "note": "사실과 근거를 중시하고 논리적으로 핵심을 짚는다. 상대의 말을 세심히 듣되 필요할 때는 명료하고 단호하게 의견을 밝힌다.",
+        "note": "학내 최고의 투자자로서 사실과 근거를 중시하고 논리적으로 핵심을 짚는다. 상대의 말을 세심히 듣되 필요할 때는 명료하고 단호하게 의견을 밝힌다.",
         "tags": [
           "이사장",
           "명료함",
@@ -1085,8 +1215,7 @@
         "group": "sins",
         "role": "타락사제",
         "rank": null,
-        "age": 39,
-        "grade": "U",
+        "age": 42,
         "subtitle": "죄 없는 세계를 바라는 진노의 마녀",
         "description": "분홍빛 긴 머리와 푸른 눈을 가진 가녀린 타락사제이자 진노의 마녀. 차분한 존댓말을 사용하며 신성력을 다룬다.",
         "note": "루벨 마을과 고아원을 운영하며 범죄 없는 세계를 바란다. 약물을 특히 혐오하고 작은 범죄도 더 큰 악의 씨앗으로 여겨 가혹하게 처벌한다. 자신의 기준에 따른 선의와 책임감을 중시하며 영역 밖의 일에는 관심을 두지 않는다.",
@@ -1104,46 +1233,43 @@
         "role": "왕녀",
         "rank": null,
         "age": 23,
-        "grade": "E",
         "subtitle": "책임과 자유 사이에서 세상을 향해",
-        "description": "금발 긴 머리와 보라색 눈, 온화한 인상의 왕녀. 정치와 외교 경험이 풍부하며 인간의 선함과 백성의 삶을 소중히 여긴다.",
-        "note": "신분을 숨긴 채 세상을 직접 탐방하며 자유와 왕녀의 책임 사이에서 고민한다. 생활 실무에는 서툴지만 직접 해보겠다는 고집으로 종종 작은 실수를 한다.",
+        "description": "금발 긴 머리와 보라색 눈, 온화한 인상의 왕녀. 정치와 외교 경험이 풍부하며 인간의 선함과 백성의 삶을 소중히 여긴다. 강압보다 협상과 상호 이익, 합의를 통한 평화를 추구한다.",
+        "note": "서민 문화를 즐기기 위해 신분을 숨기고 궁 밖으로 나선다. 자유롭게 세상을 만나고 싶지만 왕녀로서의 책임도 무겁게 받아들인다. 생활 실무에는 서툴러 직접 해보려다가 작은 실수를 하곤 한다.",
         "tags": [
           "왕녀",
-          "세상 탐방",
+          "서민 문화",
           "자유"
         ]
       },
       {
         "id": 15,
-        "name": "아드리안",
+        "name": "에드먼드",
         "part": "continent",
         "group": "royal",
         "role": "왕자 · 기사",
         "rank": null,
         "age": 28,
-        "grade": "U",
-        "subtitle": "제국의 무력으로 이루려는 통일",
-        "description": "전쟁 경험이 풍부한 왕자이자 기사. 강경한 태도를 보이며 자신만의 정의를 중시하고, 제국의 무력으로 대륙을 통일하고 지배하려 한다.",
-        "note": "왕실의 평화 노선과 타국의 간섭, 첩자의 침투에 불만을 품고 있다. 대륙의 평화를 바라보는 방식이 다른 부왕 애드먼드와 대립한다.",
+        "subtitle": "무력 통일로 이루려는 평화",
+        "description": "전쟁의 희생을 수없이 목격한 냉엄한 왕자이자 기사. 낮고 절제된 말투로 자신의 경험과 책임을 내세우며, 무력으로 대륙을 통일해야 평화를 지킬 수 있다고 믿는다.",
+        "note": "나라를 구해야 한다는 책임감으로 무력 통일을 추구한다. 타국의 간섭과 첩자의 침투에 불만을 품고 있으며, 평화를 이루는 방식이 다른 부왕 아드리안과 소피아에게 반박과 회유로 맞선다.",
         "tags": [
           "왕자",
           "무력 통일",
-          "강경 노선"
+          "구국의 책임"
         ]
       },
       {
         "id": 16,
-        "name": "애드먼드",
+        "name": "아드리안",
         "part": "continent",
         "group": "royal",
         "role": "국왕",
         "rank": null,
         "age": 57,
-        "grade": "C",
         "subtitle": "세력의 균형으로 지키는 평화",
-        "description": "소피아와 아드리안의 아버지이자 국왕. 온건한 태도로 정세를 바라보며 여러 세력의 대립과 균형이 평화를 지킨다고 믿는다.",
-        "note": "무력에 의한 대륙 통일을 추구하는 아드리안의 노선에 반대한다. 제국의 힘을 앞세우기보다 세력 사이의 균형을 유지하려 한다.",
+        "description": "소피아와 에드먼드의 아버지이자 국왕. 온건한 태도로 정세를 바라보며 여러 세력의 대립과 균형이 평화를 지킨다고 믿는다.",
+        "note": "무력에 의한 대륙 통일을 추구하는 에드먼드의 노선에 반대한다. 제국의 힘을 앞세우기보다 세력 사이의 균형을 유지하려 한다.",
         "tags": [
           "국왕",
           "온건 노선",
@@ -1158,7 +1284,6 @@
         "role": "벨루아 왕국 왕자",
         "rank": null,
         "age": 27,
-        "grade": "S",
         "subtitle": "다정한 말투 뒤에 숨은 계산",
         "description": "사교적이고 다정한 말투를 사용하는 벨루아 왕국의 왕자. 소피아를 사랑하지만 소유욕과 집착도 강하며, 부드러운 태도 뒤에 계산적인 속내를 감춘다.",
         "note": "소피아의 선의를 이용해 레온하트 제국의 이권을 차지하려 한다. 거절과 열등감 앞에서는 책임을 떠넘기며, 집착이 깊어질수록 음해와 협박에도 손을 뻗는다.",
@@ -1176,14 +1301,13 @@
         "role": "흑요 모험단 단장",
         "rank": null,
         "age": 28,
-        "grade": "S",
-        "subtitle": "힘과 실적을 자부하는 모험단장",
-        "description": "루미에르 아카데미를 졸업한 흑요 모험단의 단장. 모험을 사랑했으나 최강의 모험가라는 명성을 얻은 뒤 오만하고 과묵해졌으며 짧은 명령조로 말한다.",
-        "note": "자신의 힘과 실적에 자부심이 강하고 다른 여성들을 임무와 이익의 도구로 대한다. 연인 엘레나에게만은 예외적으로 진심 어린 사랑을 보인다.",
+        "subtitle": "명성과 실적을 자부하는 모험단장",
+        "description": "루미에르 아카데미를 졸업한 흑요 모험단의 단장. 모험을 사랑했으나 모험가로 명성을 얻은 뒤 오만하고 과묵해졌으며 짧은 명령조로 말한다.",
+        "note": "자신의 명성과 실적에 자부심이 강하고 다른 여성들을 임무와 이익의 도구로 대한다. 연인 엘레나에게만은 예외적으로 진심 어린 사랑을 보인다.",
         "tags": [
           "흑요 모험단",
           "아카데미 졸업생",
-          "힘과 실적"
+          "명성과 실적"
         ]
       },
       {
@@ -1194,7 +1318,6 @@
         "role": "흑요 모험단 마법사",
         "rank": null,
         "age": 28,
-        "grade": "A",
         "subtitle": "헌신과 자기 존중 사이의 선택",
         "description": "자주색 긴 머리와 보라색 눈, 성숙한 인상을 가진 흑요 모험단의 마법사. 차분하고 다정하며 인내심이 깊고 가까운 사람에게는 부드러운 반말을 쓴다.",
         "note": "연인 가레스를 사랑하지만 그가 타인을 도구로 대하는 데 반대한다. 대화와 설득으로 그를 바꾸려 하며, 헌신하는 마음과 자신을 존중하려는 마음 사이에서 고민한다.",
@@ -1212,9 +1335,8 @@
         "role": "흑요 모험단 서포터",
         "rank": null,
         "age": 22,
-        "grade": "B",
         "subtitle": "눈치를 살피는 서투른 서포터",
-        "description": "어리바리하고 덜렁대는 흑요 모험단의 서포터. 주변의 눈치를 자주 살피고 어버버한 말투를 보이며, 당황하면 말이 쉽게 꼬인다.",
+        "description": "은회색 긴 생머리와 보라색 눈, 처진 눈매가 인상적인 흑요 모험단의 서포터. 어리바리하고 덜렁대며 주변의 눈치를 자주 살핀다. 어버버한 말투를 보이고 당황하면 말이 쉽게 꼬인다.",
         "note": "모험단 안에서 도구처럼 취급받는 인물이다. 서툰 모습과 잦은 당황이 일상적인 태도에 드러난다.",
         "tags": [
           "흑요 모험단",
@@ -1223,18 +1345,43 @@
         ]
       }
     ];
+    const extraCharacters=[
+      {id:21,name:'아카데미 남학생'},
+      {id:22,name:'아카데미 여학생'},
+      {id:23,name:'남자 평민'},
+      {id:24,name:'여자 평민'},
+      {id:25,name:'남자아이'},
+      {id:26,name:'여자아이'},
+      {id:27,name:'기사'},
+      {id:28,name:'여자 귀족'},
+      {id:29,name:'남자 귀족'},
+      {id:30,name:'모험가'}
+    ];
     // Part 2 records use part:'continent' and group:'royal', 'labyrinth', or 'sins'; keep each id unique.
-    // Leave every portrait and state image empty until artwork is provided for the website.
-    // When images are added, gallery uses the original state numbers rather than the button order.
-    const characterMedia=Object.fromEntries(characters.map(character=>[
-      character.id,{portrait:'',position:'50% 30%',gallery:[]}
-    ]));
+    const academyImageFolders={
+      0:'iris', 1:'charlotte', 2:'sylvia', 3:'sera', 4:'lucia', 5:'isabella', 6:'alfredo',
+      7:'theo', 8:'lloyd', 9:'noel', 10:'ophelia', 11:'seraphina', 12:'lee-sohyeon'
+    };
+    // State 0 is the banner. Gallery indices are the original state numbers.
+    const academyImageStates=[1,3,5,8,10,13,22,24,32];
+    const characterMedia=Object.fromEntries(characters.map(character=>{
+      const media={portrait:'',position:'50% 30%',gallery:[]};
+      const folder=academyImageFolders[character.id];
+      if(folder){
+        const base='./assets/characters/academy/'+folder;
+        media.portrait=base+'/0.webp';
+        for(const state of academyImageStates){
+          media.gallery[state]=base+'/'+state+'.webp';
+        }
+      }
+      return [character.id,media];
+    }));
     const views=[...document.querySelectorAll('[data-view]')];
     const academyPageImage=document.querySelector('#academy-page-image');
     const academySceneImage=document.querySelector('#academy-image');
     let mediaEntered=false;
     function prepareAcademyBackground(){
-      if(activeView==='truth'||!(academySceneImage instanceof HTMLImageElement))return;
+      if(!(academySceneImage instanceof HTMLImageElement))return;
       const source=mediaSource(academySceneImage.dataset.src);
       if(!source)return;
       if(!academySceneImage.getAttribute('src'))academySceneImage.src=source;
@@ -1244,7 +1391,8 @@
     const profile=document.querySelector('#profile');
     const characterParts={
       academy:{label:'1부 · 아카데미 소속',eyebrow:'PART I · ACADEMY',filters:[{key:'all',label:'전체'},{key:'student',label:'학생'},{key:'staff',label:'교직원'}]},
-      continent:{label:'2부 · 레온하트 대륙',eyebrow:'PART II · LEONHART',filters:[{key:'all',label:'전체'},{key:'royal',label:'왕선'},{key:'labyrinth',label:'흑요 모험단'},{key:'sins',label:'루벨 마을'}]}
+      continent:{label:'2부 · 레온하트 대륙',eyebrow:'PART II · LEONHART',filters:[{key:'all',label:'전체'},{key:'royal',label:'왕선'},{key:'labyrinth',label:'흑요 모험단'},{key:'sins',label:'루벨 마을'}]},
+      extras:{label:'단역',eyebrow:'SUPPORTING ROLES',filters:[{key:'all',label:'전체'}]}
     };
     let activeView='home';
     let activePart='all';
@@ -1296,11 +1444,6 @@
     window.addEventListener('scroll',refreshAmbienceMask,{passive:true,capture:true});
     window.addEventListener('resize',refreshAmbienceMask,{passive:true});
     ['toggle','close','transitionend','animationend'].forEach(event=>document.addEventListener(event,refreshAmbienceMask,true));
-    // Add each Phase's images in reading order; use actual pixel dimensions to keep scroll positions stable: {src:'./image.webp',alt:'장면 설명',width:1000,height:2400}.
-    const truthPhases=[{number:1,images:[]},{number:2,images:[]},{number:3,images:[]}];
-    let activeTruthPhase=1;
-    const webtoonSizeToggle=document.querySelector('#webtoon-size-toggle');
-    webtoonSizeToggle?.addEventListener('click',()=>{const section=document.querySelector('#truth');if(!(section instanceof HTMLElement))return;const wide=section.classList.toggle('reader-wide');webtoonSizeToggle.setAttribute('aria-pressed',String(wide));webtoonSizeToggle.textContent=wide?'기본 크기':'넓게 보기';refreshMedia()});
     const escapeHtml=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
     function mediaSource(value){
       if(typeof value!=='string'||!value.trim())return '';
@@ -1335,17 +1478,6 @@
       });
     }
     if(!mediaObserver){window.addEventListener('scroll',refreshMedia,{passive:true,capture:true});window.addEventListener('resize',refreshMedia,{passive:true})}
-    document.addEventListener('load',event=>{
-      const image=event.target;
-      if(!(image instanceof HTMLImageElement)||!image.matches('.webtoon-image img')||!image.naturalWidth||!image.naturalHeight)return;
-      image.width=image.naturalWidth;image.height=image.naturalHeight;
-      image.parentElement.style.setProperty('--webtoon-ratio',image.naturalWidth+' / '+image.naturalHeight);
-      if(!mediaObserver)refreshMedia();
-    },true);
-    function webtoonDimensions(image){
-      const width=Number(image.width),height=Number(image.height);
-      return Number.isSafeInteger(width)&&width>0&&Number.isSafeInteger(height)&&height>0?{width,height}:{width:1000,height:2400};
-    }
     function mediaMarkup(source,alt,label,caption='',position='50% 30%'){
       const url=mediaSource(source);
       return `<span class="media-fallback" ${url?'hidden':''}><span>${escapeHtml(label)}</span>${caption?`<small>${escapeHtml(caption)}</small>`:''}</span>${url?`<img data-media-image data-src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" style="object-position:${escapeHtml(/^\d{1,3}% \d{1,3}%$/.test(position)?position:'50% 30%')}">`:''}`;
@@ -1362,7 +1494,10 @@
     }
     function validCharacterPart(part){return part==='all'||Object.prototype.hasOwnProperty.call(characterParts,part)}
     function characterFilters(part){return characterParts[part]?.filters||[{key:'all',label:'전체'}]}
-    function matchingCharacters(part=activePart,filter=activeFilter){return characters.filter(character=>(part==='all'||character.part===part)&&(filter==='all'||character.group===filter))}
+    function matchingCharacters(part=activePart,filter=activeFilter){
+      if(part==='extras')return extraCharacters;
+      return characters.filter(character=>(part==='all'||character.part===part)&&(filter==='all'||character.group===filter));
+    }
     function characterHash(id=selectedId){return activePart==='all'?'characters'+(id===null?'':'/'+id):'characters/'+activePart+'/'+activeFilter+(id===null?'':'/'+id)}
     function selectCharacterGroup(part,filter='all',id=null){
       if(!validCharacterPart(part))return;
@@ -1393,14 +1528,14 @@
     ];
     const characterSceneDefinitions=[
       {label:'일반대화',states:[1,2]},
+      {label:'웃음',states:[3,4]},
+      {label:'부끄러움',states:[5]},
       {label:'두려움',states:[8]},
-      {label:'슬픔',states:[9]},
-      {label:'화남',states:[11,12]},
+      {label:'감동',states:[10]},
+      {label:'경멸/조롱',states:[13,14]},
       {label:'검술전투',states:[22,23]},
       {label:'마법전투',states:[24,25]},
-      {label:'부상',states:[26]},
-      {label:'무장지배술',states:[28]},
-      {label:'애교',states:[31]}
+      {label:'결혼식',states:[32]}
     ];
     const characterDialog=document.querySelector('#character-dialog');
     const characterStage=document.querySelector('#character-scene-stage');
@@ -1437,7 +1572,7 @@
       const groupChanged=!!characterRenderKey;
       characterRenderKey=nextRenderKey;
       document.querySelectorAll('[data-character-part]').forEach(button=>{const part=button.dataset.characterPart;const selected=part===activePart;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('.part-count').textContent=matchingCharacters(part,'all').length});
-      const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=false;
+      const subcontrols=document.querySelector('#character-subcontrols');if(subcontrols)subcontrols.hidden=activePart==='extras';
       document.querySelectorAll('[data-part-filters]').forEach(group=>group.hidden=group.dataset.partFilters!==activePart);
       document.querySelectorAll('[data-filter]').forEach(button=>{const selected=button.dataset.filterPart===activePart&&button.dataset.filter===activeFilter;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected));button.querySelector('span').textContent=matchingCharacters(button.dataset.filterPart,button.dataset.filter).length});
       const layout=document.querySelector('#character-layout');const empty=document.querySelector('#character-empty');
@@ -1447,6 +1582,17 @@
         const part=characterParts[activePart];const category=characterFilters(activePart).find(item=>item.key===activeFilter);
         document.querySelector('#character-empty-label').textContent=part?.eyebrow||'THE CHARACTERS';
         document.querySelector('#character-empty-title').textContent=(part?(activeFilter==='all'?part.label.split(' · ')[0]:category.label):'등장인물')+' 인물 소개 준비 중';
+        refreshMedia();animateCharacterGroup(groupChanged);return;
+      }
+      if(activePart==='extras'){
+        const cards=visible.map(({id,name})=>`<article data-extra-person="${id}">
+          <div class="character-card-image"><span class="media-fallback"><small>인물 사진 준비 중</small></span></div>
+          <div class="character-card-caption"><h3 class="character-card-title"><span class="name">${escapeHtml(name)}</span></h3></div>
+        </article>`).join('');
+        roster.innerHTML=`<section class="character-group" aria-labelledby="character-group-extras">
+          <div class="character-group-heading"><h2 class="character-group-label" id="character-group-extras">단역</h2><span class="character-group-count">${visible.length}종</span></div>
+          <div class="character-card-grid">${cards}</div>
+        </section>`;
         refreshMedia();animateCharacterGroup(groupChanged);return;
       }
       roster.innerHTML=characterGroups.map(group=>{
@@ -1532,33 +1678,40 @@
       characterOpener=null;
     });
 
-    function renderTruth(){
-      const phase=truthPhases.find(item=>item.number===activeTruthPhase)||truthPhases[0];
-      const sheet=document.querySelector('#webtoon-sheet');
-      const pagination=document.querySelector('#webtoon-pagination');
-      if(!sheet||!pagination||sheet.dataset.phase===String(phase.number))return;
-      document.querySelectorAll('[data-truth-phase]').forEach(link=>{if(Number(link.dataset.truthPhase)===phase.number)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
-      document.querySelector('#truth-phase-title').textContent='Phase '+phase.number;
-      document.querySelector('#truth-progress').textContent=String(phase.number).padStart(2,'0')+' / '+String(truthPhases.length).padStart(2,'0');
-      const images=phase.images.filter(image=>image&&mediaSource(image.src));
-      sheet.innerHTML=images.length?images.map((image,index)=>{const {width,height}=webtoonDimensions(image);return `<figure class="webtoon-image" style="--webtoon-ratio:${width} / ${height}"><div class="media-fallback" hidden><span>이미지를 불러올 수 없습니다</span></div><img data-media-image data-src="${escapeHtml(mediaSource(image.src))}" width="${width}" height="${height}" alt="${escapeHtml(image.alt||'Phase '+phase.number+' 장면 '+(index+1))}" loading="lazy" decoding="async"></figure>`}).join(''):`<div class="webtoon-placeholder"><div class="webtoon-placeholder-heading"><span class="eyebrow">PHASE ${String(phase.number).padStart(2,'0')}</span><h3>이야기가 곧 펼쳐집니다</h3><p>웹툰 준비 중</p></div><div class="webtoon-placeholder-scene" aria-hidden="true">01</div><div class="webtoon-placeholder-scene" aria-hidden="true">02</div><div class="webtoon-placeholder-scene" aria-hidden="true">03</div></div>`;
-      sheet.dataset.phase=String(phase.number);
-      const previous=truthPhases.find(item=>item.number===phase.number-1);
-      const next=truthPhases.find(item=>item.number===phase.number+1);
-      pagination.innerHTML=(previous?`<a class="button" href="#truth/${previous.number}" aria-label="이전 페이지 Phase ${previous.number}"><small>이전 페이지</small><strong>← Phase ${previous.number}</strong></a>`:'<button class="button" type="button" disabled><small>이전 페이지</small><strong>첫 페이지</strong></button>')+(next?`<a class="button" href="#truth/${next.number}" aria-label="다음 페이지 Phase ${next.number}"><small>다음 페이지</small><strong>Phase ${next.number} →</strong></a>`:'<button class="button" type="button" disabled><small>다음 페이지</small><strong>마지막 페이지</strong></button>');
+    function currentPageHeading(){
+      return document.querySelector('[data-view="'+activeView+'"] h1');
+    }
+    // Independent sibling site. Both folders can be published as separate Pages repositories.
+    const nmaSiteAddress='../NMA/index.html';
+    let pendingNmaRoute='';
+    let legacyTruthNotice=false;
+    function nmaSiteUrl(route=''){
+      const url=new URL(nmaSiteAddress,document.baseURI);
+      // The existing academy-only preview server has a separate NMA preview alongside it.
+      if(['localhost','127.0.0.1','[::1]'].includes(location.hostname)&&location.port==='4318'){
+        url.port='4319';url.pathname='/index.html';
+      }
+      url.hash=route;return url.href;
+    }
+    function legacyNmaRoute(hash){
+      const parts=hash.slice(1).split('/');
+      if(parts[1]==='matrix')return '#matrix';
+      const phase=parts[1]==='archive'?parts[2]:parts[1];
+      return ['1','2','3'].includes(phase)?'#archive/'+phase:'';
     }
     function updateView(){
-      const parts=location.hash.slice(1).split('/');
+      let parts=location.hash.slice(1).split('/');
+      if(parts[0]==='truth'){
+        pendingNmaRoute=legacyNmaRoute(location.hash);legacyTruthNotice=true;
+        history.replaceState(null,'','#home');parts=['home'];
+      }
       const requested=parts[0]||'home';
       const nextView=views.some(view=>view.dataset.view===requested)?requested:'home';
       const switched=nextView!==activeView;
-      const requestedPhase=truthPhases.find(phase=>String(phase.number)===parts[1])?.number||1;
-      const phaseChanged=nextView==='truth'&&requestedPhase!==activeTruthPhase;
-      if(nextView==='truth')activeTruthPhase=requestedPhase;
       if(nextView==='characters'){
         if(parts[1]!==undefined&&validCharacterPart(parts[1])){
           activePart=parts[1];activeFilter=characterFilters(activePart).some(item=>item.key===parts[2])?parts[2]:'all';
-          const candidate=matchingCharacters().find(item=>String(item.id)===parts[3]);selectedId=candidate?.id??null;
+          const candidate=activePart==='extras'?null:matchingCharacters().find(item=>String(item.id)===parts[3]);selectedId=candidate?.id??null;
         }else if(parts[1]!==undefined){
           activePart='all';activeFilter='all';
           const candidate=characters.find(item=>String(item.id)===parts[1]);
@@ -1569,18 +1722,18 @@
       document.body.classList.toggle('home-scene',activeView==='home');
       document.body.classList.toggle('fantasy-scene',['world','academy','characters'].includes(activeView));
       document.body.classList.toggle('characters-scene',activeView==='characters');
-      document.body.classList.toggle('truth-scene',activeView==='truth');
       views.forEach(view=>view.hidden=view.dataset.view!==activeView);
-
       navigation?.querySelectorAll('a').forEach(link=>{const current=link.hash==='#'+activeView;link.classList.toggle('active',current);if(current)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});
       navigation?.classList.remove('open');menuToggle?.setAttribute('aria-expanded','false');
       if(activeView==='characters')renderCharacters();
-      if(activeView==='truth')renderTruth();
       if(document.body.classList.contains('scene-entering')&&requested!=='home')completeEntry();
-      if(switched||phaseChanged){window.scrollTo({top:0,behavior:'instant'});const heading=document.querySelector(phaseChanged&&!switched?'#truth-phase-title':`[data-view="${activeView}"] h1`);if(heading&&!characterDialog?.open){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}
+      if(switched){window.scrollTo({top:0,behavior:'instant'});const heading=currentPageHeading();if(heading&&!characterDialog?.open){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}
       if(requested==='main')document.getElementById(requested)?.scrollIntoView();
       if(mediaEntered)prepareAcademyBackground();
       refreshMedia();syncCharacterDetail();syncAcademyAmbience();
+      if(legacyTruthNotice&&(mediaEntered||entryScreen?.open)){
+        legacyTruthNotice=false;openSpoilerNotice(document.querySelector(mediaEntered?'[data-truth-confirm]':'#entry-truth'));
+      }
     }
     document.addEventListener('click',event=>{
       const target=event.target instanceof Element?event.target:null;
@@ -1611,26 +1764,66 @@
     const entryScreen=document.querySelector('#entry-screen');
     const entryButton=document.querySelector('#entry-enter');
     const entryGateArchitecture=document.querySelector('#gate-architecture');
-    function updateGateHinges(){
+    const portraitGateMedia=window.matchMedia('(orientation: portrait) and (max-width: 760px)');
+    const wideGateArt={
+      src:'./academy-gate.webp', width:1672, height:941,
+      leftHinge:464, rightHinge:1208,
+      leftLeaf:'M836 0 H752 C634 46 478 127 463 325 L464 886 H836 Z',
+      rightLeaf:'M836 0 H920 C1038 46 1194 127 1209 325 L1208 886 H836 Z'
+    };
+    const portraitGateArt={
+      src:'./academy-gate-portrait.webp', width:736, height:2138,
+      leftHinge:191, rightHinge:546,
+      leftLeaf:'M368 791 C273 823 190 920 191 1018 L191 1410 H368 Z',
+      rightLeaf:'M368 791 C463 823 547 920 546 1018 L546 1410 H368 Z',
+      // Safe area for the arch, pillars, lanterns and threshold in the new artwork.
+      safeWidth:640, safeTop:535, safeBottom:1460
+    };
+    let displayedGateArt=null;
+    function updateGateArtwork(){
       if(!(entryGateArchitecture instanceof HTMLElement))return;
-      const width=entryGateArchitecture.clientWidth;const height=entryGateArchitecture.clientHeight;
+      const {clientWidth:width,clientHeight:height}=entryGateArchitecture;
       if(!width||!height)return;
-      const scale=Math.max(width/1672,height/941);
-      const offset=width/2-836*scale;
-      entryGateArchitecture.style.setProperty('--gate-left-hinge',`${offset+465*scale}px`);
-      entryGateArchitecture.style.setProperty('--gate-right-hinge',`${offset+1208*scale}px`);
+
+      const isPortrait=portraitGateMedia.matches;
+      const art=isPortrait?portraitGateArt:wideGateArt;
+      const style=entryGateArchitecture.style;
+      if(art!==displayedGateArt){
+        entryGateArchitecture.querySelector('#gate-left-shape').setAttribute('d',art.leftLeaf);
+        entryGateArchitecture.querySelector('#gate-right-shape').setAttribute('d',art.rightLeaf);
+        for(const svg of entryGateArchitecture.querySelectorAll('.painted-gate svg')){
+          svg.setAttribute('viewBox',`0 0 ${art.width} ${art.height}`);
+          svg.querySelector('image').setAttribute('href',art.src);
+        }
+        style.setProperty('--gate-art',`url("${art.src}")`);
+        style.setProperty('--gate-left-hinge',`${art.leftHinge/art.width*100}%`);
+        style.setProperty('--gate-right-hinge',`${art.rightHinge/art.width*100}%`);
+        displayedGateArt=art;
+      }
+
+      const cover=Math.max(width/art.width,height/art.height);
+      let artWidth=art.width*cover;
+      let artHeight=art.height*cover;
+      let artCenterY=height/2;
+      if(isPortrait){
+        // At extreme aspect ratios, limit scaling on the cropped axis to protect the stone frame.
+        artWidth=Math.min(artWidth,width/art.safeWidth*art.width);
+        const scaleY=Math.min(cover,height/(art.safeBottom-art.safeTop));
+        artHeight=art.height*scaleY;
+        const centeredTop=(height-(art.safeTop+art.safeBottom)*scaleY)/2;
+        const top=Math.max(height-artHeight,Math.min(0,centeredTop));
+        artCenterY=top+artHeight/2;
+      }
+      style.setProperty('--gate-art-width',`${artWidth}px`);
+      style.setProperty('--gate-art-height',`${artHeight}px`);
+      style.setProperty('--gate-art-center-y',`${artCenterY}px`);
     }
     if(entryGateArchitecture instanceof HTMLElement){
-      if(typeof ResizeObserver==='function')new ResizeObserver(updateGateHinges).observe(entryGateArchitecture);
-      else window.addEventListener('resize',updateGateHinges,{passive:true});
+      if(typeof ResizeObserver==='function')new ResizeObserver(updateGateArtwork).observe(entryGateArchitecture);
+      else window.addEventListener('resize',updateGateArtwork,{passive:true});
     }
-    const entryConnection=document.querySelector('#entry-connection');
-    const entrySkip=document.querySelector('#entry-skip');
     const academyGateway=document.querySelector('#academy-gateway');
     const gatewaySkip=document.querySelector('#gateway-skip');
-    const connectionLabel=document.querySelector('#connection-label');
-    const consoleLog=document.querySelector('#console-log');
-    const consoleViewport=document.querySelector('.console-body');
     const entryState=document.querySelector('#entry-state');
     const entryTimers=new Set();
     let entryConnecting=false;
@@ -1638,178 +1831,56 @@
     function completeEntry(){
       if(!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
       entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
-      document.body.classList.remove('scene-entering','interface-revealing');
+      document.body.classList.remove('scene-entering','interface-revealing','world-revealing');
       entryScreen.close();document.body.classList.remove('entry-active');
-      mediaEntered=true;prepareAcademyBackground();refreshMedia();syncAcademyAmbience();
-      academyTheme.begin();
-      const heading=document.querySelector(`[data-view="${activeView}"] h1`);if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
+      mediaEntered=true;entryConnecting=false;prepareAcademyBackground();
+      refreshMedia();syncAcademyAmbience();academyTheme.begin();
+      const heading=currentPageHeading();if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
       syncCharacterDetail();
     }
     function openAcademyGate(){
       if(gatewayOpening||!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
       if(!(academyGateway instanceof HTMLElement)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){completeEntry();return}
       if(activeView!=='home'||(location.hash&&location.hash!=='#home')){completeEntry();return}
+      const stage=academyGateway.querySelector('.opening-stage');
+      if(!(entryGateArchitecture instanceof HTMLElement)||!(stage instanceof HTMLElement)){completeEntry();return}
       gatewayOpening=true;entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
-      if(entryConnection)entryConnection.hidden=true;
-      // Keep the actual home artwork visible behind the doors; reveal only its interface.
       document.body.classList.add('scene-entering');window.scrollTo({top:0,behavior:'instant'});
       entryScreen.classList.add('gate-active');
       entryScreen.setAttribute('aria-labelledby','gateway-title');entryScreen.setAttribute('aria-describedby','gateway-description');
-      const architecture=entryGateArchitecture;const transitEffects=document.querySelector('#gateway-transit-effects');const stage=academyGateway.querySelector('.gateway-stage');
-      if(!(architecture instanceof HTMLElement)||!(transitEffects instanceof HTMLElement)||!(stage instanceof HTMLElement)){completeEntry();return}
-      stage.append(architecture);
-      updateGateHinges();
-      academyGateway.dataset.phase='passing';
-      academyGateway.hidden=false;academyGateway.classList.add('opening','home-gateway');gatewaySkip?.focus({preventScroll:true});
-      scheduleEntry(()=>{architecture.hidden=true;transitEffects.hidden=true;academyGateway.dataset.phase='white'},1050);
+      stage.append(entryGateArchitecture);academyGateway.hidden=false;updateGateArtwork();
+      academyGateway.dataset.phase='passing';academyGateway.classList.add('opening');gatewaySkip?.focus({preventScroll:true});
+      const description=document.querySelector('#gateway-description');
+      scheduleEntry(()=>{entryGateArchitecture.hidden=true;academyGateway.dataset.phase='sky';if(description)description.textContent='다른 세상에서도 너를.'},1750);
+      scheduleEntry(()=>{academyGateway.dataset.phase='title';if(description)description.textContent='루미에르 아카데미.'},7400);
       scheduleEntry(()=>{
         let revealed=false;let backgroundTimeout=null;
         function revealLandscape(){
           if(revealed||!entryScreen.open||activeView!=='home')return;
           revealed=true;
           if(backgroundTimeout!==null){clearTimeout(backgroundTimeout);entryTimers.delete(backgroundTimeout)}
-          if(academyGateway.classList.contains('waiting-for-background')){academyGateway.classList.remove('waiting-for-background');academyGateway.classList.add('background-ready')}
-          academyGateway.dataset.phase='landscape';academyGateway.classList.add('revealed');
-          const description=document.querySelector('#gateway-description');if(description)description.textContent='아카데미 풍경이 서서히 드러납니다.';
-          scheduleEntry(()=>{academyGateway.dataset.phase='interface';document.body.classList.add('interface-revealing');academyGateway.classList.add('interface-revealing');if(description)description.textContent='아카데미 안내가 차례로 나타납니다.'},1600);
-          scheduleEntry(completeEntry,4500);
+          // Let the title disappear into the light before that light reveals the real home artwork.
+          academyGateway.dataset.phase='title-departure';academyGateway.classList.add('title-departing');
+          scheduleEntry(()=>{
+            academyGateway.dataset.phase='world';academyGateway.classList.add('world-revealing');document.body.classList.add('world-revealing');
+            if(description)description.textContent='하늘 너머로 아카데미의 풍경이 펼쳐집니다.';
+          },1100);
+          scheduleEntry(()=>{
+            academyGateway.dataset.phase='interface';document.body.classList.add('interface-revealing');
+            if(description)description.textContent='루미에르 아카데미에 오신 것을 환영합니다.';
+          },2300);
+          scheduleEntry(completeEntry,5100);
         }
-        // A slow connection should reveal the loaded landscape from white, without a blank flash.
+        // Hold the title on slow connections until the landscape can replace the sky smoothly.
         if(academySceneImage instanceof HTMLImageElement&&!academySceneImage.complete&&typeof academySceneImage.decode==='function'){
-          academyGateway.classList.add('waiting-for-background');
           backgroundTimeout=scheduleEntry(revealLandscape,12000);
           academySceneImage.decode().catch(()=>{}).then(revealLandscape);
         }else revealLandscape();
-      },1550);
+      },8100);
     }
-    // Fictional CLI playback only; commands are never executed and no connections are performed.
-    const consoleHistory=[
-      {kind:'command',prompt:'Sohyeon@node-03:~$ ',message:'nma attach --session 07-c1',tone:'command'},
-      ...[
-        ['OK','Connector authenticated: Sohyeon.','ready'],
-        ['INFO','Existing session located.','muted'],
-        ['INFO','Session 07-c1 remains active.','normal'],
-        ['OK','Resume checkpoint available.','ready'],
-        ['INFO','Reading retained channel state.','muted'],
-        ['OK','Transport channel retained.','ready'],
-        ['INFO','/nma/sector-07 attached.','normal'],
-        ['OK','Channel descriptor verified.','ready'],
-        ['INFO','Loading cached segment table.','muted'],
-        ['OK','Segment table restored.','ready'],
-        ['INFO','Background stream retained.','normal'],
-        ['OK','Stream sequence synchronized.','ready'],
-        ['INFO','Reading prior process state.','muted'],
-        ['OK','Process group recovered.','ready'],
-        ['INFO','Retained output buffer available.','normal'],
-        ['OK','Buffer bounds verified.','ready'],
-        ['INFO','Checking active channel route.','muted'],
-        ['OK','Session route retained.','ready'],
-        ['INFO','Resuming output from last checkpoint.','normal'],
-        ['OK','Live output channel attached.','ready']
-      ].map(([tag,message,tone],index)=>({time:`06:42:17.${String(120+index*31).padStart(3,'0')}`,tag:tag==='OK'?' OK ':tag,message,tone}))
-    ];
-    const sessionBurst=[
-      ['INFO','Session metadata received.','muted'],
-      ['OK','Transport channel open.','ready'],
-      ['INFO','/nma/sector-07 mounted [read-only].','normal'],
-      ['OK','Cache header verified.','ready'],
-      ['ERROR','Amnesia detected.','error'],
-      ['INFO','Requesting cached index.','muted'],
-      ['OK','Entry map available.','ready'],
-      ['INFO','Continuity check queued.','normal'],
-      ['OK','Fallback path retained.','ready'],
-      ['INFO','Background process group retained.','muted']
-    ].map(([tag,message,tone],index)=>({time:`06:42:18.${String(512+index*17).padStart(3,'0')}`,tag:tag==='OK'?' OK ':tag,message,tone}));
-    const referenceBurst=[
-      ['OK','Resume token accepted.','ready'],
-      ['INFO','Rebuilding local index.','muted'],
-      ['OK','Index bounds verified.','ready'],
-      ['WARN','Reference lookup delayed.','notice'],
-      ['INFO','Querying cached records.','normal'],
-      ['ERROR','Memory record not found.','error'],
-      ['INFO','Recovered route selected.','muted'],
-      ['OK','Fallback profile loaded.','ready'],
-      ['INFO','Foreground stream requested.','normal'],
-      ['OK','Session link ready.','ready']
-    ].map(([tag,message,tone],index)=>({time:`06:42:20.${String(210+index*13).padStart(3,'0')}`,tag:tag==='OK'?' OK ':tag,message,tone}));
-    const consoleEvents=[
-      {time:'06:42:18.012',tag:' OK ',pending:'Reading active channel...',message:'Active channel synchronized.',tone:'ready',duration:320},
-      {kind:'burst',lines:sessionBurst,interval:16,pause:90},
-      {time:'06:42:19.026',tag:'ERROR',pending:'Comparing matrix data...',message:'Matrix comparison failed.',tone:'error',duration:420},
-      {time:'06:42:19.271',tag:' OK ',pending:'Selecting fallback route...',message:'Fallback route accepted.',tone:'ready',duration:220},
-      {kind:'burst',lines:referenceBurst,interval:13,pause:120},
-      {time:'06:42:21.108',tag:' OK ',pending:'Restoring foreground context...',message:'Foreground context restored.',tone:'ready',duration:380},
-      {time:'06:42:21.508',tag:'INFO',pending:'Redirecting session output...',message:'Session active. Output redirected.',tone:'muted',duration:180}
-    ];
     function scheduleEntry(action,delay){
       const timer=setTimeout(()=>{entryTimers.delete(timer);if(entryScreen instanceof HTMLDialogElement&&entryScreen.open)action()},delay);
       entryTimers.add(timer);return timer;
-    }
-    function followConsoleOutput(){if(consoleViewport instanceof HTMLElement)consoleViewport.scrollTop=consoleViewport.scrollHeight}
-    function createConsoleLine(event){
-      const line=document.createElement('li');
-      const time=document.createElement('span');time.className='console-time';time.textContent=event.time?`[${event.time}]`:'';
-      const payload=document.createElement('span');payload.className='console-payload';
-      const tag=document.createElement('span');tag.className=event.kind==='command'?'console-prompt':'console-tag';
-      const message=document.createElement('span');message.className='console-message';
-      payload.append(tag,message);line.append(time,payload);consoleLog.append(line);
-      return {line,tag,message};
-    }
-    function finishConsoleLine(parts,event,animate=true){
-      parts.line.dataset.tone=event.tone||'normal';parts.line.removeAttribute('aria-busy');parts.tag.removeAttribute('aria-hidden');
-      parts.tag.textContent=`[${event.tag}] `;parts.message.textContent=event.message;
-      if(animate){
-        followConsoleOutput();
-        if(event.message==='Foreground context restored.'&&connectionLabel)connectionLabel.textContent='Session context restored.';
-      }
-    }
-    function seedConsoleHistory(){
-      if(!consoleLog)return;
-      consoleLog.replaceChildren();
-      consoleHistory.forEach(event=>{
-        const parts=createConsoleLine(event);
-        if(event.kind==='command'){
-          parts.line.className='console-command';parts.line.dataset.tone='command';parts.tag.textContent=event.prompt;parts.message.textContent=event.message;
-        }else finishConsoleLine(parts,event,false);
-      });
-      followConsoleOutput();
-    }
-    function advanceConsole(index,delay=70){
-      if(index<consoleEvents.length-1){scheduleEntry(()=>showConsoleLine(index+1),delay);return}
-      if(connectionLabel)connectionLabel.textContent='Session active. Handoff pending.';
-      scheduleEntry(openAcademyGate,130);
-    }
-    function showConsoleLine(index){
-      if(!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open||!consoleLog)return;
-      const event=consoleEvents[index];if(!event)return;
-      if(event.kind==='burst'){
-        let lineIndex=0;
-        function flushLine(){
-          const item=event.lines[lineIndex];if(!item){advanceConsole(index,event.pause);return}
-          const parts=createConsoleLine(item);finishConsoleLine(parts,item);lineIndex++;
-          if(lineIndex<event.lines.length)scheduleEntry(flushLine,event.interval);else advanceConsole(index,event.pause);
-        }
-        flushLine();return;
-      }
-      const parts=createConsoleLine(event);
-      if(event.kind==='command'){
-        parts.line.className='console-command';parts.line.dataset.tone='command';parts.tag.textContent=event.prompt;parts.message.textContent=event.message;
-        followConsoleOutput();advanceConsole(index,120);return;
-      }
-      parts.line.dataset.tone='pending';parts.line.setAttribute('aria-busy','true');
-      parts.tag.textContent='[ | ] ';parts.tag.setAttribute('aria-hidden','true');parts.message.textContent=event.pending;followConsoleOutput();
-      const frames=['|','/','-',String.fromCharCode(92)];let frameIndex=0;let processing=true;let spinTimer=null;
-      function spin(){
-        if(!processing)return;
-        frameIndex=(frameIndex+1)%frames.length;parts.tag.textContent=`[ ${frames[frameIndex]} ] `;
-        spinTimer=scheduleEntry(spin,85);
-      }
-      spinTimer=scheduleEntry(spin,85);
-      scheduleEntry(()=>{
-        processing=false;
-        if(spinTimer!==null){clearTimeout(spinTimer);entryTimers.delete(spinTimer)}
-        finishConsoleLine(parts,event);advanceConsole(index);
-      },event.duration);
     }
     function enterAcademy(){
       if(entryConnecting||!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
@@ -1818,46 +1889,49 @@
       if(entryButton)entryButton.disabled=true;
       const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(reducedMotion){completeEntry();return}
-      document.querySelector('.entry-action')?.setAttribute('hidden','');
-      if(entryConnection)entryConnection.hidden=false;
-      entryScreen.setAttribute('aria-labelledby','console-heading');entryScreen.setAttribute('aria-describedby','connection-label');
-      if(entryState)entryState.textContent='CHANNEL ATTACHED';
-      entryScreen.classList.add('connecting');
-      entrySkip?.focus({preventScroll:true});
-      seedConsoleHistory();
-      showConsoleLine(0);
+      const logo=document.querySelector('#opening-logo');
+      if(logo instanceof HTMLImageElement&&!logo.getAttribute('src')){
+        logo.addEventListener('load',()=>logo.parentElement?.classList.add('has-logo'),{once:true});
+        logo.src=logo.dataset.src;
+      }
+      if(entryState)entryState.textContent='ENTERING ACADEMY';
+      openAcademyGate();
     }
     entryButton?.addEventListener('click',enterAcademy);
     const spoilerDialog=document.querySelector('#spoiler-dialog');
     const spoilerNo=document.querySelector('#spoiler-no');
+    const spoilerYes=document.querySelector('#spoiler-yes');
+    document.querySelectorAll('[data-truth-confirm]').forEach(link=>link.href=nmaSiteUrl());
+    if(spoilerYes instanceof HTMLAnchorElement)spoilerYes.href=nmaSiteUrl();
     let spoilerOpener=null;
     let spoilerAccepted=false;
     function openSpoilerNotice(opener){
       if(!(spoilerDialog instanceof HTMLDialogElement)||spoilerDialog.open)return;
       spoilerOpener=opener;spoilerAccepted=false;
+      if(spoilerYes instanceof HTMLAnchorElement)spoilerYes.href=nmaSiteUrl(pendingNmaRoute);
       spoilerDialog.showModal();document.body.classList.add('spoiler-active');
       spoilerNo?.focus({preventScroll:true});
     }
-    document.querySelector('#entry-truth')?.addEventListener('click',event=>openSpoilerNotice(event.currentTarget));
-    document.querySelectorAll('[data-truth-confirm]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();openSpoilerNotice(event.currentTarget)}));
+    document.querySelector('#entry-truth')?.addEventListener('click',event=>{pendingNmaRoute='';openSpoilerNotice(event.currentTarget)});
+    document.querySelectorAll('[data-truth-confirm]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();pendingNmaRoute='';openSpoilerNotice(event.currentTarget)}));
     spoilerNo?.addEventListener('click',()=>spoilerDialog?.close('no'));
-    document.querySelector('#spoiler-yes')?.addEventListener('click',()=>{
+    spoilerYes?.addEventListener('click',()=>{
       if(!(spoilerDialog instanceof HTMLDialogElement)||!spoilerDialog.open)return;
       spoilerAccepted=true;spoilerDialog.close('yes');document.body.classList.remove('spoiler-active');
-      if(entryScreen instanceof HTMLDialogElement&&entryScreen.open)academyTheme.prepare();
-      location.hash='truth/1';updateView();completeEntry();
+      // Let the anchor open its new tab directly from this click. Keep the academy state intact.
+      pendingNmaRoute='';
     });
     spoilerDialog?.addEventListener('close',()=>{
       document.body.classList.remove('spoiler-active');
-      if(!spoilerAccepted&&spoilerOpener instanceof HTMLElement&&spoilerOpener.isConnected&&!spoilerOpener.closest('[hidden]'))spoilerOpener.focus({preventScroll:true});
-      spoilerOpener=null;
+      if(spoilerOpener instanceof HTMLElement&&spoilerOpener.isConnected&&!spoilerOpener.closest('[hidden]'))spoilerOpener.focus({preventScroll:true});
+      spoilerOpener=null;pendingNmaRoute='';
     });
-    entrySkip?.addEventListener('click',completeEntry);
     gatewaySkip?.addEventListener('click',completeEntry);
-    entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting&&!(event.target instanceof Element&&event.target.closest('#entry-truth'))){event.preventDefault();if(!event.repeat)enterAcademy()}});
+    entryScreen?.addEventListener('keydown',event=>{if(event.key==='Enter'&&!entryConnecting&&!(event.target instanceof Element&&event.target.closest('#entry-truth,#spoiler-dialog'))){event.preventDefault();if(!event.repeat)enterAcademy()}});
     entryScreen?.addEventListener('cancel',event=>event.preventDefault());
     renderCharacters();updateView();
-    if(entryScreen instanceof HTMLDialogElement){if(entryGateArchitecture instanceof HTMLElement)entryScreen.prepend(entryGateArchitecture);entryScreen.showModal();updateGateHinges();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
+    if(entryScreen instanceof HTMLDialogElement){if(entryGateArchitecture instanceof HTMLElement)entryScreen.prepend(entryGateArchitecture);entryScreen.showModal();updateGateArtwork();document.body.classList.add('entry-active');entryButton?.focus({preventScroll:true})}
+    if(legacyTruthNotice){legacyTruthNotice=false;openSpoilerNotice(document.querySelector('#entry-truth'))}
   </script>
 </body>
 </html>
