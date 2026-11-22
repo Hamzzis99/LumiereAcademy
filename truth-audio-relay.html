@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>NMA 경보음 연결</title>
+  <script>
+    'use strict';
+    const token=new URLSearchParams(location.search).get('cue');
+    if(token&&/^[0-9a-f-]{36}$/i.test(token)&&typeof BroadcastChannel==='function'){
+      const nmaPreview=new URL(location.href);
+      nmaPreview.port='4319';
+      const channel=new BroadcastChannel('academy-truth-warning:'+token);
+
+      // Forward only scripted cues from the local NMA preview parent.
+      function forwardCue(event){
+        if(event.source!==parent||event.origin!==nmaPreview.origin)return;
+        if(event.data!=='fault'&&event.data!=='stop')return;
+        channel.postMessage(event.data);
+        if(event.data==='stop'){
+          channel.close();
+          window.removeEventListener('message',forwardCue);
+        }
+      }
+      window.addEventListener('message',forwardCue);
+    }
+  </script>
+</head>
+<body></body>
+</html>
