@@ -1,6 +1,6 @@
 'use strict';
 
-function bindWebtoonRecommendations(academyUrl, onSelect) {
+function bindWebtoonRecommendations(academyUrl, onSelect, truthRoute = 'world') {
   const books = [
     { key: 'main-story', title: '메인웹툰', subtitle: '입학식', cover: 'academy-gate-portrait.webp' },
     { key: 'childhood-friend', title: '소꿉친구 웹툰', subtitle: 'NTR 모드 웹툰', cover: 'assets/webtoons/covers/childhood-friend.webp' },
@@ -29,7 +29,7 @@ function bindWebtoonRecommendations(academyUrl, onSelect) {
     const cards = books.filter(book => book.key !== currentBook).map(book => {
       const link = document.createElement('a');
       const url = new URL(academyUrl);
-      url.hash = book.key === 'academy-truth' ? 'world' : 'world/' + book.key + '/1';
+      url.hash = book.key === 'academy-truth' ? truthRoute : 'world/' + book.key + '/1';
       link.href = url.href;
       link.className = 'webtoon-recommendation';
       link.dataset.book = book.key;
