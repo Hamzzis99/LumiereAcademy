@@ -2616,6 +2616,7 @@
     function openAcademyGate(){
       if(gatewayOpening||!(entryScreen instanceof HTMLDialogElement)||!entryScreen.open)return;
       if(!(academyGateway instanceof HTMLElement)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){completeEntry();return}
+      if(activeView!=='home'||(location.hash&&location.hash!=='#home')){completeEntry();return}
       const stage=academyGateway.querySelector('.opening-stage');
       if(!(entryGateArchitecture instanceof HTMLElement)||!(stage instanceof HTMLElement)){completeEntry();return}
       gatewayOpening=true;entryTimers.forEach(timer=>clearTimeout(timer));entryTimers.clear();
@@ -2719,7 +2720,7 @@
       document.body.classList.add('entry-active');
     }
     updateView();
-    if(entryScreen?.open&&(entryParams.get('entry')==='reader'||activeView!=='home'))enterAcademy();
+    if(entryScreen?.open&&(entryParams.get('entry')==='reader'||activeView!=='home'))completeEntry();
   </script>
 </body>
 </html>
